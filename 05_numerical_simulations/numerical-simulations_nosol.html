@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Christophe Pallier" />
+  <title>Numerical simulations</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Numerical simulations</h1>
+  <p class="author">
+Christophe Pallier
+  </p>
+  <p class="date">Sept 2013</p>
+</div>
+<div class="slide section level6">
+
+<p>The aim is to assess how well the proportion in a sample estimates the proportion in a population.</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a population of N=1 million voters out of which 52% support a candidate A, and the rest support candidate B. Use a numpy array.</p></li>
+<li><p>Extract a random sample of s=100 voters and compute the proportion of A supporters.</p></li>
+<li><p>Rerun the preceding process 1000 times and plot an histogram of the estimated proportions (using matplotlib.pyplot.hist).</p></li>
+</ol>
+<p>Exercice: Modify s, the size of the sample, and compute the standard deviation of the sampled means as a function of s.</p>
+</div>
+</body>
+</html>

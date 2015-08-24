@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Christophe Pallier" />
+  <title>Numerical simulations</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Numerical simulations</h1>
+  <p class="author">
+Christophe Pallier
+  </p>
+  <p class="date">Sept 2013</p>
+</div>
+<div class="slide section level6">
+
+<p>The aim is to assess how well the proportion in a sample estimates the proportion in a population.</p>
+<ol style="list-style-type: decimal">
+<li>Create a population of N=1 million voters out of which 52% support a candidate A, and the rest support candidate B. Use a numpy array.</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
+N = <span class="dv">1000000</span>
+p = .<span class="dv">52</span>
+
+pop = np.zeros(N)
+pop[<span class="dv">0</span>:<span class="dt">int</span>(N*p)] = <span class="dv">1</span>
+np.mean(pop)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Extract a random sample of s=100 voters and compute the proportion of A supporters.</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">s = <span class="dv">100</span>
+
+<span class="ch">import</span> random
+samp = random.sample(pop, s)
+np.mean(samp)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Rerun the preceding process 1000 times and plot an histogram of the estimated proportions (using matplotlib.pyplot.hist).</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">sampmeans = [ np.mean(random.sample(pop, s)) <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1000</span>) ]
+
+<span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
+plt.hist(sampmeans)</code></pre>
+<p>Exercice: Modify s, the size of the sample, and compute the standard deviation of the sampled means as a function of s.</p>
+</div>
+</body>
+</html>

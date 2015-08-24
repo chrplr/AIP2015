@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="christophe@pallier.org" />
+  <title>How computers work</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">How computers work</h1>
+  <p class="author">
+christophe@pallier.org
+  </p>
+  <p class="date">Sep. 2013</p>
+</div>
+<div id="automata" class="slide section level2">
+<h1><a href="#automata">Automata</a></h1>
+<div class="figure">
+<img src="images/automate_joueur_de_flute_vaucanson.jpg" alt="Fluteur automate de Vaucanson" /><p class="caption">Fluteur automate de Vaucanson</p>
+</div>
+<p>An automaton can be described by a set of internal <strong>states</strong> and a transition table that associates events to <strong>transitions</strong> between states. They are also known as finite state machines.</p>
+<p>Remarks:</p>
+<ul>
+<li><p>Events associated to transition can be input and/or output</p></li>
+<li><p>Automata can react to external events in a context-sentitive manner.</p></li>
+</ul>
+</div>
+<div class="slide section level2">
+
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/pacman.png" alt="Pacman" /></td>
+<td align="right"><img src="images/transition-diagram-pacman-ghost.png" alt="Pacman’s ghost behavior" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="slide section level2">
+
+<div class="figure">
+<img src="images/coin-counter_ori.svg" alt="Change counter in a vending machine" /><p class="caption">Change counter in a vending machine</p>
+</div>
+</div>
+<div class="slide section level2">
+
+<p>Exercice: draw the transition diagram for a simple coffee machine with three states (off/on/brewing) and two buttons (switch on/off and brew)</p>
+</div>
+<div class="slide section level2">
+
+<div class="figure">
+<img src="images/BengaleseFinch_song_fsa.png" alt="Finite state automaton description on Bengalese Finch songs (Berwick et al., 2011 Trends in Cognitive Sciences 15, 3: 113–21)" /><p class="caption">Finite state automaton description on Bengalese Finch songs (Berwick et al., 2011 Trends in Cognitive Sciences 15, 3: 113–21)</p>
+</div>
+<p>(see also Descartes. <em>Les animaux Machines</em> <a href="http://www.ac-grenoble.fr/PhiloSophie/logphil/oeuvres/descarte/newcastl.htm">Lettre au Marquis de Newcastle</a></p>
+</div>
+<div class="slide section level2">
+
+<p>Pattern recognition</p>
+<p>!(Haha!)[images/fsa1.gif]</p>
+<p>(see Regular Expressions)</p>
+</div>
+<div class="slide section level2">
+
+<p>Capturing the Grammar of English language</p>
+<div class="figure">
+<img src="images/fsa_lang.png" alt="simple fragment of English" /><p class="caption">simple fragment of English</p>
+</div>
+<p>See <a href="http://theory.esm.rochester.edu/temperley/visual-english.pdf">David Temperley’s Visual representation of the English language</a> for more.</p>
+</div>
+<div id="computers" class="slide section level2">
+<h1><a href="#computers">Computers</a></h1>
+<p>A computer is basically an automaton with an additonal memory store.</p>
+<p>Examples:</p>
+<h3 id="turing-machines"><a href="#turing-machines">Turing Machines</a></h3>
+<p>A finite state machine augmented with a tape and a mechanism to read/write onit.</p>
+<div class="figure">
+<img src="images/computation01.gif" alt="example of a Turing machine" /><p class="caption">example of a Turing machine</p>
+</div>
+<p>See (https://en.wikipedia.org/wiki/Turing_machine)[https://en.wikipedia.org/wiki/Turing_machine] for more information.</p>
+</div>
+<div class="slide section level2">
+
+<h3 id="register-machines"><a href="#register-machines">Register machines</a></h3>
+<ul>
+<li>Read (Dennett2008-Secrets-of-Computer-Power-Revealed.pdf)[Dennett2008-Secrets-of-Computer-Power-Revealed.pdf],</li>
+<li>Play with <a href="http://proto.atech.tufts.edu/RodRego/">http://proto.atech.tufts.edu/RodRego/</a></li>
+</ul>
+<h3 id="remarks"><a href="#remarks">Remarks:</a></h3>
+<ul>
+<li>The first computers were not programmable. They were hardwired!</li>
+<li>Programmable computer:</li>
+<li>a program is a set of instructions stored in memory.</li>
+<li>Loaded and executed by a processor.</li>
+<li>Such programs are written in machine langage (the language of the processor)</li>
+</ul>
+<p>Programs in higher-level languages (rather than Machine language) can be either * <strong>compiled</strong>, or * <strong>interpreted</strong></p>
+<p>In both cases, you write the program as textual files.</p>
+<p>A <strong>compiler</strong> translates the program into an executable file in machine language. The exectutable file is standalone.</p>
+<p>An <strong>interpreter</strong> reads the file and execute the commands one by one. It is slower, but easier to interact with. Disatvange: you need the interpreter at all time.</p>
+</div>
+<div id="operating-system" class="slide section level2">
+<h1><a href="#operating-system">Operating system</a></h1>
+<p>An O.S. is the first program that loads into the computer during the boot. When running:</p>
+<ul>
+<li><p>it controls the hardware (screen/printer/disk/keybord/mouse,…) (drivers)</p></li>
+<li>it manages all the other programs (processes/tasks/applications).
+<ul>
+<li>sharing memory</li>
+<li>allocating processors and cores</li>
+<li>allocating time</li>
+</ul>
+<p>Check out <em>Task Manager</em> (Windows)/<em>System Monitor</em> (Linux)/ <em>Activity Monitor</em> (Mac)</p></li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/windows.jpeg" alt="Windows" /></td>
+<td align="left"><img src="images/linux.jpeg" alt="Linux" /></td>
+<td align="left"><img src="images/macos.png" alt="MacOS" /></td>
+</tr>
+</tbody>
+</table>
+<p>Different OS offer different “views” of the computer (e.g. 1 button mouse in Mac, 2 in Windows, 3 in Linux), so often programs are designed to work on one OS (bad!). Prefer multiplatform software (like Python).</p>
+<p>Several OS can be installed in a given machine: - choice at boot (multiboot) - an OS can run inside a <strong>virtual machine</strong>, that is a program running in another (or the same) OS, and emulating a full computer.</p>
+</div>
+<div id="what-is-a-terminal" class="slide section level2">
+<h1><a href="#what-is-a-terminal">What is a Terminal?</a></h1>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/terminal.jpg" /></td>
+<td align="left"><img src="images/minitel.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Terminal</strong> (or <strong>console</strong>): originaly, a device comprising a keyboard and screen, allowing a human to <em>interact</em> with a computer.</p>
+<p>Notes:</p>
+<ul>
+<li><p>early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).</p></li>
+<li><p>in the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.</p></li>
+</ul>
+<div class="figure">
+<img src="images/terminals.jpg" />
+</div>
+<p>With the advent of <em>Personal Computers</em>, the terminal and the computer became a single apparatus.</p>
+<p>However, terminals can be <em>virtual</em>. Terminals are programs that let you run text programs. You interact by typing and displaying text. No graphical interface/no mouse.</p>
+<p><em>Shell</em>: a software that provides a way to interact with the operating system.</p>
+<p>Graphical shells. Windows/Icons/Menus … Limited but ‘intuitive’</p>
+<p>Textual shells (command lines). More powerful. It reads in commands and executes them. It can provide variables, loops,…, to facilitate automation of tasks. It provides a better control of the machine/better at automating tasks</p>
+<p>See Wikipedia <a href="http://en.wikipedia.org/wiki/Shell_%28computing%29">Shell_(Computing)</a></p>
+<p>Windows: cmd/powershell. Mac/linux:bash/tsch…</p>
+<p>Example (creating 20 directories in one command)</p>
+<pre><code>for f in 01 02 03 04 05 06 07 08 09 10; do mkdir -p subject_$f/data subject_$f/results; done
+
+for f in 1 2 3 4 5: do python myprog.py $f ; done</code></pre>
+<p>Is it worth learning to use a textual shell today? Probably, BUT you can handle 90% of problems with Python.</p>
+</div>
+<div id="disks-directories-and-files" class="slide section level2">
+<h1><a href="#disks-directories-and-files">Disks, Directories and files</a></h1>
+<p>Most computers (not all) have two kinds of memories: - volatile, fast, memory, which is cleared when the computer is switched off (caches, RAM) - ‘permanent’, slow, memory, which is not erased when the computer is switched off (DISKS)</p>
+<p>The unit of storage is the <strong>file</strong>.</p>
+<p>Files are nothing but blobs of bits stored “sequentially” on disks. A first file could be stored between location 234 and 256, a second file could be stored at location 456.</p>
+<p>To access a file, one would need to know its location on the disk. To simplify users’s life, OSes provide a system of “pointers”, <strong>filenames</strong>.</p>
+<p>To help users further, filenames are organised in a hierarchical structure (a tree) of directories (or folders).</p>
+<p>So to locate a file, you must know - the disk (C:, D:, … in Windows only) - its location in the directory structure - its name</p>
+<p>(note: a given file can have several names: cf. links)</p>
+<p>Absolute pathnames vs. relative pathnames (..)</p>
+<p><strong>working directory</strong> A running program has a. Filenames can be relative to this directory.</p>
+<p>Open python</p>
+<pre><code>import os
+os.getcwd()
+os.chdir(&#39;..&#39;)
+os.getcwd()</code></pre>
+</div>
+<div id="what-is-a-computer" class="slide section level2">
+<h1><a href="#what-is-a-computer">What is a computer?</a></h1>
+<p>Automaton: states/transitions.</p>
+<p>Computer: states/transition + memory (Turing machine)</p>
+<p>First computer were not programmable. They were wired!</p>
+<p>Programmable computer: programs=set of instructions stored in memory. Loaded and executed by a processor. Programs are written in machine langage (the language of the processor)</p>
+<p>Programs in higher-level languages can be either * <strong>compiled</strong>, or * <strong>interpreted</strong></p>
+<p>In both cases, you write the program as textual files.</p>
+<p>A <strong>compiler</strong> translates the program into an executable file in machine language. The exectutable file is standalone.</p>
+<p>An <strong>interpreter</strong> reads the file and execute the commands one by one. It is slower, but easier to interact with. Disatvange: you need the interpreter at all time.</p>
+</div>
+<div id="what-is-a-library-or-modulepackage" class="slide section level2">
+<h1><a href="#what-is-a-library-or-modulepackage">What is a library (or module/package)?</a></h1>
+<p>A set of new functions that extend a language (.DLL (Windows);.a or .so (Linux); framework bundles (MacOs))</p>
+<p>Dynamic libraries can be used simultaneously by several processes.</p>
+<p>Eg. the function @<span class="citation">@sqrt</span>@@ can be defined once, and called by several programs, saving memory.</p>
+<p>In Python, use @<span class="citation">@import</span> library</p>
+<pre><code>import math
+math.srqt(2)</code></pre>
+</div>
+</body>
+</html>

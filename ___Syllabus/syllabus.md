@@ -1,6 +1,13 @@
 Introduction to Programming (AIP)
 =================================
 
+Objectives:
+
+* Learn what is a computer, what is a program
+* Learn the basics of a programming language (Python)
+* Learn about the process of executing, writing and debugging programs
+* Learning about the process of moving from a problem statement to a computational formulation of a method for solving the problem
+
 
 Knowledge to be acquired:
 
@@ -8,41 +15,33 @@ Knowledge to be acquired:
 Practical skills
 ================
 
-* If you download some source code (e.g. Python) from the internet, how
-to execute it?
-* how to run a program from the command line 
-(requires: knowing how to open a terminal/find the location of a file/cd to the correct folder/type a command/pass arguments)
-* how to launch ipython and use it interactively (distinction shell/interpreter python)
-* how to execute a python script.
-* how to use an editor (atom) to view/edit a python script
+You should know how to:
+
+* Download some source code (e.g. Python) from the Internet (e.g. github) and display it.
+* Run a program from the command line 
+ - open a terminal, interact with the shell
+ - navigate the directory structure with cd/ls
+ - type commands, possibily with options or arguments
+ - interrupt a running program (using the process manager)
+
+* Execute a python script.
+* Install missing modules
+* Launch ipython and use it interactively (distinction shell/interpreter python)
+* Use an editor (atom) to view/edit a Python script
+* Find/read Python's documentation
 * what to do when there is a crash/error message
-* how to install missing modules
-* how to interrupt a running program
-* know how to find/read documentation
-
-
-Our Coding standards
-====================
-
-* use a common template for all scripts
-* force writing a docstring with aim, input, output descriptions
-* avoid global variables except for constants (use uppercase for identifier)
-* spaces around operators, after ',',...
-* use explicit names (lowercase ascii)
-* use comments sparingly, explain why, not how 
-* factorisation de code (each step is a function, put docstrings)
 
 
 Programming concepts
 ====================
 
-* sequential execution  of instructions
+* the basic element: the instruction. simple program=sequences of instructions
+* forever loops
+* conditional statements
 * constants integers/floats/strings (insist that there are different types) 
 * variables
 * lists/dictionaries 
-* forever loops
 * loops over sequences
-* conditional statements
 * functions/parameters/local variables
 * modules
 * file input/output
@@ -91,6 +90,18 @@ Computer architecture concepts
 * Interacting with the computer: Terminal vs. GUI.
 * What is a program: executables vs. source code/compilation and
 interpretation.
+
+
+Our Coding standards
+====================
+
+* use a common template for all scripts
+* force writing docstrings with aim, input & output descriptions
+* avoid global variables except for constants (use uppercase for identifier)
+* spaces around operators, after ',',...
+* use explicit names (lowercase ascii)
+* use comments sparingly, explain why, not how 
+* factorisation de code (each step is a function, put docstrings)
 
 
  

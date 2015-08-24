@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="christophe@pallier.org" />
+  <title>Reaction times</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Reaction times</h1>
+  <p class="author">
+christophe@pallier.org
+  </p>
+  <p class="date">Sept. 2013</p>
+</div>
+<div class="slide section level6">
+
+<ol style="list-style-type: example">
+<li>Write a program, using pygame, that starts with an empty black screen and after one second, displays a small white dot at the center of the screen for 1 second, waits for another second and then quits (tip: use the function pygame.time.delay to wait for a given amount of time)</li>
+</ol>
+</div>
+<div class="slide section level6">
+
+<ol start="2" style="list-style-type: example">
+<li>Start the following program, move the mouse into the pygame window and clik on it several times, press keys, … close the window to quit.</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> pygame
+
+pygame.init()
+screen = pygame.display.set_mode((<span class="dv">640</span>, <span class="dv">400</span>))
+
+<span class="kw">while</span> <span class="ot">True</span>:
+    event = pygame.event.wait()
+    <span class="kw">if</span> event.<span class="dt">type</span> == pygame.QUIT:
+        <span class="kw">break</span>
+    <span class="dt">print</span>(pygame.event.event_name(event.<span class="dt">type</span>))
+
+pygame.quit()</code></pre>
+<p>(you can skim through the tutorial at <a href="http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/">http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/</a> ) to understand pygame’s mouse events. Now, modify the previous code so that the dot remains on the screen until you press a mouse button.</p>
+</div>
+<div class="slide section level6">
+
+<ol start="3" style="list-style-type: example">
+<li>Look at the documentation of the function pygame.time.get_ticks() and add code to measure and print the reaction-times, that is the time between the onset of the dot’s display and the mouse button press.</li>
+</ol>
+</div>
+<div class="slide section level6">
+
+<ol start="4" style="list-style-type: example">
+<li>Modify the previous program to repeat the process for 32 trials, and:</li>
+</ol>
+<ul>
+<li>Make the time between the appearance of two dots a random duration between 1 and 2 secs (tip: use the function random.randint).</li>
+<li>Record the reaction times in a list.</li>
+<li>At the end of the program, save the reaction times in a text file.</li>
+<li>Run this program twice using your right hand and twice using your left hand, <em>trying to respond as fast as possible, but without making false alarms</em> (change the name of the text file to save into different text files).</li>
+</ul>
+</div>
+<div class="slide section level6">
+
+<ol start="5" style="list-style-type: example">
+<li>Look at your reaction time data. If you know to do it, plot histograms with a spreadsheet program or R (or any other software)</li>
+</ol>
+<p>Launch spyder. Go to the console window, in the options, set the working directory to the directory that contains reaction-times.csv. Type the following commands:</p>
+<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dt">open</span>(<span class="st">&#39;reaction-times.csv&#39;</span>)
+l = []
+<span class="kw">for</span> line in f:
+    l.append(<span class="dt">int</span>(line))
+l
+plot(l)
+hist(l)
+mean(l)
+median(l)</code></pre>
+</div>
+<div class="slide section level6">
+
+<ol start="6" style="list-style-type: example">
+<li>Back to the reaction time program, write a function that removes the 25% extreme data points in a list and returns the mean and standard errors of the remaining data points (not using numpy).</li>
+</ol>
+</div>
+<div class="slide section level6">
+
+<ol start="7" style="list-style-type: example">
+<li><p>Change the size of the dot so that it is 10 times bigger than previously. Rerun the experiment. How is your reaction times affected?</p></li>
+<li><p>Now, change the contrast of the dot with the background (make it grey rather than white). How is your reaction times affected?</p></li>
+<li><p>Modify the previous program so that the color of target is randomly chosen between blue and red (with equal probability) at each trial. You still use only one response button.</p></li>
+<li><p>The task is to now to take a decision: one mouse button is assigned to blue and another one to red (if you only have one mouse button, use 2 keys and the KEYDOWN event). In the results file, save both the button pressed and the reaction times (on row per trial). Compare decision times to simple reaction times.</p></li>
+<li><p>Modify the program so that the dot can appear (randomly) at one of two locations far on the left or far on the right of the center. How is your reaction time affected?</p></li>
+<li><p>(advanced): Modify the simple detection program so that the contrast can be modified at each trial. Write the program to find the threshold of detection of the do.</p></li>
+</ol>
+</div>
+</body>
+</html>

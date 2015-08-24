@@ -1,0 +1,26 @@
+#! /bin/bash
+# Time-stamp: <2015-08-24 10:59 christophe@pallier.org>
+
+
+rm -f *.html *.pdf
+rm -f *_sol.md *_nosol.md
+
+for f in *.md; 
+do 
+	gpp -D ANSWERS=1 $f > ${f%.md}_sol.md
+	gpp  $f > ${f%.md}_nosol.md
+done
+
+for f in *_sol.md;
+do 
+	pandoc -s -S --to slidy --toc $f -o ${f%.md}.html
+	pandoc -s -S --toc $f -o ${f%.md}.pdf
+done
+
+for f in *_nosol.md;
+do 
+	pandoc -s -S --to slidy --toc $f -o ${f%.md}.html
+	pandoc -s -S --toc $f -o ${f%.md}.pdf
+done
+
+
