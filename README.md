@@ -9,17 +9,29 @@ Objectives
 * learn the bases of Python programming
 * Learn how to execute, design, write and debug programs
 
-(see below for more details about the notions that will be presented during this series of lectures)
+(see below for more details about the contents of this series of lectures)
 
-### Instructors
- 
+### Prerequisites:
 
-- Christophe Pallier <christophe@pallier.org>
-- Louis Thibault <louist87@gmail.com>
-- Sylvain Charron <sylvain.charron@polytechnique.edu>
+This course is intended for beginners, but students who already have
+rudiments in programming (e.g. only know Matlab) can benefit from it.
+Also, note that knowledge of Python and of the skills listed below is
+a requiement for the other hands-on classes (Ateliers) of the
+Cogmaster.
+
+Before attending AIP, it can help:
+- to study the learning modules on 'Python' and 'the command line' at
+(https://www.codecademy.com)[www.codecademy.com] 
+- have a peek at the documents in the 'resources' folder.
+
 
 ### Website: https://github.com/chrplr/AIP2015
 
+### Instructors
+ 
+- Christophe Pallier <christophe@pallier.org>
+- Louis Thibault <louist87@gmail.com>
+- Sylvain Charron <sylvain.charron@polytechnique.edu>
 
 
 
@@ -70,6 +82,8 @@ You should know how to:
 
 Computer's architecture
 -----------------------
+
+To program computers, it is necessary to have a rough idea of how they work. 
 
 * Computer = Automaton + Memory store (Turing machines)
 * Intro to Machine language (Register machine Rodrego)
