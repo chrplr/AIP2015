@@ -33,9 +33,8 @@ Installation procedures will be put online on Tuesday. Links will be provided to
 
 If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.
 
-23:30
-The instruction to install python on Windows are completed  
-Mac installation instruction for python soon
+00:15  
+Mac installation instruction for the Acaconda python distribution and its configuration and tests
 
 
 First, read the installation instruction for your operating system:  
@@ -129,7 +128,7 @@ Once the installation on your computer completed, you can browse the documents i
     ```
     You have to type it where a little rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
     You will see some text messages during the installation of some python modules, don't worry!
- * **WARNING** **if you have a 32bit Windows, stop the install process rith now, do not install anything past this point!** 
+ * **WARNING** **if you have a 32bit Windows, stop the install process rith now, do not install anything past this point!**
  * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
     ```sh
     conda install -c https://conda.binstar.org/krisvanneste pygame
@@ -229,7 +228,48 @@ Once the installation on your computer completed, you can browse the documents i
 
 ###Python
 
-The procedure will be poster later this evening. Meanwhile, please download [Mac OS X — 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-MacOSX-x86_64.pkg) from [http://continuum.io/downloads]
+1. Preparation
+ * [ ] Make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
+ * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
+ * [ ] First go to the "apple" menu in the upper-left corner of the screen. Select "About This Mac", and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). **If not or if you are not sure, don't install anything, and come see us tomorrow morning.**
+ * [ ] In the "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until tomorrow to install a different version of Python.**
+ * [ ] If and only if your mac pass this tests, you can carry on.
+
+2. Download Anaconda
+ * [ ] Download the Anaconda distribution installer [Mac OS X — 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-MacOSX-x86_64.pkg) from [http://continuum.io/downloads]
+
+3. Install the Anaconda python distribution
+ * [ ] go to your `Downloads` folder and double click on the file Anaconda-X.X.X-MacOSX-x86_64.pkg in order to start the installation.
+ * [ ] click on `Continue` several times and agree on licence terms until the installation is completed, if at some point you see the error "You cannot install Anaconda in this location", then just click on `Install for me only` and you should be able to continue.
+ * [ ] when you see the message "The installation was successful", click on the `Close` button
+
+4. Configuration
+ * [ ] you should see a Launcher.app icon on your desktop, double-click on it to start the launcher.
+ * [ ] answer as you like about sending informations to the Continuum company
+ * [ ] wait whil the laucher checks which python applications are installed
+ * [ ] verify that `ipython-notebook` and `ipython-qtconsole` are installed (their icon should be `Update | Lauch`), otherwise, click on `Install` buttons.
+ * [ ] close the "Laucher" window
+
+5. Test
+ * [ ] lauch the `Terminal` application from your "Dock"
+ * [ ] just after the `$` sign, type `ipython` then press on the `Enter` key in order to lauch a ipython interpreter
+ * [ ] in the ipython shell, type each of those lines one by one followed by enter
+
+    ```python
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import stats
+    x=np.arange(-5,5,.1)
+    y=stats.norm.pdf(x)
+    plt.plot(x,y)
+    plt.show()
+    ```
+
+0. **Warning** Now the Mac python install procedure starts to be tricky, if you don't feel confident with typing commands in a terminal, of if you'd like to sleep, stop rigth now, we will carry on tomorrow morning.  
+Otherwise, stay up for some more fun with the terminal!
+
+
+
 
 
 ## Linux debian based
@@ -261,7 +301,10 @@ Execute the following commands:
     plt.plot(x,y)
     plt.show()
     ```
- * [ ] python /usr/share/pyshared/pygame/examples/chimp.py
+ * [ ] the you can try to type in a terminal
+     ```bash
+     python /usr/share/pyshared/pygame/examples/chimp.py
+     ```
 
 3. If you want a look a the documentation you installed, use your favorite browser  
  `iceweasel /usr/share/doc/python2.7-doc/html/index.html`  
