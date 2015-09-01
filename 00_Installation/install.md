@@ -33,8 +33,9 @@ Installation procedures will be put online on Tuesday. Links will be provided to
 
 If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.
 
-20:30
-The instruction to install python on Windows and Mac will be posted a bit later this evening
+23:30
+The instruction to install python on Windows are completed  
+Mac installation instruction for python soon
 
 
 First, read the installation instruction for your operating system:  
@@ -149,7 +150,7 @@ Once the installation on your computer completed, you can browse the documents i
     pygame.quit()
     ```
     You should see a little window appear, change color and then disapear.
-    
+
 
 ## Mac OS
 
