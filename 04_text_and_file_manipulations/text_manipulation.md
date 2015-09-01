@@ -2,6 +2,96 @@
 % Christophe@pallier.org
 % Sept. 2013
 
+
+Strings
+=======
+
+In Python, text can be stored in objects of type 'str' (a.k.a as 'strings')
+
+String constants are enclosed between single or double quotes
+
+```python
+'bonjour'
+
+"bonjour Paris!"
+
+"""hello
+ceci est un text
+sur plusieurs lignes
+"""
+
+type('123')
+
+type(123)
+
+123 + 456
+
+'123' + '456'
+
+int('123')  # converting str into int
+str(1 + 1)  # converting int into str
+```
+
+* A string can be viewed as a *list* of characters:
+
+```python
+mystring = 'superman'
+
+len(mystring)
+
+mystring[0]
+mystring[1]
+mystring[1:5]
+
+for letter in mystring:
+    print(letter)
+```
+
+A set of functions to manipulate strings is available in the module 'string' (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])). Among others, you should know about:
+
+* string.upper and string.lower
+* string.split
+* string.find
+
+### Interactive input from the command line:
+
+```python
+name = raw_input('Comment vous appelez-vous ? ')
+
+print "Bonjour " + name + '!'
+```
+
+Reading and writing to text files
+=================================
+
+
+Create a text file 'essa
+
+```python
+
+
+writing:
+
+
+
+
+```python
+filename = 'test.txt'
+handle = open(filename, 'w')
+handle.write('welcome')
+handle.write('to the wonderful')
+handle.write('world of Python!')
+handle.close()
+```
+
+
+
+
+
+
+Exercices
+=========
+
 Download [Alice in Wonderland](http://www.pallier.org/cours/AIP2013/alice.txt).
 
 (@) Write a program that prints the lines that contains the string 'Alice' (tip: you can use the find function from the module string). Then, test the same program with the strings 'Rabbit', 'rabbit', 'stone', 'office'.
