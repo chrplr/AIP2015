@@ -52,13 +52,13 @@ Once the installation on your computer completed, you can browse the documents i
 ### Scratch
 1. Download [ScratchInstaller1.4.exe](http://download.scratch.mit.edu/ScratchInstaller1.4.exe) from http://download.scratch.mit.edu/ by using the right click on the link and the option `Save target as`, and select an appropriate directory, for example the default `Downloads` folder.
 2. then install as usual:
- * upon the end of the download either click on `Open the Folder` or open an explorer (windows key + e) and go to your `Downloads` folder
- * double-click on the ScratchInstaller1.4.exe file and wait
- * after a while your screen turns dark and an ominous warning pop-up window ask you if you'd like this unknown programm to modify stuff on your computer. Click on the `Yes` button.
- * The Scratch Setup Wizard window should pop-up and you can install the software clicking on the `Next` Button and accepting default parameters (note in which directory the program will be installed) until you have to click on the `Finish` button.
+ * [ ] upon the end of the download either click on `Open the Folder` or open an explorer (windows key + e) and go to your `Downloads` folder
+ * [ ] double-click on the ScratchInstaller1.4.exe file and wait
+ * [ ] after a while your screen turns dark and an ominous warning pop-up window ask you if you'd like this unknown programm to modify stuff on your computer. Click on the `Yes` button.
+ * [ ] The Scratch Setup Wizard window should pop-up and you can install the software clicking on the `Next` Button and accepting default parameters (note in which directory the program will be installed) until you have to click on the `Finish` button.
 3. test Scratch
- * If you did not uncheck the options before clicking on `Finish`, you should see the program running and you coud reopen it using the desktop Scratch icon. Alternatively, you can open an explorer, go to the directory in which the program was installed and double click on the Scratch icon.
- * you should be able to move the little animal around
+ * [ ] If you did not uncheck the options before clicking on `Finish`, you should see the program running and you coud reopen it using the desktop Scratch icon. Alternatively, you can open an explorer, go to the directory in which the program was installed and double click on the Scratch icon.
+ * [ ] you should be able to move the little animal around
 
 ### Atom
 
@@ -94,7 +94,7 @@ Once the installation on your computer completed, you can browse the documents i
 1. Download the application
  * [ ] Go to [http://desktop.github.com] and click on the `Download GitHub Desktop` button.
 2. Installation
- * It should start automatically, otherwise go to your `Downloads` folder and double click on the "GitHubSetup.exe" file
+ * [ ] It should start automatically, otherwise go to your `Downloads` folder and double click on the "GitHubSetup.exe" file
 
 3. configuration: you should see a window that says "Welcome"
  * [ ] fill the username and password and click on `login`, then your email and click on `Continue`
@@ -128,7 +128,7 @@ Once the installation on your computer completed, you can browse the documents i
     ```
     You have to type it where a little rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
     You will see some text messages during the installation of some python modules, don't worry!
- * **WARNING** **if you have a 32bit Windows, stop the install process rith now, do not install anything past this point!**
+ * [ ] **WARNING** **if you have a 32bit Windows, stop the install process rigth now, do not install anything past this point!**
  * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
     ```sh
     conda install -c https://conda.binstar.org/krisvanneste pygame
