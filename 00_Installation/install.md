@@ -143,9 +143,9 @@ Instructions
 
 4. Test
 
-* [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
-* [ ] click on `All the programs` and then the `Anaconda folder`, then on `Ipython (Py 2.7) QTConsole`
-* [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
+ * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
+ * [ ] click on `All the programs` and then the `Anaconda folder`, then on `Ipython (Py 2.7) QTConsole`
+ * [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
     ```python
     import pygame
     pygame.init()
@@ -248,7 +248,7 @@ __________________________________________________
  * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
  * [ ] First go to the "apple" menu in the upper-left corner of the screen. Select "About This Mac", and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). **If not or if you are not sure, don't install anything, and come see us tomorrow morning.**
  * [ ] In the "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until tomorrow to install a different version of Python.**
- * [ ] If and only if your mac pass this tests, you can carry on.
+ * [ ] If and only if your mac pass these tests, you can carry on.
 
 2. Download Anaconda
  * [ ] Download the Anaconda distribution installer [Mac OS X — 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-MacOSX-x86_64.pkg) from [http://continuum.io/downloads]
