@@ -121,14 +121,15 @@ Once the installation on your computer completed, you can browse the documents i
 
 3. Configuration
 
- * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
+ * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command to find the application using its name.
  * [ ] click on `All the programs` and then the `Anaconda folder`, then on `Anaconda Command Prompt`
  * [ ] this launches the anaconda terminal, where you have to type this text and then press on the `Enter` key:
     ```sh
     conda install conda
     ```
-    You have to type it where a tille rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
+    You have to type it where a little rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
     You will see some text messages during the installation of some python modules, don't worry!
+ * **WARNING** **if you have a 32bit Windows, stop the install process rith now, do not install anything past this point!** 
  * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
     ```sh
     conda install -c https://conda.binstar.org/krisvanneste pygame
