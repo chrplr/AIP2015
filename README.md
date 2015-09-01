@@ -24,8 +24,18 @@ Before attending AIP, it can help:
 (https://www.codecademy.com)[www.codecademy.com]
 - have a peek at the documents in the 'resources' folder.
 
+During or after AIP, you may be interested in
+[MIT's Introduction to computer science and programming](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/) online course. 
 
-### Website: https://github.com/chrplr/AIP2015
+Another excellent resource to go beyond this lecture is <https://mitpress.mit.edu/sicp/sicp.html>
+
+
+### AIP's website:
+
+The web site for AIP2015 is <https://github.com/chrplr/AIP2015>
+
+This site will be updated during the course. To facilitate updating your local copy, we recommend that you use git to first clone the repository and then regularily pull the updates (ask for help if necessary).
+
 
 ### Instructors
 
@@ -99,8 +109,11 @@ Methodology of programming
 * debug with 'print'
 
 
-Our Coding standards
---------------------
+
+Remarks
+-------
+
+Our Coding standards:
 
 * use a common template for all scripts
 * force writing docstrings with aim, input & output descriptions

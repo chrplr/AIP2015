@@ -43,8 +43,67 @@ Christophe@pallier.org
   </p>
   <p class="date">Sept. 2013</p>
 </div>
-<div class="slide section level6">
+<div id="strings" class="slide section level1">
+<h1><a href="#strings">Strings</a></h1>
+<p>In Python, text can be stored in objects of type ‘str’ (a.k.a as ‘strings’)</p>
+<p>String constants are enclosed between single or double quotes</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;bonjour&#39;</span>
 
+<span class="co">&quot;bonjour Paris!&quot;</span>
+
+<span class="co">&quot;&quot;&quot;hello</span>
+<span class="co">ceci est un text</span>
+<span class="co">sur plusieurs lignes</span>
+<span class="co">&quot;&quot;&quot;</span>
+
+<span class="dt">type</span>(<span class="st">&#39;123&#39;</span>)
+
+<span class="dt">type</span>(<span class="dv">123</span>)
+
+<span class="dv">123</span> + <span class="dv">456</span>
+
+<span class="co">&#39;123&#39;</span> + <span class="st">&#39;456&#39;</span>
+
+<span class="dt">int</span>(<span class="st">&#39;123&#39;</span>)  <span class="co"># converting str into int</span>
+<span class="dt">str</span>(<span class="dv">1</span> + <span class="dv">1</span>)  <span class="co"># converting int into str</span></code></pre>
+<ul>
+<li>A string can be viewed as a <em>list</em> of characters:</li>
+</ul>
+<pre class="sourceCode python"><code class="sourceCode python">mystring = <span class="st">&#39;superman&#39;</span>
+
+<span class="dt">len</span>(mystring)
+
+mystring[<span class="dv">0</span>]
+mystring[<span class="dv">1</span>]
+mystring[<span class="dv">1</span>:<span class="dv">5</span>]
+
+<span class="kw">for</span> letter in mystring:
+    <span class="dt">print</span>(letter)</code></pre>
+<p>A set of functions to manipulate strings is available in the module ‘string’ (see <a href="https://docs.python.org/2/library/string.html]">https://docs.python.org/2/library/string.html</a>). Among others, you should know about:</p>
+<ul>
+<li>string.upper and string.lower</li>
+<li>string.split</li>
+<li>string.find</li>
+</ul>
+<h3 id="interactive-input-from-the-command-line"><a href="#interactive-input-from-the-command-line">Interactive input from the command line:</a></h3>
+<pre class="sourceCode python"><code class="sourceCode python">name = <span class="dt">raw_input</span>(<span class="st">&#39;Comment vous appelez-vous ? &#39;</span>)
+
+<span class="dt">print</span> <span class="st">&quot;Bonjour &quot;</span> + name + <span class="st">&#39;!&#39;</span></code></pre>
+</div>
+<div id="reading-and-writing-to-text-files" class="slide section level1">
+<h1><a href="#reading-and-writing-to-text-files">Reading and writing to text files</a></h1>
+<p>Create a text file ’essa</p>
+<p>```python</p>
+<p>writing:</p>
+<pre class="sourceCode python"><code class="sourceCode python">filename = <span class="st">&#39;test.txt&#39;</span>
+handle = <span class="dt">open</span>(filename, <span class="st">&#39;w&#39;</span>)
+handle.write(<span class="st">&#39;welcome&#39;</span>)
+handle.write(<span class="st">&#39;to the wonderful&#39;</span>)
+handle.write(<span class="st">&#39;world of Python!&#39;</span>)
+handle.close()</code></pre>
+</div>
+<div id="exercices" class="slide section level1">
+<h1><a href="#exercices">Exercices</a></h1>
 <p>Download <a href="http://www.pallier.org/cours/AIP2013/alice.txt">Alice in Wonderland</a>.</p>
 <ol style="list-style-type: example">
 <li>Write a program that prints the lines that contains the string ‘Alice’ (tip: you can use the find function from the module string). Then, test the same program with the strings ‘Rabbit’, ‘rabbit’, ‘stone’, ‘office’.</li>
@@ -70,7 +129,7 @@ print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="s
 print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;office&#39;</span>)</code></pre>
 <p>Get <a href="http://www.pallier.org/cours/AIP2013/text3.py">http://www.pallier.org/cours/AIP2013/text3.py</a></p>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="2" style="list-style-type: example">
 <li>Here is a program that converts the text file into a list of words, removing the punctuation marks and converting everything in lower case. Run it.</li>
@@ -95,7 +154,7 @@ words = text.split()
         n3 = n3 + <span class="dv">1</span>
 <span class="dt">print</span> n1, n2, n3</code></pre>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="3" style="list-style-type: example">
 <li>Read about Python’s Dictionnaries <a href="http://docs.python.org/2/tutorial/datastructures.html#dictionaries">http://docs.python.org/2/tutorial/datastructures.html#dictionaries</a> and use a dictonnary to store the number of occurrences of each word in Alice in Wonderland (the keys are the words, and the values and the number of occurrences; if word= [‘a’, ‘a’, ‘b’]; dico={‘a’:2, ‘b’:1}).</li>
@@ -114,7 +173,7 @@ for w in sorted(dico, key=dico.get, reverse=True):
     print w, d[w]</code></pre>
 <p>Get <a href="http://www.pallier.org/cours/AIP2013/text2.py">http://www.pallier.org/cours/AIP2013/text2.py</a></p>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="4" style="list-style-type: example">
 <li>Use numpy and matplotlib to plot the word log(frequencies) as a function of the rank of words on the abscissae (the most frequence word being ranked #1)</li>
@@ -140,7 +199,7 @@ plt.show()</code></pre>
 <li>(advanced) Plot the relationship between word length and word frequency.</li>
 </ol>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="6" style="list-style-type: example">
 <li>Generate random text (each letter from a-z being equiprobable, and the spacecharacter being 8 times more probable) of 1 million characters. Compute the frequencies of each ‘pseudowords’ and plot the rank/frequency diagram.</li>
@@ -173,13 +232,13 @@ plt.xscale(<span class="st">&#39;log&#39;</span>)
 plt.show()</code></pre>
 <p>Get <a href="http://www.pallier.org/cours/AIP2013/text4.py">http://www.pallier.org/cours/AIP2013/text4.py</a></p>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="7" style="list-style-type: example">
 <li>(advanced) compute the table of transition frequencies between words in Alice and generate random text following this pattern.</li>
 </ol>
 </div>
-<div class="slide section level6">
+<div class="slide section level1">
 
 <ol start="8" style="list-style-type: example">
 <li>Read about the MU Puzzle (<a href="http://en.wikipedia.org/wiki/MU_puzzle">http://en.wikipedia.org/wiki/MU_puzzle</a>). Write a program that generates sequences of strings based on the following production rules and the initial state ‘MI’</li>

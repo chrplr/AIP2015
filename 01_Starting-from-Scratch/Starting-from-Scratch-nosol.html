@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="christophe@pallier.org" />
+  <title>Crash course in programming, with Scratch</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Crash course in programming, with Scratch</h1>
+  <p class="author">
+christophe@pallier.org
+  </p>
+</div>
+<div class="slide section level1">
+
+<p>This introduction to programming relies on <a href="http://scratch.mit.edu">Scratch</a>, a programming language for kids.</p>
+<p>You can either work online at <a href="https://scratch.mit.edu/projects/editor/?tip_bar=home">https://scratch.mit.edu/projects/editor/?tip_bar=home</a> or offline by downloading Scratch at <a href="https://scratch.mit.edu/scratch_1.4/">https://scratch.mit.edu/scratch_1.4/</a></p>
+<p>You may want to run the tutorial “Getting Started with Scratch” on the website.</p>
+<h2 id="first-steps"><a href="#first-steps">First steps</a></h2>
+<h3 id="program-001"><a href="#program-001">Program 001</a></h3>
+<p>In the ‘motion’ group, take the instruction ‘turn 15 degrees’ and drag it onto the ‘Scripts’ panel.</p>
+<div class="figure">
+<img src="img/scratch_001.png" />
+</div>
+<p>Double-Click repeatedly on the block ‘turn 15 degrees’, you should see the cat (‘sprite 1’) rotate.</p>
+<p>In Scratch, when one double-clicks an instruction in the ‘Scripts’ panel, the computer <strong>executes</strong> it.</p>
+<h3 id="program-002"><a href="#program-002">Program 002</a></h3>
+<p>Drag the instruction ‘move 10 steps’ from the motion group, and add it to the bottom of the instruction ‘turn 15 degrees’. Change the value ‘10’ into ‘50’.</p>
+<div class="figure">
+<img src="img/scratch_002.png" />
+</div>
+<p>You have just created a <strong>block</strong> of instructions, that is, your first <strong>program</strong> or <strong>script</strong>, Bravo!</p>
+<ul>
+<li>Double-Click on the block and see the sprite moving.</li>
+<li>Note that inside a block, instructions are exectuted <em>sequentially</em>, one after the other. <strong>Can you prove it</strong>?</li>
+<li>Experiment with changing the <strong>argument</strong> of the instruction ‘move’ (Tip: to clear the drawing area, move the instruction ‘pen/clear’ to the script window and execute it)</li>
+</ul>
+<h3 id="program-003"><a href="#program-003">Program 003</a></h3>
+<p>Click on the ‘pen’ group, and add ‘pen down’ at the top of the block.</p>
+<div class="figure">
+<img src="img/scratch_003.png" />
+</div>
+<p>Run it.</p>
+<h3 id="program-004"><a href="#program-004">Program 004</a></h3>
+<p>Construct the following scripts and play with them until you are sure to understand the behavior of the computer..</p>
+<div class="figure">
+<img src="img/scratch_004.png" />
+</div>
+<h3 id="concepts-learned-so-far"><a href="#concepts-learned-so-far">Concepts learned so far</a></h3>
+<ul>
+<li>Instruction</li>
+<li>Argument of an instruction</li>
+<li>Block of instructions and sequential execution</li>
+</ul>
+<h2 id="loops"><a href="#loops">Loops</a></h2>
+<p>Computers are good at doing tasks repeatedly (as they do not get tired).</p>
+<p>Click on the “Control” group, and try to construct the following script:</p>
+<div class="figure">
+<img src="img/scratch_repeat.png" />
+</div>
+<ul>
+<li>Clicking on the ‘green’ flag will execute the block of instructions</li>
+<li>The ‘Repeat’ instruction, execute the inner block of instruction a number of times specified as an argument. This is called a <strong>loop</strong></li>
+<li>Adjust the parameter of the Repeat instruction so that the sprite draw a full circle when you click once on the green flag.</li>
+<li>Replace the repeat instruction by ‘forever’.</li>
+</ul>
+<h3 id="repeat-a-block-until"><a href="#repeat-a-block-until">Repeat a block until</a></h3>
+<p>Modify the script as follows:</p>
+<div class="figure">
+<img src="img/repeat_until.png" />
+</div>
+<p>Tip: the condition ‘key space pressed?’ is in the ‘Sensing’ group.</p>
+<p>This illustrates a <strong>repeat..until loop</strong>: the inner block is executed until the <strong>condition</strong> is satisfied.</p>
+<h3 id="two-sprites"><a href="#two-sprites">Two sprites</a></h3>
+<p>Add a new sprite, and duplicate the script from sprite1. Click on the green flag. You should see the two sprites running in circles.</p>
+<div class="figure">
+<img src="two_sprites" />
+</div>
+</div>
+<div id="prove-that-the-scripts-associated-to-the-two-sprites-run-in-parallel-rather-than-sequentially." class="slide section level1">
+<h1><a href="#prove-that-the-scripts-associated-to-the-two-sprites-run-in-parallel-rather-than-sequentially.">Prove that the scripts associated to the two sprites run in <em>parallel</em> (rather than sequentially).</a></h1>
+<h2 id="conditional-execution-or-branching"><a href="#conditional-execution-or-branching">Conditional execution or branching</a></h2>
+<p>Create a new scratch project, and change the costume of the sprite into a ball.</p>
+<p>Then write and execute the following script.</p>
+<div class="figure">
+<img src="condition_001.png" />
+</div>
+<p>You should see the ball bounce on the edges.</p>
+<h2 id="variables"><a href="#variables">Variables</a></h2>
+<p>Using the group ‘variable’, we are going to create a <strong>variable</strong> ‘a’ and make it display continuously the x-coordinate of the ball.</p>
+<div class="figure">
+<img src="condition_002.png" />
+</div>
+<p>The concept of <strong>variable</strong> is very important. You can think of it as a name for a object that can change (here the object is a number).</p>
+<p>Now study the following script:</p>
+<div class="figure">
+<img src="function_001.png" />
+</div>
+<p>The loop is executed 100 times. Each time, the value of the variable <code>a</code> is incremented by 1, and is used to compute new <code>x</code> and <code>y</code> coordinates where to sprite is instructed to moved to.</p>
+</div>
+<div id="exercices" class="slide section level1">
+<h1><a href="#exercices">Exercices</a></h1>
+<p>Exercice 1. With Scratch, use the instructions “pen down” and “move” and “turn”,(a) make the cat draw a square (with sides measuring 100 steps) (b) draw an hexagon (c) draw a circle (d) Draw a house (just a rectangle with a triangle on top of it)</p>
+<p>Exercice 2: Using the Control/Forever, make the cat turn continuously along a circle.</p>
+<p>Exercice 3: Using the Control/If, make the cat react when you press any of the arrow buttons, by advancing in the corresponding direction (e.g., if you press the up arrow, the cat should move up by 10 steps)</p>
+<p>Exercice 4: Bouncing ball * Delete the cat. Using new sprite/open, add a ball. * Make the ball move automatically horizontally from left to right and bounce when it touches an edge (tip: use Control/forever) * Make the ball follow the mouse. * Add a second ball that follows the first.</p>
+<p>Exercice 4: “Spirograph”. Download the project “Kitty Graphics” on Scratch web site and study the code. Can you understand it? It uses several concepts that we have not yet seen (e.g. variables)</p>
+</div>
+</body>
+</html>

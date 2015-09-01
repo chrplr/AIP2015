@@ -166,8 +166,9 @@ Exercice (advanced): Write a function that return the hexadecimal representation
 To go further: 
 
 * If you want to know how negative integer numbers are represented, see <http://en.wikipedia.org/wiki/Two%27s_complement>
-* Execute 0.1 + 0.2 on the python command line. If you are surprised, read  [What Every Programmer Should Know About Floating-Point Arithmetic](http://floating-point-gui.de/)
 
+* To understand how real numbers are encoded, read  [What Every Programmer Should Know About Floating-Point Arithmetic](http://floating-point-gui.de/)
+and <https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues>
 
 
 
