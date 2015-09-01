@@ -33,9 +33,6 @@ Installation procedures will be put online on Tuesday. Links will be provided to
 
 If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.
 
-00:15  
-Mac installation instruction for the Acaconda python distribution and its configuration and tests
-
 
 First, read the installation instruction for your operating system:  
 [Linux](#linux-debian-based)  
@@ -46,6 +43,14 @@ Follow carefully the instructions. If something does not work as expected, stop 
 
 Once the installation on your computer completed, you can browse the documents in [the ressource folder](../resources/)
 
+Status
+-----
+01:45  
+Everything is ready for tomorrow morning
+
+__________________________________________________
+
+Instructions
 
 ## Windows
 
@@ -159,6 +164,8 @@ Once the installation on your computer completed, you can browse the documents i
      ```
 
      You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
+
+__________________________________________________
 
 ## Mac OS
 
@@ -354,6 +361,7 @@ Otherwise, stay up for some more fun with the terminal!
     ```
     You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
 
+__________________________________________________
 
 ## Linux debian based
 
