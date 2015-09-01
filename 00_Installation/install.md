@@ -109,18 +109,47 @@ Once the installation on your computer completed, you can browse the documents i
 
 2. Installation of the Anaconda distribution
 
-* [ ] go to your `Downloads` folder and double click on the "Anaconda-X.X.X-Windows-" file
-* [ ] confirm that you want to run the file on the security warning pop-up window
-* [ ] on the Anaconda Setup Wizard, beware, you will have to change on option, so click 'Next' on the opening panel
-* [ ] then 'Agree' with the licence agreement
-* [ ] verify that you Install for `Just Me (recommended)`, then click on `Next`
-* [ ] use default Destination folder and click on `Next`
-* [ ] check that both "Add Anaconda to my PATH" and "Register Anaconda as my default Python 2.7" are ckecked and click on `Install`
-* [ ] upon completion, click on 'Next', then `Finish`
+ * [ ] go to your `Downloads` folder and double click on the "Anaconda-X.X.X-Windows-" file
+ * [ ] confirm that you want to run the file on the security warning pop-up window
+ * [ ] on the Anaconda Setup Wizard, beware, you will have to change on option, so click 'Next' on the opening panel
+ * [ ] then 'Agree' with the licence agreement
+ * [ ] verify that you Install for `Just Me (recommended)`, then click on `Next`
+ * [ ] use default Destination folder and click on `Next`
+ * [ ] check that both "Add Anaconda to my PATH" and "Register Anaconda as my default Python 2.7" are ckecked and click on `Install`
+ * [ ] upon completion, click on 'Next', then `Finish`
 
 3. Configuration
 
+ * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
+ * [ ] click on `All the programs` and then the `Anaconda folder`, then on `Anaconda Command Prompt`
+ * [ ] this launches the anaconda terminal, where you have to type this text and then press on the `Enter` key:
+    ```sh
+    conda install conda
+    ```
+    You have to type it where a tille rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
+    You will see some text messages during the installation of some python modules, don't worry!
+ * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
+    ```sh
+    conda install -c https://conda.binstar.org/krisvanneste pygame
+    ```
+ * [ ] When the installation of pygame is over, you can even type `exit` and press on `Enter` to close the window, how spooky!
 
+4. Test
+
+* [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
+* [ ] click on `All the programs` and then the `Anaconda folder`, then on `Ipython (Py 2.7) QTConsole`
+* [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
+    ```python
+    import pygame
+    pygame.init()
+    w=pygame.display.set_mode([300,300])
+    w.fill([128,37,213])
+    pygame.display.flip()
+    pygame.time.wait(3000)
+    pygame.quit()
+    ```
+    You should see a little window appear, change color and then disapear.
+    
 
 ## Mac OS
 
