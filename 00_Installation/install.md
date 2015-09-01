@@ -38,8 +38,8 @@ The instruction to install python on Windows and Mac will be posted a bit later 
 
 
 First, read the installation instruction for your operating system:  
-[Linux](#Linux-debian-based)  
-[Mac OS](#mac-OS)  
+[Linux](#linux-debian-based)  
+[Mac OS](#mac-os)  
 [windows](#windows)
 
 Follow carefully the instructions. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.
@@ -186,7 +186,7 @@ The procedure will be poster later this evening. Meanwhile, please download [Win
 The procedure will be poster later this evening. Meanwhile, please download [Mac OS X — 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-MacOSX-x86_64.pkg) from [http://continuum.io/downloads]
 
 
-## Linux debian-based
+## Linux debian based
 
 ### Python
 
