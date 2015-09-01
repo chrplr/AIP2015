@@ -126,8 +126,9 @@ Once the installation on your computer completed, you can browse the documents i
     ```sh
     conda install conda
     ```
-    You have to type it where a little rectangle is blinking, after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
+    You have to type it where a little rectangle is blinking (this is the "prompt"), after something that looks like `C:Users\your_name\AppData\Local\continuum\Anaconda>`
     You will see some text messages during the installation of some python modules, don't worry!
+ * [ ] when you are asked `Procced ([y]/n)`, press on the `Enter` key (because yes is the default)
  * [ ] **WARNING** **if you have a 32bit Windows, stop the install process rigth now, do not install anything past this point!**
  * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
     ```sh
@@ -149,8 +150,15 @@ Once the installation on your computer completed, you can browse the documents i
     pygame.time.wait(3000)
     pygame.quit()
     ```
-    You should see a little window appear, change color and then disapear.
+    You should see a little window appear, change color and then disappear.
+ * [ ] press the keys `ctrl+D` to quit the ipython console
+ * [ ] click on the `Windows` icon (or just press the `Windows` key on your keyboard), then on `All the programs` and then the `Anaconda folder`, then on `Anaconda Command Prompt`
+ * [ ] at the prompt, type the following text then press on `Enter`
+     ```bash
+     python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py
+     ```
 
+     You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
 
 ## Mac OS
 
@@ -188,25 +196,25 @@ Once the installation on your computer completed, you can browse the documents i
 
  ### Atom
 
- 1. Download the Atom installer by clicking on the big red `Download For Mac` button on [http://atom.io]
+1. Download the Atom installer by clicking on the big red `Download For Mac` button on [http://atom.io]
 
- 2. Install as usual
+2. Install as usual
 
- 3. Enjoy!
+3. Enjoy!
 
 
 ### Scratch
 1. Download [MacScratch1.4.dmg](http://download.scratch.mit.edu/MacScratch1.4.dmg) from http://download.scratch.mit.edu/
 2. then install as usual:
- * select your `Downloads` folder from the `Dock`
- * clic on the .dmg file to mount the virtual disk that wraps the application
- * drag and drop this application to your `Applications` folder in the pop-up window
- * eject the virtual disk
+ * [ ] select your `Downloads` folder from the `Dock`
+ * [ ] clic on the .dmg file to mount the virtual disk that wraps the application
+ * [ ] drag and drop this application to your `Applications` folder in the pop-up window
+ * [ ] eject the virtual disk
 3. test Scratch
- * select your `Applications` folder from the `Dock`
- * clic on the `Scratch1.4` folder
- * then clic on the `Scratch.app` icon
- * the Scratch window should appear on your screen and you should be able to drag and move the little animal around
+ * [ ] select your `Applications` folder from the `Dock`
+ * [ ] clic on the `Scratch1.4` folder
+ * [ ] then clic on the `Scratch.app` icon
+ * [ ] the Scratch window should appear on your screen and you should be able to drag and move the little animal around
 
 ### R
 
@@ -218,15 +226,15 @@ Once the installation on your computer completed, you can browse the documents i
 
 
 2. Installation
-* [ ] In the Finder open the folder in which you downloaded the R package. Double-click on it and do as usual.
-* [ ] go to the download folder then double-click on "RStudio-X.XX.XXX.dmg". In the window that pops up, slide the RStudio icon into the Applications folder.
+ * [ ] In the Finder open the folder in which you downloaded the R package. Double-click on it and do as usual.
+ * [ ] go to the download folder then double-click on "RStudio-X.XX.XXX.dmg". In the window that pops up, slide the RStudio icon into the Applications folder.
 
 3. Verification
  * [ ] Launch RStudio from the icon on your desktop
  * [ ] in the command window, type 'demo(graphics)
 
 
-###Python
+### Python
 
 1. Preparation
  * [ ] Make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
@@ -265,11 +273,86 @@ Once the installation on your computer completed, you can browse the documents i
     plt.show()
     ```
 
+  * [ ] Type
+
 0. **Warning** Now the Mac python install procedure starts to be tricky, if you don't feel confident with typing commands in a terminal, of if you'd like to sleep, stop rigth now, we will carry on tomorrow morning.  
 Otherwise, stay up for some more fun with the terminal!
 
 
+6. Install the "Command Line Tools".
+ * [ ] open a terminal window.
+ * [ ] In this window copy and paste the following text then press on the `Enter` key (from now on this will be called **executing a command in the terminal**)
+   ```bash
+   xcode-select --install
+   ```
 
+ * [ ] This should make a window pop up to ask you if you want to install the "Command Lin Tools", answer `Yes`, and wait until completion of the installation
+
+7. Install "Homebrew
+ * [ ] in a terminal, copy paste or type this command:
+     ```bash
+     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+     ```
+
+ * [ ] wait...
+ * [ ] once the installation is over type in the terminal
+     ```bash
+     brew doctor
+     ```
+
+ * [ ] wait...
+ * [ ] when the doctor gave you its check-up diagnosis, it should tell you that your system is ready for brewing stuff or something similar  
+       **IF THERE IS SOME CRITICAL ERROR AND NOT JUST WARNINGS, STOP THE INSTALLATION PROCESS NOW AND ASK US WHAT TO DO**
+
+ * **If and only if **, you can Now close (by typing `exit` and then closing the windows `CMD+W`) all your instances of the terminal application, quit the application `CMD+Q` and relaunch it.
+
+8. Install pygame dependencies
+ * [ ] with the following command:
+     ```bash
+     brew install sdl sdl_image sdl_mixer sdl_ttf portmidi
+     ```
+ * [ ] wait
+
+9. Install "conda"
+ * [ ] In a terminal, execute
+     ```bash
+     conda install conda
+     ```
+
+ * [ ] when you are asked `Procced ([y]/n)`, press on the `Enter` key (because yes is the default
+ * [ ] wait
+
+
+10. Finally install pygame
+ * [ ] by typing in the terminal
+     ```bash
+     conda install -c http://conda.binstar.org/quasiben pygame
+     ```
+ * [ ] when you are asked `Procced ([y]/n)`, press on the `Enter` key (because yes is the default
+ * [ ] wait
+
+11. Check the installation
+ * [ ] in a terminal, type
+     ```bash
+     ipython qtconsole
+     ```
+
+ * [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
+     ```python
+     import pygame
+     pygame.init()
+     w=pygame.display.set_mode([300,300])
+     w.fill([128,37,213])
+     pygame.display.flip()
+     pygame.time.wait(3000)
+     pygame.quit()
+     ```
+ * [ ] press the keys `ctrl+D` to quit the ipython console
+ * [ ] to further check the installation, in a Terminal window, type:
+    ```bash
+    python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py
+    ```
+    You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
 
 
 ## Linux debian based
@@ -301,6 +384,7 @@ Execute the following commands:
     plt.plot(x,y)
     plt.show()
     ```
+
  * [ ] the you can try to type in a terminal
      ```bash
      python /usr/share/pyshared/pygame/examples/chimp.py
