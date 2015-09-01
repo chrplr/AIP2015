@@ -92,9 +92,9 @@ Once the installation on your computer completed, you can browse the documents i
  * [ ] fill the requested fields with appropriate username, email, and password
  * [ ] click on the `Sign up for Github` button
 1. Download the application
- * [ ] Go to [http://desktop.github.com] and doucle-click on the `Download GitHub Desktop` button.
+ * [ ] Go to [http://desktop.github.com] and click on the `Download GitHub Desktop` button.
 2. Installation
- * It should start automatically
+ * It should start automatically, otherwise go to your `Downloads` folder and double click on the "GitHubSetup.exe" file
 
 3. configuration: you should see a window that says "Welcome"
  * [ ] fill the username and password and click on `login`, then your email and click on `Continue`
@@ -103,7 +103,22 @@ Once the installation on your computer completed, you can browse the documents i
 
 ### Python
 
-The procedure will be poster later this evening. Meanwhile, please download [Windows 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86_64.exe) from [http://continuum.io/downloads]
+1. Downloads
+ * [ ] please download [Windows 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86_64.exe) from [http://continuum.io/downloads]
+ * [ ] if you have a 32 bit system (typically Windows XP), then download the [Windows 32-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86.exe) instead.
+
+2. Installation of the Anaconda distribution
+
+* [ ] go to your `Downloads` folder and double click on the "Anaconda-X.X.X-Windows-" file
+* [ ] confirm that you want to run the file on the security warning pop-up window
+* [ ] on the Anaconda Setup Wizard, beware, you will have to change on option, so click 'Next' on the opening panel
+* [ ] then 'Agree' with the licence agreement
+* [ ] verify that you Install for `Just Me (recommended)`, then click on `Next`
+* [ ] use default Destination folder and click on `Next`
+* [ ] check that both "Add Anaconda to my PATH" and "Register Anaconda as my default Python 2.7" are ckecked and click on `Install`
+* [ ] upon completion, click on 'Next', then `Finish`
+
+3. Configuration
 
 
 
@@ -273,8 +288,7 @@ You should see a new window, where you should be able to grab and move the littl
     ```bash
     sudo apt-get update
     ```
- * [ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate `.deb` installer for Debian/Ubuntu
-
+ * [ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate `.deb` installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.
 
 
 1. Installation
@@ -284,6 +298,7 @@ You should see a new window, where you should be able to grab and move the littl
     ```
  * [ ] and, for Rstudio, replacing the XX by the version numbers
     ```bash
+    sudo apt-get install libjpeg62
     sudo dpkg -i rstudio-X.XX.XXX-amd64.deb
     ```
 
