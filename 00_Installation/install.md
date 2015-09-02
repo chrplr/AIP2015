@@ -50,7 +50,7 @@ Everything is ready for tomorrow morning
 
 __________________________________________________
 
-Instructions
+
 
 ## Windows
 
