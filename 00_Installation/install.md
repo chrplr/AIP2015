@@ -73,6 +73,8 @@ __________________________________________________
 
 3. Enjoy!
 
+4. If you have an older version of Windows than , Download and install the [Windows](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083%20Setup.exe) installer of SublimeText from [http://www.sublimetext.com/3].
+
 
 ### R and Rstudio
 
@@ -182,7 +184,8 @@ __________________________________________________
 | 2002 | 2003 | 2005 | 2007 | 2009 | 2011 | 2012 | 2013 | 2014 |
 
 2. Some configuration
- * [ ] Make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
+ * [ ] make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
+ * [ ] clic on `Finder` next to the `Apple` logo on the top left corener of your screen, then on `Preferences`, then check the first unchecked box under `DEVICES`, close the `Finder Preferences` window.
  * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
 
 ### Command Line Tools
