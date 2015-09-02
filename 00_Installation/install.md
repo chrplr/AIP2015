@@ -281,7 +281,6 @@ __________________________________________________
  * [ ] alternatively, open a terminal and type the following text, then press on the `Enter` key
 
      sysctl hw.cpu64bit_capable
-     ```
 
       architecture | output | so what ?
      --------------|--------|----------
