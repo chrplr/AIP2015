@@ -106,6 +106,8 @@ __________________________________________________
  * [ ] skip the local repository search
  * [ ] now you can just quit the "Github Desktop" application
 
+4. In case your Windows version is earlier than "Windows 7" (i.e. "XP", "Vista",...), get the installer from [https://github.com/git-for-windows/git/releases/tag/v2.5.1.windows.1], then ask for help during the installation party.
+
 ### Python
 
 1. Downloads
@@ -168,6 +170,29 @@ __________________________________________________
 __________________________________________________
 
 ## Mac OS
+
+### Warming up
+1. Know you system version, so you can chose which file to download
+ * [ ] First go to the "apple" menu by clicking on the apple icon at the upper-left corner of the screen.
+ * [ ] Select "About This Mac", and look at the Version number, the first two numbers are the major releases:
+
+| 10.2 | 10.3 | 10.4 | 10.5 | 10.6 | 10.7 | 10.8 | 10.9 | 10.10 |
+|------|------|------|------|------|------|------|------|-------|
+| Jaguar | Panther | Tiger | Leopard | Snow Leopard | Lion | Mountain Lion | Mavericks | Yosemite |
+| 2002 | 2003 | 2005 | 2007 | 2009 | 2011 | 2012 | 2013 | 2014 |
+
+2. Some configuration
+ * [ ] Make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
+ * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
+
+### Command Line Tools
+ * [ ] open a terminal by clicking on the `Terminal` icon you just placed in the "Dock".
+ * [ ] In this window copy and paste the following text then press on the `Enter` key (from now on this will be called **executing a command in the terminal**)
+   ```bash
+   xcode-select --install
+   ```
+
+ * [ ] This should make a window pop up to ask you if you want to install the "Command Line Tools", answer `Yes`, and wait until completion of the installation
 
 ### XQuartz
 
@@ -244,10 +269,18 @@ __________________________________________________
 ### Python
 
 1. Preparation
- * [ ] Make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
- * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
  * [ ] First go to the "apple" menu in the upper-left corner of the screen. Select "About This Mac", and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). **If not or if you are not sure, don't install anything, and come see us tomorrow morning.**
- * [ ] In the "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until tomorrow to install a different version of Python.**
+ * [ ] Alternatively, clic on the `Apple` icon again, then on "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.**  
+ * [ ] alternatively, open a terminal and type the following text, then press on the `Enter` key
+     ```bash
+     sysctl hw.cpu64bit_capable
+     ```
+
+      architecture | output | so what ?
+     --------------|--------|----------
+      64 bits | 1 | Carry on
+      32 bits | 0 | Stop right now
+
  * [ ] If and only if your mac pass these tests, you can carry on.
 
 2. Download Anaconda
@@ -284,16 +317,6 @@ __________________________________________________
 
 0. **Warning** Now the Mac python install procedure starts to be tricky, if you don't feel confident with typing commands in a terminal, of if you'd like to sleep, stop rigth now, we will carry on tomorrow morning.  
 Otherwise, stay up for some more fun with the terminal!
-
-
-6. Install the "Command Line Tools".
- * [ ] open a terminal window.
- * [ ] In this window copy and paste the following text then press on the `Enter` key (from now on this will be called **executing a command in the terminal**)
-   ```bash
-   xcode-select --install
-   ```
-
- * [ ] This should make a window pop up to ask you if you want to install the "Command Lin Tools", answer `Yes`, and wait until completion of the installation
 
 7. Install "Homebrew
  * [ ] in a terminal, copy paste or type this command:
