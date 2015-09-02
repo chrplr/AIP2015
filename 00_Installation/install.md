@@ -311,7 +311,7 @@ Otherwise, stay up for some more fun with the terminal!
  * [ ] when the doctor gave you its check-up diagnosis, it should tell you that your system is ready for brewing stuff or something similar  
        **IF THERE IS SOME CRITICAL ERROR AND NOT JUST WARNINGS, STOP THE INSTALLATION PROCESS NOW AND ASK US WHAT TO DO**
 
- * **If and only if **, you can Now close (by typing `exit` and then closing the windows `CMD+W`) all your instances of the terminal application, quit the application `CMD+Q` and relaunch it.
+ * [ ] **If and only if** the doctor gave its green light, you can Now close (by typing `exit` and then closing the windows with the `cmd+W` key stroke combination) all your instances of the terminal application, quit the application `cmd+Q` and relaunch it.
 
 8. Install pygame dependencies
  * [ ] with the following command:
