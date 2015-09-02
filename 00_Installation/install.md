@@ -279,8 +279,10 @@ __________________________________________________
  * [ ] First go to the "apple" menu in the upper-left corner of the screen. Select "About This Mac", and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). **If not or if you are not sure, don't install anything, and come see us tomorrow morning.**
  * [ ] Alternatively, clic on the `Apple` icon again, then on "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.**  
  * [ ] alternatively, open a terminal and type the following text, then press on the `Enter` key
-
+     ```
      sysctl hw.cpu64bit_capable
+     ```
+     The output tells you if your processor can get huge instruction sets
 
       architecture | output | so what ?
      --------------|--------|----------
