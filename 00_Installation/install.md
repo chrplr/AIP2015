@@ -140,7 +140,7 @@ __________________________________________________
  * [ ] when you are asked `Procced ([y]/n)`, press on the `Enter` key (because yes is the default)
  * [ ] **WARNING** **if you have a 32bit Windows, stop the install process rigth now, do not install anything past this point!**
  * [ ] when you are back to the blinking little rectangle, type this text, then press the `Enter` key:
-    ```sh
+    ```
     conda install -c https://conda.binstar.org/krisvanneste pygame
     ```
  * [ ] When the installation of pygame is over, you can even type `exit` and press on `Enter` to close the window, how spooky!
