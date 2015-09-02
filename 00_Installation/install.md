@@ -7,7 +7,7 @@ Objectives
 Each student should end up with a bundle of softwares which are needed in the
 mandatory courses of the Cogmaster.
 
-You migh skip the last one if and only if you are already used to an advanced
+You migh skip the `Atom` install if and only if you are already used to an advanced
 text editor as wim, emacs, sublimetext. Microsoft Office Word, LibreOffice and
 other document formatting software are
 **not** text editors.
