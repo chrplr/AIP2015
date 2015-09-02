@@ -301,6 +301,12 @@ Otherwise, stay up for some more fun with the terminal!
      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
      ```
 
+ * [ ] if you ever have an error about certificates using `curl`, execute the two following commands and restart the "Homebrew" install of the previous step
+     ```bash
+     export CURL_CA_BUNDLE=/usr/local/curl/
+     curl http://curl.haxx.se/ca/cacert.pem -o cacert.pem
+     ```
+
  * [ ] wait...
  * [ ] once the installation is over type in the terminal
      ```bash
