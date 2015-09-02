@@ -150,7 +150,7 @@ __________________________________________________
  * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
  * [ ] click on `All the programs` and then the `Anaconda folder`, then on `Ipython (Py 2.7) QTConsole`
  * [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
-    ```python
+    ```
     import pygame
     pygame.init()
     w=pygame.display.set_mode([300,300])
@@ -311,7 +311,7 @@ __________________________________________________
  * [ ] just after the `$` sign, type `ipython` then press on the `Enter` key in order to lauch a ipython interpreter
  * [ ] in the ipython shell, type each of those lines one by one followed by enter
 
-    ```python
+    ```
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
@@ -382,7 +382,7 @@ Otherwise, stay up for some more fun with the terminal!
      ```
 
  * [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
-     ```python
+     ```
      import pygame
      pygame.init()
      w=pygame.display.set_mode([300,300])
@@ -420,7 +420,7 @@ Execute the following commands:
  * [ ] in a terminal, type `ipython` in order to lauch a ipython interpreter
  * [ ] in the ipython shell, type each of those lines one by one followed by enter
 
-    ```python
+    ```
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
