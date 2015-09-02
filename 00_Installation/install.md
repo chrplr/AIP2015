@@ -112,6 +112,8 @@ __________________________________________________
 
 ### Python
 
+0. if you have trouble with the anaconda installation that we told you we cannot solve, here is a link to the Christophe Gohlke 64bits modules [http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame]
+
 1. Downloads
  * [ ] please download [Windows 64-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86_64.exe) from [http://continuum.io/downloads]
  * [ ] if you have a 32 bit system (typically Windows XP), then download the [Windows 32-Bit Python 2.7 Graphical Installer](https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86.exe) instead.
@@ -143,6 +145,7 @@ __________________________________________________
     ```
     conda install -c https://conda.binstar.org/krisvanneste pygame
     ```
+
  * [ ] When the installation of pygame is over, you can even type `exit` and press on `Enter` to close the window, how spooky!
 
 4. Test
@@ -150,7 +153,7 @@ __________________________________________________
  * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.
  * [ ] click on `All the programs` and then the `Anaconda folder`, then on `Ipython (Py 2.7) QTConsole`
  * [ ] after the "IPython window" has opened, you can copy and paste the following seven lines just after the `In [1]:`, then press twice on `Enter`
- 
+
     ```
     import pygame
     pygame.init()
