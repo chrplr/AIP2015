@@ -164,7 +164,7 @@ __________________________________________________
  * [ ] click on the `Windows` icon (or just press the `Windows` key on your keyboard), then on `All the programs` and then the `Anaconda folder`, then on `Anaconda Command Prompt`
  * [ ] at the prompt, type the following text then press on `Enter`
      ```
-     python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py
+     python Lib\site-packages\pygame\examples\chimp.py
      ```
 
      You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
