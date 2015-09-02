@@ -185,7 +185,7 @@ __________________________________________________
 
 2. Some configuration
  * [ ] make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.
- * [ ] clic on `Finder` next to the `Apple` logo on the top left corener of your screen, then on `Preferences`, then check the first unchecked box under `DEVICES`, close the `Finder Preferences` window.
+ * [ ] clic on `Finder` next to the `Apple` logo on the top left corner of your screen, then on `Preferences`, then the `Side Bar` check the first unchecked box under `DEVICES`, close the `Finder Preferences` window.
  * [ ] go to your `Application folder` and the to the `Utilities` subfolder, grab the `Terminal` icon and put it on the second place on your "Dock", right next to the `Finder` icon.
 
 ### Command Line Tools
