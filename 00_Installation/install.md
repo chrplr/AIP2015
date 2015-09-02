@@ -163,7 +163,7 @@ __________________________________________________
  * [ ] press the keys `ctrl+D` to quit the ipython console
  * [ ] click on the `Windows` icon (or just press the `Windows` key on your keyboard), then on `All the programs` and then the `Anaconda folder`, then on `Anaconda Command Prompt`
  * [ ] at the prompt, type the following text then press on `Enter`
-     ```bash
+     ```
      python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py
      ```
 
@@ -191,7 +191,7 @@ __________________________________________________
 ### Command Line Tools
  * [ ] open a terminal by clicking on the `Terminal` icon you just placed in the "Dock".
  * [ ] In this window copy and paste the following text then press on the `Enter` key (from now on this will be called **executing a command in the terminal**)
-   ```bash
+   ```
    xcode-select --install
    ```
 
@@ -279,7 +279,7 @@ __________________________________________________
  * [ ] First go to the "apple" menu in the upper-left corner of the screen. Select "About This Mac", and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). **If not or if you are not sure, don't install anything, and come see us tomorrow morning.**
  * [ ] Alternatively, clic on the `Apple` icon again, then on "About This Mac" window, now click on "More info..." and in the window that opens up seek the "Processor Name" entry in the "Hardware Overview". If it says "PowerPC", "Intel Core Solo" or "Intel Core Duo", then **stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.**  
  * [ ] alternatively, open a terminal and type the following text, then press on the `Enter` key
-     ```bash
+
      sysctl hw.cpu64bit_capable
      ```
 
@@ -327,19 +327,19 @@ Otherwise, stay up for some more fun with the terminal!
 
 7. Install "Homebrew
  * [ ] in a terminal, copy paste or type this command:
-     ```bash
+     ```
      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
      ```
 
  * [ ] if you ever have an error about certificates using `curl`, execute the two following commands and restart the "Homebrew" install of the previous step
-     ```bash
+     ```
      export CURL_CA_BUNDLE=/usr/local/curl/
      curl http://curl.haxx.se/ca/cacert.pem -o cacert.pem
      ```
 
  * [ ] wait...
  * [ ] once the installation is over type in the terminal
-     ```bash
+     ```
      brew doctor
      ```
 
@@ -351,14 +351,14 @@ Otherwise, stay up for some more fun with the terminal!
 
 8. Install pygame dependencies
  * [ ] with the following command:
-     ```bash
+     ```
      brew install sdl sdl_image sdl_mixer sdl_ttf portmidi
      ```
  * [ ] wait
 
 9. Install "conda"
  * [ ] In a terminal, execute
-     ```bash
+     ```
      conda install conda
      ```
 
@@ -368,7 +368,7 @@ Otherwise, stay up for some more fun with the terminal!
 
 10. Finally install pygame
  * [ ] by typing in the terminal
-     ```bash
+     ```
      conda install -c http://conda.binstar.org/quasiben pygame
      ```
  * [ ] when you are asked `Procced ([y]/n)`, press on the `Enter` key (because yes is the default
@@ -376,7 +376,7 @@ Otherwise, stay up for some more fun with the terminal!
 
 11. Check the installation
  * [ ] in a terminal, type
-     ```bash
+     ```
      ipython qtconsole
      ```
 
@@ -392,7 +392,7 @@ Otherwise, stay up for some more fun with the terminal!
      ```
  * [ ] press the keys `ctrl+D` to quit the ipython console
  * [ ] to further check the installation, in a Terminal window, type:
-    ```bash
+    ```
     python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py
     ```
     You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).
@@ -430,7 +430,7 @@ Execute the following commands:
     ```
 
  * [ ] the you can try to type in a terminal
-     ```bash
+     ```
      python /usr/share/pyshared/pygame/examples/chimp.py
      ```
 
@@ -442,7 +442,7 @@ Execute the following commands:
 
 ### Git
 1. Download et installation
-    ```bash
+    ```
     sudo apt-get install git-core
     ```
 2. Configuration, by typing in a terminal with the appropriate replacements
@@ -451,11 +451,11 @@ Execute the following commands:
 
 ### Scratch
 1. Installation: in a terminal, type
-```bash
+```
 sudo apt-get install scratch`
 ```
 2. Test : in the terminal of a graphic console, type
-```bash
+```
 scratch
 ```
 You should see a new window, where you should be able to grab and move the little mascot.
@@ -465,7 +465,7 @@ You should see a new window, where you should be able to grab and move the littl
 
 1. Setup
  * [ ] Check which linux exactly you are using with the following command
-    ```bash
+    ```
     lsb_release -da
     ```
   You should see a aoutput like this one:
@@ -477,17 +477,17 @@ You should see a new window, where you should be able to grab and move the littl
     ```
 
  * [ ] add the appropriate repository to your `/etc/apt/sources.list`
-    ```bash
+    ```
     sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ >> /etc/apt/sources.list'
     ```
     For ubuntu, you migh have to leave out the -cran3 after the version codename
-    ```bash
+    ```
     sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/ubuntu vivid/ >> /etc/apt/sources.list'
     ```
 
 
  * [ ] update your repository list
-    ```bash
+    ```
     sudo apt-get update
     ```
  * [ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate `.deb` installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.
@@ -495,11 +495,11 @@ You should see a new window, where you should be able to grab and move the littl
 
 1. Installation
  * [ ] R
-    ```bash
+    ```
     sudo apt-get install r-base r-base-core r-base-html
     ```
  * [ ] and, for Rstudio, replacing the XX by the version numbers
-    ```bash
+    ```
     sudo apt-get install libjpeg62
     sudo dpkg -i rstudio-X.XX.XXX-amd64.deb
     ```
