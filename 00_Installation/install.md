@@ -229,6 +229,10 @@ __________________________________________________
  * [ ] Don't add any repository yet, just click on `Done`
  * [ ] now you can just quit the "Github Desktop" application
 
+ 4. For old Mac OS versions, go to [http://alx.github.io/gitbook/2_installer_git.æhtml]
+* [ ] install MacPorts
+* [ ] use it to install git
+
  ### Atom
 
 1. Download the Atom installer by clicking on the big red `Download For Mac` button on [http://atom.io]
