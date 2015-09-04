@@ -2,15 +2,72 @@
 % christophe@pallier.org
 %
 
-This introduction to programming relies on [Scratch](http://scratch.mit.edu), a programming language for kids.
 
-You can either work online at <https://scratch.mit.edu/projects/editor/?tip_bar=home> or offline by downloading Scratch at <https://scratch.mit.edu/scratch_1.4/>
+# Programming = turning an algorithm into code
+
+**Problem => Algorithm => Coding**
+
+Strictly speaking, to program is to explain to a computer how to carry out an algorithm (the second arrow), not to find an algorithm for a problem (first arrow).
+
+Although "AIP" means "Atelier d'introduction à la Programmation/Python" we will try to train you also on the first stage.
+
+. . .
+
+Examples of Problems:
+
+    - Cooking boiled eggs
+    - Integer division of two numbers
+    - Missile Pursuit (or animal chasing a prey)
+    - Play a game like chess
+    - Recover 3D information from stereoscopic images
+
+Note: suggested readings David Marr (1982, _Vision_)'s three levels of description in cognitive science.
+
+![](img/marr.jpg)
+
+# Why Python
+
+Because computers are stupid (that is, they lack a _theory of mind_ and cannot guess your desires and intentions), you must provide very detailed and exhaustive instructions. The choice of the programming language is relevant here.
+
+
+There exist many programming languages (and also different computer architectures, e.g. parallel vs. serial)
+
+In 2000, we decided to use Python for the Atelier d'Experimentation, because it is:
+
+
+- clean (the code can be relatively close to the algorithm)
+- general-purpose (vs. Matlab)
+- multiplatform
+- free software
+
+. . .
+
+Learning to program takes time because it requires to master not only the semantic but also the syntax (=grammar) of the language.
+
+. . .
+
+Like learning to play an instrument, programming is a skill that you can only acquire by trying (and making _lots of_ mistakes and correcting them!!!).
+
+Yes you can! Let's go! 
+
+# Starting from/with Scratch
+
+We not use Python for this first lecture!
+
+**Scratch** (<http://scratch.mit.edu>) was designed by the MIT media lab to teach kids how to program.
+
+
+Its main interest: programs are created using a graphical interface, preventing _syntactic errors_ (thus, you can learn the language without learning the grammar!)
+
+One can either work online at <https://scratch.mit.edu/projects/editor/?tip_bar=home> or offline by downloading Scratch at
+
+- <https://scratch.mit.edu/scratch_1.4/> (version 1)
+- <https://scratch.mit.edu/scratch2download/> (version 2)
 
 You may want to run the tutorial "Getting Started with Scratch" on the website.
 
 
-First steps
------------
+# First steps
 
 ### Program 001
 
@@ -50,15 +107,16 @@ Construct the following scripts and play with them until you are sure to underst
 ![](img/scratch_004.png)
 
 
-### Concepts learned so far
+# Concepts learned so far
 
 * Instruction
-* Argument of an instruction
+* Argument of an instruction (change '10' in 'move 10 steps')
 * Block of instructions and sequential execution
 
 
-Loops 
------
+# Loops 
+
+# repeat ('for' loop)
 
 Computers are good at doing tasks repeatedly (as they do not get tired).
 
@@ -67,87 +125,108 @@ Click on the "Control" group, and try to construct the following script:
 ![](img/scratch_repeat.png)
 
 * Clicking on the 'green' flag will execute the block of instructions
-* The  'Repeat' instruction, execute the inner block of instruction a number of times specified as an argument. This is called a **loop**
-* Adjust the parameter of the Repeat instruction so that the sprite draw a full circle when you click once on the green flag.
+* The  'Repeat' instruction executes the inner block of instruction a number of times specified as an argument. This is called a **loop**
+* Adjust the parameter of the Repeat instruction so that the sprite draws a full circle when you click once on the green flag.
 * Replace the repeat instruction by 'forever'.
 
 
-### Repeat a block until 
+### Repeat until 
 
 Modify the script as follows:
-
 
 ![](img/repeat_until.png)
 
 Tip: the condition 'key space pressed?' is in the 'Sensing' group.
 
-This illustrates a **repeat..until loop**: the inner block is executed until the **condition** is satisfied.
+This illustrates a **repeat...until loop**: the inner block is executed until the **condition** is satisfied.
 
 
-
-### Two sprites
+# Two sprites
 
 Add a new sprite, and duplicate the script from sprite1. Click on the green flag. You should see the two sprites running in circles.
 
-![](two_sprites)
+![](img/two_sprites.png)
 
-# Prove that the scripts associated to the two sprites run in *parallel* (rather than sequentially).
+Remark that the scripts associated to the two sprites run in *parallel* (rather than sequentially). 
 
-Conditional execution or branching
-----------------------------------
+
+# Conditional execution or branching
 
 Create a new scratch project, and change the costume of the sprite into a ball.
 
 Then write and execute the following script.
 
-![](condition_001.png)
+![](img/condition_001.png)
   
 You should see the ball bounce on the edges. 
 
 
-Variables
----------
+# First series of exercices
 
-Using the group 'variable', we are going to create a **variable** 'a' and make it display continuously the x-coordinate of the ball.
+1. With Scratch, use the instructions "pen down" and "move" and "turn" to (a) make the cat draw a square (with sides measuring 100 steps) (b) draw an hexagon (c) draw a circle 
 
-![](condition_002.png)
-
-The concept of **variable** is very important. You can think of it as a name for a object that can change (here the object is a number).
-
-Now study the following script:
-
-![](function_001.png)
-
-The loop is executed 100 times. Each time, the value of the variable `a` is incremented by 1, and is used to compute new `x` and `y` coordinates where to sprite is instructed to moved to.
+2. Using the Control/Forever, make the cat turn continuously along a circle.
 
 
-
-
-Exercices
-=========
-
-
-Exercice 1. With Scratch, use the instructions "pen down" and "move" and "turn",(a) make the cat draw a square (with sides measuring 100 steps) (b) draw an hexagon (c) draw a circle (d) Draw a house (just a rectangle with a triangle on top of it)
-
-Exercice 2: Using the Control/Forever, make the cat turn continuously along a circle.
-
-Exercice 3: Using the Control/If, make the cat react when you press any of the arrow buttons, by advancing in the corresponding direction (e.g., if you press the up arrow, the cat should move up by 10 steps)
-
-Exercice 4: Bouncing ball
+3. Bouncing ball
 * Delete the cat. Using new sprite/open, add a ball.
 * Make the ball move automatically horizontally from left to right and bounce when it touches an edge (tip: use Control/forever)
 * Make the ball follow the mouse.
 * Add a second ball that follows the first. 
 
-Exercice 4: "Spirograph". Download the project "Kitty Graphics" on Scratch web site and study the code. Can you understand it? It uses several concepts that we have not yet seen (e.g. variables)
+
+4. Create a script that asks for your name and then displays "Hello <your_name>!". Tip: use the instructions 'sensing/ask', 'looks/say' and 'operator/join' and the variable 'sensing/answer'. 
+
+#ifdef ANSWERS
+![](img/hello.png)
+#endif
+
+# Variables
+
+Using the group 'variable', we are going to create a **variable** 'a' and make it display continuously the x-coordinate of the ball.
+
+![](img/condition_002.png)
+
+The concept of **variable** is very important. You can think of it as a name for a object that can change (here the object is a number).
+
+Now study the following script:
+
+![](img/function_001.png)
+
+The loop is executed 100 times. Each time, the value of the variable `a` is incremented by 1, and is used to compute new `x` and `y` coordinates where to sprite is instructed to moved to.
+
+![](img/xy-function.png)
+
+# Second series of exercices
+
+1. 'Multiply by adding'. Write a program that reads in two integer numbers and displays their sum.
+
+#ifdef ANSWERS
+![](img/multiply.png)
+#endif
 
 
 
+1. "Guess a number". Make Scratch pick up a random number in the interval [1,100], and  loop asking you for a guess and reply either 'too low', 'too high', or 'you win!' depending on your answer.  
 
+2. Create a script that initializes a variable 'a' to 0, then repeatly (10000 times) picks up two random numbers on the interval [0,100], plots a dot at these coordinates, and add 1 to the variable 'a'  if the dot is within the circle of radius 100 centered on (0,0). Can you tell what 'a' is an estimate of? 
 
+3. Pong (optional). Program a racket that you can move horizontally, to the left or to the right, with two keys on the keyboard and a ball that bounces on edge or on the racket.
 
+4. "Spirograph".
 
- 
+![](img/Spirograph.jpg)
+
+Read <http://www.mathplayground.com/Spiromath.html> and write a scratch program that draws these figures (note: search the web for the math formulas that allow to compute x, and y; they require a bit of trigonometry, i.e., use the 'sin' and 'cos' functions).
+
+#ifdef ANSWERS
+
+* Kitty graphics <https://scratch.mit.edu/projects/5542/>
+* Spirograph  <https://scratch.mit.edu/projects/3240756/>
+* Math-connection
+    - <https://scratch.mit.edu/studios/134/>
+    - <https://scratch.mit.edu/projects/2984543/>
+#endif
 
 
 
