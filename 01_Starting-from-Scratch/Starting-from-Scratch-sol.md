@@ -177,9 +177,6 @@ You should see the ball bounce on the edges.
 
 4. Create a script that asks for your name and then displays "Hello <your_name>!". Tip: use the instructions 'sensing/ask', 'looks/say' and 'operator/join' and the variable 'sensing/answer'. 
 
-#ifdef ANSWERS
-![](img/hello.png)
-#endif
 
 # Variables
 
@@ -201,9 +198,6 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 
 1. 'Multiply by adding'. Write a program that reads in two integer numbers and displays their sum.
 
-#ifdef ANSWERS
-![](img/multiply.png)
-#endif
 
 
 
@@ -219,14 +213,6 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 
 Read <http://www.mathplayground.com/Spiromath.html> and write a scratch program that draws these figures (note: search the web for the math formulas that allow to compute x, and y; they require a bit of trigonometry, i.e., use the 'sin' and 'cos' functions).
 
-#ifdef ANSWERS
-
-* Kitty graphics <https://scratch.mit.edu/projects/5542/>
-* Spirograph  <https://scratch.mit.edu/projects/3240756/>
-* Math-connection
-    - <https://scratch.mit.edu/studios/134/>
-    - <https://scratch.mit.edu/projects/2984543/>
-#endif
 
 
 
