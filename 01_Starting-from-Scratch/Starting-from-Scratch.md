@@ -206,12 +206,19 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 #endif
 
 
-
 1. "Guess a number". Make Scratch pick up a random number in the interval [1,100], and  loop asking you for a guess and reply either 'too low', 'too high', or 'you win!' depending on your answer.  
 
-2. Create a script that initializes a variable 'a' to 0, then repeatly (10000 times) picks up two random numbers on the interval [0,100], plots a dot at these coordinates, and add 1 to the variable 'a'  if the dot is within the circle of radius 100 centered on (0,0). Can you tell what 'a' is an estimate of? 
+#ifdef ANSWERS
+![](img/guess-a-number.png)
+#endif
 
-3. Pong (optional). Program a racket that you can move horizontally, to the left or to the right, with two keys on the keyboard and a ball that bounces on edge or on the racket.
+2. We are going to estimate the number PI by a Monte Carlo method. Create a script that initializes a variable 'b' to 0, then repeatly (10000 times) picks up two random numbers on the interval [-1,1], plots a dot at these coordinates (multiplied by 100), and add 1 to the variable 'b'  if the dot is within the circle of radius 1 centered on (0,0).
+
+#ifdef ANSWERS
+![](img/estimation-of-pi.png)
+#endif
+
+
 
 4. "Spirograph".
 
@@ -220,6 +227,7 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 Read <http://www.mathplayground.com/Spiromath.html> and write a scratch program that draws these figures (note: search the web for the math formulas that allow to compute x, and y; they require a bit of trigonometry, i.e., use the 'sin' and 'cos' functions).
 
 #ifdef ANSWERS
+There are several examples on the scratch web site. You can study their code:
 
 * Kitty graphics <https://scratch.mit.edu/projects/5542/>
 * Spirograph  <https://scratch.mit.edu/projects/3240756/>
