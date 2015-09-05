@@ -37,7 +37,7 @@ If you are using a debian-based Linux such as Ubuntu, most of the installations 
 First, read the installation instruction for your operating system:  
 [Linux](#linux-debian-based)  
 [Mac OS](#mac-os)  
-[windows](#windows)
+[Windows](#windows)
 
 Follow carefully the instructions. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.
 
@@ -65,15 +65,15 @@ __________________________________________________
  * [ ] If you did not uncheck the options before clicking on `Finish`, you should see the program running and you coud reopen it using the desktop Scratch icon. Alternatively, you can open an explorer, go to the directory in which the program was installed and double click on the Scratch icon.
  * [ ] you should be able to move the little animal around
 
-### Atom
+### Text Editor
 
-1. Download the Atom installer by clicking on the big red `Download Windows Installer` button on [http://atom.io]
+1. If you are using "Window 7" or "Windows 8"
+ * [ ] download the Atom installer by clicking on the big red `Download Windows Installer` button on [http://atom.io]
+ * [ ] install it by double-clicking on the installer `AtomSetup.exe`
 
-2. Install as usual
+2. If you are using and older version of Windows download and install the [Windows](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083%20Setup.exe) installer of SublimeText from [http://www.sublimetext.com/3].
 
-3. Enjoy!
 
-4. If you have an older version of Windows than , Download and install the [Windows](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083%20Setup.exe) installer of SublimeText from [http://www.sublimetext.com/3].
 
 
 ### R and Rstudio
