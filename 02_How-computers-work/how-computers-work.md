@@ -3,53 +3,72 @@
 % Sep. 2013
 
 
-Automata
---------
+# Automaton
 
-![Fluteur automate de Vaucanson](images/automate_joueur_de_flute_vaucanson.jpg)
+Definitions from .Merriam-webster:
 
+* A mechanism that is relatively self-operating
+* A machine or control mechanism designed to follow automatically a predetermined sequence of operations
 
-An automaton can be described by a set of internal **states** and a transition table that associates events to **transitions** between states. They are also known as finite state machines.
+. . .
 
-Remarks:
+Examples:
 
-*  Events associated to transition can be input and/or output
+* drinks vending machine
 
-*  Automata can react to external events in a context-sentitive manner.
-
-
--------------
-
---------------------------- ---------------------------------------------------------------------
-![Pacman](images/pacman.png) ![Pacman's ghost behavior](images/transition-diagram-pacman-ghost.png)
---------------------------- ---------------------------------------------------------------------
+![](images/drinks-vending-machine.jpg)
 
 
--------------
+* clocks
 
-![Change counter in a vending machine](images/coin-counter_ori.svg) 
+![Automate du Quartier de l'horloge à Paris](images/horloge.jpg)
 
--------------
+*  "Canard" et "Joueur de flûte" by Jacques de Vaucanson (1733)
 
-Exercice: draw the transition diagram for a simple coffee machine with three states (off/on/brewing) and two buttons (switch on/off and brew)
+![](images/canard-vaucanson.jpg)
 
---------------
+"L'Encyclopédie fit de Vaucanson un demi-dieu et le célébra pour ses automates extraordinaires : pour la première fois des êtres artificiels étaient capables, par le génie du cerveau humain, de jouer parfaitement d'un instrument de musique ou de se comporter comme de véritables êtres vivants." 
 
-![Finite state automaton description on Bengalese Finch songs (Berwick et al., 2011 Trends in Cognitive Sciences 15, 3: 113–21)](images/BengaleseFinch_song_fsa.png) 
+
+# Formal description of automata
+
+At a abstract level, an automaton can be formally described by:
+- a set of internal **states**
+- a **transition** table that describes the **events** that lead to changes from state to state
+
+### Change counter in a vending machine
+
+![](images/coin-counter.svg) 
+
+---------------
+
+### Pacman's ghost
+
+
+---------------------- ---------------------------------------------------------------------
+![](images/pacman.png) ![](images/transition-diagram-pacman-ghost.png)
+---------------------- ---------------------------------------------------------------------
+
+### Birdsong
+
+Finite state automaton description of Bengalese Finch songs
+
+![](images/BengaleseFinch_song_fsa.png) 
+
+From Berwick et al., 2011 _Trends in Cognitive Sciences_ 15, 3: 113–21
 
 (see also Descartes. *Les animaux Machines*  [Lettre au Marquis de Newcastle](http://www.ac-grenoble.fr/PhiloSophie/logphil/oeuvres/descarte/newcastl.htm)
 
 --------------
 
-Pattern recognition
+## Pattern recognition
 
-!(Haha!)[images/fsa1.gif]
+![Haha!](images/fsa1.gif)
 
-(see Regular Expressions)
+(a very useful tool in Computer Science are  _regular expressions_, a way to describe patterns and find them in data)
 
----------------------
 
-Capturing the Grammar of English language
+## Capturing the Grammar of English language
 
 ![simple fragment of English](images/fsa_lang.png)
 
@@ -57,35 +76,155 @@ See [David Temperley's Visual representation of the English language](http://the
 
 
 
-Computers
----------
+# Remarks
 
 
-A computer is basically an automaton with an additonal memory store.
+*  Events associated to transition can be input and/or output
 
-Examples: 
+*  Automata can react to external events in a context-sensitive manner because the current states depends on the history of states. 
+
+Computer science terminology: _finite state machines_ (FSM), or _finite state automaton__ (FSA)
+
+
+Exercice: draw the transition diagram for a simple coffee machine with three states (off/on/brewing) and two buttons (switch on/off and brew)
+
+
+# Computers
+
+Computer =  automaton with an additional memory store.
+
 
 ### Turing Machines
 
-A finite state machine augmented with a tape and a mechanism to read/write onit.
+Alan Turing (1936).
 
-![example of a Turing machine](images/computation01.gif)
+Intended as a mathematical model of computation, it is a finite state machine augmented with a tape and a mechanism to read/write on it.
 
-See (https://en.wikipedia.org/wiki/Turing_machine)[https://en.wikipedia.org/wiki/Turing_machine] for more information.
+![](images/Turing-machine.jpg)
+
+
+. . .
+
+
+
+In the 1930s, there were several independent attempts to formalize the notion of computability, and it was discovers that all of them were equivalent in power!
+
+**Church–Turing thesis** : a function on the natural numbers is computable in an informal sense (i.e., computable by a human being using a pencil-and-paper method, ignoring resource limitations) if and only if it is computable by a Turing machine. 
+
+For more information about Turing machines, see <https://en.wikipedia.org/wiki/Turing_machine>
+
+
+
+
+
 
 -----------
 
-### Register machines  
-   - Read (Dennett2008-Secrets-of-Computer-Power-Revealed.pdf)[Dennett2008-Secrets-of-Computer-Power-Revealed.pdf],
-   - Play with [http://proto.atech.tufts.edu/RodRego/](http://proto.atech.tufts.edu/RodRego/)
+### Register machines
+
+Register machine is another 'yoy' computing model that is closer to actual computers. 
+
+ _The seven secrets of computer power revealed_ (Chapter 24 from
+Daniel Dennett (1023) _Intuition Pumps and other tools for thinking_)
+
+(an older version is available at <http://sites.tufts.edu/rodrego/files/2011/03/Secrets-of-Computer-Power-Revealed-2008.pdf>)
+
+(Online Demo at  [http://proto.atech.tufts.edu/RodRego/](http://proto.atech.tufts.edu/RodRego/)
 
 
-### Remarks:
+Registers = memory locations, each with a unique _address_ (1, 2, 3, ...), and each able to have , as _contents_, a singel integer (0, 1, 2, ...)
+
+Processing unit that can execute instructions in a stepwise, one-at-a-time fashion. The processor knows just 3 instructions:
+
+- _End_
+- _Increment register_  with 2 arguments: a register #, an step number
+- _Decrement register and Branch_ with 3 arguments, a register number and two step numbers.
+
+
+
+
+### Program 1 (ADD[0,1])
+
+    1 DEB 0 2 3
+    2 INC 1 1
+    3 END
+
+Exercice; Simlulate this program on a machine wheret  Reg0 contains 4 and Reg1 contains 7, and explain what it is doing.
+
+. . .
+
+This program adds the content of register 0 to register 1 (destroying the content of 0)
+
+
+### Program 2 (MOVE[4,5])
+
+Exercice: write a program that moves the content of reg4 intro reg5
+
+. . .
+
+	1 DEB 5 1 2
+	2 DEB 4 3 4
+	3 INC 5 2
+	4 END
+
+. . .
+
+### Program 3 (COPY[1,3])
+
+The following program copies the content of reg1 into reg3, leaving reg1 unchanged.
+
+	1 DEB 3 1 2
+	2 DEB 4 2 3
+	3 DEB 1 4 6
+	4 INC 3 5
+	5 INC 4 3
+	6 DEB 4 7 8
+	7 INC 1 6
+	8 END
+
+### Program 4 (NON DESTRUCTIVE AD[1,2,3])
+
+	 1 DEB 3 1 2
+	 2 DEB 4 2 3
+	 3 DEB 1 4 6
+	 4 INC 3 5
+	 5 INC 4 3
+	 6 DEB 4 7 8
+	 7 INC 1 6
+	 8 DEB 2 9 11
+	 9 INC 3 10
+	10 INC 4 11
+	11 DEB 4 12 13
+	12 INC 2 11
+	13 END
+
+. . .
+
+Note that _conditional branching_ is the key instruction that gives the power to the machine. Depending on the content of memory, the machine can do either (a) or (b). 
+
+## Secrets:
+
+1. Competence without comprehension. A machine can do perfect arithmetic without having to comprehend what it is doing.
+
+2. What a number in a register stands for depends on the program
+
+3. The register machine can be designed to discriminate any pattern that can be encoded with numbers (e.g. images, text, sensory inputs,...)
+
+4. Programs can be encoded by numbers.
+
+5. All programs can be given a unique number which can be treated as a list of instructions by a Universal Machine.
+
+6 all improvements in computers over Turing machine (or Register machine), are simply ways of making them faster
+
+7. There is no secret #7
+
+## Programs
+
 * The first computers were not programmable. They were hardwired! 
 * Programmable computer: 
-   - a program is a set of instructions stored in memory.
-   - Loaded and executed by a processor. 
-   - Such programs are written in machine langage (the language of the processor)
+    - a program is a set of instructions stored in memory.
+    - Loaded and executed by a processor. 
+    - Such programs are written in machine langage (the language of the processor)
 
 
 Programs in higher-level languages (rather than Machine language) can be either
@@ -102,8 +241,7 @@ An **interpreter** reads the file and execute the commands one by one. It is slo
 * * * * *
 
 
-Operating system
-----------------
+# Operating system
 
 An O.S. is the first program that loads into the computer during the boot. When running:
 
@@ -130,8 +268,7 @@ Several OS can be installed in a given machine:
 
 * * * * *
 
-What is a Terminal?
--------------------
+# What is a Terminal?
 
 ------------------------ -----------------------
 ![](images/terminal.jpg) ![](images/minitel.jpg)
@@ -176,8 +313,7 @@ Probably, BUT you can handle 90% of problems with Python.
 
 * * * * *
 
-Disks, Directories and files
-----------------------------
+# Disks, Directories and files
 
 Most computers (not all) have two kinds of memories: 
 - volatile, fast, memory, which is cleared when the computer is switched off (caches, RAM)
@@ -213,36 +349,8 @@ Open python
 	
 	
 
-* * * * *
 
-What is a computer?
--------------------
-
-Automaton: states/transitions.
-
-Computer: states/transition + memory (Turing machine)
-
-First computer were not programmable. They were wired! 
-
-Programmable computer: programs=set of instructions stored in memory.
-Loaded and executed by a processor. Programs are written in machine langage (the language of the processor)
-
-
-Programs in higher-level languages can be either
-* **compiled**, or
-* **interpreted**
-
-In both cases, you write the program as textual files.
-
-A **compiler** translates the program into an executable file in machine language. The exectutable file is standalone.
-
-An **interpreter** reads the file and execute the commands one by one. It is slower, but easier to interact with. Disatvange: you need the interpreter at all time.
-
-
-* * * * *
-
-What is a library (or module/package)?
---------------------------------------
+# What is a library (or module/package)?
 
 A set of new functions that extend a language (.DLL (Windows);.a or .so (Linux); framework bundles (MacOs))
 
