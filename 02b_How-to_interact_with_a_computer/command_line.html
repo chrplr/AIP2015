@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="la-ligne-de-commande" class="slide section level3">
+<h1>La ligne de commande</h1>
+<p>C’est l’interface privilégiée avec l’ordinateur quand on veut le soumettre à notre volonté. Elle utilise un langage qui permet de communiquer avec l’ordinateur (de façon assez frustre, entendons-nous) c’est-à-dire d’envoyer des instructions à l’ordinateur et de voir l’output de ces instructions s’afficher à l’écran.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">système</th>
+<th align="left">nom</th>
+<th align="left">pour ouvrir</th>
+<th align="left">langage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">windows</td>
+<td align="left">fenêtre de commande,…</td>
+<td align="left">win+R puis cmd</td>
+<td align="left">dos</td>
+</tr>
+<tr class="even">
+<td align="left">mac</td>
+<td align="left">terminal,iterm,…</td>
+<td align="left">/Applications/Utilities/Terminal</td>
+<td align="left">bash</td>
+</tr>
+<tr class="odd">
+<td align="left">linux</td>
+<td align="left">terminal emulator,xterm,…</td>
+<td align="left">se loguer</td>
+<td align="left">bash, tcsh,…</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exercices">Exercices</h4>
+<ol style="list-style-type: decimal">
+<li>Accédez à une ligne de commande sur votre ordinateur.</li>
+<li>identifier les informations affichées automatiquement</li>
+</ol>
+</div>
+<div id="larborescence-des-fichiers" class="slide section level3">
+<h1>L’arborescence des fichiers</h1>
+<p>C’est une façon de se représenter et d’organiser l’information stockée sur le disque dur<br />
+<strong>Il faut : - toujours savoir où on est dans cette arborescence ! - toujours savoir où se trouve ce qu’on souhaite manipuler !</strong></p>
+<p><strong>Concepts clef</strong> :</p>
+<ul>
+<li>racine : c’est le point de départ de l’organisation des informations (particularité de windows : il peut y en avoir plusieurs)</li>
+<li>repertoire : c’est un contenant qui peut contenir des fichiers ou d’autres répertoires</li>
+<li>fichier : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,…)</li>
+<li>chemin d’accès (ou <em>path</em>) : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier, en partant de la racine</li>
+<li>répertoire courant : c’est l’endroit où on se trouve à un instant donné dans l’arborescence, c’est là qu’on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus</li>
+<li>chemin relatif : le chemin à partir du répertoire courant, identifié par le signe “point” <code>.</code> tandis que le répertoire parent est identifié par le signe “point point” `..``</li>
+</ul>
+<h4 id="exercices-1">Exercices</h4>
+<ol style="list-style-type: decimal">
+<li>Ouvrez ce que vous avez sous</li>
+<li></li>
+</ol>
+<p><strong>Pour aller plus loin</strong> Les systèmes de fichiers, avec des fonctionnalités différentes et malheureusement pas forcément compatibles les uns avec les autres, correspondent à la manière de transcrire physiquement sur la mémoire cette structure. C’est pour ça qu’on a souvent de sproblèmes de transfort de fichiers en mac et PC =&gt; bien choisir comment “formater” une clef USB ou un disque dur pour partager des données</p>
+<p>Exemples :</p>
+<ul>
+<li>FAT 32, File Allocation Table depuis windows 95 : limite la taille des fichiers à 4 Go, le seul système de fichier bien supporté par tous les systèmes d’exploitation</li>
+<li>NTFS, New Technology File System : depuis Windows NT, nécessite des ajouts logiciels pour être plus ou moins supporté sous mac</li>
+<li>exFAT, Extended File Allocation Table : Windows, à éviter comme la peste</li>
+<li>ext, extended file system : linux, actuellement en version ext4</li>
+<li>HFS et HFS+, Hierarchical File System : mac avec une taille minimale de fichier qui gaspille de l’espace</li>
+</ul>
+<p><strong>Afficher le nom, le contenu et changer de répertoire courant</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">langage</th>
+<th align="left">nom</th>
+<th align="left">contenu</th>
+<th align="left">changer</th>
+<th align="left">créer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">dos</td>
+<td align="left">chdir</td>
+<td align="left">dir</td>
+<td align="left">chdir</td>
+<td align="left">mkdir</td>
+</tr>
+<tr class="even">
+<td align="left">bash</td>
+<td align="left">pwd</td>
+<td align="left">ls</td>
+<td align="left">cd</td>
+<td align="left">mkdir</td>
+</tr>
+<tr class="odd">
+<td align="left">python module os</td>
+<td align="left">os.getcwd()</td>
+<td align="left">os.listdir()</td>
+<td align="left">os.chdir</td>
+<td align="left">os.mkdir()</td>
+</tr>
+</tbody>
+</table>
+<h4 id="essayez-ces-manipulations-en-ligne-de-commande-avec-votre-système">Essayez ces manipulations en ligne de commande avec votre système</h4>
+<ol style="list-style-type: decimal">
+<li>où êtes-vous quand vous ouvrez votre ligne de commande ?</li>
+<li>quels sont les fichiers présents là aussi ?</li>
+<li>déplacez-vous dans un répertoire où ça ne pose pas de problème de faire des tests</li>
+<li>créez un répertoire test_ligne_commande</li>
+<li>allez dans ce répertoire</li>
+</ol>
+<p><strong>Remarques</strong> :</p>
+<ul>
+<li>on peut éditer des fichiers mais pas des répertoires !</li>
+<li>les fichiers et les répertoires comportent des méta-données (comme vos photos,emails,…) qui disent qui a le droit de faire quoi avec</li>
+<li>oui je sais techniquement un répertoire c’est aussi un fichier (c’est de l’info en la mémoire) mais pas la peine de s’embrouiller.</li>
+</ul>
+<p><strong>gestionnaires de fichiers</strong> :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">système</th>
+<th align="left">nom</th>
+<th align="left">pour ouvrir</th>
+<th align="left">racine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">windows</td>
+<td align="left">explorer</td>
+<td align="left">win+E</td>
+<td align="left">Lettre:<br />
+mac</td>
+</tr>
+<tr class="even">
+<td align="left">linux</td>
+<td align="left">nautilus,gnome commander,…</td>
+<td align="left">commande</td>
+<td align="left">/</td>
+</tr>
+</tbody>
+</table>
+<p><strong>super important</strong> : pour éviter les problèmes (surtout en ligne de commande), toujours utiliser des noms de répertoires et de fichiers qui suivent ces règles : - pas d’espace - pas de caractères hors de : - l’alphabet anglais majuscule et minuscule - les chiffres arabes - le <code>_</code> (on tolère aussi le <code>-</code>) - pas le nom d’un autre truc utile</p>
+<p><strong>Remarque</strong> : toutes les opérations que vous faites avec un gestionnaire sont faisable en ligne de commande (et souvent c’est plus pratique quand on a plein d’opérations à effectuer). Attention par contre, on a pas droit à l’erreur donc il vaut mieux avoir un système de suivi de version pour ses documents !</p>
+</div>
+</body>
+</html>
