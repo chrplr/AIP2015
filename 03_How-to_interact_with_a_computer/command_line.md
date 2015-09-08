@@ -85,11 +85,11 @@ Exemples :
 
 **Afficher le nom, le contenu et changer de répertoire courant**
 
-langage|nom|contenu|changer | créer
--------|--------|--------|---|---
-dos|chdir|dir|chdir|mkdir
-bash|pwd|ls|cd|mkdir
-python module os|os.getcwd()|os.listdir()|os.chdir|os.mkdir()
+OS|langage|nom|contenu|changer | créer
+---|----|--------|--------|---|---
+Windows|dos|chdir|dir|chdir|mkdir
+linux/OS|bash|pwd|ls|cd|mkdir
+independant|python module os|os.getcwd()|os.listdir()|os.chdir|os.mkdir()
 
 #### Essayez ces manipulations en ligne de commande avec votre système
 
