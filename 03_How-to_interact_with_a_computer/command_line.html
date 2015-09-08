@@ -16,6 +16,13 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
+<div class="slide section level3">
+
+<p>http://www.kloth.net/services/cardpunch.php file system</p>
+<p>file</p>
+<p>Fiche</p>
+<p>=&gt; some oddities of computer-related facts come from such old conventions for example the</p>
+</div>
 <div id="la-ligne-de-commande-shell" class="slide section level3">
 <h1>La ligne de commande (“Shell”)</h1>
 <p>C’est l’interface privilégiée avec l’ordinateur quand on veut le soumettre à notre volonté. Elle nécessite d’utiliser un langage qui permet de communiquer avec l’ordinateur (de façon assez frustre, entendons-nous) c’est-à-dire d’envoyer des instructions à l’ordinateur et parfois voir l’output de ces instructions s’afficher à l’écran.</p>
@@ -58,19 +65,19 @@
 <div id="larborescence-des-fichiers" class="slide section level3">
 <h1>L’arborescence des fichiers</h1>
 <p>C’est une façon de se représenter et d’organiser l’information stockée dans la mémoire de l’ordinateur<br />
-<strong>Il faut</strong> :</p>
+Il faut toujours savoir :</p>
 <ul>
-<li><strong>toujours savoir où on est dans cette arborescence !</strong></li>
-<li><strong>toujours savoir où se trouve ce qu’on souhaite manipuler !</strong></li>
+<li><strong>où on est dans cette arborescence !</strong></li>
+<li><strong>où se trouve ce qu’on souhaite manipuler !</strong></li>
 </ul>
 <p><strong>Concepts clef</strong> :</p>
 <ul>
-<li>racine : c’est le point de départ de l’organisation des informations (particularité de windows : il peut y en avoir plusieurs)</li>
-<li>repertoire : c’est un contenant qui peut contenir des fichiers ou d’autres répertoires</li>
-<li>répertoire courant : c’est l’endroit où on se trouve à un instant donné dans l’arborescence, c’est là qu’on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus</li>
-<li>chemin relatif : le chemin à partir du répertoire courant, identifié par le signe “point” <code>.</code> tandis que le répertoire parent est identifié par le signe “point point” `..``</li>
-<li>fichier : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,…)</li>
-<li>chemin d’accès (ou <em>path</em>) : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier, en partant de la racine</li>
+<li><strong>racine</strong> : c’est le point de départ de l’organisation des informations (particularité de windows : il peut y en avoir plusieurs, une par partition)</li>
+<li><strong>repertoire</strong> : c’est un contenant qui peut contenir des fichiers ou d’autres répertoires</li>
+<li><strong>répertoire courant</strong> : c’est l’endroit où on se trouve à un instant donné dans l’arborescence, c’est là qu’on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus</li>
+<li><strong>chemin relatif</strong> : le chemin à partir du répertoire courant, identifié par le signe “point” <code>.</code> tandis que le répertoire parent est identifié par le signe “point point” `..``</li>
+<li><strong>fichier</strong> : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,…)</li>
+<li><strong>chemin d’accès (ou <em>path</em>)</strong> : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier, en partant de la racine</li>
 </ul>
 <p>Tout ça peut se voir avec les outils graphiques qu’on trouve désormais couramment dans les systèmes d’exploitation<br />
 <strong>Gestionnaires de fichiers</strong> :</p>
@@ -119,6 +126,7 @@ mac</td>
 <table>
 <thead>
 <tr class="header">
+<th align="left">OS</th>
 <th align="left">langage</th>
 <th align="left">nom</th>
 <th align="left">contenu</th>
@@ -128,6 +136,7 @@ mac</td>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">Windows</td>
 <td align="left">dos</td>
 <td align="left">chdir</td>
 <td align="left">dir</td>
@@ -135,6 +144,7 @@ mac</td>
 <td align="left">mkdir</td>
 </tr>
 <tr class="even">
+<td align="left">linux/OS</td>
 <td align="left">bash</td>
 <td align="left">pwd</td>
 <td align="left">ls</td>
@@ -142,6 +152,7 @@ mac</td>
 <td align="left">mkdir</td>
 </tr>
 <tr class="odd">
+<td align="left">independant</td>
 <td align="left">python module os</td>
 <td align="left">os.getcwd()</td>
 <td align="left">os.listdir()</td>
