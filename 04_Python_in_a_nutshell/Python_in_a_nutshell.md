@@ -24,7 +24,7 @@ You can use Python in two ways:
 
 . . .
 
-This is ok if you quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the **Edit-run** approach
+This is ok if you need to quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the **Edit-run** approach
 
 # Edit-run cycle
 
@@ -49,8 +49,8 @@ Using a **text editor**, e.g. *atom*, you write a program, that is, a series of 
 
 
 Remark:
-* You can learn more about Turtle graphics by erading the documentation at <https://docs.python.org/2/library/turtle.html>
-* there exist a third approach which combines interactivity and persistence --- the `ipython notebook`.
+* You can learn more about Turtle graphics by reading the documentation at <https://docs.python.org/2/library/turtle.html>
+* there exist a third approach which combines interactivity and persistence --- the `ipython notebook`. Like Mathematica, handy for numerical processing. 
 
 # First programs
 
@@ -66,75 +66,21 @@ Concepts: string constant, variable (name), affectation, string concatenation wi
 
 . . .
 
-	n = 10
-	a = 'bonjour'
-	o = [5.6, 7.8, 0.9]
-	print(n)
-	print(a)
-	print(o)
 
-	n = 15
-	a = 'au revoir'
-	o = ['toto', 'titi', 'tata']
-	print(n)
-	print(a)
-	print(o)
-
-Concept: variables and constants, affectation
-
-. . .
-
-	n = 10
-	m = n
-	n = n + 2
-	print(m, n)
-
-Concept: modifying a variable
-
-. . .
-
-	for x in [1, 2, 3, 4]:
-		print(x*x + 2*x + 1)
-
-Concept: loop
-
-. . .
-
-	numbers = [1, 2, 5, 10]
-	y = [(x*x + 2*x + 1) for x in numbers]
-	y
-
-concept: lists (or sequences)
-
-See <http://effbot.org/zone/python-list.htm>
-
-. . .
-
-	for _ in range(100):
-		print('All work and no play makes Jack a dull boy')
-
-Concepts: range to generate a list of numbers, 'for' loop, indentation of instuction block
-
-. . .
-
-	for name in ('Jack', 'John', 'Tim'):
-		for _ in range(10):
-			print('All work and no play makes ' + name + ' a dull boy!')
-
-Concepts: list of strings, double imbrication
-
-. . .
-
-
-
-	first100 = range(1, 101)
-	for n in first100:
-		sum = sum + n
+	# multiplication by successive addition
+    a, b = 10, 5
+	sum = 0
+	while (a > 0):
+		sum = sum + b
+		a = a - 1
 	print(sum)
 
+Concepts: multiple affectation, modifying a variable, while loop, indentation for blocks,
+
+
 . . .
 
-
+    # guess a number 
 	import random
 
 	target = random.randint(1, 100)
@@ -154,6 +100,86 @@ Concepts: list of strings, double imbrication
 
 
 Type this program in a text editor, save it as a python script (with extension .py) and run it.
+
+
+
+## types
+
+Do the following in interactive mode (ipython):
+
+	type(10)
+	type(10.5)
+	type('bonjour')
+
+	a = 20
+	type(a)
+
+Concept: types
+
+	print(10 + 5)
+	print("10" + "5")
+	print("10" + 5)
+
+10 is an integer, 10.0 is a float, "10" is a string. It is possible to convert from one type to another:
+
+	print('Il y a ' + str(10) + ' ans...')
+	print(int("10"))
+	
+
+Complex types (lists, dictionnaries):
+
+	type([1, 2, 3])
+	type(['a', 'b', 'c'])
+	type({'alpha':1, 'beta':2})
+
+
+
+. . .
+
+	for x in [1, 2, 3, 4]:
+		print(x*x + 2*x + 1)
+
+Concept: for loop
+
+. . .
+
+	numbers = [1, 2, 5, 10]
+	y = [(x*x + 2*x + 1) for x in numbers]
+	y
+
+concept: lists (or sequences)
+
+See <http://effbot.org/zone/python-list.htm>
+
+
+
+
+
+. . .
+
+	for _ in range(100):
+		print('All work and no play makes Jack a dull boy')
+
+Concepts: range to generate a list of numbers, 'for' loop, indentation of instuction block
+
+. . .
+
+	for name in ('Jack', 'John', 'Tim'):
+		for _ in range(10):
+			print('All work and no play makes ' + name + ' a dull boy!')
+
+Concepts: list of strings, double imbrication
+
+
+
+
+. . .
+
+
+	first100 = range(1, 101)
+	for n in first100:
+		sum = sum + n
+	print(sum)
 
 
 Programs (a.k.a scripts)

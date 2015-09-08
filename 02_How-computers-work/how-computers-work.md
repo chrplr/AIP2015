@@ -237,13 +237,18 @@ A **compiler** translates the program into an executable file in machine languag
 
 An **interpreter** reads the file and execute the commands one by one. It is slower, but easier to interact with. Disatvange: you need the interpreter at all time.
 
+![](images/interpret-compile.png)
 
 * * * * *
 
 
 # Operating system
 
-An O.S. is the first program that loads into the computer during the boot. When running:
+In the first computers, there was only **one** program running. Yo would load the program into memory, then run it until the end. Programs were ran in BATCH mode, in a sequence.
+
+Then, it was realized that computers could 'time-share' between programs, allowing several users (or programs) to share the computer.
+
+This requires an operating systems (O.S.). The O.S. is the first program that loads into the computer during the boot. When running:
 
 * it controls the hardware (screen/printer/disk/keybord/mouse,...) (drivers) 
 
