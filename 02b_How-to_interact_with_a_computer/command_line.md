@@ -1,7 +1,21 @@
 
-### La ligne de commande
+
+
+
+http://www.kloth.net/services/cardpunch.php
+file system
+
+file
+
+Fiche
+
+=> some oddities of computer-related facts come from such old conventions
+for example the
+
+
+### La ligne de commande ("Shell")
 C'est l'interface privilégiée avec l'ordinateur quand on veut le soumettre à notre volonté.
-Elle utilise un langage qui permet de communiquer avec l'ordinateur (de façon assez frustre, entendons-nous) c'est-à-dire d'envoyer des instructions à l'ordinateur et de voir l'output de ces instructions s'afficher à l'écran.
+Elle nécessite d'utiliser un langage qui permet de communiquer avec l'ordinateur (de façon assez frustre, entendons-nous) c'est-à-dire d'envoyer des instructions à l'ordinateur et parfois voir l'output de ces instructions s'afficher à l'écran.
 
 
 système|nom|pour ouvrir|langage
@@ -12,29 +26,48 @@ linux|terminal emulator,xterm,...|se loguer|bash, tcsh,...
 
 #### Exercices
 1. Accédez à une ligne de commande sur votre ordinateur.
-2. identifier les informations affichées automatiquement
+2. identifier les informations affichées automatiquement.
 
 
 ### L'arborescence des fichiers
-C'est une façon de se représenter et d'organiser l'information stockée sur le disque dur  
-**Il faut :
-- toujours savoir où on est dans cette arborescence !
-- toujours savoir où se trouve ce qu'on souhaite manipuler !**
+C'est une façon de se représenter et d'organiser l'information stockée dans la mémoire de l'ordinateur  
+Il faut toujours savoir :
+
+- **où on est dans cette arborescence !**
+- **où se trouve ce qu'on souhaite manipuler !**
 
 
 **Concepts clef** :
 
-- racine : c'est le point de départ de l'organisation des informations (particularité de windows : il peut y en avoir plusieurs)
-- repertoire : c'est un contenant qui peut contenir des fichiers ou d'autres répertoires
-- fichier : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,...)
-- chemin d'accès (ou _path_) : c'est la description du chemin à suivre dans l'arborescence pour trouver un répertoire ou un fichier, en partant de la racine
-- répertoire courant : c'est l'endroit où on se trouve à un instant donné dans l'arborescence, c'est là qu'on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus
-- chemin relatif : le chemin à partir du répertoire courant, identifié par le signe "point" `.` tandis que le répertoire parent est identifié par le signe "point point" `..``
+- **racine** : c'est le point de départ de l'organisation des informations (particularité de windows : il peut y en avoir plusieurs, une par partition)
+- **repertoire** : c'est un contenant qui peut contenir des fichiers ou d'autres répertoires
+- **répertoire courant** : c'est l'endroit où on se trouve à un instant donné dans l'arborescence, c'est là qu'on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus
+- **chemin relatif** : le chemin à partir du répertoire courant, identifié par le signe "point" `.` tandis que le répertoire parent est identifié par le signe "point point" `..``
+- **fichier** : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,...)
+- **chemin d'accès (ou _path_)** : c'est la description du chemin à suivre dans l'arborescence pour trouver un répertoire ou un fichier, en partant de la racine
+
+Tout ça peut se voir avec les outils graphiques qu'on trouve désormais couramment dans les systèmes d'exploitation  
+**Gestionnaires de fichiers** :
+
+système|nom|pour ouvrir|racine
+-------|--------|--------|------
+windows|explorer|win+E| Lettre:\
+mac|finder|cmd+N| /
+linux|nautilus,gnome commander,...|commande|/
+
+**Super important** : pour éviter les problèmes (surtout en ligne de commande), toujours utiliser des noms de répertoires et de fichiers qui suivent ces règles :
+- pas d'espace
+- pas de caractères hors de :
+  - l'alphabet anglais majuscule et minuscule
+  - les chiffres arabes
+  - le `_` (on tolère aussi le `-`)
+- pas le nom d'un autre truc utile
+
 
 #### Exercices
-1. Ouvrez ce que vous avez sous 
-2.
-
+1. Trouvez sur votre ordinateur votre répertoire d'utilisateur
+3. puis le répertoire racine
+2. puis le répertoire où la distribution Anaconda de python est installée
 
 
 **Pour aller plus loin**
@@ -63,7 +96,7 @@ python module os|os.getcwd()|os.listdir()|os.chdir|os.mkdir()
 1. où êtes-vous quand vous ouvrez votre ligne de commande ?
 2. quels sont les fichiers présents là aussi ?
 1. déplacez-vous dans un répertoire où ça ne pose pas de problème de faire des tests
-1. créez un répertoire test_ligne_commande
+1. créez un répertoire qui s'appelle "test_ligne_commande" (sans les guillemets !)
 1. allez dans ce répertoire
 
 
@@ -73,20 +106,5 @@ python module os|os.getcwd()|os.listdir()|os.chdir|os.mkdir()
 - les fichiers et les répertoires comportent des méta-données (comme vos photos,emails,...) qui disent qui a le droit de faire quoi avec
 - oui je sais techniquement un répertoire c'est aussi un fichier (c'est de l'info en la mémoire) mais pas la peine de s'embrouiller.
 
-**gestionnaires de fichiers** :
-
-système|nom|pour ouvrir|racine
--------|--------|--------|------
-windows|explorer|win+E| Lettre:\
-mac|finder|cmd+N| /
-linux|nautilus,gnome commander,...|commande|/
-
-**super important** : pour éviter les problèmes (surtout en ligne de commande), toujours utiliser des noms de répertoires et de fichiers qui suivent ces règles :
-- pas d'espace
-- pas de caractères hors de :
-  - l'alphabet anglais majuscule et minuscule
-  - les chiffres arabes
-  - le `_` (on tolère aussi le `-`)
-- pas le nom d'un autre truc utile
 
 **Remarque** : toutes les opérations que vous faites avec un gestionnaire sont faisable en ligne de commande (et souvent c'est plus pratique quand on a plein d'opérations à effectuer). Attention par contre, on a pas droit à l'erreur donc il vaut mieux avoir un système de suivi de version pour ses documents !
