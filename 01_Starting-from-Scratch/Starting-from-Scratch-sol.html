@@ -195,15 +195,20 @@ christophe@pallier.org
 <div class="figure">
 <img src="img/multiply.png" />
 </div>
-<ol style="list-style-type: decimal">
+<ol start="2" style="list-style-type: decimal">
 <li>“Guess a number”. Make Scratch pick up a random number in the interval [1,100], and loop asking you for a guess and reply either ‘too low’, ‘too high’, or ‘you win!’ depending on your answer.</li>
 </ol>
 <div class="figure">
 <img src="img/guess-a-number.png" />
 </div>
-<ol start="2" style="list-style-type: decimal">
-<li>We are going to estimate the number PI by a Monte Carlo method. Create a script that initializes a variable ‘b’ to 0, then repeatly (10000 times) picks up two random numbers on the interval [-1,1], plots a dot at these coordinates (multiplied by 100), and add 1 to the variable ‘b’ if the dot is within the circle of radius 1 centered on (0,0).</li>
+<ol start="3" style="list-style-type: decimal">
+<li>We are going to estimate the number PI by a Monte Carlo method.:</li>
 </ol>
+<ul>
+<li>Repeatly (e.g. 2000 times) picks up two random numbers on the interval [-1, 1]. This corresponds to a dot inside a square of size 2x2.</li>
+<li>Count how many times the dot falls within the circle of radius 1 centered on the origin (Pythagore helps you here: the dot is within the circle iff <code>(x * x + y * y) &lt; 1</code>.)</li>
+<li>The proportion of dots falling within the circle, multiplied by four (the area of the square), is an estimate of teh area of the disk, that is, the number pi.</li>
+</ul>
 <div class="figure">
 <img src="img/estimation-of-pi.png" />
 </div>
@@ -213,7 +218,8 @@ christophe@pallier.org
 <div class="figure">
 <img src="img/Spirograph.jpg" />
 </div>
-<p>Read <a href="http://www.mathplayground.com/Spiromath.html">http://www.mathplayground.com/Spiromath.html</a> and write a scratch program that draws these figures (note: search the web for the math formulas that allow to compute x, and y; they require a bit of trigonometry, i.e., use the ‘sin’ and ‘cos’ functions).</p>
+<p>The aim of this exercice is to recreate the Spirograph patterns.</p>
+<p>First, check out the demo at <a href="http://www.mathplayground.com/Spiromath.html">http://www.mathplayground.com/Spiromath.html</a>. With the help of the mathematical equations provided at <a href="http://www.mathematische-basteleien.de/spirographs.htm">http://www.mathematische-basteleien.de/spirographs.htm</a> write a scratch program that draws these figures.</p>
 <p>There are several examples on the scratch web site. You can study their code:</p>
 <ul>
 <li>Kitty graphics <a href="https://scratch.mit.edu/projects/5542/">https://scratch.mit.edu/projects/5542/</a></li>

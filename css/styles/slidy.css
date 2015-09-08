@@ -134,23 +134,21 @@ div.slide h1 {
   background: transparent;
 }
 
-div.toc {
-  position: absolute;
-  top: auto;
-  bottom: 4em;
-  left: 4em;
-  right: auto;
-  width: 60%;
-  max-width: 30em;
-  height: 30em;
-  border: solid thin black;
-  padding: 1em;
-  background: rgb(240,240,240);
-  color: black;
-  z-index: 300;
-  overflow: auto;
-  display: block;
-  visibility: visible;
+@media screen and (max-device-width: 1024px)
+{
+  div.slide { font-size: 100%; }
+}
+
+@media screen and (max-device-width: 800px)
+{
+  div.slide { font-size: 200%; }
+  div.slidy_toc {
+    top: 1em;
+    left: 1em;
+    right: auto;
+    width: 80%;
+    font-size: 180%;
+  }
 }
 
 div.toc-heading {
@@ -201,10 +199,10 @@ a:hover { color: red; text-decoration: underline }
 a:active { color: red; text-decoration: underline }
 
 a {text-decoration: none}
-.navbar a:link {color: white}
-.navbar a:visited {color: yellow}
-.navbar a:active {color: red}
-.navbar a:hover {color: red}
+.toolbar a:link {color: blue}
+.toolbar a:visited {color: blue}
+.toolbar a:active {color: red}
+.toolbar a:hover {color: red}
 
 ul { list-style-type: square; }
 ul ul { list-style-type: disc; }

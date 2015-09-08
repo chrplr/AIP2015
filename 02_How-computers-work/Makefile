@@ -1,6 +1,6 @@
-# Time-stamp: <2015-09-08 10:16 christophe@pallier.org>
+# Time-stamp: <2015-09-08 13:22 christophe@pallier.org>
 
-PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css
+PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css 
 
 INPUT_MDS := $(wildcard *.md)
 
@@ -28,7 +28,6 @@ pdf: $(OUTPUT_PDF)
 
 %.pdf: %.md
 	pandoc $< -o $@
-
 
 clean:
 	@rm -f $(OUTPUT_HTML) $(OUTPUT_PDF)

@@ -206,13 +206,18 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 #endif
 
 
-1. "Guess a number". Make Scratch pick up a random number in the interval [1,100], and  loop asking you for a guess and reply either 'too low', 'too high', or 'you win!' depending on your answer.  
+2. "Guess a number". Make Scratch pick up a random number in the interval [1,100], and  loop asking you for a guess and reply either 'too low', 'too high', or 'you win!' depending on your answer.  
 
 #ifdef ANSWERS
 ![](img/guess-a-number.png)
 #endif
 
-2. We are going to estimate the number PI by a Monte Carlo method. Create a script that initializes a variable 'b' to 0, then repeatly (10000 times) picks up two random numbers on the interval [-1,1], plots a dot at these coordinates (multiplied by 100), and add 1 to the variable 'b'  if the dot is within the circle of radius 1 centered on (0,0).
+3. We are going to estimate the number PI by a Monte Carlo method.:
+
+-  Repeatly (e.g. 2000 times) picks up two random numbers on the interval [-1, 1]. This corresponds to a dot inside a square of size 2x2.
+- Count how many times the dot falls within the circle of radius 1 centered on the origin (Pythagore helps you here: the dot is within the circle iff `(x * x + y * y) < 1`.)
+- The proportion of dots falling within the circle, multiplied by four  (the area of the square), is an estimate of teh area of the disk, that is, the number pi.
+
 
 #ifdef ANSWERS
 ![](img/estimation-of-pi.png)
@@ -224,7 +229,10 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 
 ![](img/Spirograph.jpg)
 
-Read <http://www.mathplayground.com/Spiromath.html> and write a scratch program that draws these figures (note: search the web for the math formulas that allow to compute x, and y; they require a bit of trigonometry, i.e., use the 'sin' and 'cos' functions).
+The aim of this exercice is to recreate the Spirograph patterns.
+
+First, check out the demo at <http://www.mathplayground.com/Spiromath.html>.
+With the help of the mathematical equations provided at <http://www.mathematische-basteleien.de/spirographs.htm> write a scratch program that draws these figures.
 
 #ifdef ANSWERS
 There are several examples on the scratch web site. You can study their code:

@@ -5,7 +5,7 @@
 
 # Automaton
 
-Definitions from .Merriam-webster:
+Definitions from the Merriam-Webster dictionary:
 
 * A mechanism that is relatively self-operating
 * A machine or control mechanism designed to follow automatically a predetermined sequence of operations

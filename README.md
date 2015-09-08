@@ -34,7 +34,22 @@ Another excellent resource to go beyond this lecture is <https://mitpress.mit.ed
 
 The web site for AIP2015 is <https://github.com/chrplr/AIP2015>
 
-This site will be updated during the course. To facilitate updating your local copy, we recommend that you use git to first clone the repository and then regularily pull the updates (ask for help if necessary).
+This site will be updated during the course. To facilitate updating your local copy, we recommend that you use the program 'git' to first clone the repository and then regularily pull the updates.
+
+1. If not already done, install git on your computer (following these [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)).
+
+2.  To download a copy of the lectures'files on your computer, open a terminal ([how-to-for macosx](http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac), [how-to-for windows](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window), and type the command:
+
+```
+    git clone https://github.com/chrplr/AIP2015
+```
+
+3. When you will need to update your local copy to the most recent version available on the github server, open a terminal, go to the AIP2015 folder, and type the command:
+
+```
+    git pull
+```
+
 
 
 ### Instructors
@@ -78,10 +93,10 @@ You should know how to:
 
 * Download some source code (e.g. Python) from the Internet (e.g. github) and display it.
 * Run a program from the command line
- - open a terminal, interact with the shell
- - navigate the directory structure with cd/ls
- - type commands, possibily with options or arguments
- - interrupt a running program (using the process manager)
+    - open a terminal, interact with the shell
+    - navigate the directory structure with cd/ls
+    - type commands, possibily with options or arguments
+    - interrupt a running program (using the process manager)
 
 * Execute a python script.
 * Install missing modules

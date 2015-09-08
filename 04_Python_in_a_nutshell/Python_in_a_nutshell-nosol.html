@@ -43,35 +43,80 @@ Christophe Pallier
 <div id="using-python-interactively" class="slide section level1">
 <h1><a href="#using-python-interactively">Using Python interactively</a></h1>
 <p>You can use Python in two ways:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Interactively</strong>, e.g. by launching <code>ipython</code> in a terminal, and typing python commands that are <em>interpreted</em> and <em>executed</em> when you press ‘Enter’.</li>
-</ol>
 <ul>
-<li>Open a terminal and start ipython</li>
-<li><p>Type the following lines</p>
-<p>import turtle turtle.circle(50) turtle;forward(100) turtle.circle(50)</p>
-<p>turtle.right(90) turtle.forward(100) turtle.right(90) turtle.heading()</p></li>
+<li><strong>Interactively</strong>, e.g. by launching <code>ipython</code> in a terminal, and typing python commands that are <em>interpreted</em> and <em>executed</em> when you press ‘Enter’.</li>
 </ul>
+<ol style="list-style-type: decimal">
+<li>Open a command line window (a.k.a. Terminal):
+<ul>
+<li>Ubuntu-Linux: Ctrl-Alt-T <a href="https://help.ubuntu.com/community/UsingTheTerminal">https://help.ubuntu.com/community/UsingTheTerminal</a></li>
+<li>MacOSX: <a href="http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac">http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac</a>,</li>
+<li>Windows: <a href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window</a></li>
+</ul></li>
+<li>Type <code>ipython</code> on the command-line and press <code>Enter</code>:</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="img/ipython_terminal1.png" /></td>
+<td align="left"><img src="img/ipython_terminal2.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li>You are now talking to ipython. Enter the following commands:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="ch">import</span> turtle 
+    turtle.circle(<span class="dv">50</span>)
+    turtle;forward(<span class="dv">100</span>)
+    turtle.circle(<span class="dv">50</span>)
+    
+    turtle.right(<span class="dv">90</span>)
+    turtle.forward(<span class="dv">100</span>)
+    turtle.right(<span class="dv">90</span>)
+    turtle.heading()</code></pre>
 <div class="incremental">
-<p>This is ok if you need to quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the <strong>Edit-run</strong> approach</p>
+<p>This way of using Python is fine if you need to quickly test an idea. But as soon as you quit <code>ipython</code> (by pressing <code>Ctrl-D</code>), you lose all traces of what you have done. To avoid that, you want to use the <strong>Edit-run</strong> approach</p>
 </div>
 </div>
 <div id="using-a-editor-edit-run-cycle" class="slide section level1">
 <h1><a href="#using-a-editor-edit-run-cycle">Using a editor (Edit-run cycle)</a></h1>
-<p>Using a <strong>text editor</strong>, e.g. <em>atom</em>, you write a program, that is, a series of commands ;</p>
+<p>Using a <strong>text editor</strong>, e.g. <em>atom</em>, you write a python script, that is, a series of commands, that you save in a file; then you gie this file to interpret to Python. Here is how:</p>
+<ol style="list-style-type: decimal">
+<li>Open a Text-Editor (e.g. Atom) and a Terminal window side-by-side:</li>
+</ol>
+<div class="figure">
+<img src="img/editor-terminal.png" />
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Create a <code>New File</code> in the Editor and enter the following text:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="ch">import</span> turtle
+    turtle.circle(<span class="dv">50</span>)
+    turtle.forward(<span class="dv">50</span>)
+    turtle.left(<span class="dv">120</span>)
+    turtle.forward(<span class="dv">100</span>)
+    turtle.left(<span class="dv">120</span>)
+    turtle.forward(<span class="dv">100</span>)
+    turtle.left(<span class="dv">120</span>)
+    turtle.forward(<span class="dv">50</span>)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Using ‘File/Save as’, save the this text under the filename <code>myscript.py</code> in your personal (home) directory</li>
+</ol>
 <ul>
-<li>start Atom</li>
-<li><p>Type the following lines</p>
-<p>import turtle turtle.circle(50) turtle.forward(50) turtle.left(120) turtle.forward(100) turtle.left(120) turtle.forward(100) turtle.left(120) turtle.forward(50)</p></li>
-<li>save the buffer under the filename <code>myscript.py</code></li>
-<li><p><em>run</em> with a python interpreter, for example by typing <code>python myprogram.py</code> on a command line (or <code>%run myprogram.py</code> in ipython).</p></li>
+<li><em>run</em> with a python interpreter, by typing <code>python myscript.py</code> on a command line of the Terminal. Try it now.</li>
 </ul>
-<p>Remark: * You can learn more about Turtle graphics by reading the documentation at <a href="https://docs.python.org/2/library/turtle.html">https://docs.python.org/2/library/turtle.html</a> * there exist a third approach which combines interactivity and persistence — the <code>ipython notebook</code>. Like Mathematica, handy for numerical processing.</p>
+<p>Important: you must make sure that the current working direcoty of the terminal is the same directory where the file myscript.py has been saved. Otherwise, you will get an error message such as ‘No such file or directory’. To fix this problem, you must use the ‘cd’ command to navigate the directory structure.</p>
+<p>Remarks:</p>
+<ul>
+<li><p>You can learn more about Turtle graphics by reading the documentation at <a href="https://docs.python.org/2/library/turtle.html">https://docs.python.org/2/library/turtle.html</a></p></li>
+<li><p>there exist a third approach which combines interactivity and persistence — the <code>ipython notebook</code>. Like Mathematica, handy for numerical processing.</p></li>
+</ul>
 </div>
 <div id="first-programs" class="slide section level1">
 <h1><a href="#first-programs">First programs</a></h1>
 <h3 id="warming-up"><a href="#warming-up">Warming up</a></h3>
-<p>Create a script <code>hello.py</code>, and run it:</p>
+<p>Create a script <code>hello.py</code> in the editor, save it and run it on the command-line:</p>
 <pre><code>name = raw_input(&#39;What is your name?&#39;)
 print(&#39;Hello &#39; + name + &#39;!&#39;)</code></pre>
 <p>Concepts: string constant, variable (name), affectation, string concatenation with ‘+’</p>
@@ -84,7 +129,7 @@ while (a &gt; 0):
     a = a - 1
 print(sum)</code></pre>
 <p>Concepts: multiple affectation, modifying a variable, while loop, indentation for blocks,</p>
-<h2 id="types"><a href="#types">types</a></h2>
+<h2 id="types"><a href="#types">Types</a></h2>
 <h3 id="section"><a href="#section"></a></h3>
 <p>Do the following in interactive mode (ipython):</p>
 <pre><code>type(10)
@@ -164,7 +209,6 @@ y</code></pre>
         guess = <span class="dt">raw_input</span>(<span class="st">&quot;Your guess? &quot;</span>)
 
     <span class="dt">print</span>(<span class="st">&quot;You win! The number was indeed &quot;</span> + target)</code></pre>
-<p>Exercice (depeing</p>
 </div>
 <div id="programs-a.k.a-scripts" class="slide section level1">
 <h1><a href="#programs-a.k.a-scripts">Programs (a.k.a scripts)</a></h1>

@@ -6,33 +6,49 @@
 
 You can use Python in two ways:
 
-1. **Interactively**, e.g. by launching `ipython` in a terminal, and typing python commands that are *interpreted* and *executed* when you press 'Enter'. 
+* **Interactively**, e.g. by launching `ipython` in a terminal, and typing python commands that are *interpreted* and *executed* when you press 'Enter'. 
 
-* Open a terminal and start ipython
-* Type the following lines 
+1. Open a command line window (a.k.a. Terminal):
+    - Ubuntu-Linux: Ctrl-Alt-T <https://help.ubuntu.com/community/UsingTheTerminal>
+    - MacOSX: <http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac>,
+    - Windows: <http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>
 
-    import turtle 
-    turtle.circle(50)
-    turtle;forward(100)
-    turtle.circle(50)
+2. Type `ipython` on the command-line and press `Enter`:
+
+------------------------------ ------------------------------
+![](img/ipython_terminal1.png) ![](img/ipython_terminal2.png)
+------------------------------ ------------------------------
+
+
+3. You are now talking to ipython. Enter the following commands:
+
+```python
+	import turtle 
+	turtle.circle(50)
+	turtle;forward(100)
+	turtle.circle(50)
 	
 	turtle.right(90)
 	turtle.forward(100)
 	turtle.right(90)
 	turtle.heading()
-
+```
 
 . . .
 
-This is ok if you need to quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the **Edit-run** approach
+This way of using Python is fine if you need to quickly test an idea. But as soon as you quit `ipython` (by pressing `Ctrl-D`), you lose all traces of what you have done. To avoid that, you want to use the **Edit-run** approach
 
 # Using a editor (Edit-run cycle)
 
-Using a **text editor**, e.g. *atom*, you write a program, that is, a series of commands ;
+Using a **text editor**, e.g. *atom*, you write a python script, that is, a series of commands, that you save in a file; then you gie this file to interpret to Python. Here is how:
 
-* start Atom
-* Type the following lines
+1. Open a Text-Editor (e.g. Atom)  and a Terminal window side-by-side:
 
+![](img/editor-terminal.png)
+
+2. Create a `New File` in the Editor and enter the following text:
+
+```python
 	import turtle
     turtle.circle(50)
 	turtle.forward(50)
@@ -41,15 +57,21 @@ Using a **text editor**, e.g. *atom*, you write a program, that is, a series of 
 	turtle.left(120)
 	turtle.forward(100)
 	turtle.left(120)
-   	turtle.forward(50)
+	turtle.forward(50)
+```
 
 
-* save the buffer under the filename `myscript.py`
-* *run* with a python interpreter, for example by typing `python myprogram.py` on a command line (or `%run myprogram.py` in ipython).
+3. Using 'File/Save as',  save the this text under the filename `myscript.py` in your personal (home) directory 
+* *run* with a python interpreter, by typing `python myscript.py` on a command line of the Terminal. Try it now.
+
+Important: you must make sure that the current working direcoty of the terminal is the same directory where the file myscript.py has been saved. Otherwise, you will get an error message such as 'No such file or directory'. To fix this problem, you must use the 'cd' command to navigate the directory structure.
 
 
-Remark:
+
+Remarks:
+
 * You can learn more about Turtle graphics by reading the documentation at <https://docs.python.org/2/library/turtle.html>
+
 * there exist a third approach which combines interactivity and persistence --- the `ipython notebook`. Like Mathematica, handy for numerical processing. 
 
 # First programs
@@ -57,7 +79,7 @@ Remark:
 ### Warming up
 
 
-Create a script `hello.py`, and run it:
+Create a script `hello.py` in the editor, save it and run it on the command-line:
 
 	name = raw_input('What is your name?')
 	print('Hello ' + name + '!')
@@ -78,7 +100,7 @@ Concepts: string constant, variable (name), affectation, string concatenation wi
 Concepts: multiple affectation, modifying a variable, while loop, indentation for blocks,
 
 
-## types
+## Types
 
 ### 
 
@@ -199,7 +221,6 @@ Type this program in a text editor, save it as a Python script (with extension .
     print("You win! The number was indeed " + target)
 ```
 
-Exercice (depeing 
 
 
 # Programs (a.k.a scripts)
