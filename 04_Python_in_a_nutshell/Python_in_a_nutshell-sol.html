@@ -29,10 +29,8 @@ code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
@@ -42,23 +40,135 @@ code > span.er { color: #ff0000; font-weight: bold; }
 Christophe Pallier
   </p>
 </div>
-<div class="slide section level1">
-
-<p>Remember, that you can use Python in two ways:</p>
+<div id="using-python-interactively" class="slide section level1">
+<h1><a href="#using-python-interactively">Using Python interactively</a></h1>
+<p>You can use Python in two ways:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Interactively</strong>, e.g. by launching <code>ipython</code> in a terminal, and typing python commands that are <em>interpreted</em> and <em>executed</em> when you press ‘Enter’.</li>
 </ol>
-<p>This is good if you quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the second approach:</p>
+<ul>
+<li>Open a terminal and start ipython</li>
+<li><p>Type the following lines</p>
+<p>import turtle turtle.circle(50) turtle;forward(100) turtle.circle(50)</p>
+<p>turtle.right(90) turtle.forward(100) turtle.right(90) turtle.heading()</p></li>
+</ul>
 <div class="incremental">
-<ol start="2" style="list-style-type: decimal">
-<li>Using an <strong>Edit-Run</strong> cycle: using a <em>text editor</em>, you write a program, that is, a series of commands ; then you save it, say with the filename <code>myscript.py, and you *run* with a python interpreter, for example by typing</code>python myprogram.py` on a command line.</li>
-</ol>
+<p>This is ok if you need to quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the <strong>Edit-run</strong> approach</p>
+</div>
+</div>
+<div id="using-a-editor-edit-run-cycle" class="slide section level1">
+<h1><a href="#using-a-editor-edit-run-cycle">Using a editor (Edit-run cycle)</a></h1>
+<p>Using a <strong>text editor</strong>, e.g. <em>atom</em>, you write a program, that is, a series of commands ;</p>
+<ul>
+<li>start Atom</li>
+<li><p>Type the following lines</p>
+<p>import turtle turtle.circle(50) turtle.forward(50) turtle.left(120) turtle.forward(100) turtle.left(120) turtle.forward(100) turtle.left(120) turtle.forward(50)</p></li>
+<li>save the buffer under the filename <code>myscript.py</code></li>
+<li><p><em>run</em> with a python interpreter, for example by typing <code>python myprogram.py</code> on a command line (or <code>%run myprogram.py</code> in ipython).</p></li>
+</ul>
+<p>Remark: * You can learn more about Turtle graphics by reading the documentation at <a href="https://docs.python.org/2/library/turtle.html">https://docs.python.org/2/library/turtle.html</a> * there exist a third approach which combines interactivity and persistence — the <code>ipython notebook</code>. Like Mathematica, handy for numerical processing.</p>
+</div>
+<div id="first-programs" class="slide section level1">
+<h1><a href="#first-programs">First programs</a></h1>
+<h3 id="warming-up"><a href="#warming-up">Warming up</a></h3>
+<p>Create a script <code>hello.py</code>, and run it:</p>
+<pre><code>name = raw_input(&#39;What is your name?&#39;)
+print(&#39;Hello &#39; + name + &#39;!&#39;)</code></pre>
+<p>Concepts: string constant, variable (name), affectation, string concatenation with ‘+’</p>
+<p>. . .</p>
+<pre><code># multiplication by successive addition
+a, b = 10, 5
+sum = 0
+while (a &gt; 0):
+    sum = sum + b
+    a = a - 1
+print(sum)</code></pre>
+<p>Concepts: multiple affectation, modifying a variable, while loop, indentation for blocks,</p>
+<h2 id="types"><a href="#types">types</a></h2>
+<h3 id="section"><a href="#section"></a></h3>
+<p>Do the following in interactive mode (ipython):</p>
+<pre><code>type(10)
+type(10.5)
+type(&#39;bonjour&#39;)
+
+a = 20
+type(a)</code></pre>
+<p>Concept: types</p>
+<pre><code>print(10 + 5)
+print(&quot;10&quot; + &quot;5&quot;)
+print(&quot;10&quot; + 5)</code></pre>
+<p>10 is an integer, 10.0 is a float, “10” is a string. It is possible to convert from one type to another:</p>
+<pre><code>print(&#39;Il y a &#39; + str(10) + &#39; ans...&#39;)
+print(int(&quot;10&quot;))</code></pre>
+<p>. . .</p>
+<pre><code>num = raw_input(&#39;entrez en nombre&#39;)
+print(num)</code></pre>
+<p>Question: <code>num</code> est-il un nombre ou une chaîne de caractères?</p>
+<p>Exercices: faire les exercices 2.3 et 2.4 de <em>How to think like a computer scientist?</em></p>
+</div>
+<div id="complex-types-lists-dictionnaries" class="slide section level1">
+<h1><a href="#complex-types-lists-dictionnaries">Complex types (lists, dictionnaries):</a></h1>
+<pre><code>type([1, 2, 3])
+type([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])</code></pre>
+<div class="incremental">
+<pre><code>seq1 = [&#39;jean&#39;, &#39;marie&#39;, &#39;paul&#39;]
+seq1[0]
+seq1[1]
+seq1[2]</code></pre>
 </div>
 <div class="incremental">
-<ol start="3" style="list-style-type: decimal">
-<li>Although a very nice third approach which combines interactivity and persistence — the <code>ipython notebook</code> — exists, we believe that students must first learn the second approach (Edit-Run).</li>
-</ol>
+<pre><code>dico = {&#39;windows&#39;:0, &#39;macos&#39;:0, &#39;linux&#39;:1}
+type(dico)
+dico[&#39;windows&#39;]
+dico[&#39;macos&#39;]
+dico[&#39;linux&#39;]</code></pre>
+<h2 id="for-loops"><a href="#for-loops">for Loops</a></h2>
+<pre><code>for x in [1, 2, 3, 4]:
+    print(x*x + 2*x + 1)</code></pre>
+<p>Concept: for loop</p>
+<p>. . .</p>
+<pre><code>numbers = [1, 2, 5, 10]
+y = [(x*x + 2*x + 1) for x in numbers]
+y</code></pre>
+<p>concept: lists (or sequences)</p>
+<p>See <a href="http://effbot.org/zone/python-list.htm">http://effbot.org/zone/python-list.htm</a></p>
+<p>. . .</p>
+<pre><code>for _ in range(100):
+    print(&#39;All work and no play makes Jack a dull boy&#39;)</code></pre>
+<p>Concepts: range to generate a list of numbers, ‘for’ loop, indentation of instuction block</p>
+<p>. . .</p>
+<pre><code>for name in (&#39;Jack&#39;, &#39;John&#39;, &#39;Tim&#39;):
+    for _ in range(10):
+        print(&#39;All work and no play makes &#39; + name + &#39; a dull boy!&#39;)</code></pre>
+<p>Concepts: list of strings, double imbrication</p>
+<p>Exercice: write a program that computes the sum of the first n integers (1+2+…+n)</p>
+<pre><code>n = 100
+for i in range(1, n+1)
+    sum = sum + i
+print(sum)</code></pre>
 </div>
+</div>
+<div id="guess-a-number" class="slide section level1">
+<h1><a href="#guess-a-number">Guess a number</a></h1>
+<p>Type this program in a text editor, save it as a Python script (with extension .py) and run it.</p>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="co"># guess a number </span>
+    <span class="ch">import</span> random
+
+    target = random.randint(<span class="dv">1</span>, <span class="dv">100</span>)
+
+    <span class="dt">print</span>(<span class="st">&quot;I am thinking about a number between 1 and 100&quot;</span>)
+
+    guess = <span class="dt">raw_input</span>(<span class="st">&quot;Your guess? &quot;</span>)
+
+    <span class="kw">while</span> guess != target:
+        <span class="kw">if</span> guess &lt; target:
+            <span class="dt">print</span>(<span class="st">&quot;Too low!&quot;</span>)
+        <span class="kw">else</span>:
+            <span class="dt">print</span>(<span class="st">&quot;Tow high!&quot;</span>)
+        guess = <span class="dt">raw_input</span>(<span class="st">&quot;Your guess? &quot;</span>)
+
+    <span class="dt">print</span>(<span class="st">&quot;You win! The number was indeed &quot;</span> + target)</code></pre>
+<p>Exercice (depeing</p>
 </div>
 <div id="programs-a.k.a-scripts" class="slide section level1">
 <h1><a href="#programs-a.k.a-scripts">Programs (a.k.a scripts)</a></h1>
@@ -71,7 +181,7 @@ Christophe Pallier
 <li>Testing and branching instructions</li>
 </ul></li>
 </ul>
-<p>Note that Python scripts also often contain sections of module importation and function definitions</p>
+<p>Note that Python scripts also often contain sections of module importation and function definitions (to be explained later)</p>
 </div>
 <div class="slide section level1">
 
@@ -83,8 +193,8 @@ circle(<span class="dv">50</span>)
 forward(<span class="dv">100</span>)
 circle(<span class="dv">50</span>)</code></pre>
 <p>The arguments of functions can be constants, variables, other function calls.</p>
-<pre class="sourceCode python"><code class="sourceCode python">myvar = <span class="dv">34</span>
-<span class="dt">print</span>(<span class="dv">34</span>)
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">34</span>)
+myvar = <span class="dv">36</span>
 <span class="dt">print</span>(myvar)
 <span class="dt">print</span>(math.sin(myvar))</code></pre>
 </div>
@@ -120,13 +230,6 @@ a[<span class="dv">0</span>] = <span class="dv">10</span>
 <span class="kw">while</span> n &lt; <span class="dv">10</span>:
       n = n + <span class="dv">1</span>
 <span class="dt">print</span> n</code></pre>
-</div>
-<div class="slide section level1">
-
-<h2 id="objects"><a href="#objects">Objects</a></h2>
-<ul>
-<li>Useful programs typically manipulates objects, e.g. to extract some information, transform it and modify the world.</li>
-</ul>
 </div>
 </body>
 </html>

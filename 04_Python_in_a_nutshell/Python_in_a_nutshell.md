@@ -26,7 +26,7 @@ You can use Python in two ways:
 
 This is ok if you need to quickly test an idea. But as soon as you quit ipython, you lose all traces of what you have done. To avoid that, you want to use the **Edit-run** approach
 
-# Edit-run cycle
+# Using a editor (Edit-run cycle)
 
 Using a **text editor**, e.g. *atom*, you write a program, that is, a series of commands ;
 
@@ -78,32 +78,9 @@ Concepts: string constant, variable (name), affectation, string concatenation wi
 Concepts: multiple affectation, modifying a variable, while loop, indentation for blocks,
 
 
-. . .
-
-    # guess a number 
-	import random
-
-	target = random.randint(1, 100)
-
-	print("I am thinking about a number between 1 and 100")
-
-	guess = raw_input("Your guess? ")
-
-	while guess != target:
-        if guess < target:
-            print("Too low!")
-        else:
-            print("Tow high!")
-        guess = raw_input("Your guess? ")
-
-    print("You win! The number was indeed " + target)
-
-
-Type this program in a text editor, save it as a python script (with extension .py) and run it.
-
-
-
 ## types
+
+### 
 
 Do the following in interactive mode (ipython):
 
@@ -124,17 +101,39 @@ Concept: types
 
 	print('Il y a ' + str(10) + ' ans...')
 	print(int("10"))
-	
 
-Complex types (lists, dictionnaries):
+. . .
+
+	num = raw_input('entrez en nombre')
+	print(num)
+
+Question: `num` est-il un nombre ou une chaîne de caractères?
+
+
+Exercices: faire les exercices 2.3 et 2.4 de _How to think like a computer scientist?_
+
+
+# Complex types (lists, dictionnaries):
 
 	type([1, 2, 3])
 	type(['a', 'b', 'c'])
-	type({'alpha':1, 'beta':2})
-
-
 
 . . .
+
+	seq1 = ['jean', 'marie', 'paul']
+	seq1[0]
+	seq1[1]
+	seq1[2]
+
+. . .
+
+    dico = {'windows':0, 'macos':0, 'linux':1}
+	type(dico)
+    dico['windows']
+    dico['macos']
+    dico['linux']
+	
+## for Loops
 
 	for x in [1, 2, 3, 4]:
 		print(x*x + 2*x + 1)
@@ -152,9 +151,6 @@ concept: lists (or sequences)
 See <http://effbot.org/zone/python-list.htm>
 
 
-
-
-
 . . .
 
 	for _ in range(100):
@@ -170,20 +166,43 @@ Concepts: range to generate a list of numbers, 'for' loop, indentation of instuc
 
 Concepts: list of strings, double imbrication
 
+Exercice: write a program that computes the sum of the first n integers (1+2+...+n) 
 
-
-
-. . .
-
-
-	first100 = range(1, 101)
-	for n in first100:
-		sum = sum + n
+#ifdef ANSWERS
+	n = 100
+	for i in range(1, n+1)
+		sum = sum + i
 	print(sum)
+#endif
+
+# Guess a number
+
+Type this program in a text editor, save it as a Python script (with extension .py) and run it.
+
+```python
+    # guess a number 
+	import random
+
+	target = random.randint(1, 100)
+
+	print("I am thinking about a number between 1 and 100")
+
+	guess = raw_input("Your guess? ")
+
+	while guess != target:
+        if guess < target:
+            print("Too low!")
+        else:
+            print("Tow high!")
+        guess = raw_input("Your guess? ")
+
+    print("You win! The number was indeed " + target)
+```
+
+Exercice (depeing 
 
 
-Programs (a.k.a scripts)
-========================
+# Programs (a.k.a scripts)
 
 * A program typically consists in  a series of  *instructions* (aka *commands*).
 * The main types of instructions are:
@@ -248,8 +267,6 @@ print a, b, c
 ```
 
 
-
-
 ----------------------
 
 ### Testing and branching
@@ -268,16 +285,6 @@ while n < 10:
       n = n + 1
 print n
 ```
-
-
----------------------------
-
-Objects
--------
-
-* Useful programs typically manipulates objects, e.g. to extract some information, transform it and modify the world.
-
----------------------------
 
 
 

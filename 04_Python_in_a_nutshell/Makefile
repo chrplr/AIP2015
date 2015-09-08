@@ -1,26 +1,34 @@
-#! /bin/bash
-# Time-stamp: <2015-08-24 18:27 christophe@pallier.org>
+# Time-stamp: <2015-09-08 10:16 christophe@pallier.org>
 
-PANDOC_OPTS := --standalone -S --toc --chapters -t slidy -c css/slidy.css
+PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css
 
 INPUT_MDS := $(wildcard *.md)
 
 OUTPUT_HTML = $(INPUT_MDS:.md=-sol.html) $(INPUT_MDS:.md=-nosol.html)
 
-.PHONY: all html clean
+OUTPUT_PDF = $(INPUT_MDS:.md=-sol.pdf) $(INPUT_MDS:.md=-nosol.pdf)
 
-all: html
+.PHONY: all html clean pdf
 
-%-sol.md: %.md
-	gpp  $< > $@
+all: html pdf
 
 %-nosol.md: %.md
+	gpp  $< > $@
+
+%-sol.md: %.md
 	gpp -D ANSWERS=1 $< > $@
 
 html: $(OUTPUT_HTML)
 
+
 %.html: %.md
 	pandoc $(PANDOC_OPTS) $< -o $@
 
+pdf: $(OUTPUT_PDF)
+
+%.pdf: %.md
+	pandoc $< -o $@
+
+
 clean:
-	@rm -f $(OUTPUT_HTML)
+	@rm -f $(OUTPUT_HTML) $(OUTPUT_PDF)

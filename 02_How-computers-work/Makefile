@@ -1,40 +1,34 @@
-#
-# Makefile for creating HTML.
-#
-# Pandoc is used for the conversion. Thanks to Olivier Couet for the Markdown
-# ROOT documentation generation scripts.
-#
+# Time-stamp: <2015-09-08 10:16 christophe@pallier.org>
 
-PANDOC_OPTS := --standalone -S --toc --chapters -t slidy -c css/slidy.css
-PANDOC_OPTS_INDEX := --standalone -S -t slidy -c css/slidy.css
+PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css
 
-INPUT_MDS := how-computers-work.md
+INPUT_MDS := $(wildcard *.md)
 
-INDEX_MD := index.md
-INDEX_HTML := index.html
+OUTPUT_HTML = $(INPUT_MDS:.md=-sol.html) $(INPUT_MDS:.md=-nosol.html)
 
-OUTPUT_HTML = $(INPUT_MDS:.md=.html)
+OUTPUT_PDF = $(INPUT_MDS:.md=-sol.pdf) $(INPUT_MDS:.md=-nosol.pdf)
 
-.PHONY: all html clean
+.PHONY: all html clean pdf
 
-all: html
+all: html pdf
 
-html: idx $(OUTPUT_HTML)
+%-nosol.md: %.md
+	gpp  $< > $@
 
-idx:
-	@echo Generating HTML index
-	@(echo "Index" > $(INDEX_MD) ; \
-	  echo "=====" >> $(INDEX_MD) ; \
-	  echo "" >> $(INDEX_MD) ; \
-	  for Md in $(INPUT_MDS) ; do \
-	    echo "1. [$$(head -n1 $$Md)]($${Md%.*}.html)" ; \
-	  done >> $(INDEX_MD) )
-	@pandoc $(PANDOC_OPTS_INDEX) $(INDEX_MD) -o $(INDEX_HTML)
+%-sol.md: %.md
+	gpp -D ANSWERS=1 $< > $@
+
+html: $(OUTPUT_HTML)
+
 
 %.html: %.md
-	@echo Generating HTML: $@
 	pandoc $(PANDOC_OPTS) $< -o $@
 
+pdf: $(OUTPUT_PDF)
+
+%.pdf: %.md
+	pandoc $< -o $@
+
+
 clean:
-	@echo Cleaning up
-	@rm -f $(OUTPUT_HTML) $(INDEX_MD) $(INDEX_HTML)
+	@rm -f $(OUTPUT_HTML) $(OUTPUT_PDF)
