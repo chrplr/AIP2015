@@ -10,10 +10,8 @@
   <title>How computers work</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
@@ -59,7 +57,7 @@ christophe@pallier.org
 <p>At a abstract level, an automaton can be formally described by: - a set of internal <strong>states</strong> - a <strong>transition</strong> table that describes the <strong>events</strong> that lead to changes from state to state</p>
 <h3 id="change-counter-in-a-vending-machine"><a href="#change-counter-in-a-vending-machine">Change counter in a vending machine</a></h3>
 <div class="figure">
-<img src="images/coin-counter.svg" />
+<img src="images/coin-counter.png" />
 </div>
 </div>
 <div class="slide section level1">
@@ -85,7 +83,7 @@ christophe@pallier.org
 
 <h2 id="pattern-recognition"><a href="#pattern-recognition">Pattern recognition</a></h2>
 <div class="figure">
-<img src="images/fsa1.gif" alt="Haha!" /><p class="caption">Haha!</p>
+<img src="images/fsa1.png" alt="Haha!" /><p class="caption">Haha!</p>
 </div>
 <p>(a very useful tool in Computer Science are <em>regular expressions</em>, a way to describe patterns and find them in data)</p>
 <h2 id="capturing-the-grammar-of-english-language"><a href="#capturing-the-grammar-of-english-language">Capturing the Grammar of English language</a></h2>
@@ -117,10 +115,9 @@ christophe@pallier.org
 <p><strong>Church–Turing thesis</strong> : a function on the natural numbers is computable in an informal sense (i.e., computable by a human being using a pencil-and-paper method, ignoring resource limitations) if and only if it is computable by a Turing machine.</p>
 <p>For more information about Turing machines, see <a href="https://en.wikipedia.org/wiki/Turing_machine">https://en.wikipedia.org/wiki/Turing_machine</a></p>
 </div>
-<div class="slide section level1">
-
-<h3 id="register-machines"><a href="#register-machines">Register machines</a></h3>
-<p>Register machine is another ‘yoy’ computing model that is closer to actual computers.</p>
+<div id="register-machines" class="slide section level1">
+<h1><a href="#register-machines">Register machines</a></h1>
+<p>A register machine is another computing model that is closer to actual computers.</p>
 <p><em>The seven secrets of computer power revealed</em> (Chapter 24 from Daniel Dennett (1023) <em>Intuition Pumps and other tools for thinking</em>)</p>
 <p>(an older version is available at <a href="http://sites.tufts.edu/rodrego/files/2011/03/Secrets-of-Computer-Power-Revealed-2008.pdf">http://sites.tufts.edu/rodrego/files/2011/03/Secrets-of-Computer-Power-Revealed-2008.pdf</a>)</p>
 <p>(Online Demo at <a href="http://proto.atech.tufts.edu/RodRego/">http://proto.atech.tufts.edu/RodRego/</a></p>
@@ -172,19 +169,21 @@ christophe@pallier.org
 13 END</code></pre>
 <p>. . .</p>
 <p>Note that <em>conditional branching</em> is the key instruction that gives the power to the machine. Depending on the content of memory, the machine can do either (a) or (b).</p>
-<h2 id="secrets"><a href="#secrets">Secrets:</a></h2>
+</div>
+<div id="the-7-secrets-of-computers-revealed" class="slide section level1">
+<h1><a href="#the-7-secrets-of-computers-revealed">The 7 secrets of computers revealed</a></h1>
 <ol style="list-style-type: decimal">
 <li><p>Competence without comprehension. A machine can do perfect arithmetic without having to comprehend what it is doing.</p></li>
 <li><p>What a number in a register stands for depends on the program</p></li>
 <li><p>The register machine can be designed to discriminate any pattern that can be encoded with numbers (e.g. images, text, sensory inputs,…)</p></li>
 <li><p>Programs can be encoded by numbers.</p></li>
 <li><p>All programs can be given a unique number which can be treated as a list of instructions by a Universal Machine.</p></li>
+<li><p>all improvements in computers over Turing machine (or Register machine), are simply ways of making them faster</p></li>
+<li><p>There is no secret #7</p></li>
 </ol>
-<p>6 all improvements in computers over Turing machine (or Register machine), are simply ways of making them faster</p>
-<ol start="7" style="list-style-type: decimal">
-<li>There is no secret #7</li>
-</ol>
-<h2 id="programs"><a href="#programs">Programs</a></h2>
+</div>
+<div id="programs" class="slide section level1">
+<h1><a href="#programs">Programs</a></h1>
 <ul>
 <li>The first computers were not programmable. They were hardwired!</li>
 </ul>
@@ -207,8 +206,8 @@ christophe@pallier.org
 <img src="images/interpret-compile.png" />
 </div>
 </div>
-<div id="operating-system" class="slide section level1">
-<h1><a href="#operating-system">Operating system</a></h1>
+<div id="operating-systems" class="slide section level1">
+<h1><a href="#operating-systems">Operating systems</a></h1>
 <p>In the first computers, there was only <strong>one</strong> program running. Yo would load the program into memory, then run it until the end. Programs were ran in BATCH mode, in a sequence.</p>
 <p>Then, it was realized that computers could ‘time-share’ between programs, allowing several users (or programs) to share the computer.</p>
 <p>This requires an operating systems (O.S.). The O.S. is the first program that loads into the computer during the boot. When running:</p>

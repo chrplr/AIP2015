@@ -1,6 +1,6 @@
 % How computers work
 % christophe@pallier.org
-% Sep. 2013
+% Sep. 2015
 
 
 # Automaton
@@ -38,7 +38,7 @@ At a abstract level, an automaton can be formally described by:
 
 ### Change counter in a vending machine
 
-![](images/coin-counter.svg) 
+![](images/coin-counter.png) 
 
 ---------------
 
@@ -63,7 +63,7 @@ From Berwick et al., 2011 _Trends in Cognitive Sciences_ 15, 3: 113–21
 
 ## Pattern recognition
 
-![Haha!](images/fsa1.gif)
+![Haha!](images/fsa1.png)
 
 (a very useful tool in Computer Science are  _regular expressions_, a way to describe patterns and find them in data)
 
@@ -115,14 +115,9 @@ For more information about Turing machines, see <https://en.wikipedia.org/wiki/T
 
 
 
+# Register machines
 
-
-
------------
-
-### Register machines
-
-Register machine is another 'yoy' computing model that is closer to actual computers. 
+A register machine is another computing model that is closer to actual computers. 
 
  _The seven secrets of computer power revealed_ (Chapter 24 from
 Daniel Dennett (1023) _Intuition Pumps and other tools for thinking_)
@@ -202,7 +197,7 @@ The following program copies the content of reg1 into reg3, leaving reg1 unchang
 
 Note that _conditional branching_ is the key instruction that gives the power to the machine. Depending on the content of memory, the machine can do either (a) or (b). 
 
-## Secrets:
+# The 7 secrets of computers revealed
 
 1. Competence without comprehension. A machine can do perfect arithmetic without having to comprehend what it is doing.
 
@@ -214,13 +209,16 @@ Note that _conditional branching_ is the key instruction that gives the power to
 
 5. All programs can be given a unique number which can be treated as a list of instructions by a Universal Machine.
 
-6 all improvements in computers over Turing machine (or Register machine), are simply ways of making them faster
+6. all improvements in computers over Turing machine (or Register machine), are simply ways of making them faster
 
 7. There is no secret #7
 
-## Programs
+# Programs
 
 * The first computers were not programmable. They were hardwired! 
+
+![](images/oldtimes.jpg)
+
 * Programmable computer: 
     - a program is a set of instructions stored in memory.
     - Loaded and executed by a processor. 
@@ -237,13 +235,17 @@ A **compiler** translates the program into an executable file in machine languag
 
 An **interpreter** reads the file and execute the commands one by one. It is slower, but easier to interact with. Disatvange: you need the interpreter at all time.
 
+![](images/interpret-compile.png)
 
-* * * * *
 
 
-# Operating system
+# Operating systems
 
-An O.S. is the first program that loads into the computer during the boot. When running:
+In the first computers, there was only **one** program running. Yo would load the program into memory, then run it until the end. Programs were ran in BATCH mode, in a sequence.
+
+Then, it was realized that computers could 'time-share' between programs, allowing several users (or programs) to share the computer.
+
+This requires an operating systems (O.S.). The O.S. is the first program that loads into the computer during the boot. When running:
 
 * it controls the hardware (screen/printer/disk/keybord/mouse,...) (drivers) 
 
@@ -270,9 +272,9 @@ Several OS can be installed in a given machine:
 
 # What is a Terminal?
 
------------------------- -----------------------
-![](images/terminal.jpg) ![](images/minitel.jpg)
------------------------- -----------------------
+---------------------------  -----------------------
+![](images/terminal512.jpg)  ![](images/minitel.jpg)
+---------------------------  -----------------------
 
 **Terminal** (or **console**):  originaly, a device comprising a keyboard and screen, allowing a human to *interact* with a computer. 
 
@@ -280,9 +282,11 @@ Notes:
 
 - early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).
 
+![](images/PunchedCard.jpg)
+
 - in the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.
 
-![](images/terminals.jpg)
+![](images/terminals.jpeg)
 
 With the advent of _Personal Computers_, the terminal and the computer became a single apparatus.
 
@@ -338,9 +342,9 @@ So to locate a file, you must know
 
 Absolute pathnames vs. relative pathnames (..)
 
- **working directory** A running program has a. Filenames can be relative to this directory.
+ **working directory** A running program has a working directory. Filenames can be relative to this directory.
 
-Open python
+In Python:
 
 	import os
 	os.getcwd()

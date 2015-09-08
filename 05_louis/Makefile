@@ -1,5 +1,5 @@
 #! /bin/bash
-# Time-stamp: <2015-08-24 18:27 christophe@pallier.org>
+# Time-stamp: <2015-09-05 09:58 christophe@pallier.org>
 
 PANDOC_OPTS := --standalone -S --toc --chapters -t slidy -c css/slidy.css
 
@@ -11,10 +11,10 @@ OUTPUT_HTML = $(INPUT_MDS:.md=-sol.html) $(INPUT_MDS:.md=-nosol.html)
 
 all: html
 
-%-sol.md: %.md
+%-nosol.md: %.md
 	gpp  $< > $@
 
-%-nosol.md: %.md
+%-sol.md: %.md
 	gpp -D ANSWERS=1 $< > $@
 
 html: $(OUTPUT_HTML)
