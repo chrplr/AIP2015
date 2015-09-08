@@ -1,6 +1,6 @@
 % How computers work
 % christophe@pallier.org
-% Sep. 2013
+% Sep. 2015
 
 
 # Automaton
