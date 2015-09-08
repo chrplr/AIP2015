@@ -9,8 +9,7 @@ mandatory courses of the Cogmaster.
 
 You migh skip the `Atom` install if and only if you are already used to an advanced
 text editor as wim, emacs, sublimetext. Microsoft Office Word, LibreOffice and
-other document formatting software are
-**not** text editors.
+other document formatting softwares are **not** text editors.
 
 Important notes
 ---------------
@@ -29,7 +28,7 @@ Installation procedures are currently being tested on Windows (7 64bits), MacOS
 Some installations will require an internet access, thus don't forget to
 bring your login and password for the ENS wifi on wednesday morning.
 
-Installation procedures will be put online on Tuesday. Links will be provided to download the installation files from the internet. Try much as possible to downloaded on your computer Tuesday evening: it will save us some time on Wednesday morning because the network at the ENS is usually slow and we will have only few USB sticks with the softwares.
+Installation procedures will be put online on Tuesday. Links will be provided to download the installation files from the internet. Try much as possible to download the software installers on your computer Tuesday evening: it will save us some time on Wednesday morning because the network at the ENS is usually slow and we will have only few USB sticks with the software installers.
 
 If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.
 
@@ -39,14 +38,9 @@ First, read the installation instruction for your operating system:
 [Mac OS](#mac-os)  
 [Windows](#windows)
 
-Follow carefully the instructions. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.
+Follow carefully the instructions **step by step, not skipping any**. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.
 
 Once the installation on your computer completed, you can browse the documents in [the ressource folder](../resources/)
-
-Status
------
-01:45  
-Everything is ready for tomorrow morning
 
 __________________________________________________
 
@@ -128,6 +122,24 @@ __________________________________________________
  * [ ] use default Destination folder and click on `Next`
  * [ ] check that both "Add Anaconda to my PATH" and "Register Anaconda as my default Python 2.7" are ckecked and click on `Install`
  * [ ] upon completion, click on 'Next', then `Finish`
+
+ 5. Test
+ * [ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command to find the application using its name.
+ * [ ] click on `All the programs` and then the `Anaconda (64-bit)` folder, what you are looking for is the `IPython (Py 2.7)` entry. Click there (and not the `IPython (Py 2.7) Notebook` nor the `IPython (Py 2.7) QTConsole`).
+ * [ ] this launches a window that understands only commands in the python language
+ * [ ] in just after the `$` sign, type each of those lines one by one followed by a stroke on the `enter` key
+
+     ```
+     import numpy as np
+     import matplotlib.pyplot as plt
+     from scipy import stats
+     x=np.arange(-5,5,.1)
+     y=stats.norm.pdf(x)
+     plt.plot(x,y)
+     plt.show()
+     ```
+ * [ ] close the window with the graph
+ * [ ] close the ipython shell by typing `quit()` or the keyboard shortcut `ctrl + D`
 
 3. Configuration
 
@@ -324,8 +336,9 @@ __________________________________________________
     plt.plot(x,y)
     plt.show()
     ```
-
-  * [ ] Type
+ * [ ] close the window with the graph
+ * [ ] close the ipython shell by typing `quit()` or the keyboard shortcut `ctrl + D`
+ * [ ] you are now back to the command line in the Terminal application.
 
 0. **Warning** Now the Mac python install procedure starts to be tricky, if you don't feel confident with typing commands in a terminal, of if you'd like to sleep, stop rigth now, we will carry on tomorrow morning.  
 Otherwise, stay up for some more fun with the terminal!
@@ -434,9 +447,20 @@ Execute the following commands:
     plt.show()
     ```
 
- * [ ] the you can try to type in a terminal
+ * [ ] exit the ipython shell by typing `quit()` or the keyboard shortcut `ctrl + D`
+
+ * [ ] then you are back to the terminal shell where you can install pygame
+     ```
+     sudo apt-get install python-pygame
+     ```
+
+ * [ ] then test that pygame runs smoothly
      ```
      python /usr/share/pyshared/pygame/examples/chimp.py
+     ```
+     or
+     ```
+     python /usr/lib/python2.7/dist-packages/pygame/examples/chimp.py
      ```
 
 3. If you want a look a the documentation you installed, use your favorite browser  
@@ -457,7 +481,7 @@ Execute the following commands:
 ### Scratch
 1. Installation: in a terminal, type
 ```
-sudo apt-get install scratch`
+sudo apt-get install scratch
 ```
 2. Test : in the terminal of a graphic console, type
 ```
@@ -503,6 +527,7 @@ You should see a new window, where you should be able to grab and move the littl
     ```
     sudo apt-get install r-base r-base-core r-base-html
     ```
+
  * [ ] and, for Rstudio, replacing the XX by the version numbers
     ```
     sudo apt-get install libjpeg62
