@@ -44,7 +44,9 @@ This site will be updated during the course. To facilitate updating your local c
     git clone https://github.com/chrplr/AIP2015
 ```
 
-3. When you will need to update your local copy to the most recent version available on the github server, open a terminal, go to the AIP2015 folder, and type the command:
+The list of html and pdf files available in all sudirectories is in [index.html](index.html)
+
+3. When you need to update your local copy to the most recent version available on the github server, open a terminal, go to your local AIP2015 folder and type the command:
 
 ```
     git pull

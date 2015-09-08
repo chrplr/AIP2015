@@ -9,9 +9,9 @@ You can use Python in two ways:
 * **Interactively**, e.g. by launching `ipython` in a terminal, and typing python commands that are *interpreted* and *executed* when you press 'Enter'. 
 
 1. Open a command line window (a.k.a. Terminal):
-    - Ubuntu-Linux: Ctrl-Alt-T <https://help.ubuntu.com/community/UsingTheTerminal>
-    - MacOSX: <http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac>,
-    - Windows: <http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>
+    - Ubuntu-Linux: Ctrl-Alt-T (see <https://help.ubuntu.com/community/UsingTheTerminal>)
+    - MacOSX: Open Finder/Applications/Utilities/Terminal (see <http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac>)
+    - Windows: Win+X+Command-Prompt (see <http://pcsupport.about.com/od/commandlinereference/f/open-command-prompt.htm>)
 
 2. Type `ipython` on the command-line and press `Enter`:
 
@@ -20,7 +20,7 @@ You can use Python in two ways:
 ------------------------------ ------------------------------
 
 
-3. You are now talking to ipython. Enter the following commands:
+3. When you terminal looks like the one of the right, you are  "talking" to ipython. Enter the following commands:
 
 ```python
 	import turtle 
