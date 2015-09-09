@@ -33,7 +33,7 @@ Installation procedures will be put online on Tuesday. Links will be provided to
 If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.
 
 
-First, read the installation instruction for your operating system:  
+Select the installation instructions for your operating system:  
 [Linux](#linux-debian-based)  
 [Mac OS](#mac-os)  
 [Windows](#windows)
@@ -421,23 +421,28 @@ __________________________________________________
 
 ### Python
 
+You must be connected to the Internet!
+
 Execute the following commands:
-1. Download and installation
- * [ ] `sudo apt-get install python2.7`
- * [ ] `sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas`
- * [ ] `sudo apt-get install ipython ipython-notebook`
+1. Download and install
 
-   You might as well install the documentation
+----------
+sudo apt-get install python2.7`
+sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas
+sudo apt-get install ipython ipython-notebook`
 
- * [ ] `sudo apt-get install python2.7-doc python2.7-examples`
- * [ ] `sudo apt-get install python-numpy-doc python-matplotlib-doc`
- * [ ] `sudo apt-get install ipython-doc`
+
+sudo apt-get install python2.7-doc python2.7-examples`
+sudo apt-get install python-numpy-doc python-matplotlib-doc`
+sudo apt-get install ipython-doc
+sudo apt-get install python-pygame
+----------
 
 2. Check the installation
  * [ ] in a terminal, type `ipython` in order to lauch a ipython interpreter
  * [ ] in the ipython shell, type each of those lines one by one followed by enter
 
-    ```
+```python
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
@@ -445,23 +450,12 @@ Execute the following commands:
     y=stats.norm.pdf(x)
     plt.plot(x,y)
     plt.show()
-    ```
+```
 
  * [ ] exit the ipython shell by typing `quit()` or the keyboard shortcut `ctrl + D`
 
  * [ ] then you are back to the terminal shell where you can install pygame
-     ```
-     sudo apt-get install python-pygame
-     ```
 
- * [ ] then test that pygame runs smoothly
-     ```
-     python /usr/share/pyshared/pygame/examples/chimp.py
-     ```
-     or
-     ```
-     python /usr/lib/python2.7/dist-packages/pygame/examples/chimp.py
-     ```
 
 3. If you want a look a the documentation you installed, use your favorite browser  
  `iceweasel /usr/share/doc/python2.7-doc/html/index.html`  
@@ -491,6 +485,9 @@ You should see a new window, where you should be able to grab and move the littl
 
 
 ### R
+
+Instructions to install R are available here:
+<https://cran.r-project.org/bin/linux/ubuntu/README.html#installation>
 
 1. Setup
  * [ ] Check which linux exactly you are using with the following command
@@ -540,4 +537,6 @@ You should see a new window, where you should be able to grab and move the littl
 
 ### Atom
 
- If you are using linux, you are most probably already using a decent text editor and thus won't need Atom.
+    sudo apt-get install atom
+
+ But if you are using linux, you might already be using a decent text editor and thus won't need Atom.
