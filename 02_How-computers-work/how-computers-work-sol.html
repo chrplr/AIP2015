@@ -246,46 +246,86 @@ christophe@pallier.org
 <p><strong>Terminal</strong> (or <strong>console</strong>): originaly, a device comprising a keyboard and screen, allowing a human to <em>interact</em> with a computer.</p>
 <p>Notes:</p>
 <ul>
-<li>early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).</li>
+<li>Early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).</li>
 </ul>
 <div class="figure">
 <img src="images/PunchedCard.jpg" />
 </div>
 <ul>
-<li>in the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.</li>
+<li>In the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.</li>
 </ul>
 <div class="figure">
 <img src="images/terminals.jpeg" />
 </div>
-<p>With the advent of <em>Personal Computers</em>, the terminal and the computer became a single apparatus.</p>
-<p>However, terminals can be <em>virtual</em>. Terminals are programs that let you run text programs. You interact by typing and displaying text. No graphical interface/no mouse.</p>
-<p><em>Shell</em>: a software that provides a way to interact with the operating system.</p>
-<p>Graphical shells. Windows/Icons/Menus … Limited but ‘intuitive’</p>
-<p>Textual shells (command lines). More powerful. It reads in commands and executes them. It can provide variables, loops,…, to facilitate automation of tasks. It provides a better control of the machine/better at automating tasks</p>
-<p>See Wikipedia <a href="http://en.wikipedia.org/wiki/Shell_%28computing%29">Shell_(Computing)</a></p>
-<p>Windows: cmd/powershell. Mac/linux:bash/tsch…</p>
-<p>Example (creating 20 directories in one command)</p>
-<pre><code>for f in 01 02 03 04 05 06 07 08 09 10; do mkdir -p subject_$f/data subject_$f/results; done
-
-for f in 1 2 3 4 5: do python myprog.py $f ; done</code></pre>
-<p>Is it worth learning to use a textual shell today? Probably, BUT you can handle 90% of problems with Python.</p>
+<ul>
+<li>With the advent of <em>Personal Computers</em>, the terminal and the computer became a single apparatus.</li>
+</ul>
+<p>However, terminals can be <em>virtual</em>. A terminal is a program that let you run text programs. You interact by typing and displaying text. No graphical interface/no mouse.</p>
+<p>When you open a terminal, a program called a <strong>shell</strong> is started that displays a prompt, and waits for you to enter commands with the keyboard.</p>
+<div class="figure">
+<img src="images/terminal.png" alt="Picture of a virtual terminal in Linux" /><p class="caption">Picture of a ‘virtual’ terminal in Linux</p>
+</div>
+<h2 id="how-to-open-a-terminal"><a href="#how-to-open-a-terminal">How to open a Terminal</a></h2>
+<ul>
+<li><p>Ubuntu-Linux: Ctrl-Alt-T (see <a href="https://help.ubuntu.com/community/UsingTheTerminal">https://help.ubuntu.com/community/UsingTheTerminal</a>)</p></li>
+<li><p>MacOSX: Open Finder/Applications/Utilities/Terminal (see <a href="http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac">http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac</a>)</p></li>
+<li><p>Windows: Win+X+Command-Prompt (see <a href="http://pcsupport.about.com/od/commandlinereference/f/open-command-prompt.htm">http://pcsupport.about.com/od/commandlinereference/f/open-command-prompt.htm</a>)</p></li>
+</ul>
+<h2 id="the-shell"><a href="#the-shell">The shell</a></h2>
+<p>Inside the terminal, you are interacting with a program called a <strong>Shell</strong>.</p>
+<p>Various <em>Shells</em> exists: under Windows: cmd/powershell; under, Mac/linux: bash/tsch… they speak slighlty different languages.</p>
+<p>The shell displays a prompt and waits for you to type commands that it will execute. For example, if you type ipython, it will start the ipython program.</p>
+<p>One issue is that you have to know the available commands and the language. By contrast with a Graphical User Interface shell with Windows/Icons/Menus, <strong>Textual shells</strong> have a very poor ergonomy. Yet, there are more powerful. They provides variables, loops,… to facilitate automation of tasks.</p>
+<p>For example, to create 20 directories in a single bash command under linux:</p>
+<pre><code>for f in 01 02 03 04 05 06 07 08 09 10; do mkdir -p subject_$f/data subject_$f/results; done</code></pre>
+<p>To learn more, see Wikipedia’s article on <em>Shell_(Computing)</em>: <a href="http://en.wikipedia.org/wiki/Shell_%28computing%29">http://en.wikipedia.org/wiki/Shell_%28computing%29</a></p>
+<p>Good news: you will not need to learn a <em>shell</em> language, only a few commands (pwd/cd/ls/dir) to allow you to navigate the filesystem and run a program.</p>
 </div>
 <div id="disks-directories-and-files" class="slide section level1">
 <h1><a href="#disks-directories-and-files">Disks, Directories and files</a></h1>
-<p>Most computers (not all) have two kinds of memories: - volatile, fast, memory, which is cleared when the computer is switched off (caches, RAM) - ‘permanent’, slow, memory, which is not erased when the computer is switched off (DISKS)</p>
+<p>Most computers (not all) have two kinds of memories: - volatile, fast, memory, which is cleared when the computer is switched off (processor’s caches, RAM) - ‘permanent’, slow, memory, which is not erased when the computer is switched off (DISKS, Flashdrives (=solid-state drives))</p>
 <p>The unit of storage is the <strong>file</strong>.</p>
-<p>Files are nothing but blobs of bits stored “sequentially” on disks. A first file could be stored between location 234 and 256, a second file could be stored at location 456.</p>
-<p>To access a file, one would need to know its location on the disk. To simplify users’s life, OSes provide a system of “pointers”, <strong>filenames</strong>.</p>
-<p>To help users further, filenames are organised in a hierarchical structure (a tree) of directories (or folders).</p>
-<p>So to locate a file, you must know - the disk (C:, D:, … in Windows only) - its location in the directory structure - its name</p>
-<p>(note: a given file can have several names: cf. links)</p>
-<p>Absolute pathnames vs. relative pathnames (..)</p>
-<p><strong>working directory</strong> A running program has a working directory. Filenames can be relative to this directory.</p>
-<p>In Python:</p>
-<pre><code>import os
-os.getcwd()
-os.chdir(&#39;..&#39;)
-os.getcwd()</code></pre>
+<p>Files are nothing but blobs of bits stored “sequentially” on disks.</p>
+<p>A first file could be stored between location 234 and 256, a second file could be stored at location 456.</p>
+</div>
+<div id="filenames-directory-structure" class="slide section level1">
+<h1><a href="#filenames-directory-structure">filenames, directory structure</a></h1>
+<p>To access a file, one would need to know its location on the disk. To simplify human users’ life, the OS provide a system of “pointers”, that is <strong>filenames</strong> , organised in directories.</p>
+<p>To help users further, the directories are organised in a hierarchical structure: a directory can contain filenames and other (sub)directories. The top-level directory is called the <strong>root</strong>.</p>
+<div class="figure">
+<img src="images/linux_directory_structure.png" alt="Linux directory structure" /><p class="caption">Linux directory structure</p>
+</div>
+<p>To locate a file, you must know: - its location in the directory structure - its basename</p>
+<p>Remark: a given file can have several names in the same or various directories (remember: a filename is nothing but a link between a human readable charachter string to a location on the disk)</p>
+<h2 id="working-directory.-absolute-pathnames-vs.relative-pathnames-.."><a href="#working-directory.-absolute-pathnames-vs.relative-pathnames-..">Working directory. Absolute pathnames vs. relative pathnames (..)</a></h2>
+<p>It would be tedious to always have to specify the full path of a files (that is, the list of all subdirs from the root)</p>
+<p>Here comes the notion of <strong>working directory</strong>: A running program has a working directory and filenames can specified <strong>relative</strong> to this directory.</p>
+<p>Suppose you want to access the file pointed to by <code>/users/pallier/documents/thesis.pdf</code>. If the current working directory is <code>/users/pallier</code>, you can just use <code>documents/thesis.pdf</code> (notice the absence of ‘/’ at the beginning).</p>
+<p>To determine the current working directory, list its content, and change it:</p>
+<ul>
+<li><p>under bash</p>
+<p>pwd ls cd Documents</p></li>
+<li><p>under Windows/DOS</p>
+<p>echo %cd% dir cd Documents</p></li>
+<li><p>under python (or ipython):</p>
+<p>import os os.getcwd() os.listdir(‘.’) os.chdir(‘documents’) os.getcwd()</p></li>
+</ul>
+</div>
+<div id="path" class="slide section level1">
+<h1><a href="#path">PATH</a></h1>
+<p>A command can simply be a program’s name. Typing it and pressing Enter will start the program.</p>
+<p>The shell knows where to look for programs thanks to a special environment variable called the <strong>PATH</strong></p>
+<p>Under bash</p>
+<pre><code>echo $PATH
+which python</code></pre>
+<p>Under Windows/DOS:</p>
+<pre><code>echo %PATH%</code></pre>
+<p>The PATH variable lists all the directories that contains programs.</p>
+<p>It is possible to add new directories to the PATH variable, to access new programs.</p>
+<p>bash</p>
+<pre><code>export PATH=newdirectory:$PATH</code></pre>
+<p>DOS</p>
+<pre><code>PATH=newdirectory;%PATH%</code></pre>
 </div>
 <div id="what-is-a-library-or-modulepackage" class="slide section level1">
 <h1><a href="#what-is-a-library-or-modulepackage">What is a library (or module/package)?</a></h1>

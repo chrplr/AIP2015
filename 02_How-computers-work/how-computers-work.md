@@ -280,39 +280,55 @@ Several OS can be installed in a given machine:
 
 Notes:
 
-- early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).
+- Early computers had no keyboard, no screen. The input was done through punched cards and output would be printed out).
 
 ![](images/PunchedCard.jpg)
 
-- in the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.
+- In the mainframe era, many terminals were connected to a single, powerful, computer. Everybody was sharing the same computer.
 
 ![](images/terminals.jpeg)
 
-With the advent of _Personal Computers_, the terminal and the computer became a single apparatus.
+- With the advent of _Personal Computers_, the terminal and the computer became a single apparatus.
 
-However, terminals can be *virtual*. Terminals are programs that let you run text programs. You interact by typing and displaying text. No graphical interface/no mouse.
+However, terminals can be *virtual*. A terminal is a program that let you run text programs. You interact by typing and displaying text. No graphical interface/no mouse.
 
-*Shell*: a software that provides a way to interact with the operating system. 
+When you open a terminal, a program called a **shell** is started that displays a prompt, and waits for you to enter commands with the keyboard.
 
-Graphical shells. Windows/Icons/Menus ... Limited but 'intuitive'
 
-Textual shells (command lines). More powerful. It reads in commands and executes
-them. It can provide variables, loops,..., to facilitate automation of tasks.
-It provides a better control of the machine/better at automating tasks
+![Picture of a 'virtual' terminal in Linux](images/terminal.png)
 
-See Wikipedia [Shell_(Computing)](http://en.wikipedia.org/wiki/Shell_%28computing%29)
+## How to open a Terminal
 
-Windows: cmd/powershell. Mac/linux:bash/tsch...
+- Ubuntu-Linux: Ctrl-Alt-T (see <https://help.ubuntu.com/community/UsingTheTerminal>)
 
-Example (creating 20 directories in one command)
+- MacOSX: Open Finder/Applications/Utilities/Terminal (see <http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac>)
+
+- Windows: Win+X+Command-Prompt (see <http://pcsupport.about.com/od/commandlinereference/f/open-command-prompt.htm>)
+
+
+## The shell
+
+Inside the terminal, you are interacting with a program called a **Shell**.
+
+Various *Shells* exists: under Windows: cmd/powershell; under, Mac/linux: bash/tsch... they speak slighlty different languages.
+
+The shell displays a prompt and waits for you to type commands that it will execute. For example, if you type ipython, it will start the ipython program.
+
+
+One issue is that you have to know the available commands and the language.
+By contrast with a Graphical User Interface shell with
+Windows/Icons/Menus, **Textual shells** have a very poor ergonomy. Yet, there are more powerful. They provides variables, loops,... to facilitate automation of tasks.
+
+For example, to create 20 directories in a single bash command under linux:
 
     for f in 01 02 03 04 05 06 07 08 09 10; do mkdir -p subject_$f/data subject_$f/results; done
 
-	for f in 1 2 3 4 5: do python myprog.py $f ; done
 
-Is it worth learning to use a textual shell today?
-Probably, BUT you can handle 90% of problems with Python.
 
+To learn more, see Wikipedia's article on  *Shell_(Computing)*: <http://en.wikipedia.org/wiki/Shell_%28computing%29>
+
+
+Good news: you will not need to learn a *shell* language, only a few commands (pwd/cd/ls/dir) to allow you to navigate the filesystem and run a program.
 
 
 * * * * *
@@ -320,38 +336,95 @@ Probably, BUT you can handle 90% of problems with Python.
 # Disks, Directories and files
 
 Most computers (not all) have two kinds of memories: 
-- volatile, fast, memory, which is cleared when the computer is switched off (caches, RAM)
-- 'permanent', slow, memory, which is not erased when the computer is switched off (DISKS)
+- volatile, fast, memory, which is cleared when the computer is switched off (processor's caches, RAM)
+- 'permanent', slow, memory, which is not erased when the computer is switched off (DISKS, Flashdrives (=solid-state drives))
 
 The unit of storage is the **file**. 
 
 Files are nothing but blobs of bits stored "sequentially" on disks. 
+
 A first file could be stored between location 234 and 256, a second file could be stored at location 456.
 
+# filenames, directory structure
+
 To access a file,  one would need to know its location on the disk.
-To simplify users's life, OSes provide a system of "pointers", **filenames**.
+To simplify human users' life, the OS provide a system of "pointers", that is **filenames** , organised in directories. 
 
-To help users further, filenames are organised in a hierarchical structure (a tree) of directories (or folders).
+To help users further, the directories are organised in a hierarchical structure: a directory can contain filenames and other (sub)directories. The top-level directory is called the **root**. 
 
-So to locate a file, you must know 
-- the disk (C:, D:, ... in Windows only) 
+![Linux directory structure](images/linux_directory_structure.png)
+
+To locate a file, you must know:
 - its location in the directory structure
-- its name
+- its basename
 
-(note: a given file can have several names: cf. links)
+Remark: a given file can have several names in the same or various directories (remember: a filename is nothing but a link between a human readable charachter string to a location on the disk)
 
-Absolute pathnames vs. relative pathnames (..)
 
- **working directory** A running program has a working directory. Filenames can be relative to this directory.
+## Working directory. Absolute pathnames vs. relative pathnames (..)
 
-In Python:
+It would be tedious to always have to specify the full path of a files (that is, the list of all subdirs from the root)
+
+Here comes the notion of **working directory**: A running program has a working directory and filenames can specified **relative** to this directory.
+
+Suppose you want to access the file pointed to by `/users/pallier/documents/thesis.pdf`. If the current working directory is `/users/pallier`, you can just use `documents/thesis.pdf` (notice the absence of '/' at the beginning).
+
+To determine the current working directory, list its content, and change it:
+
+- under bash
+
+	 pwd
+	 ls
+	 cd Documents
+
+- under Windows/DOS
+
+
+	 echo %cd%
+	 dir
+	 cd Documents
+	
+
+- under python (or ipython):
 
 	import os
 	os.getcwd()
-	os.chdir('..')
+	os.listdir('.')
+	os.chdir('documents')
 	os.getcwd()
 	
 	
+# PATH
+
+A command can simply be a program's name. Typing it and pressing Enter will start the program.
+
+The shell knows where to look for programs thanks to a special environment variable called the **PATH**
+
+
+Under bash
+
+	echo $PATH
+	which python
+
+Under Windows/DOS:
+
+	echo %PATH%
+	
+
+
+
+The PATH variable lists all the directories that contains programs.
+
+It is possible to add new directories to the PATH variable, to access new programs.
+
+bash
+
+	export PATH=newdirectory:$PATH
+
+
+DOS
+
+	PATH=newdirectory;%PATH%
 
 
 # What is a library (or module/package)?

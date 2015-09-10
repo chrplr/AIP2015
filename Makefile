@@ -1,5 +1,5 @@
 # recursive make: runs make in all the immediate subdirs
-# Time-stamp: <2015-09-08 17:46 christophe@pallier.org>
+# Time-stamp: <2015-09-09 21:45 christophe@pallier.org>
  
 SHELL=/bin/bash
 
@@ -21,7 +21,13 @@ index.html: index.md
 
 
 index.md:
-	echo "<h1>>HTML files:</h1>" > index.md
+	echo "<h1>Atelier d'Introduction a la Programmation AIP2015</h1>" > index.md
+	echo 'Generated on ' $$( LANG=EN date ) 'by <christophe@pallier.org>' >> index.md
+	echo '' >> index.md
+	echo '(these pages maybe outdated; the latest version is always available in a git repository at <https://github.com/chrplr/AIP2015>)' >> index.md
+	echo '' >> index.md
+	echo '<a href="README.html">README first (course description)</a>' >> index.md
+	echo "<h1>>HTML files:</h1>" >> index.md
 	for f in `find -name '*.html' | sort `; do \
 		echo "* <a href="$$f">$$f</a>"; \
 	done >> index.md
@@ -30,6 +36,6 @@ index.md:
 		echo "* <a href="$$f">$$f</a>"; \
 	done >> index.md
 
-aga:
-	#	echo "* [$$f]($$f)"; 
+#putonftp:
+#	ncftpput ...
 

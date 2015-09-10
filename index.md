@@ -1,4 +1,11 @@
+<h1>Atelier d'Introduction a la Programmation AIP2015</h1>
+Generated on  Wed Sep 9 21:45:34 CEST 2015 by <christophe@pallier.org>
+
+(these pages maybe outdated; the latest version is always available in a git repository at <https://github.com/chrplr/AIP2015>)
+
+<a href="README.html">README first (course description)</a>
 <h1>>HTML files:</h1>
+* <a href=./00_Installation/install.html>./00_Installation/install.html</a>
 * <a href=./01_Starting-from-Scratch/Starting-from-Scratch-nosol.html>./01_Starting-from-Scratch/Starting-from-Scratch-nosol.html</a>
 * <a href=./01_Starting-from-Scratch/Starting-from-Scratch-sol.html>./01_Starting-from-Scratch/Starting-from-Scratch-sol.html</a>
 * <a href=./02_How-computers-work/how-computers-work-nosol.html>./02_How-computers-work/how-computers-work-nosol.html</a>
@@ -26,6 +33,7 @@
 * <a href=./css/Overview.html>./css/Overview.html</a>
 * <a href=./README.html>./README.html</a>
 <h1>>PDFs:</h1>
+* <a href=./00_Installation/install.pdf>./00_Installation/install.pdf</a>
 * <a href=./01_Starting-from-Scratch/Starting-from-Scratch-nosol.pdf>./01_Starting-from-Scratch/Starting-from-Scratch-nosol.pdf</a>
 * <a href=./01_Starting-from-Scratch/Starting-from-Scratch.pdf>./01_Starting-from-Scratch/Starting-from-Scratch.pdf</a>
 * <a href=./01_Starting-from-Scratch/Starting-from-Scratch-sol.pdf>./01_Starting-from-Scratch/Starting-from-Scratch-sol.pdf</a>
