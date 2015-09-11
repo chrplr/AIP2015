@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="louist87@gmail.com" />
+  <title>Composing Programs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Composing Programs</h1>
+  <p class="author">
+louist87@gmail.com
+  </p>
+  <p class="date">Sep. 2015</p>
+</div>
+<div id="review-core-concepts" class="slide section level1">
+<h1>Review: Core Concepts</h1>
+<h2 id="what-problems-do-operating-systems-solve">What problems do operating systems solve?</h2>
+<h2 id="what-is-a-system-shell">What is a system shell?</h2>
+<h2 id="what-is-an-interpreter">What is an interpreter?</h2>
+<h2 id="what-is-the-python-shell-command">What is the <code>python</code> shell command?</h2>
+</div>
+<div id="review-our-tools" class="slide section level1">
+<h1>Review: Our Tools</h1>
+<h2 id="what-is-atom">1. What is <code>atom</code> ?</h2>
+<h2 id="what-is-ipython-and-why-should-it-be-preferred-over-python">2. What is <code>ipython</code> and why should it be preferred over <code>python</code>?</h2>
+</div>
+<div id="programming-in-python" class="slide section level1">
+<h1>Programming in Python</h1>
+<h2 id="programming-languages-are-written-for-humans">Programming languages are written for humans!</h2>
+<ul>
+<li>All languages are compiled to machine code</li>
+<li>Programming languages are a tool for <strong>structuring thought</strong></li>
+</ul>
+<p><strong>x86 assembly</strong> wants you to think in terms of CPU registers</p>
+<pre><code>section .data
+str:     db &#39;Hello world!&#39;, 0Ah
+str_len: equ $ - str
+
+section .text
+global _start
+
+_start:
+mov eax, 4
+mov ebx, 1
+
+mov ecx, str
+mov edx, str_len
+int 80h
+
+mov eax, 1
+mov ebx, 0
+int 80h</code></pre>
+<p><strong>Brainfuck</strong> wants you to think in terms of memory addresses and pointers:</p>
+<pre><code>++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</code></pre>
+<p><strong>Python</strong> wants you to think in terms of physical <em>objects</em>:</p>
+<pre><code>print &quot;Hello world!&quot;</code></pre>
+</div>
+<div id="object-oriented-programming" class="slide section level1">
+<h1>Object-Oriented Programming</h1>
+<ol style="list-style-type: decimal">
+<li>OOP is a <em>programming paradigm</em>: a way to think about your problem and your code.</li>
+<li>OOP uses the metaphor of <em>objects</em> to describe elements of code and their behaviors.</li>
+</ol>
+<blockquote>
+<p>In Python, <em>everything</em> is an object!</p>
+</blockquote>
+<h2 id="so-what-is-an-object">So, what is an object?</h2>
+<p>Two levels of analysis:</p>
+<ol style="list-style-type: decimal">
+<li>Metaphorical level: what does the term <em>object</em> tell me about how I should think about my problem?</li>
+<li>Practical level: what can I do with this thing called <em>object</em>, and where can I get one?</li>
+</ol>
+</div>
+<div id="metaphorical-level" class="slide section level1">
+<h1>Metaphorical level</h1>
+<h2 id="all-data-are-not-equal.-python-is-a-strongly-typed-language">All data are not equal. Python is a <em>strongly typed</em> language:</h2>
+<ul>
+<li>Data come in various forms, called <em>types</em>.</li>
+<li>Similar types behave similarly. Different types behave differently.</li>
+<li>It makes sense to do certain things with certain data types, but not with others.</li>
+</ul>
+<p>Adding integers:</p>
+<pre><code>1 + 1</code></pre>
+<p>Dividing floats:</p>
+<pre><code>38.7 / 3.2</code></pre>
+<p>Adding strings:</p>
+<pre><code>&quot;Hello &quot; + &quot;world!&quot;</code></pre>
+<p>Adding an integer to a string:</p>
+<pre><code>&quot;I am &quot; + 28 + &quot; years old&quot;</code></pre>
+<h2 id="conclusions">Conclusions:</h2>
+<ol style="list-style-type: decimal">
+<li>An object’s type tells you something about how you’re expected to use it.</li>
+<li><strong>Know what you’re manipulating at all times!</strong></li>
+</ol>
+</div>
+<div id="practical-level" class="slide section level1">
+<h1>Practical level</h1>
+<h2 id="common-object-types">Common Object Types</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Type Name</th>
+<th align="center">Python object</th>
+<th align="left">Use case</th>
+<th align="left">Caveats</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Boolean</td>
+<td align="center"><code>bool</code></td>
+<td align="left">Representing truth</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Integer</td>
+<td align="center"><code>int</code></td>
+<td align="left">Representing whole numbers</td>
+<td align="left">Beware of integer division! Try <code>10 / 2</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Float</td>
+<td align="center"><code>float</code></td>
+<td align="left">Representing decimal fractions</td>
+<td align="left">Beware of floating-point errors! Try <code>.1 * 3</code></td>
+</tr>
+<tr class="even">
+<td align="left">String</td>
+<td align="center"><code>str</code></td>
+<td align="left">Representing text</td>
+<td align="left">Beware of accents and diacriticals!</td>
+</tr>
+<tr class="odd">
+<td align="left">List</td>
+<td align="center"><code>list</code></td>
+<td align="left">Maintaining an ordered sequence of objects that may change. Useful for <em>homogenous</em> types</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Tuple</td>
+<td align="center"><code>tuple</code></td>
+<td align="left">Maintainging an immutable ordered sequence Useful for <em>heterogeneous</em> types.</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Dictionary</td>
+<td align="center"><code>dict</code></td>
+<td align="left">Associating one object (the <em>key</em>) to another (the <em>value</em>)</td>
+<td align="left">Dicts are <em>unordered</em></td>
+</tr>
+<tr class="even">
+<td align="left">Set</td>
+<td align="center"><code>set</code></td>
+<td align="left">Keeping track of values that were encountered. Testing for the presence of multiple values.</td>
+<td align="left">Sets are unordered and contain at most one of each item.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="control-structures" class="slide section level1">
+<h1>Control Structures</h1>
+<p>Computers build upon automata by allowing for <em>data-dependent computation</em>. How do we change the behavior of a program based on the value of a variable?</p>
+<pre><code>x = 10
+if x &gt; 10:
+    print(&quot;Greater than 10&quot;)
+elif x:
+    print(&quot;Less than 10, but nonzero&quot;)
+else:
+    print(&quot;exactly 0&quot;)</code></pre>
+<p><code>if</code> and <code>elif</code> evaluate the <em>expression</em> that follows them. If the statement evaluates to <code>True</code>, the block of code is executed.</p>
+<p>All objects have a Boolean truth value:</p>
+<pre><code>bool(0)
+bool(1)
+bool(&quot;&quot;)
+bool(&quot;false&quot;)
+bool([])
+bool([1, 2, 3])</code></pre>
+<p>Zero and null values evaluate to <code>False</code>. Everything else evaluates to <code>True</code>.</p>
+</div>
+<div id="comparison-operators" class="slide section level1">
+<h1>Comparison operators:</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Symbol</th>
+<th align="left">Meaning</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>&lt;</code></td>
+<td align="left"><em>Less than</em></td>
+<td align="center"><code>1 &lt; 4</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>&gt;</code></td>
+<td align="left"><em>Greater than</em></td>
+<td align="center"><code>2.3 &gt; 0</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>==</code></td>
+<td align="left"><em>Equal to</em></td>
+<td align="center"><code>1 == True</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>!=</code></td>
+<td align="left"><em>Not equal to</em></td>
+<td align="center"><code>True != False</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning">WARNING:</h3>
+<ul>
+<li><code>=</code> is for assignment, i.e.: <code>n_subjects = 20</code></li>
+<li><code>==</code> is for boolean evaluation, i.e.: <code>{} == False</code></li>
+</ul>
+<p>This will throw an error:</p>
+<pre><code>x = &quot;hello&quot;
+if x = &quot;hello&quot;:
+    print(&quot;success!&quot;)</code></pre>
+</div>
+<div id="exercises" class="slide section level1">
+<h1>Exercises</h1>
+<ol style="list-style-type: decimal">
+<li><p>Write a script to test if two strings are equal. If they are equal, print the string, otherwise print a message indicating that they are not equal. Bonus: edit your script to print the string in all capital letters. (Hint: look at the methods for <code>str</code> objects!)</p></li>
+<li><p>Write a script to test if a dictionary contains the key “x”. The expression <code>&quot;x&quot; in d</code> (where <code>d</code> is a dictionary) will evaluate to <code>True</code> if <code>&quot;x&quot;</code> is a key in the dictionary. If the key is present, print its associated value. If it is absent, do the same for the key <code>&quot;y&quot;</code>. If niether key is present, print a message explaining the dictionary is empty.</p></li>
+</ol>
+</div>
+<div id="functions" class="slide section level1">
+<h1>Functions</h1>
+<p>Functions are the basic element of abstraction in most programming languages. They are used to:</p>
+<ul>
+<li>Prevent duplication of code</li>
+<li>Improve readability of code</li>
+<li>Prevent bugs</li>
+</ul>
+<p>Functions take in objects, and <em>return</em> objects. Using a function is referred to as <em>calling</em>. Function calls are denoted by parentheses, e.g.:</p>
+<pre><code>sum([1, 3, 6, 2])</code></pre>
+<p>Functions are defined via the <code>def</code> keyword:</p>
+<pre><code>def sum(terms):
+    &quot;&quot;&quot;Add all elements of a list together and return the result&quot;&quot;&quot;
+    s = 0
+    for i in terms:
+        s += i
+
+    return i</code></pre>
+</div>
+<div id="exercises-1" class="slide section level1">
+<h1>Exercises</h1>
+<ol style="list-style-type: decimal">
+<li><p>Create a function that takes three arguments <code>a</code>, <code>b</code>, and <code>c</code> that correspond to the three sides of a right triangle with <code>c</code> being the hypotenuse. The function should calculate the length of the side for which <code>None</code> was passed using the Pythagorean theorem. For example: <code>calculate_missing_side(3, 8, None)</code> should return <code>8.544...</code></p></li>
+<li><p>Create a function called <code>map2</code> that takes a function as it’s first argument and a list of integers as it’s second argument. <code>map2</code> should call the function passed into it once for each argument in the list and return a list containing all the results. Next, write a function called <code>double</code> that doubles a number. Call <code>map2</code> as follows: <code>map2(double, range(10))</code>.</p></li>
+</ol>
+</div>
+</body>
+</html>
