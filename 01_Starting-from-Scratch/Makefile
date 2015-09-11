@@ -1,6 +1,7 @@
-# Time-stamp: <2015-09-08 10:16 christophe@pallier.org>
+# Time-stamp: <2015-09-10 20:29 christophe@pallier.org>
 
-PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css
+#PANDOC_OPTS := --standalone -S --toc -t slidy -V slidy-url=../css 
+PANDOC_OPTS :=  -t slidy -V slidy-url=../css --toc  --standalone 
 
 INPUT_MDS := $(wildcard *.md)
 
