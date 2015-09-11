@@ -1,8 +1,21 @@
 Introduction to Programming (AIP2015)
 =====================================
 
-Objectives
-----------
+## Instructors
+
+- Christophe Pallier <christophe@pallier.org>
+- Sylvain Charron <sylvain.charron@polytechnique.edu>
+- Louis Thibault <louist87@gmail.com>
+
+### Website:
+
+The lectures materials are available in a git repositoty located at <https://github.com/chrplr/AIP2015>
+
+To download them on your computer, follow [these instructions](./howtos/how-to-get-the-lectures-materials.html).
+
+Too see the list of all html and pdf documents, check [index.html](index.html).
+
+## Objectives
 
 * Learn the principles of how computers work
 * Learn the basic concepts of programming (instructions/variables/loops...)
@@ -30,35 +43,6 @@ During or after AIP, you may be interested in
 Another excellent resource to go beyond this lecture is <https://mitpress.mit.edu/sicp/sicp.html>
 
 
-### AIP's website:
-
-The web site for AIP2015 is <https://github.com/chrplr/AIP2015>
-
-This site will be updated during the course. To facilitate updating your local copy, we recommend that you use the program 'git' to first clone the repository and then regularily pull the updates.
-
-1. If not already done, install git on your computer (following these [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)).
-
-2.  To download a copy of the lectures'files on your computer, open a terminal ([how-to-for macosx](http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac), [how-to-for windows](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window), and type the command:
-
-```
-    git clone https://github.com/chrplr/AIP2015
-```
-
-The list of html and pdf files available in all sudirectories is in [index.html](index.html)
-
-3. When you need to update your local copy to the most recent version available on the github server, open a terminal, go to your local AIP2015 folder and type the command:
-
-```
-    git pull
-```
-
-
-
-### Instructors
-
-- Christophe Pallier <christophe@pallier.org>
-- Louis Thibault <louist87@gmail.com>
-- Sylvain Charron <sylvain.charron@polytechnique.edu>
 
 
 

@@ -303,23 +303,36 @@ christophe@pallier.org
 <p>Suppose you want to access the file pointed to by <code>/users/pallier/documents/thesis.pdf</code>. If the current working directory is <code>/users/pallier</code>, you can just use <code>documents/thesis.pdf</code> (notice the absence of ‘/’ at the beginning).</p>
 <p>To determine the current working directory, list its content, and change it:</p>
 <ul>
-<li><p>under bash</p>
-<p>pwd ls cd Documents</p></li>
-<li><p>under Windows/DOS</p>
-<p>echo %cd% dir cd Documents</p></li>
-<li><p>under python (or ipython):</p>
-<p>import os os.getcwd() os.listdir(‘.’) os.chdir(‘documents’) os.getcwd()</p></li>
+<li>under bash</li>
 </ul>
+<pre><code>     pwd
+     ls
+     cd Documents</code></pre>
+<ul>
+<li>under Windows/cmd</li>
+</ul>
+<pre><code>     echo %cd%
+     dir
+     cd Documents</code></pre>
+<ul>
+<li>under python (or ipython):</li>
+</ul>
+<pre><code>    import os
+    os.getcwd()
+    os.listdir(&#39;.&#39;)
+    os.chdir(&#39;documents&#39;)
+    os.getcwd()</code></pre>
 </div>
 <div id="path" class="slide section level1">
 <h1><a href="#path">PATH</a></h1>
 <p>A command can simply be a program’s name. Typing it and pressing Enter will start the program.</p>
-<p>The shell knows where to look for programs thanks to a special environment variable called the <strong>PATH</strong></p>
+<p>The shell knows where to look for programs thanks to a special environment variable called the <strong>PATH</strong>.</p>
 <p>Under bash</p>
-<pre><code>echo $PATH
-which python</code></pre>
+<pre><code>    echo $PATH
+    which ls
+    which python</code></pre>
 <p>Under Windows/DOS:</p>
-<pre><code>echo %PATH%</code></pre>
+<pre><code>    echo %PATH%</code></pre>
 <p>The PATH variable lists all the directories that contains programs.</p>
 <p>It is possible to add new directories to the PATH variable, to access new programs.</p>
 <p>bash</p>

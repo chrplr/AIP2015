@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Christophe Pallier &amp; Sylvain Charron" />
+  <title>Getting a copy of the course materials</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Getting a copy of the course materials</h1>
+<h2 class="author">Christophe Pallier &amp; Sylvain Charron</h2>
+<h3 class="date">Sept. 2015</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#création-dune-copie-locale">Création d’une copie locale</a></li>
+<li><a href="#mises-à-jour">Mises à jour</a></li>
+</ul>
+</div>
+<p>Le cours AIP2015 est accessible sur deux repositories git.</p>
+<ul>
+<li><p>L’un se trouve sur un site web sur Internet: https://github.com/chrplr/AIP2015</p></li>
+<li><p>L’autre est accessible sur le réseau local wifi ‘synapse’ à l’adresse: student@192.168.0.2:Sites/cogmaster2015/AIP2015 (mot de passe: Ie5h,Ps’e&amp;jn’aps)</p></li>
+</ul>
+<p>Ce document explique comment récupérer le cours en utilisant le programme git que vous devez avoir installé sur votre ordinateur (cf. les <a href="../00_Installation/install.html">instructions d’installation</a>).</p>
+<p>Le principe est le suivant:</p>
+<ul>
+<li><p>vous allez créer, une fois pour toutes, une copie locale du cours sur votre ordinateur (“clonage”).</p></li>
+<li><p>Ensuite, à tout moment, vous pourrez très simplement mettre à jour les fichiers modifiés par les enseignants.</p></li>
+</ul>
+<h2 id="création-dune-copie-locale"><a href="#création-dune-copie-locale">Création d’une copie locale</a></h2>
+<p>La toute première fois, vous devrez <em>cloner</em> un des repositories sur votre ordinateur, c’est à dire créer un répertoire AIP2015 contenant tous les fichiers du cours.</p>
+<p><a href="how-to-open-a-terminal.html">Ouvrez un terminal</a> et tapez les lignes de commandes suivantes:</p>
+<ul>
+<li>Si vous êtes connecté à Internet:</li>
+</ul>
+<pre><code>git clone  https://github.com/chrplr/AIP2015 internet
+cd AIP2015
+git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015</code></pre>
+<ul>
+<li>Si vous êtes connecté au reseau wifi local ‘synapse’:</li>
+</ul>
+<pre><code>git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 synapse
+cd AIP2015
+git remote add internet https://github.com/chrplr/AIP2015</code></pre>
+<p>Quand un mot de passe est demandé, tapez <code>test</code> et appuyez sur ‘Entrée’. (il est normal que le mot de passe ne s’affiche pas)</p>
+<ul>
+<li>Vérifier si la configuration est correcte:</li>
+</ul>
+<pre><code>git remote -v</code></pre>
+<p>Vous devriez voir s’afficher:</p>
+<pre><code>internet        https://github.com/chrplr/AIP2015.git (fetch)
+internet        https://github.com/chrplr/AIP2015.git (push)
+synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (fetch)
+synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (push)</code></pre>
+<h2 id="mises-à-jour"><a href="#mises-à-jour">Mises à jour</a></h2>
+<p>Pour mettre à jour le contenu du répertoire AIP2015, ouvrez un terminal;</p>
+<ul>
+<li>Si vous êtes connecté à Internet</li>
+</ul>
+<pre><code>cd AIP2015
+git pull internet master</code></pre>
+<ul>
+<li>Si vous êtes connecté à synapse:</li>
+</ul>
+<pre><code>cd AIP2015
+git pull synapse master</code></pre>
+<p>That’s all!</p>
+</body>
+</html>

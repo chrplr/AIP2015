@@ -426,17 +426,16 @@ You must be connected to the Internet!
 Execute the following commands:
 1. Download and install
 
-----------
-sudo apt-get install python2.7`
+```
+sudo apt-get install python2.7
 sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas
-sudo apt-get install ipython ipython-notebook`
+sudo apt-get install ipython ipython-notebook
 
-
-sudo apt-get install python2.7-doc python2.7-examples`
-sudo apt-get install python-numpy-doc python-matplotlib-doc`
+sudo apt-get install python2.7-doc python2.7-examples
+sudo apt-get install python-numpy-doc python-matplotlib-doc
 sudo apt-get install ipython-doc
 sudo apt-get install python-pygame
-----------
+```
 
 2. Check the installation
  * [ ] in a terminal, type `ipython` in order to lauch a ipython interpreter
@@ -457,30 +456,46 @@ sudo apt-get install python-pygame
  * [ ] then you are back to the terminal shell where you can install pygame
 
 
-3. If you want a look a the documentation you installed, use your favorite browser  
- `iceweasel /usr/share/doc/python2.7-doc/html/index.html`  
- and  
- `iceweasel /usr/share/doc/python-pygame/index.hml`
+3. If you want a look a the documentation you installed, use your favorite browser
+
+ ```
+ iceweasel /usr/share/doc/python2.7-doc/html/index.html
+ ```
+ 
+ and
+ 
+ ```
+ iceweasel /usr/share/doc/python-pygame/index.hml
+ ```
 
 
 ### Git
 1. Download et installation
-    ```
-    sudo apt-get install git-core
-    ```
+
+```
+sudo apt-get install git-core
+```
+
 2. Configuration, by typing in a terminal with the appropriate replacements
- * [ ] `git config --global user.name "your_user_name"`
- * [ ] `git config --global user.email your_email@example.com`
+
+```
+git config --global user.name "your_user_name"
+git config --global user.email your_email@example.com
+```
 
 ### Scratch
 1. Installation: in a terminal, type
+
 ```
 sudo apt-get install scratch
 ```
+
 2. Test : in the terminal of a graphic console, type
+
 ```
 scratch
 ```
+
 You should see a new window, where you should be able to grab and move the little mascot.
 
 
@@ -491,45 +506,55 @@ Instructions to install R are available here:
 
 1. Setup
  * [ ] Check which linux exactly you are using with the following command
-    ```
-    lsb_release -da
-    ```
-  You should see a aoutput like this one:
-    ```
+
+```
+   lsb_release -da
+```
+
+You should see an output like this one:
+
+```
     Distributor ID: Debian
     Description :   Debian GNU/Linux 7.8 (wheezy)
     Release:        7.8
     Codename:       wheezy
-    ```
+```
 
  * [ ] add the appropriate repository to your `/etc/apt/sources.list`
-    ```
-    sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ >> /etc/apt/sources.list'
-    ```
-    For ubuntu, you migh have to leave out the -cran3 after the version codename
-    ```
+
+```
+sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ >> /etc/apt/sources.list'
+```
+
+For Ubuntu, you migh have to leave out the -cran3 after the version codename
+
+```
     sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/ubuntu vivid/ >> /etc/apt/sources.list'
-    ```
+```
 
 
  * [ ] update your repository list
-    ```
-    sudo apt-get update
-    ```
- * [ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate `.deb` installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.
+
+```
+sudo apt-get update
+```
+
+* [ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate `.deb` installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.
 
 
 1. Installation
  * [ ] R
-    ```
-    sudo apt-get install r-base r-base-core r-base-html
-    ```
+
+```
+sudo apt-get install r-base r-base-core r-base-html
+```
 
  * [ ] and, for Rstudio, replacing the XX by the version numbers
-    ```
+
+```
     sudo apt-get install libjpeg62
     sudo dpkg -i rstudio-X.XX.XXX-amd64.deb
-    ```
+```
 
 3. Verification
  * [ ] type `rstudio` in a console to lauch the R interpreter
@@ -537,6 +562,8 @@ Instructions to install R are available here:
 
 ### Atom
 
-    sudo apt-get install atom
+```
+sudo apt-get install atom
+```
 
  But if you are using linux, you might already be using a decent text editor and thus won't need Atom.

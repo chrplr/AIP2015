@@ -1,31 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
 <h1 id="introduction-to-programming-aip2015">Introduction to Programming (AIP2015)</h1>
-<h2 id="objectives">Objectives</h2>
-<ul>
-<li>Learn the principles of how computers work</li>
-<li>Learn the basic concepts of programming (instructions/variables/loops...)</li>
-<li>learn the bases of Python programming</li>
-<li>Learn how to execute, design, write and debug programs</li>
-</ul>
-<p>(see below for more details about the contents of this series of lectures)</p>
-<h3 id="prerequisites">Prerequisites:</h3>
-<p>This course is intended for beginners, but students who already have rudiments in programming (e.g. only know Matlab) can benefit from it. Also, note that knowledge of Python and of the skills listed below is a requirement for the other hands-on classes (Ateliers) of the Cogmaster.</p>
-<p>Before attending AIP, it can help: - to study the learning modules on 'Python' and 'the command line' at (https://www.codecademy.com)[www.codecademy.com] - have a peek at the documents in the 'resources' folder.</p>
-<p>During or after AIP, you may be interested in <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/">MIT's Introduction to computer science and programming</a> online course.</p>
-<p>Another excellent resource to go beyond this lecture is <a href="https://mitpress.mit.edu/sicp/sicp.html">https://mitpress.mit.edu/sicp/sicp.html</a></p>
-<h3 id="aips-website">AIP's website:</h3>
-<p>The web site for AIP2015 is <a href="https://github.com/chrplr/AIP2015">https://github.com/chrplr/AIP2015</a></p>
-<p>This site will be updated during the course. To facilitate updating your local copy, we recommend that you use the program 'git' to first clone the repository and then regularily pull the updates.</p>
-<ol style="list-style-type: decimal">
-<li><p>If not already done, install git on your computer (following these <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">instructions</a>).</p></li>
-<li><p>To download a copy of the lectures'files on your computer, open a terminal (<a href="http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac">how-to-for macosx</a>, <a href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">how-to-for windows</a>, and type the command:</p></li>
-</ol>
-<pre><code>    git clone https://github.com/chrplr/AIP2015</code></pre>
-<p>The list of html and pdf files available in all sudirectories is in <a href="index.html">index.html</a></p>
-<ol start="3" style="list-style-type: decimal">
-<li>When you need to update your local copy to the most recent version available on the github server, open a terminal, go to your local AIP2015 folder and type the command:</li>
-</ol>
-<pre><code>    git pull</code></pre>
-<h3 id="instructors">Instructors</h3>
+<h2 id="instructors">Instructors</h2>
 <ul>
 <li>Christophe Pallier <script type="text/javascript">
 <!--
@@ -33,19 +18,36 @@ h='&#112;&#x61;&#108;&#108;&#x69;&#x65;&#114;&#46;&#x6f;&#114;&#x67;';a='&#64;';
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#104;&#114;&#x69;&#x73;&#116;&#x6f;&#112;&#104;&#x65;&#32;&#x61;&#116;&#32;&#112;&#x61;&#108;&#108;&#x69;&#x65;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x6f;&#114;&#x67;</noscript></li>
-<li>Louis Thibault <script type="text/javascript">
-<!--
-h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#108;&#x6f;&#x75;&#x69;&#x73;&#116;&#56;&#x37;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#108;&#x6f;&#x75;&#x69;&#x73;&#116;&#56;&#x37;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></li>
 <li>Sylvain Charron <script type="text/javascript">
 <!--
 h='&#112;&#x6f;&#108;&#x79;&#116;&#x65;&#x63;&#104;&#110;&#x69;&#x71;&#x75;&#x65;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#x73;&#x79;&#108;&#118;&#x61;&#x69;&#110;&#46;&#x63;&#104;&#x61;&#114;&#114;&#x6f;&#110;';e=n+a+h;
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x73;&#x79;&#108;&#118;&#x61;&#x69;&#110;&#46;&#x63;&#104;&#x61;&#114;&#114;&#x6f;&#110;&#32;&#x61;&#116;&#32;&#112;&#x6f;&#108;&#x79;&#116;&#x65;&#x63;&#104;&#110;&#x69;&#x71;&#x75;&#x65;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#100;&#x75;</noscript></li>
+<li>Louis Thibault <script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#108;&#x6f;&#x75;&#x69;&#x73;&#116;&#56;&#x37;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#108;&#x6f;&#x75;&#x69;&#x73;&#116;&#56;&#x37;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></li>
 </ul>
+<h3 id="website">Website:</h3>
+<p>The lectures materials are available in a git repositoty located at <a href="https://github.com/chrplr/AIP2015">https://github.com/chrplr/AIP2015</a></p>
+<p>To download them on your computer, follow <a href="./howtos/how-to-get-the-lectures-materials.html">these instructions</a>.</p>
+<p>Too see the list of all html and pdf documents, check <a href="index.html">index.html</a>.</p>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Learn the principles of how computers work</li>
+<li>Learn the basic concepts of programming (instructions/variables/loops…)</li>
+<li>learn the bases of Python programming</li>
+<li>Learn how to execute, design, write and debug programs</li>
+</ul>
+<p>(see below for more details about the contents of this series of lectures)</p>
+<h3 id="prerequisites">Prerequisites:</h3>
+<p>This course is intended for beginners, but students who already have rudiments in programming (e.g. only know Matlab) can benefit from it. Also, note that knowledge of Python and of the skills listed below is a requirement for the other hands-on classes (Ateliers) of the Cogmaster.</p>
+<p>Before attending AIP, it can help: - to study the learning modules on ‘Python’ and ‘the command line’ at (https://www.codecademy.com)[www.codecademy.com] - have a peek at the documents in the ‘resources’ folder.</p>
+<p>During or after AIP, you may be interested in <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/">MIT’s Introduction to computer science and programming</a> online course.</p>
+<p>Another excellent resource to go beyond this lecture is <a href="https://mitpress.mit.edu/sicp/sicp.html">https://mitpress.mit.edu/sicp/sicp.html</a></p>
 <p>More precisely, at the end of this series of lectures, you should have acquired:</p>
 <h2 id="basic-programming-concepts">Basic programming concepts</h2>
 <ul>
@@ -60,11 +62,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li>modules</li>
 <li>file input/output</li>
 </ul>
-<p>For example, you should be able to write Python scripts to: * search for items in a list * find the largest number in a list of integers * compute basic statistics from files containaint numeric data * compute the number of occurrences of words in a text file * play the &quot;guess a number&quot; game</p>
+<p>For example, you should be able to write Python scripts to: * search for items in a list * find the largest number in a list of integers * compute basic statistics from files containaint numeric data * compute the number of occurrences of words in a text file * play the “guess a number” game</p>
 <h2 id="practical-skills">Practical skills</h2>
 <p>You should know how to:</p>
 <ul>
-<li>Download some source code (e.g. Python) from the Internet (e.g. github) and display it.</li>
+<li>Download some source code (e.g. Python) from the Internet (e.g. github) and display it.</li>
 <li>Run a program from the command line
 <ul>
 <li>open a terminal, interact with the shell</li>
@@ -76,10 +78,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li>Install missing modules</li>
 <li>Launch ipython and use it interactively (distinction shell/interpreter python)</li>
 <li>Use an editor (atom) to view/edit a Python script</li>
-<li>Find/read Python's documentation</li>
+<li>Find/read Python’s documentation</li>
 <li>what to do when there is a crash/error message</li>
 </ul>
-<h2 id="computers-architecture">Computer's architecture</h2>
+<h2 id="computers-architecture">Computer’s architecture</h2>
 <p>To program computers, it is necessary to have a rough idea of how they work.</p>
 <ul>
 <li>Computer = Automaton + Memory store (Turing machines)</li>
@@ -91,7 +93,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <ul>
 <li>divide-and-conquer approach, piping</li>
 <li>writing code following our coding standards (see below)</li>
-<li>debug with 'print'</li>
+<li>debug with ‘print’</li>
 </ul>
 <h2 id="remarks">Remarks</h2>
 <p>Our Coding standards:</p>
@@ -99,8 +101,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <li>use a common template for all scripts</li>
 <li>force writing docstrings with aim, input &amp; output descriptions</li>
 <li>avoid global variables except for constants (use uppercase for identifier)</li>
-<li>spaces around operators, after ',',...</li>
+<li>spaces around operators, after ‘,’,…</li>
 <li>use explicit names (lowercase ascii)</li>
 <li>use comments sparingly, explain why, not how</li>
 <li>factoring code (each step is a function, put docstrings)</li>
 </ul>
+</body>
+</html>

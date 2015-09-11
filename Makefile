@@ -1,5 +1,5 @@
 # recursive make: runs make in all the immediate subdirs
-# Time-stamp: <2015-09-09 21:45 christophe@pallier.org>
+# Time-stamp: <2015-09-11 11:55 christophe@pallier.org>
  
 SHELL=/bin/bash
 
@@ -14,10 +14,10 @@ all: README.html index.html
 	done;
 
 README.html: README.md
-	pandoc $< -o $@
+	pandoc -s -S -c pandoc.css $< -o $@
 
 index.html: index.md
-	pandoc $< -o $@
+	pandoc -s -S $< -o $@
 
 
 index.md:

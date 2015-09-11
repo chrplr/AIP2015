@@ -373,42 +373,57 @@ To determine the current working directory, list its content, and change it:
 
 - under bash
 
+```
 	 pwd
 	 ls
 	 cd Documents
+```
 
-- under Windows/DOS
+- under Windows/cmd
 
-
+```
 	 echo %cd%
 	 dir
 	 cd Documents
+```
 	
 
 - under python (or ipython):
 
+
+```
 	import os
 	os.getcwd()
 	os.listdir('.')
 	os.chdir('documents')
 	os.getcwd()
+```
+
 	
 	
 # PATH
 
 A command can simply be a program's name. Typing it and pressing Enter will start the program.
 
-The shell knows where to look for programs thanks to a special environment variable called the **PATH**
+
+
+The shell knows where to look for programs thanks to a special environment variable called the **PATH**. 
 
 
 Under bash
 
+```
 	echo $PATH
+	which ls
 	which python
+```
+
 
 Under Windows/DOS:
 
+```
 	echo %PATH%
+```
 	
 
 
