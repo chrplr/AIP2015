@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="review-answers" class="slide section level1">
+<h1>Review Answers</h1>
+<h2 id="what-problems-do-operating-systems-solve">What problems do operating systems solve?</h2>
+<ol style="list-style-type: decimal">
+<li><strong>Hardware abstraction</strong>: interact with heterogeneous hardware through a common interface.</li>
+<li><strong>Multitasking</strong>: Run several programs concurrently, managing their state independently. Programs managed by operating systems are sometimes called <em>applications</em> (hence the neologism <em>app</em>).</li>
+</ol>
+<h2 id="what-is-a-system-shell">What is a system shell?</h2>
+<p>A system shell is a command-line interface to the <em>operating system</em>, presented through a program called a <em>terminal emulator</em> (usually shortened to <em>terminal</em>).</p>
+<h2 id="what-is-an-interpreter">What is an interpreter?</h2>
+<p>An interpreter is a program, managed by the OS, that translates human-readable <em>source code</em> into executable <em>machine code</em>, and executes it.</p>
+<h2 id="what-is-the-python-shell-command">What is the <code>python</code> shell command?</h2>
+<p>The <code>python</code> command tells the OS to start the python interpreter, which is an application that is managed by the OS. The python interpreter has two modes of operation.</p>
+<p>It can launch an interactive shell:</p>
+<pre><code>$ python</code></pre>
+<p>It can run a script non-interactively:</p>
+<pre><code>$ python myscript.py</code></pre>
+<p><strong>Note:</strong> The <code>$</code> symbol is a convention used to denote shell input. It is <em>not</em> typed into the terminal.</p>
+</div>
+<div id="review-our-tools" class="slide section level1">
+<h1>Review: Our Tools</h1>
+<h2 id="what-is-atom">1. What is <code>atom</code> ?</h2>
+<p><strong>Atom</strong> is a <em>text editor</em>. It edits text, and nothing else.</p>
+<h2 id="what-is-ipython-and-why-should-it-be-preferred-over-python">2. What is <code>ipython</code> and why should it be preferred over <code>python</code>?</h2>
+<p><strong>IPython</strong> is an interactive python shell. It behaves similarly to the <code>python</code> command, but includes nice features for programmers including:</p>
+<ul>
+<li>colorized tracebacks (we’ll talk about those later)</li>
+<li><code>?</code> syntax for documentation</li>
+<li>tab-completion</li>
+<li><code>%</code> syntax for “magic” commands (we’ll talk about those later, too)</li>
+</ul>
+</div>
+<div id="programming-in-python" class="slide section level1">
+<h1>Programming in Python</h1>
+<h2 id="points-to-get-across">Points to get across:</h2>
+<ol style="list-style-type: decimal">
+<li>Programming languages impose a structure on your reasoning</li>
+<li>Such approaches are called “programming paradigms”</li>
+<li>Python’s programming paradigm is OOP</li>
+</ol>
+<h2 id="on-oop">On OOP:</h2>
+<h3 id="metaphorical-level">Metaphorical level</h3>
+<ol style="list-style-type: decimal">
+<li>Objects are the basic unit of python code</li>
+<li>Objects are typed</li>
+<li>Type tells you something about how you should use the object</li>
+</ol>
+<h3 id="practical-level">Practical level</h3>
+<ol style="list-style-type: decimal">
+<li>Introduce duck-typing: “What can my object do?”
+<ul>
+<li>Check the methods</li>
+<li>Use the docs</li>
+</ul></li>
+<li>Demonstrate function and caveats for each type.</li>
+<li>Take Questions</li>
+</ol>
+</div>
+<div id="control-structures" class="slide section level1">
+<h1>Control Structures</h1>
+<p>Straightforward. Demonstrate and emphasize <code>=</code> vs <code>==</code></p>
+</div>
+</body>
+</html>
