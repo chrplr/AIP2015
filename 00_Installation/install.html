@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#course-00-software-installation"><strong>Course 00: Software Installation</strong></a><ul>
+<li><a href="#wednesday-september-2-2015">Wednesday September 2 2015</a></li>
+<li><a href="#objectives">Objectives</a></li>
+<li><a href="#important-notes">Important notes</a></li>
+<li><a href="#windows">Windows</a><ul>
+<li><a href="#scratch">Scratch</a></li>
+<li><a href="#text-editor">Text Editor</a></li>
+<li><a href="#r-and-rstudio">R and Rstudio</a></li>
+<li><a href="#git">Git</a></li>
+<li><a href="#python">Python</a></li>
+</ul></li>
+<li><a href="#mac-os">Mac OS</a><ul>
+<li><a href="#warming-up">Warming up</a></li>
+<li><a href="#command-line-tools">Command Line Tools</a></li>
+<li><a href="#xquartz">XQuartz</a></li>
+<li><a href="#git-1">Git</a></li>
+<li><a href="#scratch-1">Scratch</a></li>
+<li><a href="#r">R</a></li>
+<li><a href="#python-1">Python</a></li>
+</ul></li>
+<li><a href="#linux-debian-based">Linux debian based</a><ul>
+<li><a href="#python-2">Python</a></li>
+<li><a href="#git-2">Git</a></li>
+<li><a href="#scratch-2">Scratch</a></li>
+<li><a href="#r-1">R</a></li>
+<li><a href="#atom">Atom</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="course-00-software-installation"><a href="#course-00-software-installation"><strong>Course 00: Software Installation</strong></a></h1>
+<h2 id="wednesday-september-2-2015"><a href="#wednesday-september-2-2015">Wednesday September 2 2015</a></h2>
+<h2 id="objectives"><a href="#objectives">Objectives</a></h2>
+<p>Each student should end up with a bundle of softwares which are needed in the mandatory courses of the Cogmaster.</p>
+<p>You migh skip the <code>Atom</code> install if and only if you are already used to an advanced text editor as wim, emacs, sublimetext. Microsoft Office Word, LibreOffice and other document formatting softwares are <strong>not</strong> text editors.</p>
+<h2 id="important-notes"><a href="#important-notes">Important notes</a></h2>
+<p>The <strong>only</strong> slot in the schedule dedicated to installation of softwares is on Wednesday 2 September from 9:00 to 12:00. We will <strong>not</strong> answer installation questions during the following AIP lectures. We will not try to solve your problems if you were not attending on Wednesday morning. If you don’t have a computer yet, tell us after the AIP presentation on Monday 31 August.</p>
+<p>Backup your computer on monday evening.</p>
+<p>Installation procedures are currently being tested on Windows (7 64bits), MacOS (10.9 Maverick), and debian-based linux. We have have few years of experience with installations on various Operating System versions, but there is always some computers on which the usual procedures and fixes fail. We will try our best, if it happens to you, please be patient.</p>
+<p>Some installations will require an internet access, thus don’t forget to bring your login and password for the ENS wifi on wednesday morning.</p>
+<p>Installation procedures will be put online on Tuesday. Links will be provided to download the installation files from the internet. Try much as possible to download the software installers on your computer Tuesday evening: it will save us some time on Wednesday morning because the network at the ENS is usually slow and we will have only few USB sticks with the software installers.</p>
+<p>If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.</p>
+<p>Select the installation instructions for your operating system:<br /><a href="#linux-debian-based">Linux</a><br /><a href="#mac-os">Mac OS</a><br /><a href="#windows">Windows</a></p>
+<p>Follow carefully the instructions <strong>step by step, not skipping any</strong>. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.</p>
+<p>Once the installation on your computer completed, you can browse the documents in <a href="../resources/">the ressource folder</a></p>
+<hr />
+<h2 id="windows"><a href="#windows">Windows</a></h2>
+<h3 id="scratch"><a href="#scratch">Scratch</a></h3>
+<ol style="list-style-type: decimal">
+<li>Download <a href="http://download.scratch.mit.edu/ScratchInstaller1.4.exe">ScratchInstaller1.4.exe</a> from http://download.scratch.mit.edu/ by using the right click on the link and the option <code>Save target as</code>, and select an appropriate directory, for example the default <code>Downloads</code> folder.</li>
+<li>then install as usual:</li>
+</ol>
+<ul>
+<li>[ ] upon the end of the download either click on <code>Open the Folder</code> or open an explorer (windows key + e) and go to your <code>Downloads</code> folder</li>
+<li>[ ] double-click on the ScratchInstaller1.4.exe file and wait</li>
+<li>[ ] after a while your screen turns dark and an ominous warning pop-up window ask you if you’d like this unknown programm to modify stuff on your computer. Click on the <code>Yes</code> button.</li>
+<li>[ ] The Scratch Setup Wizard window should pop-up and you can install the software clicking on the <code>Next</code> Button and accepting default parameters (note in which directory the program will be installed) until you have to click on the <code>Finish</code> button.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>test Scratch</li>
+</ol>
+<ul>
+<li>[ ] If you did not uncheck the options before clicking on <code>Finish</code>, you should see the program running and you coud reopen it using the desktop Scratch icon. Alternatively, you can open an explorer, go to the directory in which the program was installed and double click on the Scratch icon.</li>
+<li>[ ] you should be able to move the little animal around</li>
+</ul>
+<h3 id="text-editor"><a href="#text-editor">Text Editor</a></h3>
+<ol style="list-style-type: decimal">
+<li>If you are using “Window 7” or “Windows 8”</li>
+</ol>
+<ul>
+<li>[ ] download the Atom installer by clicking on the big red <code>Download Windows Installer</code> button on [http://atom.io]</li>
+<li>[ ] install it by double-clicking on the installer <code>AtomSetup.exe</code></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>If you are using and older version of Windows download and install the <a href="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083%20Setup.exe">Windows</a> installer of SublimeText from [http://www.sublimetext.com/3].</li>
+</ol>
+<h3 id="r-and-rstudio"><a href="#r-and-rstudio">R and Rstudio</a></h3>
+<ol style="list-style-type: decimal">
+<li>Downloads</li>
+</ol>
+<ul>
+<li>[ ] Download <a href="https://download1.rstudio.org/RStudio-0.99.473.exe">the lattest RStudio-0.XX.XXX.exe</a> from [https://www.rstudio.com/products/rstudio/download/]</li>
+<li>[ ] Download <a href="https://cran.r-project.org/bin/windows/base/R-3.2.2-win.exe">the lattest R package installer</a> from [https://cran.r-project.org/bin/windows/base/]</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] Install R by double-clicking on the downloaded file and following the steps on the typical Windows installer pop-up window (usually you just have to clic on the <code>Next</code> button).<br /></li>
+<li>[ ] Then install RStudio by double-clicking on the downloaded file. It should be straight forward.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Verification</li>
+</ol>
+<ul>
+<li>[ ] Launch RStudio from the icon on your desktop</li>
+<li>[ ] in the command window, type ‘demo(graphics)’</li>
+</ul>
+<h3 id="git"><a href="#git">Git</a></h3>
+<ol start="0" style="list-style-type: decimal">
+<li>Set up an account on Github.com</li>
+</ol>
+<ul>
+<li>[ ] Open an internet browser and go to [http://github.com]</li>
+<li>[ ] fill the requested fields with appropriate username, email, and password</li>
+<li>[ ] click on the <code>Sign up for Github</code> button</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Download the application</li>
+</ol>
+<ul>
+<li>[ ] Go to [http://desktop.github.com] and click on the <code>Download GitHub Desktop</code> button.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] It should start automatically, otherwise go to your <code>Downloads</code> folder and double click on the “GitHubSetup.exe” file</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>configuration: you should see a window that says “Welcome”</li>
+</ol>
+<ul>
+<li>[ ] fill the username and password and click on <code>login</code>, then your email and click on <code>Continue</code></li>
+<li>[ ] skip the local repository search</li>
+<li>[ ] now you can just quit the “Github Desktop” application</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>In case your Windows version is earlier than “Windows 7” (i.e. “XP”, “Vista”,…), get the installer from [https://github.com/git-for-windows/git/releases/tag/v2.5.1.windows.1], then ask for help during the installation party.</li>
+</ol>
+<h3 id="python"><a href="#python">Python</a></h3>
+<ol start="0" style="list-style-type: decimal">
+<li><p>if you have trouble with the anaconda installation that we told you we cannot solve, here is a link to the Christophe Gohlke 64bits modules [http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame]</p></li>
+<li>Downloads</li>
+</ol>
+<ul>
+<li>[ ] please download <a href="https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86_64.exe">Windows 64-Bit Python 2.7 Graphical Installer</a> from [http://continuum.io/downloads]</li>
+<li>[ ] if you have a 32 bit system (typically Windows XP), then download the <a href="https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-Windows-x86.exe">Windows 32-Bit Python 2.7 Graphical Installer</a> instead.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Installation of the Anaconda distribution</li>
+</ol>
+<ul>
+<li>[ ] go to your <code>Downloads</code> folder and double click on the “Anaconda-X.X.X-Windows-” file</li>
+<li>[ ] confirm that you want to run the file on the security warning pop-up window</li>
+<li>[ ] on the Anaconda Setup Wizard, beware, you will have to change on option, so click ‘Next’ on the opening panel</li>
+<li>[ ] then ‘Agree’ with the licence agreement</li>
+<li>[ ] verify that you Install for <code>Just Me (recommended)</code>, then click on <code>Next</code></li>
+<li>[ ] use default Destination folder and click on <code>Next</code></li>
+<li>[ ] check that both “Add Anaconda to my PATH” and “Register Anaconda as my default Python 2.7” are ckecked and click on <code>Install</code></li>
+<li>[ ] upon completion, click on ‘Next’, then <code>Finish</code></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Test</li>
+</ol>
+<ul>
+<li>[ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command to find the application using its name.</li>
+<li>[ ] click on <code>All the programs</code> and then the <code>Anaconda (64-bit)</code> folder, what you are looking for is the <code>IPython (Py 2.7)</code> entry. Click there (and not the <code>IPython (Py 2.7) Notebook</code> nor the <code>IPython (Py 2.7) QTConsole</code>).</li>
+<li>[ ] this launches a window that understands only commands in the python language</li>
+<li><p>[ ] in just after the <code>$</code> sign, type each of those lines one by one followed by a stroke on the <code>enter</code> key</p>
+<code>import numpy as np  import matplotlib.pyplot as plt  from scipy import stats  x=np.arange(-5,5,.1)  y=stats.norm.pdf(x)  plt.plot(x,y)  plt.show()</code></li>
+<li>[ ] close the window with the graph</li>
+<li><p>[ ] close the ipython shell by typing <code>quit()</code> or the keyboard shortcut <code>ctrl + D</code></p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Configuration</li>
+</ol>
+<ul>
+<li>[ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command to find the application using its name.</li>
+<li>[ ] click on <code>All the programs</code> and then the <code>Anaconda folder</code>, then on <code>Anaconda Command Prompt</code></li>
+<li>[ ] this launches the anaconda terminal, where you have to type this text and then press on the <code>Enter</code> key: <code>sh     conda install conda</code> You have to type it where a little rectangle is blinking (this is the “prompt”), after something that looks like <code>C:Users\your_name\AppData\Local\continuum\Anaconda&gt;</code> You will see some text messages during the installation of some python modules, don’t worry!</li>
+<li>[ ] when you are asked <code>Procced ([y]/n)</code>, press on the <code>Enter</code> key (because yes is the default)</li>
+<li>[ ] <strong>WARNING</strong> <strong>if you have a 32bit Windows, stop the install process rigth now, do not install anything past this point!</strong></li>
+<li><p>[ ] when you are back to the blinking little rectangle, type this text, then press the <code>Enter</code> key: <code>conda install -c https://conda.binstar.org/krisvanneste pygame</code></p></li>
+<li><p>[ ] When the installation of pygame is over, you can even type <code>exit</code> and press on <code>Enter</code> to close the window, how spooky!</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Test</li>
+</ol>
+<ul>
+<li>[ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command fo find the application using its name.</li>
+<li>[ ] click on <code>All the programs</code> and then the <code>Anaconda folder</code>, then on <code>Ipython (Py 2.7) QTConsole</code></li>
+<li><p>[ ] after the “IPython window” has opened, you can copy and paste the following seven lines just after the <code>In [1]:</code>, then press twice on <code>Enter</code></p>
+<pre><code>import pygame
+pygame.init()
+w=pygame.display.set_mode([300,300])
+w.fill([128,37,213])
+pygame.display.flip()
+pygame.time.wait(3000)
+pygame.quit()</code></pre>
+You should see a little window appear, change color and then disappear.</li>
+<li>[ ] press the keys <code>ctrl+D</code> to quit the ipython console</li>
+<li>[ ] click on the <code>Windows</code> icon (or just press the <code>Windows</code> key on your keyboard), then on <code>All the programs</code> and then the <code>Anaconda folder</code>, then on <code>Anaconda Command Prompt</code></li>
+<li><p>[ ] at the prompt, type the following text then press on <code>Enter</code> <code>python Lib\site-packages\pygame\examples\chimp.py</code></p>
+<p>You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).</p></li>
+</ul>
+<hr />
+<h2 id="mac-os"><a href="#mac-os">Mac OS</a></h2>
+<h3 id="warming-up"><a href="#warming-up">Warming up</a></h3>
+<ol style="list-style-type: decimal">
+<li>Know you system version, so you can chose which file to download</li>
+</ol>
+<ul>
+<li>[ ] First go to the “apple” menu by clicking on the apple icon at the upper-left corner of the screen.</li>
+<li>[ ] Select “About This Mac”, and look at the Version number, the first two numbers are the major releases:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">10.2</th>
+<th align="left">10.3</th>
+<th align="left">10.4</th>
+<th align="left">10.5</th>
+<th align="left">10.6</th>
+<th align="left">10.7</th>
+<th align="left">10.8</th>
+<th align="left">10.9</th>
+<th align="left">10.10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Jaguar</td>
+<td align="left">Panther</td>
+<td align="left">Tiger</td>
+<td align="left">Leopard</td>
+<td align="left">Snow Leopard</td>
+<td align="left">Lion</td>
+<td align="left">Mountain Lion</td>
+<td align="left">Mavericks</td>
+<td align="left">Yosemite</td>
+</tr>
+<tr class="even">
+<td align="left">2002</td>
+<td align="left">2003</td>
+<td align="left">2005</td>
+<td align="left">2007</td>
+<td align="left">2009</td>
+<td align="left">2011</td>
+<td align="left">2012</td>
+<td align="left">2013</td>
+<td align="left">2014</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>Some configuration</li>
+</ol>
+<ul>
+<li>[ ] make sure you know the administrator password for your computer (password used to install new software) and that you are able to type it blind.</li>
+<li>[ ] clic on <code>Finder</code> next to the <code>Apple</code> logo on the top left corner of your screen, then on <code>Preferences</code>, then the <code>Side Bar</code> check the first unchecked box under <code>DEVICES</code>, close the <code>Finder Preferences</code> window.</li>
+<li>[ ] go to your <code>Application folder</code> and the to the <code>Utilities</code> subfolder, grab the <code>Terminal</code> icon and put it on the second place on your “Dock”, right next to the <code>Finder</code> icon.</li>
+</ul>
+<h3 id="command-line-tools"><a href="#command-line-tools">Command Line Tools</a></h3>
+<ul>
+<li>[ ] open a terminal by clicking on the <code>Terminal</code> icon you just placed in the “Dock”.</li>
+<li><p>[ ] In this window copy and paste the following text then press on the <code>Enter</code> key (from now on this will be called <strong>executing a command in the terminal</strong>) <code>xcode-select --install</code></p></li>
+<li><p>[ ] This should make a window pop up to ask you if you want to install the “Command Line Tools”, answer <code>Yes</code>, and wait until completion of the installation</p></li>
+</ul>
+<h3 id="xquartz"><a href="#xquartz">XQuartz</a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Download <a href="http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg">XQuartz-2.7.7.dmg</a> from [http://xquartz.macosforge.org/landing/]</p></li>
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] double click on “XQuartz-2.7.7.dmg” in your “Downloads” folder or wherever you downloaded it.</li>
+<li>[ ] double click on the “XQuartz.pkg”</li>
+<li>[ ] click on <code>Continue</code> and <code>Agree</code> until you can click on <code>Install</code></li>
+</ul>
+<h3 id="git-1"><a href="#git-1">Git</a></h3>
+<ol start="0" style="list-style-type: decimal">
+<li>Set up an account on Github.com</li>
+</ol>
+<ul>
+<li>[ ] Open an internet browser and go to [http://github.com]</li>
+<li>[ ] fill the requested fields with appropriate username, email, and password</li>
+<li>[ ] click on the <code>Sign up for Github</code> button</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Download the application</li>
+</ol>
+<ul>
+<li>[ ] Go to [http://desktop.github.com] and click on the <code>Download GitHub Desktop</code> button.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] Go to your <code>Downloads</code> folder</li>
+<li>[ ] decompress the <code>.zip</code> archive if needed</li>
+<li>[ ] double-click on the <code>GitHub Desktop</code> icon</li>
+<li>[ ] click on the <code>Open</code> button at the security pop up window</li>
+<li>[ ] click on <code>Move to Application Folder</code></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>configuration: you should see a window that says “Let’s take a minute to setup your computer”</li>
+</ol>
+<ul>
+<li>[ ] click on <code>Continue</code></li>
+<li>[ ] fill the username and password and click on <code>Sign up</code>, then on <code>Continue</code></li>
+<li>[ ] Click on <code>Install Command Line Tools</code>, then on the pop-up window, type down your mac account password and click on <code>Install Helper</code></li>
+<li>[ ] click on <code>OK</code> upon completion of the Helper install</li>
+<li>[ ] Then click on <code>Continue</code> on the “Welcome to GitHub Desktop”</li>
+<li>[ ] Don’t add any repository yet, just click on <code>Done</code></li>
+<li>[ ] now you can just quit the “Github Desktop” application</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>For old Mac OS versions, go to [http://sourceforge.net/projects/git-osx-installer/files/l]</li>
+</ol>
+<ul>
+<li>[ ] get the appropriate version installer</li>
+<li>[ ] install it as usual</li>
+</ul>
+<p>### Atom</p>
+<ol style="list-style-type: decimal">
+<li><p>Download the Atom installer by clicking on the big red <code>Download For Mac</code> button on [http://atom.io]</p></li>
+<li><p>Install as usual</p></li>
+<li><p>Enjoy!</p></li>
+</ol>
+<h3 id="scratch-1"><a href="#scratch-1">Scratch</a></h3>
+<ol style="list-style-type: decimal">
+<li>Download <a href="http://download.scratch.mit.edu/MacScratch1.4.dmg">MacScratch1.4.dmg</a> from http://download.scratch.mit.edu/</li>
+<li>then install as usual:</li>
+</ol>
+<ul>
+<li>[ ] select your <code>Downloads</code> folder from the <code>Dock</code></li>
+<li>[ ] clic on the .dmg file to mount the virtual disk that wraps the application</li>
+<li>[ ] drag and drop this application to your <code>Applications</code> folder in the pop-up window</li>
+<li>[ ] eject the virtual disk</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>test Scratch</li>
+</ol>
+<ul>
+<li>[ ] select your <code>Applications</code> folder from the <code>Dock</code></li>
+<li>[ ] clic on the <code>Scratch1.4</code> folder</li>
+<li>[ ] then clic on the <code>Scratch.app</code> icon</li>
+<li>[ ] the Scratch window should appear on your screen and you should be able to drag and move the little animal around</li>
+</ul>
+<h3 id="r"><a href="#r">R</a></h3>
+<ol style="list-style-type: decimal">
+<li>Downloads</li>
+</ol>
+<ul>
+<li><p>[ ] Go to [http://cran.rstudio.com/bin/macosx/] and download either the “R-3.2.2.pkg” or the “R-3.2.1-snowleopard.pkg” depending on the version of your OS (check About this mac on the apple menu on the top left of your screen if needed).</p></li>
+<li><p>[ ] download <a href="http://download1.rstudio.org/RStudio-0.99.473.dmg">RStudio-0.99.473.dmg</a> from https://www.rstudio.com/products/rstudio/download/ or an appropriate older version from [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop]</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] In the Finder open the folder in which you downloaded the R package. Double-click on it and do as usual.</li>
+<li>[ ] go to the download folder then double-click on “RStudio-X.XX.XXX.dmg”. In the window that pops up, slide the RStudio icon into the Applications folder.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Verification</li>
+</ol>
+<ul>
+<li>[ ] Launch RStudio from the icon on your desktop</li>
+<li>[ ] in the command window, type ’demo(graphics)</li>
+</ul>
+<h3 id="python-1"><a href="#python-1">Python</a></h3>
+<ol style="list-style-type: decimal">
+<li>Preparation</li>
+</ol>
+<ul>
+<li>[ ] First go to the “apple” menu in the upper-left corner of the screen. Select “About This Mac”, and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). <strong>If not or if you are not sure, don’t install anything, and come see us tomorrow morning.</strong></li>
+<li>[ ] Alternatively, clic on the <code>Apple</code> icon again, then on “About This Mac” window, now click on “More info…” and in the window that opens up seek the “Processor Name” entry in the “Hardware Overview”. If it says “PowerPC”, “Intel Core Solo” or “Intel Core Duo”, then <strong>stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.</strong><br /></li>
+<li><p>[ ] alternatively, open a terminal and type the following text, then press on the <code>Enter</code> key <code>sysctl hw.cpu64bit_capable</code> The output tells you if your processor can get huge instruction sets</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">architecture</th>
+<th align="left">output</th>
+<th align="left">so what ?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">64 bits</td>
+<td align="left">1</td>
+<td align="left">Carry on</td>
+</tr>
+<tr class="even">
+<td align="left">32 bits</td>
+<td align="left">0</td>
+<td align="left">Stop right now</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>[ ] If and only if your mac pass these tests, you can carry on.</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Download Anaconda</li>
+</ol>
+<ul>
+<li>[ ] Download the Anaconda distribution installer <a href="https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda-2.3.0-MacOSX-x86_64.pkg">Mac OS X — 64-Bit Python 2.7 Graphical Installer</a> from [http://continuum.io/downloads]</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Install the Anaconda python distribution</li>
+</ol>
+<ul>
+<li>[ ] go to your <code>Downloads</code> folder and double click on the file Anaconda-X.X.X-MacOSX-x86_64.pkg in order to start the installation.</li>
+<li>[ ] click on <code>Continue</code> several times and agree on licence terms until the installation is completed, if at some point you see the error “You cannot install Anaconda in this location”, then just click on <code>Install for me only</code> and you should be able to continue.</li>
+<li>[ ] when you see the message “The installation was successful”, click on the <code>Close</code> button</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Configuration</li>
+</ol>
+<ul>
+<li>[ ] you should see a Launcher.app icon on your desktop, double-click on it to start the launcher.</li>
+<li>[ ] answer as you like about sending informations to the Continuum company</li>
+<li>[ ] wait whil the laucher checks which python applications are installed</li>
+<li>[ ] verify that <code>ipython-notebook</code> and <code>ipython-qtconsole</code> are installed (their icon should be <code>Update | Lauch</code>), otherwise, click on <code>Install</code> buttons.</li>
+<li>[ ] close the “Laucher” window</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Test</li>
+</ol>
+<ul>
+<li>[ ] lauch the <code>Terminal</code> application from your “Dock”</li>
+<li>[ ] just after the <code>$</code> sign, type <code>ipython</code> then press on the <code>Enter</code> key in order to lauch a ipython interpreter</li>
+<li><p>[ ] in the ipython shell, type each of those lines one by one followed by enter</p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+x=np.arange(-5,5,.1)
+y=stats.norm.pdf(x)
+plt.plot(x,y)
+plt.show()</code></pre></li>
+<li>[ ] close the window with the graph</li>
+<li>[ ] close the ipython shell by typing <code>quit()</code> or the keyboard shortcut <code>ctrl + D</code></li>
+<li><p>[ ] you are now back to the command line in the Terminal application.</p></li>
+</ul>
+<ol start="0" style="list-style-type: decimal">
+<li><p><strong>Warning</strong> Now the Mac python install procedure starts to be tricky, if you don’t feel confident with typing commands in a terminal, of if you’d like to sleep, stop rigth now, we will carry on tomorrow morning.<br />Otherwise, stay up for some more fun with the terminal!</p></li>
+<li>Install “Homebrew</li>
+</ol>
+<ul>
+<li><p>[ ] in a terminal, copy paste or type this command: <code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p></li>
+<li><p>[ ] if you ever have an error about certificates using <code>curl</code>, execute the two following commands and restart the “Homebrew” install of the previous step <code>export CURL_CA_BUNDLE=/usr/local/curl/      curl http://curl.haxx.se/ca/cacert.pem -o cacert.pem</code></p></li>
+<li>[ ] wait…</li>
+<li><p>[ ] once the installation is over type in the terminal <code>brew doctor</code></p></li>
+<li>[ ] wait…</li>
+<li><p>[ ] when the doctor gave you its check-up diagnosis, it should tell you that your system is ready for brewing stuff or something similar<br /> <strong>IF THERE IS SOME CRITICAL ERROR AND NOT JUST WARNINGS, STOP THE INSTALLATION PROCESS NOW AND ASK US WHAT TO DO</strong></p></li>
+<li><p>[ ] <strong>If and only if</strong> the doctor gave its green light, you can Now close (by typing <code>exit</code> and then closing the windows with the <code>cmd+W</code> key stroke combination) all your instances of the terminal application, quit the application <code>cmd+Q</code> and relaunch it.</p></li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li>Install pygame dependencies</li>
+</ol>
+<ul>
+<li>[ ] with the following command: <code>brew install sdl sdl_image sdl_mixer sdl_ttf portmidi</code></li>
+<li>[ ] wait</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>Install “conda”</li>
+</ol>
+<ul>
+<li><p>[ ] In a terminal, execute <code>conda install conda</code></p></li>
+<li>[ ] when you are asked <code>Procced ([y]/n)</code>, press on the <code>Enter</code> key (because yes is the default</li>
+<li><p>[ ] wait</p></li>
+</ul>
+<ol start="10" style="list-style-type: decimal">
+<li>Finally install pygame</li>
+</ol>
+<ul>
+<li>[ ] by typing in the terminal <code>conda install -c http://conda.binstar.org/quasiben pygame</code></li>
+<li>[ ] when you are asked <code>Procced ([y]/n)</code>, press on the <code>Enter</code> key (because yes is the default</li>
+<li>[ ] wait</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li>Check the installation</li>
+</ol>
+<ul>
+<li><p>[ ] in a terminal, type <code>ipython qtconsole</code></p></li>
+<li>[ ] after the “IPython window” has opened, you can copy and paste the following seven lines just after the <code>In [1]:</code>, then press twice on <code>Enter</code> <code>import pygame      pygame.init()      w=pygame.display.set_mode([300,300])      w.fill([128,37,213])      pygame.display.flip()      pygame.time.wait(3000)      pygame.quit()</code></li>
+<li>[ ] press the keys <code>ctrl+D</code> to quit the ipython console</li>
+<li><p>[ ] to further check the installation, in a Terminal window, type: <code>python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py</code> You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).</p></li>
+</ul>
+<hr />
+<h2 id="linux-debian-based"><a href="#linux-debian-based">Linux debian based</a></h2>
+<h3 id="python-2"><a href="#python-2">Python</a></h3>
+<p>You must be connected to the Internet!</p>
+<p>Execute the following commands: 1. Download and install</p>
+<pre><code>sudo apt-get install python2.7
+sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas
+sudo apt-get install ipython ipython-notebook
+
+sudo apt-get install python2.7-doc python2.7-examples
+sudo apt-get install python-numpy-doc python-matplotlib-doc
+sudo apt-get install ipython-doc
+sudo apt-get install python-pygame</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Check the installation</li>
+</ol>
+<ul>
+<li>[ ] in a terminal, type <code>ipython</code> in order to lauch a ipython interpreter</li>
+<li>[ ] in the ipython shell, type each of those lines one by one followed by enter</li>
+</ul>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="ch">import</span> numpy <span class="ch">as</span> np
+    <span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
+    <span class="ch">from</span> scipy <span class="ch">import</span> stats
+    x=np.arange(-<span class="dv">5</span>,<span class="dv">5</span>,.<span class="dv">1</span>)
+    y=stats.norm.pdf(x)
+    plt.plot(x,y)
+    plt.show()</code></pre>
+<ul>
+<li><p>[ ] exit the ipython shell by typing <code>quit()</code> or the keyboard shortcut <code>ctrl + D</code></p></li>
+<li><p>[ ] then you are back to the terminal shell where you can install pygame</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>If you want a look a the documentation you installed, use your favorite browser</li>
+</ol>
+<p><code>iceweasel /usr/share/doc/python2.7-doc/html/index.html</code></p>
+<p>and</p>
+<p><code>iceweasel /usr/share/doc/python-pygame/index.hml</code></p>
+<h3 id="git-2"><a href="#git-2">Git</a></h3>
+<ol style="list-style-type: decimal">
+<li>Download et installation</li>
+</ol>
+<pre><code>sudo apt-get install git-core</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Configuration, by typing in a terminal with the appropriate replacements</li>
+</ol>
+<pre><code>git config --global user.name &quot;your_user_name&quot;
+git config --global user.email your_email@example.com</code></pre>
+<h3 id="scratch-2"><a href="#scratch-2">Scratch</a></h3>
+<ol style="list-style-type: decimal">
+<li>Installation: in a terminal, type</li>
+</ol>
+<pre><code>sudo apt-get install scratch</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Test : in the terminal of a graphic console, type</li>
+</ol>
+<pre><code>scratch</code></pre>
+<p>You should see a new window, where you should be able to grab and move the little mascot.</p>
+<h3 id="r-1"><a href="#r-1">R</a></h3>
+<p>Instructions to install R are available here: <a href="https://cran.r-project.org/bin/linux/ubuntu/README.html#installation">https://cran.r-project.org/bin/linux/ubuntu/README.html#installation</a></p>
+<ol style="list-style-type: decimal">
+<li>Setup</li>
+</ol>
+<ul>
+<li>[ ] Check which linux exactly you are using with the following command</li>
+</ul>
+<pre><code>   lsb_release -da</code></pre>
+<p>You should see an output like this one:</p>
+<pre><code>    Distributor ID: Debian
+    Description :   Debian GNU/Linux 7.8 (wheezy)
+    Release:        7.8
+    Codename:       wheezy</code></pre>
+<ul>
+<li>[ ] add the appropriate repository to your <code>/etc/apt/sources.list</code></li>
+</ul>
+<pre><code>sudo sh -c &#39;echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ &gt;&gt; /etc/apt/sources.list&#39;</code></pre>
+<p>For Ubuntu, you migh have to leave out the -cran3 after the version codename</p>
+<pre><code>    sudo sh -c &#39;echo deb http://cran.univ-paris1.fr/bin/linux/ubuntu vivid/ &gt;&gt; /etc/apt/sources.list&#39;</code></pre>
+<ul>
+<li>[ ] update your repository list</li>
+</ul>
+<pre><code>sudo apt-get update</code></pre>
+<ul>
+<li>[ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate <code>.deb</code> installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Installation</li>
+</ol>
+<ul>
+<li>[ ] R</li>
+</ul>
+<pre><code>sudo apt-get install r-base r-base-core r-base-html</code></pre>
+<ul>
+<li>[ ] and, for Rstudio, replacing the XX by the version numbers</li>
+</ul>
+<pre><code>    sudo apt-get install libjpeg62
+    sudo dpkg -i rstudio-X.XX.XXX-amd64.deb</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Verification</li>
+</ol>
+<ul>
+<li>[ ] type <code>rstudio</code> in a console to lauch the R interpreter</li>
+<li>[ ] type ‘demo(graphics)’ and press on ‘Enter’ to see the graphs.</li>
+</ul>
+<h3 id="atom"><a href="#atom">Atom</a></h3>
+<pre><code>sudo apt-get install atom</code></pre>
+<p>But if you are using linux, you might already be using a decent text editor and thus won’t need Atom.</p>
+</body>
+</html>
