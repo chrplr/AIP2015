@@ -7,29 +7,48 @@
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
+div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
 table.sourceCode { width: 100%; line-height: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
 </head>
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#course-00-software-installation-wednesday-september-2-2015"><strong>Course 00: Software Installation</strong> Wednesday September 2 2015</a><ul>
+<li><a href="#course-00-software-installation"><strong>Course 00: Software Installation</strong></a><ul>
+<li><a href="#wednesday-september-2-2015">Wednesday September 2 2015</a></li>
 <li><a href="#objectives">Objectives</a></li>
 <li><a href="#important-notes">Important notes</a></li>
 <li><a href="#windows">Windows</a><ul>
@@ -58,23 +77,27 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 </div>
-<h1 id="course-00-software-installation-wednesday-september-2-2015"><a href="#course-00-software-installation-wednesday-september-2-2015"><strong>Course 00: Software Installation</strong> Wednesday September 2 2015</a></h1>
-<h2 id="objectives"><a href="#objectives">Objectives</a></h2>
+<h1 id="course-00-software-installation"><strong>Course 00: Software Installation</strong></h1>
+<h2 id="wednesday-september-2-2015">Wednesday September 2 2015</h2>
+<h2 id="objectives">Objectives</h2>
 <p>Each student should end up with a bundle of softwares which are needed in the mandatory courses of the Cogmaster.</p>
 <p>You migh skip the <code>Atom</code> install if and only if you are already used to an advanced text editor as wim, emacs, sublimetext. Microsoft Office Word, LibreOffice and other document formatting softwares are <strong>not</strong> text editors.</p>
-<h2 id="important-notes"><a href="#important-notes">Important notes</a></h2>
+<h2 id="important-notes">Important notes</h2>
 <p>The <strong>only</strong> slot in the schedule dedicated to installation of softwares is on Wednesday 2 September from 9:00 to 12:00. We will <strong>not</strong> answer installation questions during the following AIP lectures. We will not try to solve your problems if you were not attending on Wednesday morning. If you don’t have a computer yet, tell us after the AIP presentation on Monday 31 August.</p>
 <p>Backup your computer on monday evening.</p>
 <p>Installation procedures are currently being tested on Windows (7 64bits), MacOS (10.9 Maverick), and debian-based linux. We have have few years of experience with installations on various Operating System versions, but there is always some computers on which the usual procedures and fixes fail. We will try our best, if it happens to you, please be patient.</p>
 <p>Some installations will require an internet access, thus don’t forget to bring your login and password for the ENS wifi on wednesday morning.</p>
 <p>Installation procedures will be put online on Tuesday. Links will be provided to download the installation files from the internet. Try much as possible to download the software installers on your computer Tuesday evening: it will save us some time on Wednesday morning because the network at the ENS is usually slow and we will have only few USB sticks with the software installers.</p>
 <p>If you are using a debian-based Linux such as Ubuntu, most of the installations will be made with apt, it is way safer to try the installation at your home if you have a decent internet connection than Wednesday at the ENS.</p>
-<p>Select the installation instructions for your operating system:<br /><a href="#linux-debian-based">Linux</a><br /><a href="#mac-os">Mac OS</a><br /><a href="#windows">Windows</a></p>
+<p>Select the installation instructions for your operating system:<br />
+<a href="#linux-debian-based">Linux</a><br />
+<a href="#mac-os">Mac OS</a><br />
+<a href="#windows">Windows</a></p>
 <p>Follow carefully the instructions <strong>step by step, not skipping any</strong>. If something does not work as expected, stop there and ask for our help. It is much easier to prevent a misinstallation than to repare it.</p>
 <p>Once the installation on your computer completed, you can browse the documents in <a href="../resources/">the ressource folder</a></p>
 <hr />
-<h2 id="windows"><a href="#windows">Windows</a></h2>
-<h3 id="scratch"><a href="#scratch">Scratch</a></h3>
+<h2 id="windows">Windows</h2>
+<h3 id="scratch">Scratch</h3>
 <ol style="list-style-type: decimal">
 <li>Download <a href="http://download.scratch.mit.edu/ScratchInstaller1.4.exe">ScratchInstaller1.4.exe</a> from http://download.scratch.mit.edu/ by using the right click on the link and the option <code>Save target as</code>, and select an appropriate directory, for example the default <code>Downloads</code> folder.</li>
 <li>then install as usual:</li>
@@ -92,7 +115,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>[ ] If you did not uncheck the options before clicking on <code>Finish</code>, you should see the program running and you coud reopen it using the desktop Scratch icon. Alternatively, you can open an explorer, go to the directory in which the program was installed and double click on the Scratch icon.</li>
 <li>[ ] you should be able to move the little animal around</li>
 </ul>
-<h3 id="text-editor"><a href="#text-editor">Text Editor</a></h3>
+<h3 id="text-editor">Text Editor</h3>
 <ol style="list-style-type: decimal">
 <li>If you are using “Window 7” or “Windows 8”</li>
 </ol>
@@ -103,7 +126,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ol start="2" style="list-style-type: decimal">
 <li>If you are using and older version of Windows download and install the <a href="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083%20Setup.exe">Windows</a> installer of SublimeText from [http://www.sublimetext.com/3].</li>
 </ol>
-<h3 id="r-and-rstudio"><a href="#r-and-rstudio">R and Rstudio</a></h3>
+<h3 id="r-and-rstudio">R and Rstudio</h3>
 <ol style="list-style-type: decimal">
 <li>Downloads</li>
 </ol>
@@ -115,7 +138,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>Installation</li>
 </ol>
 <ul>
-<li>[ ] Install R by double-clicking on the downloaded file and following the steps on the typical Windows installer pop-up window (usually you just have to clic on the <code>Next</code> button).<br /></li>
+<li>[ ] Install R by double-clicking on the downloaded file and following the steps on the typical Windows installer pop-up window (usually you just have to clic on the <code>Next</code> button).<br />
+</li>
 <li>[ ] Then install RStudio by double-clicking on the downloaded file. It should be straight forward.</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
@@ -125,7 +149,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>[ ] Launch RStudio from the icon on your desktop</li>
 <li>[ ] in the command window, type ‘demo(graphics)’</li>
 </ul>
-<h3 id="git"><a href="#git">Git</a></h3>
+<h3 id="git">Git</h3>
 <ol start="0" style="list-style-type: decimal">
 <li>Set up an account on Github.com</li>
 </ol>
@@ -157,7 +181,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ol start="4" style="list-style-type: decimal">
 <li>In case your Windows version is earlier than “Windows 7” (i.e. “XP”, “Vista”,…), get the installer from [https://github.com/git-for-windows/git/releases/tag/v2.5.1.windows.1], then ask for help during the installation party.</li>
 </ol>
-<h3 id="python"><a href="#python">Python</a></h3>
+<h3 id="python">Python</h3>
 <ol start="0" style="list-style-type: decimal">
 <li><p>if you have trouble with the anaconda installation that we told you we cannot solve, here is a link to the Christophe Gohlke 64bits modules [http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame]</p></li>
 <li>Downloads</li>
@@ -197,10 +221,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ul>
 <li>[ ] click on the windows icon on the left bottom of your screen. For windows 8 early version users, use your search command to find the application using its name.</li>
 <li>[ ] click on <code>All the programs</code> and then the <code>Anaconda folder</code>, then on <code>Anaconda Command Prompt</code></li>
-<li>[ ] this launches the anaconda terminal, where you have to type this text and then press on the <code>Enter</code> key: <code>sh     conda install conda</code> You have to type it where a little rectangle is blinking (this is the “prompt”), after something that looks like <code>C:Users\your_name\AppData\Local\continuum\Anaconda&gt;</code> You will see some text messages during the installation of some python modules, don’t worry!</li>
+<li><p>[ ] this launches the anaconda terminal, where you have to type this text and then press on the <code>Enter</code> key:</p>
+<pre class="sh"><code>conda install conda</code></pre>
+You have to type it where a little rectangle is blinking (this is the “prompt”), after something that looks like <code>C:Users\your_name\AppData\Local\continuum\Anaconda&gt;</code> You will see some text messages during the installation of some python modules, don’t worry!</li>
 <li>[ ] when you are asked <code>Procced ([y]/n)</code>, press on the <code>Enter</code> key (because yes is the default)</li>
 <li>[ ] <strong>WARNING</strong> <strong>if you have a 32bit Windows, stop the install process rigth now, do not install anything past this point!</strong></li>
-<li><p>[ ] when you are back to the blinking little rectangle, type this text, then press the <code>Enter</code> key: <code>conda install -c https://conda.binstar.org/krisvanneste pygame</code></p></li>
+<li><p>[ ] when you are back to the blinking little rectangle, type this text, then press the <code>Enter</code> key:</p>
+<pre><code>conda install -c https://conda.binstar.org/krisvanneste pygame</code></pre></li>
 <li><p>[ ] When the installation of pygame is over, you can even type <code>exit</code> and press on <code>Enter</code> to close the window, how spooky!</p></li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
@@ -224,8 +251,8 @@ You should see a little window appear, change color and then disappear.</li>
 <p>You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).</p></li>
 </ul>
 <hr />
-<h2 id="mac-os"><a href="#mac-os">Mac OS</a></h2>
-<h3 id="warming-up"><a href="#warming-up">Warming up</a></h3>
+<h2 id="mac-os">Mac OS</h2>
+<h3 id="warming-up">Warming up</h3>
 <ol style="list-style-type: decimal">
 <li>Know you system version, so you can chose which file to download</li>
 </ol>
@@ -280,13 +307,13 @@ You should see a little window appear, change color and then disappear.</li>
 <li>[ ] clic on <code>Finder</code> next to the <code>Apple</code> logo on the top left corner of your screen, then on <code>Preferences</code>, then the <code>Side Bar</code> check the first unchecked box under <code>DEVICES</code>, close the <code>Finder Preferences</code> window.</li>
 <li>[ ] go to your <code>Application folder</code> and the to the <code>Utilities</code> subfolder, grab the <code>Terminal</code> icon and put it on the second place on your “Dock”, right next to the <code>Finder</code> icon.</li>
 </ul>
-<h3 id="command-line-tools"><a href="#command-line-tools">Command Line Tools</a></h3>
+<h3 id="command-line-tools">Command Line Tools</h3>
 <ul>
 <li>[ ] open a terminal by clicking on the <code>Terminal</code> icon you just placed in the “Dock”.</li>
 <li><p>[ ] In this window copy and paste the following text then press on the <code>Enter</code> key (from now on this will be called <strong>executing a command in the terminal</strong>) <code>xcode-select --install</code></p></li>
 <li><p>[ ] This should make a window pop up to ask you if you want to install the “Command Line Tools”, answer <code>Yes</code>, and wait until completion of the installation</p></li>
 </ul>
-<h3 id="xquartz"><a href="#xquartz">XQuartz</a></h3>
+<h3 id="xquartz">XQuartz</h3>
 <ol style="list-style-type: decimal">
 <li><p>Download <a href="http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg">XQuartz-2.7.7.dmg</a> from [http://xquartz.macosforge.org/landing/]</p></li>
 <li>Installation</li>
@@ -296,7 +323,7 @@ You should see a little window appear, change color and then disappear.</li>
 <li>[ ] double click on the “XQuartz.pkg”</li>
 <li>[ ] click on <code>Continue</code> and <code>Agree</code> until you can click on <code>Install</code></li>
 </ul>
-<h3 id="git-1"><a href="#git-1">Git</a></h3>
+<h3 id="git-1">Git</h3>
 <ol start="0" style="list-style-type: decimal">
 <li>Set up an account on Github.com</li>
 </ol>
@@ -346,7 +373,7 @@ You should see a little window appear, change color and then disappear.</li>
 <li><p>Install as usual</p></li>
 <li><p>Enjoy!</p></li>
 </ol>
-<h3 id="scratch-1"><a href="#scratch-1">Scratch</a></h3>
+<h3 id="scratch-1">Scratch</h3>
 <ol style="list-style-type: decimal">
 <li>Download <a href="http://download.scratch.mit.edu/MacScratch1.4.dmg">MacScratch1.4.dmg</a> from http://download.scratch.mit.edu/</li>
 <li>then install as usual:</li>
@@ -366,7 +393,7 @@ You should see a little window appear, change color and then disappear.</li>
 <li>[ ] then clic on the <code>Scratch.app</code> icon</li>
 <li>[ ] the Scratch window should appear on your screen and you should be able to drag and move the little animal around</li>
 </ul>
-<h3 id="r"><a href="#r">R</a></h3>
+<h3 id="r">R</h3>
 <ol style="list-style-type: decimal">
 <li>Downloads</li>
 </ol>
@@ -388,13 +415,14 @@ You should see a little window appear, change color and then disappear.</li>
 <li>[ ] Launch RStudio from the icon on your desktop</li>
 <li>[ ] in the command window, type ’demo(graphics)</li>
 </ul>
-<h3 id="python-1"><a href="#python-1">Python</a></h3>
+<h3 id="python-1">Python</h3>
 <ol style="list-style-type: decimal">
 <li>Preparation</li>
 </ol>
 <ul>
 <li>[ ] First go to the “apple” menu in the upper-left corner of the screen. Select “About This Mac”, and check that your version of Mac OS X is 10.7 or higher (for example 10.9.5 or 10.7.2 are higher, but 10.6.8 is lower). <strong>If not or if you are not sure, don’t install anything, and come see us tomorrow morning.</strong></li>
-<li>[ ] Alternatively, clic on the <code>Apple</code> icon again, then on “About This Mac” window, now click on “More info…” and in the window that opens up seek the “Processor Name” entry in the “Hardware Overview”. If it says “PowerPC”, “Intel Core Solo” or “Intel Core Duo”, then <strong>stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.</strong><br /></li>
+<li>[ ] Alternatively, clic on the <code>Apple</code> icon again, then on “About This Mac” window, now click on “More info…” and in the window that opens up seek the “Processor Name” entry in the “Hardware Overview”. If it says “PowerPC”, “Intel Core Solo” or “Intel Core Duo”, then <strong>stop right there before doing anything else, because you will need to wait until the Wednesday install party to get a different version of Python.</strong><br />
+</li>
 <li><p>[ ] alternatively, open a terminal and type the following text, then press on the <code>Enter</code> key <code>sysctl hw.cpu64bit_capable</code> The output tells you if your processor can get huge instruction sets</p>
 <table>
 <thead>
@@ -462,16 +490,18 @@ plt.show()</code></pre></li>
 <li><p>[ ] you are now back to the command line in the Terminal application.</p></li>
 </ul>
 <ol start="0" style="list-style-type: decimal">
-<li><p><strong>Warning</strong> Now the Mac python install procedure starts to be tricky, if you don’t feel confident with typing commands in a terminal, of if you’d like to sleep, stop rigth now, we will carry on tomorrow morning.<br />Otherwise, stay up for some more fun with the terminal!</p></li>
+<li><p><strong>Warning</strong> Now the Mac python install procedure starts to be tricky, if you don’t feel confident with typing commands in a terminal, of if you’d like to sleep, stop rigth now, we will carry on tomorrow morning.<br />
+Otherwise, stay up for some more fun with the terminal!</p></li>
 <li>Install “Homebrew</li>
 </ol>
 <ul>
 <li><p>[ ] in a terminal, copy paste or type this command: <code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p></li>
-<li><p>[ ] if you ever have an error about certificates using <code>curl</code>, execute the two following commands and restart the “Homebrew” install of the previous step <code>export CURL_CA_BUNDLE=/usr/local/curl/      curl http://curl.haxx.se/ca/cacert.pem -o cacert.pem</code></p></li>
+<li><p>[ ] if you ever have an error about certificates using <code>curl</code>, execute the two following commands and restart the “Homebrew” install of the previous step <code>export CURL_CA_BUNDLE=/usr/local/curl/  curl http://curl.haxx.se/ca/cacert.pem -o cacert.pem</code></p></li>
 <li>[ ] wait…</li>
 <li><p>[ ] once the installation is over type in the terminal <code>brew doctor</code></p></li>
 <li>[ ] wait…</li>
-<li><p>[ ] when the doctor gave you its check-up diagnosis, it should tell you that your system is ready for brewing stuff or something similar<br /> <strong>IF THERE IS SOME CRITICAL ERROR AND NOT JUST WARNINGS, STOP THE INSTALLATION PROCESS NOW AND ASK US WHAT TO DO</strong></p></li>
+<li><p>[ ] when the doctor gave you its check-up diagnosis, it should tell you that your system is ready for brewing stuff or something similar<br />
+ <strong>IF THERE IS SOME CRITICAL ERROR AND NOT JUST WARNINGS, STOP THE INSTALLATION PROCESS NOW AND ASK US WHAT TO DO</strong></p></li>
 <li><p>[ ] <strong>If and only if</strong> the doctor gave its green light, you can Now close (by typing <code>exit</code> and then closing the windows with the <code>cmd+W</code> key stroke combination) all your instances of the terminal application, quit the application <code>cmd+Q</code> and relaunch it.</p></li>
 </ul>
 <ol start="8" style="list-style-type: decimal">
@@ -502,17 +532,21 @@ plt.show()</code></pre></li>
 </ol>
 <ul>
 <li><p>[ ] in a terminal, type <code>ipython qtconsole</code></p></li>
-<li>[ ] after the “IPython window” has opened, you can copy and paste the following seven lines just after the <code>In [1]:</code>, then press twice on <code>Enter</code> <code>import pygame      pygame.init()      w=pygame.display.set_mode([300,300])      w.fill([128,37,213])      pygame.display.flip()      pygame.time.wait(3000)      pygame.quit()</code></li>
+<li>[ ] after the “IPython window” has opened, you can copy and paste the following seven lines just after the <code>In [1]:</code>, then press twice on <code>Enter</code> <code>import pygame  pygame.init()  w=pygame.display.set_mode([300,300])  w.fill([128,37,213])  pygame.display.flip()  pygame.time.wait(3000)  pygame.quit()</code></li>
 <li>[ ] press the keys <code>ctrl+D</code> to quit the ipython console</li>
-<li><p>[ ] to further check the installation, in a Terminal window, type: <code>python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py</code> You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).</p></li>
+<li><p>[ ] to further check the installation, in a Terminal window, type:</p>
+<pre><code>python ~/anaconda/lib/python2.7/site-packages/pygame/examples/chimp.py</code></pre>
+<p>You should be able to play a silly game, including sound (make sure the sound is on, but not too loud).</p></li>
 </ul>
 <hr />
-<h2 id="linux-debian-based"><a href="#linux-debian-based">Linux debian based</a></h2>
-<h3 id="python-2"><a href="#python-2">Python</a></h3>
+<h2 id="linux-debian-based">Linux debian based</h2>
+<h3 id="python-2">Python</h3>
 <p>You must be connected to the Internet!</p>
 <p>Execute the following commands: 1. Download and install</p>
 <table>
+<colgroup>
 <col width="13%" />
+</colgroup>
 <tbody>
 <tr class="odd">
 <td align="left">sudo apt-get install python2.7<code>sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas sudo apt-get install ipython ipython-notebook</code></td>
@@ -529,30 +563,34 @@ plt.show()</code></pre></li>
 <li>[ ] in a terminal, type <code>ipython</code> in order to lauch a ipython interpreter</li>
 <li>[ ] in the ipython shell, type each of those lines one by one followed by enter</li>
 </ul>
-<pre class="sourceCode python"><code class="sourceCode python">    <span class="ch">import</span> numpy <span class="ch">as</span> np
-    <span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
-    <span class="ch">from</span> scipy <span class="ch">import</span> stats
-    x=np.arange(-<span class="dv">5</span>,<span class="dv">5</span>,.<span class="dv">1</span>)
-    y=stats.norm.pdf(x)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">    <span class="im">import</span> numpy <span class="im">as</span> np
+    <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+    <span class="im">from</span> scipy <span class="im">import</span> stats
+    x<span class="op">=</span>np.arange(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,.<span class="dv">1</span>)
+    y<span class="op">=</span>stats.norm.pdf(x)
     plt.plot(x,y)
-    plt.show()</code></pre>
+    plt.show()</code></pre></div>
 <ul>
 <li><p>[ ] exit the ipython shell by typing <code>quit()</code> or the keyboard shortcut <code>ctrl + D</code></p></li>
 <li><p>[ ] then you are back to the terminal shell where you can install pygame</p></li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>If you want a look a the documentation you installed, use your favorite browser<br /> <code>iceweasel /usr/share/doc/python2.7-doc/html/index.html</code><br /> and<br /> <code>iceweasel /usr/share/doc/python-pygame/index.hml</code></li>
+<li>If you want a look a the documentation you installed, use your favorite browser<br />
+ <code>iceweasel /usr/share/doc/python2.7-doc/html/index.html</code><br />
+ and<br />
+ <code>iceweasel /usr/share/doc/python-pygame/index.hml</code></li>
 </ol>
-<h3 id="git-2"><a href="#git-2">Git</a></h3>
+<h3 id="git-2">Git</h3>
 <ol style="list-style-type: decimal">
-<li>Download et installation <code>sudo apt-get install git-core</code></li>
+<li><p>Download et installation</p>
+<pre><code>sudo apt-get install git-core</code></pre></li>
 <li>Configuration, by typing in a terminal with the appropriate replacements</li>
 </ol>
 <ul>
 <li>[ ] <code>git config --global user.name &quot;your_user_name&quot;</code></li>
 <li>[ ] <code>git config --global user.email your_email@example.com</code></li>
 </ul>
-<h3 id="scratch-2"><a href="#scratch-2">Scratch</a></h3>
+<h3 id="scratch-2">Scratch</h3>
 <ol style="list-style-type: decimal">
 <li><p>Installation: in a terminal, type</p>
 <pre><code>sudo apt-get install scratch</code></pre></li>
@@ -560,23 +598,36 @@ plt.show()</code></pre></li>
 <pre><code>scratch</code></pre>
 <p>You should see a new window, where you should be able to grab and move the little mascot.</p></li>
 </ol>
-<h3 id="r-1"><a href="#r-1">R</a></h3>
-<p>Instructions to install R are available here: <a href="https://cran.r-project.org/bin/linux/ubuntu/README.html#installation">https://cran.r-project.org/bin/linux/ubuntu/README.html#installation</a></p>
+<h3 id="r-1">R</h3>
+<p>Instructions to install R are available here: <a href="https://cran.r-project.org/bin/linux/ubuntu/README.html#installation" class="uri">https://cran.r-project.org/bin/linux/ubuntu/README.html#installation</a></p>
 <ol style="list-style-type: decimal">
 <li>Setup</li>
 </ol>
 <ul>
-<li><p>[ ] Check which linux exactly you are using with the following command <code>lsb_release -da</code> You should see a aoutput like this one: <code>Distributor ID: Debian     Description :   Debian GNU/Linux 7.8 (wheezy)     Release:        7.8     Codename:       wheezy</code></p></li>
-<li><p>[ ] add the appropriate repository to your <code>/etc/apt/sources.list</code> <code>sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ &gt;&gt; /etc/apt/sources.list'</code> For ubuntu, you migh have to leave out the -cran3 after the version codename <code>sudo sh -c 'echo deb http://cran.univ-paris1.fr/bin/linux/ubuntu vivid/ &gt;&gt; /etc/apt/sources.list'</code></p></li>
-<li>[ ] update your repository list <code>sudo apt-get update</code></li>
+<li><p>[ ] Check which linux exactly you are using with the following command</p>
+<pre><code>lsb_release -da</code></pre>
+<p>You should see a aoutput like this one:</p>
+<pre><code>Distributor ID: Debian
+Description :   Debian GNU/Linux 7.8 (wheezy)
+Release:        7.8
+Codename:       wheezy</code></pre></li>
+<li><p>[ ] add the appropriate repository to your <code>/etc/apt/sources.list</code></p>
+<pre><code>sudo sh -c &#39;echo deb http://cran.univ-paris1.fr/bin/linux/debian wheezy-cran3/ &gt;&gt; /etc/apt/sources.list&#39;</code></pre>
+<p>For ubuntu, you migh have to leave out the -cran3 after the version codename</p>
+<pre><code>sudo sh -c &#39;echo deb http://cran.univ-paris1.fr/bin/linux/ubuntu vivid/ &gt;&gt; /etc/apt/sources.list&#39;</code></pre></li>
+<li><p>[ ] update your repository list</p>
+<pre><code>sudo apt-get update</code></pre></li>
 <li><p>[ ] go to [http://www.rstudio.com/products/rstudio/download/] and download the appropriate <code>.deb</code> installer for Debian/Ubuntu. If your system is not that recent, go to [https://support.rstudio.com/hc/en-us/articles/206569407-Older-Versions-of-RStudio-Desktop] to find the appropriate installer file.</p></li>
 </ul>
 <ol style="list-style-type: decimal">
 <li>Installation</li>
 </ol>
 <ul>
-<li><p>[ ] R <code>sudo apt-get install r-base r-base-core r-base-html</code></p></li>
-<li><p>[ ] and, for Rstudio, replacing the XX by the version numbers <code>sudo apt-get install libjpeg62     sudo dpkg -i rstudio-X.XX.XXX-amd64.deb</code></p></li>
+<li><p>[ ] R</p>
+<pre><code>sudo apt-get install r-base r-base-core r-base-html</code></pre></li>
+<li><p>[ ] and, for Rstudio, replacing the XX by the version numbers</p>
+<pre><code>sudo apt-get install libjpeg62
+sudo dpkg -i rstudio-X.XX.XXX-amd64.deb</code></pre></li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
 <li>Verification</li>
@@ -585,7 +636,7 @@ plt.show()</code></pre></li>
 <li>[ ] type <code>rstudio</code> in a console to lauch the R interpreter</li>
 <li>[ ] type ‘demo(graphics)’ and press on ‘Enter’ to see the graphs.</li>
 </ul>
-<h3 id="atom"><a href="#atom">Atom</a></h3>
+<h3 id="atom">Atom</h3>
 <pre><code>sudo apt-get install atom</code></pre>
 <p>But if you are using linux, you might already be using a decent text editor and thus won’t need Atom.</p>
 </body>
