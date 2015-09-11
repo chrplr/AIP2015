@@ -1,5 +1,6 @@
-**Course 00: Software Installation** Wednesday September 2 2015
-============================================================
+#**Course 00: Software Installation**  
+##Wednesday September 2 2015
+
 
 Objectives
 ----------
