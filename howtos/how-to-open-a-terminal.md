@@ -1,6 +1,6 @@
 % How to open a terminal
-% Time-stamp: <2015-09-11 11:38 christophe@pallier.org>
-%
+% Christophe Pallier
+% Sept. 2015
 
 * **MacOSX** Open Finder/Applications/Utilities/Terminal (see <http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac>)
 
@@ -19,10 +19,9 @@ This program waits for you to type commands with the keyboard.
 
 In this lecture, you will just need to know very few commands:
 
-- **Linux/MacOSX** pwd, cd, python, ipython
+- **Linux/MacOSX** `pwd`, `cd`, `python`, `ipython`
 
-- **Windows cmd** echo %cd%, cd, python, ipython
+- **Windows cmd** `echo %cd%`, `cd`, `python`, `ipython`
 
 
 To learn more, see the lectures 'how computers work' and 'how to use a computer interactively'.
-
