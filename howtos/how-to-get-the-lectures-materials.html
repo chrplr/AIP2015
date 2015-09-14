@@ -21,10 +21,10 @@
 <li><a href="#mises-à-jour">Mises à jour</a></li>
 </ul>
 </div>
-<p>Le cours AIP2015 est accessible sur deux repositories git.</p>
+<p>Le cours AIP2015 est accessible sur deux dépôts (“repositories”) git.</p>
 <ul>
 <li><p>L’un se trouve sur un site web sur Internet: https://github.com/chrplr/AIP2015</p></li>
-<li><p>L’autre est accessible sur le réseau local wifi ‘synapse’ à l’adresse: student@192.168.0.2:Sites/cogmaster2015/AIP2015 (mot de passe: Ie5h,Ps’e&amp;jn’aps)</p></li>
+<li><p>L’autre est accessible sur le réseau wifi local “synapse” à l’adresse: student@192.168.0.2:Sites/cogmaster2015/AIP2015 (mot de passe: Ie5h,Ps’e&amp;jn’aps)</p></li>
 </ul>
 <p>Ce document explique comment récupérer le cours en utilisant le programme git que vous devez avoir installé sur votre ordinateur (cf. les <a href="../00_Installation/install.html">instructions d’installation</a>).</p>
 <p>Le principe est le suivant:</p>
@@ -32,7 +32,7 @@
 <li><p>vous allez créer, une fois pour toutes, une copie locale du cours sur votre ordinateur (“clonage”).</p></li>
 <li><p>Ensuite, à tout moment, vous pourrez très simplement mettre à jour les fichiers modifiés par les enseignants.</p></li>
 </ul>
-<h2 id="création-dune-copie-locale"><a href="#création-dune-copie-locale">Création d’une copie locale</a></h2>
+<h2 id="création-dune-copie-locale">Création d’une copie locale</h2>
 <p>La toute première fois, vous devrez <em>cloner</em> un des repositories sur votre ordinateur, c’est à dire créer un répertoire AIP2015 contenant tous les fichiers du cours.</p>
 <p><a href="how-to-open-a-terminal.html">Ouvrez un terminal</a> et tapez les lignes de commandes suivantes:</p>
 <ul>
@@ -42,7 +42,7 @@
 cd AIP2015
 git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015</code></pre>
 <ul>
-<li>Si vous êtes connecté au reseau wifi local ‘synapse’:</li>
+<li>Si vous êtes connecté au reseau wifi local “synapse”:</li>
 </ul>
 <pre><code>git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 synapse
 cd AIP2015
@@ -57,18 +57,38 @@ git remote add internet https://github.com/chrplr/AIP2015</code></pre>
 internet        https://github.com/chrplr/AIP2015.git (push)
 synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (fetch)
 synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (push)</code></pre>
-<h2 id="mises-à-jour"><a href="#mises-à-jour">Mises à jour</a></h2>
-<p>Pour mettre à jour le contenu du répertoire AIP2015, ouvrez un terminal;</p>
+<h2 id="mises-à-jour">Mises à jour</h2>
+<p>Pour mettre à jour le contenu du répertoire AIP2015</p>
+<ol style="list-style-type: decimal">
+<li>Lancez un shell qui puisse interpréter les commandes <strong>git</strong> :</li>
+</ol>
 <ul>
-<li>Si vous êtes connecté à Internet</li>
+<li>si vous êtes sous window, lancez le <code>Git Shell</code> depuis le raccourci sur votre bureau</li>
+<li>si vous êtes sous mac ou linux, ouvrez un terminal</li>
 </ul>
-<pre><code>cd AIP2015
-git pull internet master</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Déplacez-vous dans votre arborescence de fichier de telle sorte qu’<strong>AIP2015</strong> soit votre répertoire courant</li>
+</ol>
 <ul>
-<li>Si vous êtes connecté à synapse:</li>
+<li>version courte : selon votre OS et la méthode choisie pour le clonage initial, exécutez</li>
 </ul>
-<pre><code>cd AIP2015
-git pull synapse master</code></pre>
+<pre><code>cd AIP2015</code></pre>
+<p>ou</p>
+<pre><code>cd GitHub/AIP2015</code></pre>
+<ul>
+<li>version longue, typiquement si vous avez déplacé le répertoire AIP2015 après son clonage : localisez le répertoire AIP2015 dans votre arborescence puis exécutez la commande <code>cd chemin_vers_votre_repertoire_AIP2015</code> où il faut évidemment remplacer “chemin_vers_votre_repertoire_AIP2015” par le chemin d’accès dans votre cas particulier.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Exécutez la commande <strong>git</strong> qui met à jour votre répertoire <strong>AIP2015</strong> depuis l’un des deux repositories du réseau</li>
+</ol>
+<ul>
+<li>Si vous êtes connecté à Internet :</li>
+</ul>
+<pre><code>git pull internet master</code></pre>
+<ul>
+<li>Si vous êtes connecté au réseau wifi local “synapse” :</li>
+</ul>
+<pre><code>git pull synapse master</code></pre>
 <p>That’s all!</p>
 </body>
 </html>
