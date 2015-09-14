@@ -3,13 +3,96 @@
 % Sept. 2015
 
 
-*There are 10 kinds of people: those who count in binary and the others*
+# Warm up
+
+(@) What does the following code do?
+
+```python
+for i in (1, 2, 3, 4, 5):
+	print(""All work and no play makes Jack a dull boy")
+```
+
+. . .
+
+Modify it to print the line 100 times (You want to do a loop, check python's documentation)
+
+. . .
+
+One possible solution, using a "while loop":
+
+```python
+n = 1
+while n <= 100:
+	print(""All work and no play makes Jack a dull boy")
+	n = n + 1
+```
+
+. . .
+
+Another, using a "for loop" and the function `range`:
+
+```python
+for _ in range(100):
+	print(""All work and no play makes Jack a dull boy")
+```
+
+. . .
+
+Modify the program to randomly select a name in the set {John, Jack, Paul, Tim} at each line.
+
+(hint: import the module "random" and use the function "random.choice")
+
+. . .
+
+```python
+import random
+
+NAMES = ('John', 'Jack', 'Paul', 'Tim')
+
+for _ in range(100):
+	name = random.choice(NAMES)
+	print("All work and no play makes " + name +  " a dull boy")
+```
 
 
-Computers represent all objects as series of 0 and 1, also known as bits (for "binary digits"). 
+-------------
 
-Representation of integers
---------------------------
+(@) What does the following function compute?
+
+```python
+def mysterious(n):
+	""" ???? """ 
+	sum = 0
+	for i in range(1, n+1):
+		sum = sum + i
+	return sum
+```
+
+. . .
+
+It computes the sum of all integers between 1 and n.
+
+
+Remark: Freidriech Gauss would probably have written:
+
+```python
+def sum2(n):
+	""" returns the sum of integers between 1 and n """
+	return n * (n + 1) / 2
+```
+
+
+
+
+
+# Representation of integers
+
+
+*There are 10 kinds of people: those who count in binary and the others.*
+
+
+Computers represent everything as series of 0 and 1, also known as *bits* (for "binary digits"). 
+
 
 Just like a number can be written in base 10, it can be written in base 2:
 
@@ -28,7 +111,7 @@ E.g.
 	...
 
 
-To learn more about how integer numbers can be represented in binary format, see <http://csunplugged.org/binary-numbers>
+To learn more about how integer numbers are reprsented in binary format, you can check out <http://csunplugged.org/binary-numbers>
 
 (@) Convert (manually) into decimal the following binary numbers:
 - 101
@@ -45,6 +128,7 @@ To learn more about how integer numbers can be represented in binary format, see
 #ifdef ANSWERS
 ```python
 def todec(s):
+	""" convert a string of 0 and 1 representing a binary number into an integer """
 	n = 0
 	for i in s:
 		n = n * 2 + int(i)
@@ -53,7 +137,6 @@ def todec(s):
 for i in ['101', '1000', '1011', '11111111']:
 	print(todec(i))
 ```	
-
 #endif
 
 
@@ -152,14 +235,11 @@ Remark: measures of memory size
 * 1 byte = 8 bits
 * 1 Kilobyte (KB) = 1024 bytes
 * 1 Megabyte (MB) = 1024 kbytes = 1048576 bytes
-* 1 Gigabytes (GB) = 1024 Mbyes 
+* 1 Gigabytes (GB) = 1024 Mbytes 
 * Terabyte, Petabyte, Exabyte...
 
 
 Exercice (advanced): Write a function that return the hexadecimal representation (base 16) of a number.
-
-
-
 
 
 
@@ -172,10 +252,8 @@ and <https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues>
 
 
 
-- - -
 
-Representation of text
-----------------------
+# Representation of text
 
 A text file is nothing but a sequences of characters (a word document is not a text file).
 
@@ -192,7 +270,11 @@ For example, if you name is 'ZOE', you would type:
 
 #endif 
 
-Remark: ASCII codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters. Unicode was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).
+Remark: **ASCII** codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.
+
+**Unicode** was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).
+
+
 
 ### How to read a text file in Python
 

@@ -1,5 +1,5 @@
 <h1>Atelier d'Introduction a la Programmation AIP2015</h1>
-Generated on  Sat Sep 12 15:12:00 CEST 2015 by <christophe@pallier.org>
+Generated on  Sat Sep 12 15:15:30 CEST 2015 by <christophe@pallier.org>
 
 (these pages maybe outdated; the latest version is always available in a git repository at <https://github.com/chrplr/AIP2015>)
 
@@ -35,6 +35,7 @@ Generated on  Sat Sep 12 15:12:00 CEST 2015 by <christophe@pallier.org>
 * <a href=./css/Overview.html>./css/Overview.html</a>
 * <a href=./howtos/how-to-get-the-lectures-materials.html>./howtos/how-to-get-the-lectures-materials.html</a>
 * <a href=./howtos/how-to-open-a-terminal.html>./howtos/how-to-open-a-terminal.html</a>
+* <a href=./index.html>./index.html</a>
 * <a href=./README.html>./README.html</a>
 <h1>>PDFs:</h1>
 * <a href=./00_Installation/install.pdf>./00_Installation/install.pdf</a>

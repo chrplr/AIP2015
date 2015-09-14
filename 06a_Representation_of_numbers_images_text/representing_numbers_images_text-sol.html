@@ -43,11 +43,65 @@ Christophe@pallier.org
   </p>
   <p class="date">Sept. 2015</p>
 </div>
+<div id="warm-up" class="slide section level1">
+<h1><a href="#warm-up">Warm up</a></h1>
+<ol style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>):
+    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span></code></pre>
+<div class="incremental">
+<p>Modify it to print the line 100 times (You want to do a loop, check python’s documentation)</p>
+</div>
+<div class="incremental">
+<p>One possible solution, using a “while loop”:</p>
+<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">1</span>
+<span class="kw">while</span> n &lt;= <span class="dv">100</span>:
+    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span>
+<span class="st">    n = n + 1</span></code></pre>
+</div>
+<div class="incremental">
+<p>Another, using a “for loop” and the function <code>range</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">100</span>):
+    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span></code></pre>
+</div>
+<div class="incremental">
+<p>Modify the program to randomly select a name in the set {John, Jack, Paul, Tim} at each line.</p>
+<p>(hint: import the module “random” and use the function “random.choice”)</p>
+</div>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> random
+
+NAMES = (<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Jack&#39;</span>, <span class="st">&#39;Paul&#39;</span>, <span class="st">&#39;Tim&#39;</span>)
+
+<span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">100</span>):
+    name = random.choice(NAMES)
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes &quot;</span> + name +  <span class="st">&quot; a dull boy&quot;</span>)</code></pre>
+</div>
+</div>
 <div class="slide section level1">
 
-<p><em>There are 10 kinds of people: those who count in binary and the others</em></p>
-<p>Computers represent all objects as series of 0 and 1, also known as bits (for “binary digits”).</p>
-<h2 id="representation-of-integers"><a href="#representation-of-integers">Representation of integers</a></h2>
+<ol start="2" style="list-style-type: example">
+<li>What does the following function compute?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> mysterious(n):
+    <span class="co">&quot;&quot;&quot; ???? &quot;&quot;&quot;</span> 
+    <span class="dt">sum</span> = <span class="dv">0</span>
+    <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1</span>, n<span class="dv">+1</span>):
+        <span class="dt">sum</span> = <span class="dt">sum</span> + i
+    <span class="kw">return</span> <span class="dt">sum</span></code></pre>
+<div class="incremental">
+<p>It computes the sum of all integers between 1 and n.</p>
+<p>Remark: Freidriech Gauss would probably have written:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sum2(n):
+    <span class="co">&quot;&quot;&quot; returns the sum of integers between 1 and n &quot;&quot;&quot;</span>
+    <span class="kw">return</span> n * (n + <span class="dv">1</span>) / <span class="dv">2</span></code></pre>
+</div>
+</div>
+<div id="representation-of-integers" class="slide section level1">
+<h1><a href="#representation-of-integers">Representation of integers</a></h1>
+<p><em>There are 10 kinds of people: those who count in binary and the others.</em></p>
+<p>Computers represent everything as series of 0 and 1, also known as <em>bits</em> (for “binary digits”).</p>
 <p>Just like a number can be written in base 10, it can be written in base 2:</p>
 <p>E.g.</p>
 <pre><code>12 : 10  + 2  = 8 + 4 = 2**3 + 2**1 : 1010
@@ -61,8 +115,8 @@ Christophe@pallier.org
 6 : 110
 7 : 111
 ...</code></pre>
-<p>To learn more about how integer numbers can be represented in binary format, see <a href="http://csunplugged.org/binary-numbers">http://csunplugged.org/binary-numbers</a></p>
-<ol style="list-style-type: example">
+<p>To learn more about how integer numbers are reprsented in binary format, you can check out <a href="http://csunplugged.org/binary-numbers">http://csunplugged.org/binary-numbers</a></p>
+<ol start="3" style="list-style-type: example">
 <li>Convert (manually) into decimal the following binary numbers:</li>
 </ol>
 <ul>
@@ -71,12 +125,12 @@ Christophe@pallier.org
 <li>1011</li>
 <li>11111111</li>
 </ul>
-<ol start="2" style="list-style-type: example">
+<ol start="4" style="list-style-type: example">
 <li><p>Write a function that, given the binary representation of a number as a string of ‘0’ and ‘1’, returns its value as a integer.</p></li>
 <li><p>Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.</p></li>
 </ol>
 <p>If you have an idea how to program it, please proceed. If not, we propose that you follow the following steps:</p>
-<ol start="4" style="list-style-type: example">
+<ol start="6" style="list-style-type: example">
 <li>Study the program below. Execute it with various values of the variable <em>num</em>. Do you understand the last line? Do you see a limitation of this program?</li>
 </ol>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">143</span> 
@@ -85,7 +139,7 @@ d2 = <span class="dt">int</span>(num/<span class="dv">100</span>)  % <span class
 d1 = <span class="dt">int</span>(num/<span class="dv">10</span>)   % <span class="dv">10</span> <span class="co"># dec</span>
 d0 =  num % <span class="dv">10</span> 
 <span class="dt">print</span>(<span class="dt">str</span>(d3) + <span class="dt">str</span>(d2) + <span class="dt">str</span>(d1) + <span class="dt">str</span>(d0))</code></pre>
-<ol start="5" style="list-style-type: example">
+<ol start="7" style="list-style-type: example">
 <li><p>Adapt the above program to print the binary representation of num</p></li>
 <li><p>Modify the above program to print the binary representations of every number between 0 and 255.</p></li>
 <li><p>(Advanced) Write an improved version that uses a loop and does not have a limitation in size.</p></li>
@@ -104,7 +158,7 @@ print(binary(1234))</code></pre>
 <li>1 byte = 8 bits</li>
 <li>1 Kilobyte (KB) = 1024 bytes</li>
 <li>1 Megabyte (MB) = 1024 kbytes = 1048576 bytes</li>
-<li>1 Gigabytes (GB) = 1024 Mbyes</li>
+<li>1 Gigabytes (GB) = 1024 Mbytes</li>
 <li>Terabyte, Petabyte, Exabyte…</li>
 </ul>
 <p>Exercice (advanced): Write a function that return the hexadecimal representation (base 16) of a number.</p>
@@ -114,18 +168,18 @@ print(binary(1234))</code></pre>
 <li><p>To understand how real numbers are encoded, read <a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> and <a href="https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues">https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues</a></p></li>
 </ul>
 </div>
-<div class="slide section level1">
-
-<h2 id="representation-of-text"><a href="#representation-of-text">Representation of text</a></h2>
+<div id="representation-of-text" class="slide section level1">
+<h1><a href="#representation-of-text">Representation of text</a></h1>
 <p>A text file is nothing but a sequences of characters (a word document is not a text file).</p>
 <p>For a long time, characters were encoded using ASCII code.</p>
 <div class="figure">
 <img src="images/asciitable.jpg" alt="ascii table" /><p class="caption">ascii table</p>
 </div>
-<ol start="9" style="list-style-type: example">
+<ol start="11" style="list-style-type: example">
 <li>lookup the ASCII representation of your first name in the table and use the chr function of Python to print it.</li>
 </ol>
-<p>Remark: ASCII codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters. Unicode was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).</p>
+<p>Remark: <strong>ASCII</strong> codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.</p>
+<p><strong>Unicode</strong> was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).</p>
 <h3 id="how-to-read-a-text-file-in-python"><a href="#how-to-read-a-text-file-in-python">How to read a text file in Python</a></h3>
 <p>Download <a href="http://www.pallier.org/cours/AIP2013/alice.txt">Alice in Wonderland</a></p>
 <pre class="sourceCode python"><code class="sourceCode python">f = <span class="dt">file</span>(<span class="st">&#39;alice.txt&#39;</span>)
@@ -133,7 +187,7 @@ o = f.read()
 <span class="dt">print</span>(o)
 lines = o.split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
 <span class="dt">print</span>(lines)</code></pre>
-<ol start="10" style="list-style-type: example">
+<ol start="12" style="list-style-type: example">
 <li><p>Write a program that counts the number of lines, and number of words in alice.txt (we suppose that words are separated by spaces).</p></li>
 <li><p>Write a program that detects if a text file contains the word ‘NSA’</p></li>
 </ol>
@@ -152,7 +206,7 @@ lines = o.split(<span class="st">&quot;</span><span class="ch">\n</span><span cl
 <div class="figure">
 <img src="images/bitmap.jpg" />
 </div>
-<ol start="12" style="list-style-type: example">
+<ol start="14" style="list-style-type: example">
 <li><p>What is the size in kilobytes of a 1024x768 pixels images ?</p></li>
 <li><p>Execute the follwoing code (it requires the modules numpy and matplotlib).</p></li>
 </ol>
@@ -169,7 +223,7 @@ a = np.array([[<span class="dv">0</span>, <span class="dv">0</span>, <span class
 plt.imshow(a, cmap=plt.cm.gray, interpolation=<span class="st">&#39;nearest&#39;</span>)
 plt.show()</code></pre>
 <p>Numpy’s arrays are a new type of object. There are similar to lists, but optimised for mathematical computations. Notably, they can be multidimensional (i.e. you can use a[i,j] notation). You can learn more about arrays in the documents <a href="http://www.pallier.org/cours/AIP2013/python4science.pdf">http://www.pallier.org/cours/AIP2013/python4science.pdf</a> and <a href="http://wiki.scipy.org/Tentative_NumPy_Tutorial">http://wiki.scipy.org/Tentative_NumPy_Tutorial</a>.</p>
-<ol start="14" style="list-style-type: example">
+<ol start="16" style="list-style-type: example">
 <li>Exercice:</li>
 </ol>
 <ol style="list-style-type: decimal">

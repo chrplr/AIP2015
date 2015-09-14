@@ -7,13 +7,6 @@ Introduction to Programming (AIP2015)
 - Sylvain Charron <sylvain.charron@polytechnique.edu>
 - Louis Thibault <louist87@gmail.com>
 
-### Website:
-
-The lectures materials are available in a git repositoty located at <https://github.com/chrplr/AIP2015>
-
-To download them on your computer, follow [these instructions](./howtos/how-to-get-the-lectures-materials.html).
-
-Too see the list of all html and pdf documents, check [index.html](index.html).
 
 ## Objectives
 
@@ -23,6 +16,15 @@ Too see the list of all html and pdf documents, check [index.html](index.html).
 * Learn how to execute, design, write and debug programs
 
 (see below for more details about the contents of this series of lectures)
+
+### Lexture materials:
+
+The most up-to-date lectures materials are available in a git repository at <https://github.com/chrplr/AIP2015>
+
+To download a local copy on your computer and set it up to easily update them, follow [these instructions](./howtos/how-to-get-the-lectures-materials.html).
+
+Too see the list of all html and pdf documents, check [doclist.html](doclist.html).
+
 
 ### Prerequisites:
 
@@ -35,14 +37,12 @@ Cogmaster.
 Before attending AIP, it can help:
 - to study the learning modules on 'Python' and 'the command line' at
 (https://www.codecademy.com)[www.codecademy.com]
-- have a peek at the documents in the 'resources' folder.
+- have a peek at the documents in the 'resources' folder, in particular _How to think like a computer scientist_.
 
-During or after AIP, you may be interested in
+During of after AIP, you may be interested in
 [MIT's Introduction to computer science and programming](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/) online course. 
 
 Another excellent resource to go beyond this lecture is <https://mitpress.mit.edu/sicp/sicp.html>
-
-
 
 
 
