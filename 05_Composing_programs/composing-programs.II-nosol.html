@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="css/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="review" class="slide section level1">
+<h1>Review:</h1>
+<ul>
+<li>OOP</li>
+<li>Functions</li>
+</ul>
+</div>
+<div id="consider-the-following-snippet" class="slide section level1">
+<h1>Consider the following snippet:</h1>
+<pre><code>d = {1: &#39;hello&#39;, 2: &#39;goodbye&#39;}
+d2 = {True:  &quot;somestring&quot;, False: &quot;&quot;}
+if d2.pop(False):
+    x = d.pop(1)
+else:
+    x = d.pop(2)</code></pre>
+<ol style="list-style-type: decimal">
+<li>What will be the value of <code>x</code>?</li>
+<li>What will be the value of <code>d2</code>?</li>
+</ol>
+</div>
+<div id="consider-the-following-snippet-1" class="slide section level1">
+<h1>Consider the following snippet:</h1>
+<pre><code>def map2(function, arguments):
+    result_list = []
+    for arg in arguments:
+        result_list.append(function(arg))
+    return result_list
+
+def square(n):
+    return n * n</code></pre>
+<ol style="list-style-type: decimal">
+<li>What will be the result of <code>map2(square, [1, 2, 3, 4, 5])</code></li>
+</ol>
+</div>
+<div id="consider-the-following-snippet-2" class="slide section level1">
+<h1>Consider the following snippet:</h1>
+<pre><code>def strange_loop(l):
+    out = []
+
+    for item in l:
+        if item is None:  # `item is None` evaluates to True when item contains None
+            return out
+        out.append(item)
+
+    return out</code></pre>
+<ol style="list-style-type: decimal">
+<li>What will be the result of <code>strange_loop([1, 2, 5, 9, None, 3, 1, 1, None])</code></li>
+</ol>
+</div>
+<div id="comments-docstrings" class="slide section level1">
+<h1>Comments &amp; Docstrings</h1>
+<ul>
+<li>What is the purpose of a docstring?</li>
+<li>What is the purpose of a comment?</li>
+</ul>
+</div>
+<div id="lets-write-a-script" class="slide section level1">
+<h1>Let’s write a script!</h1>
+<p>Requirements:</p>
+<ol style="list-style-type: decimal">
+<li>Download tab-delimited data file from <code>https://goo.gl/H0vV4x</code></li>
+<li>Reshape data into a dictionary whose keys are the column names and whose values are the columns (in the form of a list).</li>
+<li>Calculate mean response error for each SOAxCongruency condition</li>
+<li>Eliminate outlier RT values, and calculate median RT for each SOAxCongruency condition</li>
+</ol>
+</div>
+</body>
+</html>

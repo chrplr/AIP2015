@@ -88,13 +88,13 @@ def sum2(n):
 *There are 10 kinds of people: those who count in binary and the others.*
 
 
-Computers represent everything as series of 0 and 1, also known as *bits* (for "binary digits"). 
+Computers represent everything as series of 0 and 1, also known as *bits* (for "binary digits").
 
 
 Just like a number can be written in base 10, it can be written in base 2:
 
-E.g. 
-	  
+E.g.
+
 	12 : 10  + 2  = 8 + 4 = 2**3 + 2**1 : 1010
     33 : 30  + 3  = 32 + 1 = 2**5 + 1 : 100001
 
@@ -120,7 +120,7 @@ To learn more about how integer numbers are reprsented in binary format, you can
 
 *Answer:* 5, 8, 11, 255
 
-(@) Write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer. 
+(@) Write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer.
 
 . . .
 
@@ -135,29 +135,39 @@ def todec(s):
 
 for i in ['101', '1000', '1011', '11111111']:
 	print(todec(i))
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 ```	
+=======
+```
+#endif
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 
 (@) Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.
 
-If you have an idea how to program it, please proceed. If not, we propose that you follow the following steps: 
+If you have an idea how to program it, please proceed. If not, we propose that you follow the following steps:
 
-(@) Study the program below.  Execute it with various values of the variable *num*. Do you understand the last line? Do you see a limitation of this program? 
+(@) Study the program below.  Execute it with various values of the variable *num*. Do you understand the last line? Do you see a limitation of this program?
 
 ```python
-num = 143 
+num = 143
 d3 = int(num/1000) % 10 # thousands
 d2 = int(num/100)  % 10 # hundreds
 d1 = int(num/10)   % 10 # dec
-d0 =  num % 10 
+d0 =  num % 10
 print(str(d3) + str(d2) + str(d1) + str(d0))
 ```
 
 (@) Adapt the above program to print the binary representation of num
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 . . .
 
 ```python	
+=======
+#ifdef ANSWERS
+```python
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 num = 17
 b0 = num % 2
 b1 = int(num/2) % 2
@@ -165,10 +175,10 @@ b2 = int(num/4) % 2
 b3 = int(num/8) % 2
 b4 = int(num/16)  % 2
 b5 = int(num/32)  % 2
-b6 = int(num/64)  % 2 
-b7 = int(num/128) % 2 
+b6 = int(num/64)  % 2
+b7 = int(num/128) % 2
 b8 = int(num/256) % 2
-print(str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str(b1) + str(b0)) 
+print(str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str(b1) + str(b0))
 ```
 
 
@@ -176,13 +186,18 @@ print(str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str
 
 (@) Modify the above program to print the binary representations of every number between 0 and 255.
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 . . .
 
 ```python	
+=======
+#ifdef ANSWERS
+```python
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 def tobin(num):
 	b8 = int(num/256) % 2
-	b7 = int(num/128) % 2 
-	b6 = int(num/64)  % 2 
+	b7 = int(num/128) % 2
+	b6 = int(num/64)  % 2
 	b5 = int(num/32)  % 2
 	b4 = int(num/16)  % 2
 	b3 = int(num/8) % 2
@@ -190,7 +205,7 @@ def tobin(num):
 	b1 = int(num/2) % 2
 	b0 = num % 2
     return (str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str(b1) + str(b0))
-	
+
 for n in range(256):
 	print(n, tobin(n))
 
@@ -225,7 +240,7 @@ def binary(num):
 	if num == 1:
 		return "1"
 	return(binary(int(num /2)) + binary(num % 2))
-	
+
 print(binary(1234))
 ```
 
@@ -241,7 +256,7 @@ Remark: measures of memory size
 * 1 byte = 8 bits
 * 1 Kilobyte (KB) = 1024 bytes
 * 1 Megabyte (MB) = 1024 kbytes = 1048576 bytes
-* 1 Gigabytes (GB) = 1024 Mbytes 
+* 1 Gigabytes (GB) = 1024 Mbytes
 * Terabyte, Petabyte, Exabyte...
 
 
@@ -249,7 +264,7 @@ Exercice (advanced): Write a function that return the hexadecimal representation
 
 
 
-To go further: 
+To go further:
 
 * If you want to know how negative integer numbers are represented, see <http://en.wikipedia.org/wiki/Two%27s_complement>
 
@@ -263,7 +278,7 @@ and <https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues>
 
 A text file is nothing but a sequences of characters (a word document is not a text file).
 
-For a long time, characters were encoded using ASCII code. 
+For a long time, characters were encoded using ASCII code.
 
 ![ascii table](images/asciitable.jpg)
 
@@ -275,6 +290,10 @@ For example, if you name is 'ZOE', you would type:
 
 	print(chr(90)+chr(79)+chr(69))
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+=======
+#endif
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 Remark: **ASCII** codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.
 
@@ -309,7 +328,7 @@ nlines = len(lines)
 nw = 0
 for l in lines:
 	nw += len(l.split(" "))
-	
+
 print(nlines)
 print(nw)
 ```
@@ -343,7 +362,11 @@ Images can be stored either:
 
 Here we are just going to manipulate bitmaps.
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 ## Black and white bitmaps 
+=======
+### Black and white bitmaps
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 Each dot (pixel) is either '0' (black) or '1' (white).
 
@@ -376,11 +399,11 @@ plt.show()
 Numpy's arrays are a new type of object. There are similar to lists, but optimised for mathematical computations. Notably, they can be multidimensional (i.e. you can use a[i,j] notation). You can learn more about arrays in the documents <http://www.pallier.org/cours/AIP2013/python4science.pdf> and <http://wiki.scipy.org/Tentative_NumPy_Tutorial>.
 
 
-(@) Exercice: 
+(@) Exercice:
 
 1. Create a cross.
 2. create a 200x200 bitmap:
-    1. add a diagonal 
+    1. add a diagonal
     2. make two crosses imitating the British Flag
 
 
@@ -388,7 +411,7 @@ Numpy's arrays are a new type of object. There are similar to lists, but optimis
 
 ```python
 a = np.zeros((200,200))
-for i in range(200): 
+for i in range(200):
 	a[i, i] = 1
 plt.imshow(a, cmap=plt.cm.gray, interpolation='nearest')
 plt.show()
@@ -407,7 +430,7 @@ How large is the file for a 1024x768 image pixels with 256 grey levels?
 The following code displays an image:
 
 ```python
-import scipy.misc 
+import scipy.misc
 l = scipy.misc.lena()
 plt.imshow(l,  cmap=plt.cm.gray)
 plt.show()
@@ -422,7 +445,7 @@ plt.imshow(bl,  cmap=plt.cm.gray)
 plt.show()
 ```
 
-Edge detector. It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>. 
+Edge detector. It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>.
 
 Using the ndimage.convolve function, apply the following filters to the image and diplay the results.
 
@@ -439,7 +462,7 @@ kernel2 = np.array([[-1, -1, -1, -1, -1],
                    [-1, -1, -1, -1, -1]])
 ```
 
-More manipulations are available at <http://scipy-lectures.github.io/advanced/image_processing/>. 
+More manipulations are available at <http://scipy-lectures.github.io/advanced/image_processing/>.
 
 
 ### Colored bitmaps
@@ -449,6 +472,3 @@ Each dot is now associated to three bytes, representing the Red, Gree and Blue i
 How large is the file for a 1024x768 RGB image?
 
 Exercice: What are the RGB triplets for BLACK, WHITE, RED, YELLOW?
-
-
-
