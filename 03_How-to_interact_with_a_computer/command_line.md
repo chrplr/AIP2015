@@ -42,9 +42,10 @@ Il faut toujours savoir :
 - **racine** : c'est le point de départ de l'organisation des informations (particularité de windows : il peut y en avoir plusieurs, une par partition)
 - **repertoire** : c'est un contenant qui peut contenir des fichiers ou d'autres répertoires
 - **répertoire courant** : c'est l'endroit où on se trouve à un instant donné dans l'arborescence, c'est là qu'on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus
-- **chemin relatif** : le chemin à partir du répertoire courant, identifié par le signe "point" `.` tandis que le répertoire parent est identifié par le signe "point point" `..``
 - **fichier** : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,...)
-- **chemin d'accès (ou _path_)** : c'est la description du chemin à suivre dans l'arborescence pour trouver un répertoire ou un fichier, en partant de la racine
+- **chemin d'accès (ou _path_)** : c'est la description du chemin à suivre dans l'arborescence pour trouver un répertoire ou un fichier. Il s'agit de la suite des noms des répertoire à parcourir, séparés par un caractère `/` sous Mac et Linux et `\` sous Windows
+- **chemin d'accès absolu** : c'est le chemin d'accès en partant de la racine
+- **chemin relatif** : c'est le chemin d'accès à partir du répertoire courant, identifié par le signe "point" `.` tandis que le répertoire parent est identifié par le signe "point point" `..``
 
 Tout ça peut se voir avec les outils graphiques qu'on trouve désormais couramment dans les systèmes d'exploitation  
 **Gestionnaires de fichiers** :
@@ -53,7 +54,7 @@ système|nom|pour ouvrir|racine
 -------|--------|--------|------
 windows|explorer|win+E| Lettre:\
 mac|finder|cmd+N| /
-linux|nautilus,gnome commander,...|commande|/
+linux|nautilus,thunar,...|commande|/
 
 **Super important** : pour éviter les problèmes (surtout en ligne de commande), toujours utiliser des noms de répertoires et de fichiers qui suivent ces règles :
 - pas d'espace
