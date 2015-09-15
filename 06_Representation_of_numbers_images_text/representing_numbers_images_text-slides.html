@@ -29,10 +29,8 @@ code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
@@ -49,7 +47,7 @@ Christophe@pallier.org
 <li>What does the following code do?</li>
 </ol>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>):
-    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span></code></pre>
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)</code></pre>
 <div class="incremental">
 <p>Modify it to print the line 100 times (You want to do a loop, check python’s documentation)</p>
 </div>
@@ -57,17 +55,17 @@ Christophe@pallier.org
 <p>One possible solution, using a “while loop”:</p>
 <pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">1</span>
 <span class="kw">while</span> n &lt;= <span class="dv">100</span>:
-    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span>
-<span class="st">    n = n + 1</span></code></pre>
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)
+    n = n + <span class="dv">1</span></code></pre>
 </div>
 <div class="incremental">
 <p>Another, using a “for loop” and the function <code>range</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">100</span>):
-    <span class="dt">print</span>(<span class="st">&quot;&quot;</span>All work and no play makes Jack a dull boy<span class="st">&quot;)</span></code></pre>
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)</code></pre>
 </div>
 <div class="incremental">
-<p>Modify the program to randomly select a name in the set {John, Jack, Paul, Tim} at each line.</p>
-<p>(hint: import the module “random” and use the function “random.choice”)</p>
+<p>Modify the program to randomly select a name in the list (John, Jack, Paul, Tim) at each line.</p>
+<p>(Hint: import the module “random”)</p>
 </div>
 <div class="incremental">
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> random
@@ -125,9 +123,24 @@ NAMES = (<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Jack&#39;
 <li>1011</li>
 <li>11111111</li>
 </ul>
+<div class="incremental">
+<p><em>Answer:</em> 5, 8, 11, 255</p>
 <ol start="4" style="list-style-type: example">
-<li><p>Write a function that, given the binary representation of a number as a string of ‘0’ and ‘1’, returns its value as a integer.</p></li>
-<li><p>Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.</p></li>
+<li>Write a function that, given the binary representation of a number as a string of ‘0’ and ‘1’, returns its value as a integer.</li>
+</ol>
+</div>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> todec(s):
+    <span class="co">&quot;&quot;&quot; convert a string of 0 and 1 representing a binary number into an integer &quot;&quot;&quot;</span>
+    n = <span class="dv">0</span>
+    <span class="kw">for</span> i in s:
+        n = n * <span class="dv">2</span> + <span class="dt">int</span>(i)
+    <span class="kw">return</span> n
+
+<span class="kw">for</span> i in [<span class="st">&#39;101&#39;</span>, <span class="st">&#39;1000&#39;</span>, <span class="st">&#39;1011&#39;</span>, <span class="st">&#39;11111111&#39;</span>]:
+    <span class="dt">print</span>(todec(i))</code></pre>
+<ol start="5" style="list-style-type: example">
+<li>Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.</li>
 </ol>
 <p>If you have an idea how to program it, please proceed. If not, we propose that you follow the following steps:</p>
 <ol start="6" style="list-style-type: example">
@@ -140,10 +153,62 @@ d1 = <span class="dt">int</span>(num/<span class="dv">10</span>)   % <span class
 d0 =  num % <span class="dv">10</span> 
 <span class="dt">print</span>(<span class="dt">str</span>(d3) + <span class="dt">str</span>(d2) + <span class="dt">str</span>(d1) + <span class="dt">str</span>(d0))</code></pre>
 <ol start="7" style="list-style-type: example">
-<li><p>Adapt the above program to print the binary representation of num</p></li>
-<li><p>Modify the above program to print the binary representations of every number between 0 and 255.</p></li>
-<li><p>(Advanced) Write an improved version that uses a loop and does not have a limitation in size.</p></li>
-<li><p>Study the following code. Do you understand why it works?</p></li>
+<li>Adapt the above program to print the binary representation of num</li>
+</ol>
+</div>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">17</span>
+b0 = num % <span class="dv">2</span>
+b1 = <span class="dt">int</span>(num/<span class="dv">2</span>) % <span class="dv">2</span>
+b2 = <span class="dt">int</span>(num/<span class="dv">4</span>) % <span class="dv">2</span>
+b3 = <span class="dt">int</span>(num/<span class="dv">8</span>) % <span class="dv">2</span>
+b4 = <span class="dt">int</span>(num/<span class="dv">16</span>)  % <span class="dv">2</span>
+b5 = <span class="dt">int</span>(num/<span class="dv">32</span>)  % <span class="dv">2</span>
+b6 = <span class="dt">int</span>(num/<span class="dv">64</span>)  % <span class="dv">2</span> 
+b7 = <span class="dt">int</span>(num/<span class="dv">128</span>) % <span class="dv">2</span> 
+b8 = <span class="dt">int</span>(num/<span class="dv">256</span>) % <span class="dv">2</span>
+<span class="dt">print</span>(<span class="dt">str</span>(b8) + <span class="dt">str</span>(b7) +  <span class="dt">str</span>(b6) + <span class="dt">str</span>(b5) + <span class="dt">str</span>(b4) + <span class="dt">str</span>(b3) + <span class="dt">str</span>(b2) + <span class="dt">str</span>(b1) + <span class="dt">str</span>(b0)) </code></pre>
+</div>
+<div class="incremental">
+<ol start="8" style="list-style-type: example">
+<li>Modify the above program to print the binary representations of every number between 0 and 255.</li>
+</ol>
+</div>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> tobin(num):
+    b8 = <span class="dt">int</span>(num/<span class="dv">256</span>) % <span class="dv">2</span>
+    b7 = <span class="dt">int</span>(num/<span class="dv">128</span>) % <span class="dv">2</span> 
+    b6 = <span class="dt">int</span>(num/<span class="dv">64</span>)  % <span class="dv">2</span> 
+    b5 = <span class="dt">int</span>(num/<span class="dv">32</span>)  % <span class="dv">2</span>
+    b4 = <span class="dt">int</span>(num/<span class="dv">16</span>)  % <span class="dv">2</span>
+    b3 = <span class="dt">int</span>(num/<span class="dv">8</span>) % <span class="dv">2</span>
+    b2 = <span class="dt">int</span>(num/<span class="dv">4</span>) % <span class="dv">2</span>
+    b1 = <span class="dt">int</span>(num/<span class="dv">2</span>) % <span class="dv">2</span>
+    b0 = num % <span class="dv">2</span>
+    <span class="kw">return</span> (<span class="dt">str</span>(b8) + <span class="dt">str</span>(b7) +  <span class="dt">str</span>(b6) + <span class="dt">str</span>(b5) + <span class="dt">str</span>(b4) + <span class="dt">str</span>(b3) + <span class="dt">str</span>(b2) + <span class="dt">str</span>(b1) + <span class="dt">str</span>(b0))
+    
+<span class="kw">for</span> n in <span class="dt">range</span>(<span class="dv">256</span>):
+    <span class="dt">print</span>(n, tobin(n))</code></pre>
+</div>
+<div class="incremental">
+<ol start="9" style="list-style-type: example">
+<li>(Advanced) Write an improved version that uses a loop and does not have a limitation in size.</li>
+</ol>
+</div>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> binary(n):
+    <span class="kw">if</span> n==<span class="dv">0</span>:
+        <span class="kw">return</span> <span class="st">&quot;0&quot;</span>
+    s = <span class="st">&quot;&quot;</span>
+    <span class="kw">while</span> n &gt; <span class="dv">0</span>:
+        b = <span class="dt">str</span>(n % <span class="dv">2</span>)
+        s = b + s
+        n = n / <span class="dv">2</span>
+    <span class="kw">return</span> s</code></pre>
+</div>
+<div class="incremental">
+<ol start="10" style="list-style-type: example">
+<li>Study the following code. Do you understand why it works?</li>
 </ol>
 <pre><code>def binary(num):
     if num == 0:
@@ -153,6 +218,11 @@ d0 =  num % <span class="dv">10</span>
     return(binary(int(num /2)) + binary(num % 2))
     
 print(binary(1234))</code></pre>
+</div>
+<div class="incremental">
+<p><em>Answer:</em> It is a recursive function which calls itself. See <a href="http://en.wikipedia.org/wiki/Recursion_%28computer_science%29">http://en.wikipedia.org/wiki/Recursion_%28computer_science%29</a></p>
+</div>
+<div class="incremental">
 <p>Remark: measures of memory size</p>
 <ul>
 <li>1 byte = 8 bits</li>
@@ -168,6 +238,7 @@ print(binary(1234))</code></pre>
 <li><p>To understand how real numbers are encoded, read <a href="http://floating-point-gui.de/">What Every Programmer Should Know About Floating-Point Arithmetic</a> and <a href="https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues">https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues</a></p></li>
 </ul>
 </div>
+</div>
 <div id="representation-of-text" class="slide section level1">
 <h1><a href="#representation-of-text">Representation of text</a></h1>
 <p>A text file is nothing but a sequences of characters (a word document is not a text file).</p>
@@ -178,6 +249,9 @@ print(binary(1234))</code></pre>
 <ol start="11" style="list-style-type: example">
 <li>lookup the ASCII representation of your first name in the table and use the chr function of Python to print it.</li>
 </ol>
+<div class="incremental">
+<p>For example, if you name is ‘ZOE’, you would type:</p>
+<pre><code>print(chr(90)+chr(79)+chr(69))</code></pre>
 <p>Remark: <strong>ASCII</strong> codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.</p>
 <p><strong>Unicode</strong> was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).</p>
 <h3 id="how-to-read-a-text-file-in-python"><a href="#how-to-read-a-text-file-in-python">How to read a text file in Python</a></h3>
@@ -185,30 +259,65 @@ print(binary(1234))</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">f = <span class="dt">file</span>(<span class="st">&#39;alice.txt&#39;</span>)
 o = f.read()
 <span class="dt">print</span>(o)
-lines = o.split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
+lines = o.split(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">n&quot;</span>)
 <span class="dt">print</span>(lines)</code></pre>
 <ol start="12" style="list-style-type: example">
-<li><p>Write a program that counts the number of lines, and number of words in alice.txt (we suppose that words are separated by spaces).</p></li>
-<li><p>Write a program that detects if a text file contains the word ‘NSA’</p></li>
+<li>Write a program that counts the number of lines, and number of words in alice.txt (we suppose that words are separated by spaces).</li>
 </ol>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python">f = <span class="dt">file</span>(<span class="st">&#39;alice.txt&#39;</span>)
+o = f.read()
+<span class="dt">print</span>(o)
+lines = o.split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
+
+nlines = <span class="dt">len</span>(lines)
+
+nw = <span class="dv">0</span>
+<span class="kw">for</span> l in lines:
+    nw += <span class="dt">len</span>(l.split(<span class="st">&quot; &quot;</span>))
+    
+<span class="dt">print</span>(nlines)
+<span class="dt">print</span>(nw)</code></pre>
+</div>
 </div>
 <div class="slide section level1">
 
-<h2 id="representation-of-images"><a href="#representation-of-images">Representation of images</a></h2>
+<ol start="13" style="list-style-type: example">
+<li>Write a program that detects if a text file contains the word ‘NSA’</li>
+</ol>
+<div class="incremental">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> spot_nsa(filename):
+    f = <span class="dt">file</span>(filename)
+    o = f.read()
+    lines = o.split(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
+    found = <span class="ot">False</span>
+    <span class="kw">for</span> l in lines:
+        <span class="kw">if</span> <span class="st">&quot;NSA&quot;</span> in l.split(<span class="st">&quot; &quot;</span>):
+            found = <span class="ot">True</span>
+            <span class="kw">break</span>
+    <span class="kw">return</span> found</code></pre>
+</div>
+</div>
+<div id="representation-of-images" class="slide section level1">
+<h1><a href="#representation-of-images">Representation of images</a></h1>
 <p>Images can be stored either:</p>
 <ul>
 <li>as bitmaps, that is a two dimensional arrays of dots (formats: bmp, png, gif, jpeg…)</li>
 <li>as vectorized formats, the image contain instruction for drawing objects (eps, pdf, svg, …).</li>
 </ul>
 <p>Here we are just going to manipulate bitmaps.</p>
-<h3 id="black-and-white-bitmaps"><a href="#black-and-white-bitmaps">Black and white bitmaps</a></h3>
+<h2 id="black-and-white-bitmaps"><a href="#black-and-white-bitmaps">Black and white bitmaps</a></h2>
 <p>Each dot (pixel) is either ‘0’ (black) or ‘1’ (white).</p>
 <div class="figure">
 <img src="images/bitmap.jpg" />
 </div>
 <ol start="14" style="list-style-type: example">
-<li><p>What is the size in kilobytes of a 1024x768 pixels images ?</p></li>
-<li><p>Execute the follwoing code (it requires the modules numpy and matplotlib).</p></li>
+<li>What is the size in kilobytes of a 1024x768 pixels images ?</li>
+</ol>
+<p>. . .</p>
+<p><em>Answer:</em> 1024*768/8/1024=96 KB</p>
+<ol start="15" style="list-style-type: example">
+<li>Execute the follwoing code (it requires the modules numpy and matplotlib).</li>
 </ol>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy <span class="ch">as</span> np
 <span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
@@ -234,6 +343,15 @@ plt.show()</code></pre>
 <li>make two crosses imitating the British Flag</li>
 </ol></li>
 </ol>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python">a = np.zeros((<span class="dv">200</span>,<span class="dv">200</span>))
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">200</span>): 
+    a[i, i] = <span class="dv">1</span>
+plt.imshow(a, cmap=plt.cm.gray, interpolation=<span class="st">&#39;nearest&#39;</span>)
+plt.show()
+a[<span class="dv">0</span>:<span class="dv">200</span>:<span class="dv">2</span>,] = <span class="dv">1</span>
+plt.imshow(a, cmap=plt.cm.gray, interpolation=<span class="st">&#39;nearest&#39;</span>)
+plt.show()</code></pre>
 </div>
 <div id="grey-level-pictures" class="slide section level1">
 <h1><a href="#grey-level-pictures">Grey level pictures</a></h1>

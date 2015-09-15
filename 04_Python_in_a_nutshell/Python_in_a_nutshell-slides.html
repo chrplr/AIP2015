@@ -187,10 +187,12 @@ y</code></pre>
         print(&#39;All work and no play makes &#39; + name + &#39; a dull boy!&#39;)</code></pre>
 <p>Concepts: list of strings, double imbrication</p>
 <p>Exercice: write a program that computes the sum of the first n integers (1+2+…+n)</p>
+<p>. . .</p>
 <pre><code>n = 100
 for i in range(1, n+1)
     sum = sum + i
 print(sum)</code></pre>
+<p>. . .</p>
 </div>
 </div>
 <div id="guess-a-number" class="slide section level1">
@@ -216,41 +218,80 @@ print(sum)</code></pre>
 </div>
 <div id="programs-a.k.a-scripts" class="slide section level1">
 <h1><a href="#programs-a.k.a-scripts">Programs (a.k.a scripts)</a></h1>
-<ul>
-<li>A program typically consists in a series of <em>instructions</em> (aka <em>commands</em>).</li>
-<li>The main types of instructions are:
-<ul>
-<li>Function calls</li>
-<li>Assignments to variables</li>
-<li>Testing and branching instructions</li>
-</ul></li>
-</ul>
-<p>Note that Python scripts also often contain sections of module importation and function definitions (to be explained later)</p>
-</div>
-<div class="slide section level1">
+<p>A program typically consists in a series of <em>instructions</em> (aka <em>commands</em>). The main types of instructions are:</p>
+<h2 id="assignments-to-variables"><a href="#assignments-to-variables">Assignments to variables:</a></h2>
+<pre><code>a = &lt;expression&gt;
+a, b = &lt;expression1&gt;, &lt;expression2&gt;</code></pre>
+<p>Examples:</p>
+<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">24</span> + <span class="dv">56</span>
+b = <span class="st">&#39;bonjour&#39;</span>
+c = [<span class="st">&#39;aga&#39;</span>, <span class="st">&#39;bobo&#39;</span>, <span class="st">&#39;glop&#39;</span>]
+x, y = <span class="dv">100</span>, <span class="dv">200</span></code></pre>
+<p>An expression is a valid formula containing constants, variables, operators and function calls.</p>
+<p>Example of expressions</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">2</span> ** (<span class="dv">5</span> + <span class="dv">3</span>)
+<span class="co">&#39;alpha&#39;</span> + <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span> + <span class="st">&#39;beta&#39;</span>
+a &lt; b
+0b10010 &amp; 0b10
+math.sin(<span class="dv">10</span>)</code></pre>
+<p>For a description of Python <a href="http://www.tutorialspoint.com/python/python_basic_operators.htm">http://www.tutorialspoint.com/python/python_basic_operators.htm</a></p>
+<h2 id="function-calls"><a href="#function-calls">Function calls</a></h2>
+<pre><code>&lt;functionname&gt;(&lt;expression1&gt;, &lt;expression2&gt;, ...).
+object.functname(&lt;expressins1&gt;, ...)</code></pre>
+<p>Examples:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="st">&#39;bonjour&#39;</span>)
+<span class="dt">bin</span>(<span class="dv">10</span>)
 
-<h2 id="function-calls"><a href="#function-calls">function calls</a></h2>
+c = [<span class="st">&#39;aga&#39;</span>, <span class="st">&#39;bobo&#39;</span>, <span class="st">&#39;glop&#39;</span>]
+c.pop()</code></pre>
+<p>Note that a function can perform some action and return a value, some only return a value.</p>
+<h2 id="testing-and-branching-instructions"><a href="#testing-and-branching-instructions">Testing and branching instructions:</a></h2>
+<pre><code>if expression:
+    bloc_instructions
+else:
+    bloc_instructions
+
+while expression:
+    bloc_instructions
+
+for variable in sequence:
+    bloc_instructions</code></pre>
+<p>Examples:</p>
+<pre class="sourceCode python"><code class="sourceCode python">response = <span class="st">&#39;no&#39;</span>
+<span class="kw">if</span> response == <span class="st">&#39;ok&#39;</span>:
+    <span class="dt">print</span> <span class="st">&#39;accepted&#39;</span>
+<span class="kw">else</span>:
+    <span class="dt">print</span> <span class="st">&#39;rejected&#39;</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">0</span>
+<span class="kw">while</span> n &lt; <span class="dv">10</span>:
+      n = n + <span class="dv">1</span>
+<span class="dt">print</span> n</code></pre>
+<h2 id="function-definition"><a href="#function-definition">function definition</a></h2>
+<pre><code>def &lt;funcname&gt;(list of parameters):
+    bloc_instructions</code></pre>
+<p>Examples:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> <span class="dt">max</span>(a, b):
+    <span class="kw">if</span> a &gt; b:
+        <span class="kw">return</span> a
+    <span class="kw">else</span>:
+        <span class="kw">return</span> b</code></pre>
+<h2 id="importation-of-modules"><a href="#importation-of-modules">importation of modules</a></h2>
+<pre><code>import &lt;module_name&gt;
+from &lt;module_name&gt; import &lt;function_name&gt;</code></pre>
+<p>Examples:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> math <span class="ch">import</span> sin, pi
 <span class="dt">print</span>(sin(pi/<span class="dv">2</span>))</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> turtle <span class="ch">import</span> circle, forward
-circle(<span class="dv">50</span>)
-forward(<span class="dv">100</span>)
-circle(<span class="dv">50</span>)</code></pre>
-<p>The arguments of functions can be constants, variables, other function calls.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(<span class="dv">34</span>)
-myvar = <span class="dv">36</span>
-<span class="dt">print</span>(myvar)
-<span class="dt">print</span>(math.sin(myvar))</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> turtle
+turtle.circle(<span class="dv">50</span>)
+turtle.forward(<span class="dv">100</span>)
+turtle.circle(<span class="dv">50</span>)</code></pre>
 </div>
-<div class="slide section level1">
-
-<h3 id="assignments"><a href="#assignments">Assignments</a></h3>
-<pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">24</span>
-b = <span class="st">&#39;bonjour&#39;</span>
-c = [<span class="st">&#39;aga&#39;</span>, <span class="st">&#39;bobo&#39;</span>, <span class="st">&#39;glop&#39;</span>]</code></pre>
-<ul>
-<li>variables are names that point to objects in memory</li>
-</ul>
+<div id="variables-assignments" class="slide section level1">
+<h1><a href="#variables-assignments">Variables Assignments</a></h1>
+<p>Variables are names that point to objects in memory</p>
+<p>An environment is a mapping of variables names to memory locations.</p>
+<p>An expression is always evaluated in a environment.</p>
+<p>When calling a function, a new environment is created which links the value of parameters to the local variables.</p>
 <pre class="sourceCode python"><code class="sourceCode python">a = <span class="dv">3</span> 
 b = a
 <span class="dt">print</span> a, b
@@ -261,19 +302,6 @@ b = a    <span class="co"># points to the same object (a list)</span>
 c = a[:] <span class="co"># makes a copy</span>
 a[<span class="dv">0</span>] = <span class="dv">10</span>
 <span class="dt">print</span> a, b, c</code></pre>
-</div>
-<div class="slide section level1">
-
-<h3 id="testing-and-branching"><a href="#testing-and-branching">Testing and branching</a></h3>
-<pre class="sourceCode python"><code class="sourceCode python">response = <span class="st">&#39;no&#39;</span>
-<span class="kw">if</span> response == <span class="st">&#39;ok&#39;</span>:
-    <span class="dt">print</span> <span class="st">&#39;accepted&#39;</span>
-<span class="kw">else</span>:
-    <span class="dt">print</span> <span class="st">&#39;rejected&#39;</span></code></pre>
-<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">0</span>
-<span class="kw">while</span> n &lt; <span class="dv">10</span>:
-      n = n + <span class="dv">1</span>
-<span class="dt">print</span> n</code></pre>
 </div>
 </body>
 </html>

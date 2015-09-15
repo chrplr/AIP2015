@@ -29,10 +29,8 @@ code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
@@ -52,7 +50,12 @@ Christophe@pallier.org
     <span class="dt">print</span>(<span class="st">&quot;Sorry?&quot;</span>)
 <span class="kw">else</span>:
     <span class="dt">print</span>(<span class="st">&quot;Bonjour!&quot;</span>)</code></pre>
+<div class="incremental">
 <p><em>Answer:</em> It prints ‘Bonjour!’</p>
+</div>
+</div>
+<div class="slide section level1">
+
 <ol start="2" style="list-style-type: example">
 <li>What does the following program do?</li>
 </ol>
@@ -67,18 +70,30 @@ Christophe@pallier.org
         state = state + <span class="dv">1</span>
         <span class="kw">if</span> state == <span class="dv">4</span>:
             state = <span class="dv">1</span></code></pre>
-<p><em>Answer:</em> It prints a sequence of alternating A, B and C</p>
+<div class="incremental">
+<p><em>Answer:</em> It prints a sequence of alternating ‘A’, ‘B’ and ‘C’</p>
+</div>
+</div>
+<div class="slide section level1">
+
+<div class="incremental">
 <ol start="3" style="list-style-type: example">
-<li>What does the following program do (% is the modulo operator that returns the remainder of the integer division)</li>
+<li>What does the following program do (‘%’ is the “modulo” operator that returns the remainder of the integer division)</li>
 </ol>
 <pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">100</span>
 <span class="kw">while</span> n &gt; <span class="dv">0</span>:
-    <span class="kw">if</span> n%<span class="dv">7</span> == <span class="dv">0</span>:
+    <span class="kw">if</span> (n % <span class="dv">7</span>) == <span class="dv">0</span>:
         <span class="dt">print</span>(n)
     n = n - <span class="dv">1</span></code></pre>
+</div>
+<div class="incremental">
 <p><em>Answer:</em> It prints the numbers between 1 and 100 that are divisible by 7</p>
 <p>A more efficient version would be:</p>
 <pre class="sourceCode python"><code class="sourceCode python">    [x <span class="kw">for</span> x in <span class="dt">range</span>(<span class="dv">101</span>) <span class="kw">if</span> x%<span class="dv">7</span> == <span class="dv">0</span>]</code></pre>
+</div>
+</div>
+<div class="slide section level1">
+
 <ol start="4" style="list-style-type: example">
 <li>What does the function ssn do in the following code?</li>
 </ol>
@@ -90,7 +105,12 @@ Christophe@pallier.org
     
 <span class="kw">def</span> ssn(n):
     <span class="kw">return</span> ss(<span class="dt">range</span>(n<span class="dv">+1</span>))</code></pre>
+<div class="incremental">
 <p><em>Answer:</em> It returns the sum of squares of the first ‘n’ integers</p>
+</div>
+</div>
+<div class="slide section level1">
+
 <ol start="5" style="list-style-type: example">
 <li>What does the following function do?</li>
 </ol>
@@ -100,7 +120,9 @@ Christophe@pallier.org
         <span class="kw">if</span> not(x in u):
             u.append(x)
     <span class="kw">return</span> u</code></pre>
+<div class="incremental">
 <p><em>Answer:</em> It returns the set of elements in the list l</p>
+</div>
 </div>
 </body>
 </html>

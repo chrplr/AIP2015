@@ -177,9 +177,11 @@ You should see the ball bounce on the edges.
 
 4. Create a script that asks for your name and then displays "Hello <your_name>!". Tip: use the instructions 'sensing/ask', 'looks/say' and 'operator/join' and the variable 'sensing/answer'. 
 
-#ifdef ANSWERS
+. . .
+
 ![](img/hello.png)
-#endif
+
+. . .
 
 # Variables
 
@@ -201,16 +203,20 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 
 1. 'Multiply by adding'. Write a program that reads in two integer numbers and displays their sum.
 
-#ifdef ANSWERS
+. . .
+
 ![](img/multiply.png)
-#endif
+
+. . .
 
 
 2. "Guess a number". Make Scratch pick up a random number in the interval [1,100], and  loop asking you for a guess and reply either 'too low', 'too high', or 'you win!' depending on your answer.  
 
-#ifdef ANSWERS
+. . .
+
 ![](img/guess-a-number.png)
-#endif
+
+. . .
 
 3. We are going to estimate the number PI by a Monte Carlo method.:
 
@@ -219,9 +225,11 @@ The loop is executed 100 times. Each time, the value of the variable `a` is incr
 - The proportion of dots falling within the circle, multiplied by four  (the area of the square), is an estimate of teh area of the disk, that is, the number pi.
 
 
-#ifdef ANSWERS
+. . .
+
 ![](img/estimation-of-pi.png)
-#endif
+
+. . .
 
 
 
@@ -234,7 +242,8 @@ The aim of this exercice is to recreate the Spirograph patterns.
 First, check out the demo at <http://www.mathplayground.com/Spiromath.html>.
 With the help of the mathematical equations provided at <http://www.mathematische-basteleien.de/spirographs.htm> write a scratch program that draws these figures.
 
-#ifdef ANSWERS
+. . .
+
 There are several examples on the scratch web site. You can study their code:
 
 * Kitty graphics <https://scratch.mit.edu/projects/5542/>
@@ -242,7 +251,8 @@ There are several examples on the scratch web site. You can study their code:
 * Math-connection
     - <https://scratch.mit.edu/studios/134/>
     - <https://scratch.mit.edu/projects/2984543/>
-#endif
+
+. . .
 
 
 

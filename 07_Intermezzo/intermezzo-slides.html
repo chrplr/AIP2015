@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="intermezzo" class="slide section level1">
+<h1><a href="#intermezzo">Intermezzo</a></h1>
+<ul>
+<li><p>Review together what has been learned so far, and compare with the lecture’objectives</p></li>
+<li><p>Clarify Python syntax</p></li>
+<li><p>Consolidate some practical skills and some notions of Python with simple exercices</p></li>
+</ul>
+</div>
+<div id="objectives-of-the-aip" class="slide section level1">
+<h1><a href="#objectives-of-the-aip">Objectives of the AIP</a></h1>
+<p>At the end, you should be able to write simple Python scripts to:</p>
+<pre><code>- compute basic statistics from files containaing numeric data
+- compute the number of occurrences of words in a text file
+- play the &quot;guess a number&quot; game</code></pre>
+<p>Then, you should be able profit more from the other Ateliers (Atelier d’Experimentation Humaine, Atelier de Statistiques, …)</p>
+<div class="incremental">
+<p>Programming can be fun!</p>
+<p>(we are doing some silly exercices, but this is like the first lessons with an instrument)</p>
+</div>
+<div class="incremental">
+<p>We have already covered most of the points (although superfically):</p>
+<h2 id="basic-programming-concepts"><a href="#basic-programming-concepts">Basic programming concepts</a></h2>
+<ul>
+<li>instructions/sequential exectution</li>
+<li>forever loops</li>
+<li>conditional statements</li>
+<li>constants integers/floats/strings (insist that there are different types)</li>
+<li>variables</li>
+<li>lists/dictionaries</li>
+<li>loops over sequences</li>
+<li>functions/parameters/local variables</li>
+<li>modules</li>
+<li>file input/output</li>
+<li>string functions</li>
+</ul>
+<h2 id="practical-skills"><a href="#practical-skills">Practical skills</a></h2>
+<ul>
+<li>Run a program from the command line
+<ul>
+<li>open a terminal, interact with the shell</li>
+<li>navigate the directory structure with cd/ls</li>
+<li>type commands, possibily with options or arguments</li>
+<li>interrupt a running program (using the process manager)</li>
+</ul></li>
+<li>Execute a python script.</li>
+<li>Install missing modules</li>
+<li>Launch ipython and use it interactively (distinction shell/interpreter python)</li>
+<li>Use an editor (atom) to view/edit a Python script</li>
+<li>what to do when there is a crash/error message</li>
+</ul>
+<p><strong>Exercice</strong></p>
+<ul>
+<li>Open a Terminal and run the python script <code>AIP2015/resources/python-scripts/human-guess-a-number.py</code></li>
+<li>run <code>dualscope.py</code> in the same directory.</li>
+<li>open <code>human-guess-a-number.py</code> with the editor atom, change the maximum value from 100 to 1000, and rerun it.</li>
+</ul>
+</div>
+</div>
+<div id="python-syntax" class="slide section level1">
+<h1><a href="#python-syntax">Python syntax</a></h1>
+<p>We have hardly mentioned Python’s syntax yet (because it is boring…)</p>
+<p>Let us go to the lecture 04_Python_in_a_nutshell</p>
+<p>A peculiarity of Python: the use of indentation do delimit blocs of instructions.</p>
+<p>Let us check the script AIP2015/resources/python-scripts/human-guess-a-number.py and verify that it comprises only the elements just described.</p>
+</div>
+<div id="exercices" class="slide section level1">
+<h1><a href="#exercices">Exercices</a></h1>
+<h2 id="expressions"><a href="#expressions">Expressions</a></h2>
+<ol style="list-style-type: example">
+<li>How much is worth 350 euros in USD if the exchange rate if 1.17 USD = 1 euro?</li>
+</ol>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dv">350</span> * <span class="fl">1.17</span></code></pre>
+<p>You can use Python’s command line as a calculator.</p>
+<p>. . .</p>
+<h2 id="loops-and-conditional-statements"><a href="#loops-and-conditional-statements">Loops and conditional statements</a></h2>
+<ol start="2" style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">2</span> + <span class="dv">2</span>) == <span class="dv">5</span>:
+    <span class="dt">print</span>(<span class="st">&quot;Sorry?&quot;</span>)
+<span class="kw">else</span>:
+    <span class="dt">print</span>(<span class="st">&quot;Bonjour!&quot;</span>)</code></pre>
+<p>. . .</p>
+<p><em>Answer:</em> It prints ‘Bonjour!’</p>
+<p>. . .</p>
+<ol start="3" style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">while</span> <span class="ot">True</span>:
+    <span class="dt">print</span>(<span class="st">&#39;!&#39;</span>)</code></pre>
+<p>. . .</p>
+<p><em>Answer:</em> It prints ‘!’ forever. Press Ctrl-C to interrupt it. Or use the task manager of your operating system.</p>
+<ol start="4" style="list-style-type: example">
+<li>What does the following program do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">answer = <span class="st">&quot;&quot;</span>
+<span class="kw">while</span> answer != <span class="st">&#39;You are the best!&#39;</span>:
+    answer = <span class="dt">raw_input</span>(<span class="st">&#39;Who is the best?&#39;</span>)
+<span class="dt">print</span>(<span class="st">&#39;Sure!&#39;</span></code></pre>
+<p>Run it!</p>
+<p>. . .</p>
+<ol start="5" style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> x in (<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>):
+    <span class="dt">print</span> x==<span class="st">&#39;c&#39;</span></code></pre>
+<p>. . .</p>
+<p>Run it!</p>
+<p>Remark: strings are sequences, therefore the following code works in the same way:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> x in <span class="st">&#39;abcde&#39;</span>:
+    <span class="dt">print</span> x==<span class="st">&#39;c&#39;</span></code></pre>
+<ol start="6" style="list-style-type: example">
+<li>How to print a string of 80 ‘#’?</li>
+</ol>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python">s = <span class="st">&quot;&quot;</span>
+<span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">80</span>):
+    s = s + <span class="st">&quot;#&quot;</span>
+<span class="dt">print</span>(s)</code></pre>
+<p>Remark: the operator ’<em>’ on strings can also be used “#” </em> 80</p>
+<p>. . .</p>
+<ol start="7" style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">reg0 = <span class="dv">10</span>
+reg1 = <span class="dv">5</span>
+<span class="kw">while</span> reg0 &gt; <span class="dv">0</span>:
+    reg0 = reg0 - <span class="dv">1</span>
+    reg1 = reg1 + <span class="dv">1</span>
+<span class="dt">print</span>(reg0)
+<span class="dt">print</span>(reg1)</code></pre>
+<p>. . .</p>
+<p>Remember the register machine rodrego?</p>
+<p>. . .</p>
+<ol start="8" style="list-style-type: example">
+<li>How to improve the following program:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&quot;2 * 1 = 2&quot;</span>,
+<span class="dt">print</span> <span class="st">&quot;2 * 2 = 4&quot;</span>
+<span class="dt">print</span> <span class="st">&quot;2 * 3 = 6&quot;</span>
+<span class="dt">print</span> <span class="st">&quot;2 * 4 = 8&quot;</span>
+...
+<span class="dt">print</span> <span class="st">&quot;2 * 10= 20&quot;</span></code></pre>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):
+    <span class="dt">print</span> <span class="st">&quot;2 * &quot;</span> + <span class="dt">str</span>(i) + <span class="st">&quot; = &quot;</span> + <span class="dt">str</span>(<span class="dv">2</span>*i)</code></pre>
+<p>. . .</p>
+<ol start="9" style="list-style-type: example">
+<li>How to print all multiplication tables from 1 to 10?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> a in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):
+    <span class="dt">print</span>(<span class="st">&#39;---&#39;</span>)
+    <span class="kw">for</span> b in <span class="dt">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):
+        <span class="dt">print</span> <span class="dt">str</span>(a) + <span class="st">&#39; * &#39;</span> + <span class="dt">str</span>(b) + <span class="st">&#39; = &#39;</span> + <span class="dt">str</span>(a*b)</code></pre>
+<h2 id="defining-functions"><a href="#defining-functions">Defining functions</a></h2>
+<ol start="10" style="list-style-type: example">
+<li>Try to guess what the following script does and run it:</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> turtle
+
+<span class="kw">def</span> square(n):
+  turtle.fd(n)
+  turtle.right(<span class="dv">90</span>)
+  turtle.fd(n)
+  turtle.right(<span class="dv">90</span>)
+  turtle.fd(n)
+  turtle.right(<span class="dv">90</span>)
+  turtle.fd(n)
+  turtle.right(<span class="dv">90</span>)
+
+square(<span class="dv">50</span>)
+a = <span class="dt">raw_input</span>(<span class="st">&#39;stop?&#39;</span>)</code></pre>
+<p>Define the following function and execute it</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> spirale():
+    <span class="kw">for</span> n in (<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>):
+        square(n)
+        turtle.left(<span class="dv">30</span>)</code></pre>
+<p>How would you improve this code?</p>
+<ol start="11" style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python">nombres = []
+<span class="kw">while</span> <span class="ot">True</span>:
+        answer = <span class="dt">raw_input</span>(<span class="st">&#39;data point (Press just Enter to finish)?&#39;</span>)
+    <span class="kw">if</span> answer == <span class="st">&#39;&#39;</span>:
+                <span class="kw">break</span>
+    nombres.append(<span class="dt">float</span>(answer))
+
+<span class="dt">sum</span>, sumsq = <span class="fl">0.0</span>, <span class="fl">0.0</span>
+<span class="kw">for</span> x in nombres:
+    <span class="dt">sum</span> = <span class="dt">sum</span> + x
+    sumsq = <span class="dt">sum</span> + x*x
+
+<span class="dt">print</span>(<span class="dt">sum</span>/<span class="dt">len</span>(nombres))
+<span class="dt">print</span>(sumsq/<span class="dt">len</span>(nombres))</code></pre>
+<ol start="12" style="list-style-type: example">
+<li>define a function f that takes ‘x’ and ‘y’ as parameters and returns 0.5*(x+y/x).</li>
+</ol>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> f(x, y):
+    <span class="kw">return</span> <span class="fl">0.5</span> * ( x + (y / x))</code></pre>
+<p>Compute f(10, 2), f(f(10,2),2), f(f(f(10,2),2),2), and so on.</p>
+<p>Compute f(10, 9), f(f(10,9),9), f(f(f(10,9),9),9) and so on…</p>
+<p>Compute f(10, 16), f(f(10,16),16), f(f(10,16),16,16),…</p>
+<p>Computer f(10, 25), f(f(10,25),25), and so on…</p>
+<p>Can you form a conjecture on what happens?</p>
+<p>. . .</p>
+<ol start="13" style="list-style-type: example">
+<li>write a script that plays computer-guess-a-number, that is, you think about a number and the computer makes a succession of guess, and you tell it whether it is too large, to low or correct.</li>
+</ol>
+</div>
+</body>
+</html>

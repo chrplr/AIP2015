@@ -190,12 +190,14 @@ Concepts: list of strings, double imbrication
 
 Exercice: write a program that computes the sum of the first n integers (1+2+...+n) 
 
-#ifdef ANSWERS
+. . .
+
 	n = 100
 	for i in range(1, n+1)
 		sum = sum + i
 	print(sum)
-#endif
+
+. . .
 
 # Guess a number
 
@@ -225,72 +227,75 @@ Type this program in a text editor, save it as a Python script (with extension .
 
 # Programs (a.k.a scripts)
 
-* A program typically consists in  a series of  *instructions* (aka *commands*).
-* The main types of instructions are:
-    - Function calls
-    - Assignments to variables
-    - Testing and branching instructions
+A program typically consists in  a series of  *instructions* (aka *commands*).
+The main types of instructions are:
 
-Note that Python scripts also often contain sections of module importation and function definitions (to be explained later)
+## Assignments to variables:
 
------------------
-
-## function calls
-
-```python
-from math import sin, pi
-print(sin(pi/2))
+```
+a = <expression>
+a, b = <expression1>, <expression2>
 ```
 
-```python
-from turtle import circle, forward
-circle(50)
-forward(100)
-circle(50)
-```
-
-The arguments of functions can be constants, variables, other function calls.
+Examples:
 
 ```python
-print(34)
-myvar = 36
-print(myvar)
-print(math.sin(myvar))
-```
-
-
------------------------
-
-### Assignments
-
-```python
-a = 24
+a = 24 + 56
 b = 'bonjour'
 c = ['aga', 'bobo', 'glop']
+x, y = 100, 200
 ```
 
-* variables are names that point to objects in memory
+An expression is a valid formula containing constants, variables, operators and function calls.
+
+Example of expressions
 
 ```python
-a = 3 
-b = a
-print a, b
-a = 4 # a points to a new object
-print a, b
+2 ** (5 + 3)
+'alpha' + '\t' + 'beta'
+a < b
+0b10010 & 0b10
+math.sin(10)
 ```
+
+For a description of Python
+<http://www.tutorialspoint.com/python/python_basic_operators.htm>
+
+## Function calls
+
+```
+<functionname>(<expression1>, <expression2>, ...).
+object.functname(<expressins1>, ...)
+```
+
+Examples:
 
 ```python
-a = [1, 2, 3] 
-b = a    # points to the same object (a list)
-c = a[:] # makes a copy
-a[0] = 10
-print a, b, c
+print('bonjour')
+bin(10)
+
+c = ['aga', 'bobo', 'glop']
+c.pop()
 ```
 
+Note that a function can perform some action and return a value, some only return a value.
 
-----------------------
+## Testing and branching instructions:
 
-### Testing and branching
+```
+if expression:
+    bloc_instructions
+else:
+	bloc_instructions
+
+while expression:
+	bloc_instructions
+
+for variable in sequence:
+	bloc_instructions
+```
+
+Examples:
 
 ```python
 response = 'no'
@@ -308,5 +313,80 @@ print n
 ```
 
 
+
+
+
+
+## function definition
+
+```
+def <funcname>(list of parameters):
+	bloc_instructions
+```
+
+Examples:
+
+```python
+def max(a, b):
+	if a > b:
+		return a
+	else:
+		return b
+```
+
+	
+
+## importation of modules
+
+```
+import <module_name>
+from <module_name> import <function_name>
+```
+
+
+Examples:
+
+```python
+from math import sin, pi
+print(sin(pi/2))
+```
+
+```python
+import turtle
+turtle.circle(50)
+turtle.forward(100)
+turtle.circle(50)
+```
+
+
+
+# Variables Assignments
+
+
+Variables are names that point to objects in memory
+
+An environment is a mapping of variables names to memory locations.
+
+An expression is always evaluated in a environment.
+
+When calling a function, a new environment is created which links the
+value of parameters to the local variables.
+
+
+```python
+a = 3 
+b = a
+print a, b
+a = 4 # a points to a new object
+print a, b
+```
+
+```python
+a = [1, 2, 3] 
+b = a    # points to the same object (a list)
+c = a[:] # makes a copy
+a[0] = 10
+print a, b, c
+```
 
 
