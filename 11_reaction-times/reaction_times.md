@@ -4,11 +4,13 @@
 
 (@) Write a program, using pygame, that starts with an empty black screen and after one second, displays a small white dot at the center of the screen for 1 second, waits for another second and then quits (tip: use the function pygame.time.delay to wait for a given amount of time)
 
-#ifdef ANSWERS
+. . .
+
 ```python 
 #include <simple-rt1.py>
 ```
-#endif
+
+. . .
 
 - - -
 
@@ -32,25 +34,29 @@ pygame.quit()
 (you can skim through the tutorial at <http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/> )
 to understand pygame's mouse events. Now, modify the previous code so that the dot remains on the screen until you press a mouse button.
 
-#ifdef ANSWERS
+. . .
+
 
 ```python
 #include <simple-rt2.py>
 ```
 
-#endif
+
+. . .
 
 - - -
 
 (@) Look at the documentation of the function pygame.time.get_ticks() and add code to measure and print the reaction-times, that is the time between the onset of the dot's display and the mouse button press.
 
-#ifdef ANSWERS
+. . .
+
 
 ```python
 #include <simple-rt2b.py>
 ```
 
-#endif
+
+. . .
 
 - - -
 
@@ -61,13 +67,15 @@ to understand pygame's mouse events. Now, modify the previous code so that the d
 * At the end of the program, save the reaction times in a text file. 
 * Run this program twice using your right hand and twice using your left hand, *trying to respond as fast as possible, but without making false alarms* (change the name of the text file to save into different text files). 
 
-#ifdef ANSWERS
+. . .
+
 
 ```python
 #include <simple-rt3.py>
 ```
 
-#endif
+
+. . .
 
 - - -
 
@@ -92,13 +100,15 @@ median(l)
 (@) Back to the reaction time program, write a function that removes the 25% extreme data points in a list and returns the mean and standard errors of the remaining data points (not using numpy).
 
 
-#ifdef ANSWERS
+. . .
+
 
 ```python
 #include <simple-rt4.py>
 ```
 
-#endif
+
+. . .
 
 - - -
 

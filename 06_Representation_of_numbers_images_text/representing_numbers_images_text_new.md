@@ -38,9 +38,9 @@ for _ in range(100):
 
 . . .
 
-Modify the program to randomly select a name in the set {John, Jack, Paul, Tim} at each line.
+Modify the program to randomly select a name in the list (John, Jack, Paul, Tim) at each line.
 
-(hint: import the module "random" and use the function "random.choice")
+(Hint: import the module "random")
 
 . . .
 
@@ -82,9 +82,6 @@ def sum2(n):
 ```
 
 
-
-
-
 # Representation of integers
 
 
@@ -119,13 +116,15 @@ To learn more about how integer numbers are reprsented in binary format, you can
 - 1011
 - 11111111
 
-#ifdef ANSWERS
+. . .
+
 *Answer:* 5, 8, 11, 255
-#endif
 
 (@) Write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer.
 
-#ifdef ANSWERS
+. . .
+
+
 ```python
 def todec(s):
 	""" convert a string of 0 and 1 representing a binary number into an integer """
@@ -136,8 +135,12 @@ def todec(s):
 
 for i in ['101', '1000', '1011', '11111111']:
 	print(todec(i))
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+```	
+=======
 ```
 #endif
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 
 (@) Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.
@@ -157,8 +160,14 @@ print(str(d3) + str(d2) + str(d1) + str(d0))
 
 (@) Adapt the above program to print the binary representation of num
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+. . .
+
+```python	
+=======
 #ifdef ANSWERS
 ```python
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 num = 17
 b0 = num % 2
 b1 = int(num/2) % 2
@@ -171,12 +180,20 @@ b7 = int(num/128) % 2
 b8 = int(num/256) % 2
 print(str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str(b1) + str(b0))
 ```
-#endif
+
+
+. . .
 
 (@) Modify the above program to print the binary representations of every number between 0 and 255.
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+. . .
+
+```python	
+=======
 #ifdef ANSWERS
 ```python
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 def tobin(num):
 	b8 = int(num/256) % 2
 	b7 = int(num/128) % 2
@@ -193,11 +210,13 @@ for n in range(256):
 	print(n, tobin(n))
 
 ```
-#endif
+
+. . .
 
 (@) (Advanced) Write an improved version that uses a loop and does not have a limitation in size.
 
-#ifdef ANSWERS
+. . .
+
 ```python
 def binary(n):
 	if n==0:
@@ -209,7 +228,8 @@ def binary(n):
 		n = n / 2
 	return s
 ```
-#endif
+
+. . .
 
 (@) Study the following code. Do you understand why it works?
 
@@ -224,11 +244,12 @@ def binary(num):
 print(binary(1234))
 ```
 
-#ifdef ANSWERS
+. . .
 
 *Answer:*
 It is a recursive function which calls itself. See <http://en.wikipedia.org/wiki/Recursion_%28computer_science%29>
-#endif
+
+. . .
 
 Remark: measures of memory size
 
@@ -263,12 +284,16 @@ For a long time, characters were encoded using ASCII code.
 
 (@) lookup the ASCII representation of  your first name in the table and use the chr function of Python to print it.
 
-#ifdef ANSWERS
+. . .
+
 For example, if you name is 'ZOE', you would type:
 
 	print(chr(90)+chr(79)+chr(69))
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+=======
 #endif
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 Remark: **ASCII** codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.
 
@@ -290,7 +315,8 @@ print(lines)
 
 (@) Write a program that counts the number of lines, and number of words in alice.txt (we suppose that words are separated by spaces).
 
-#ifdef ANSWERS
+. . .
+
 ```python
 f = file('alice.txt')
 o = f.read()
@@ -306,11 +332,13 @@ for l in lines:
 print(nlines)
 print(nw)
 ```
-#endif
+
+-------
 
 (@) Write a program that detects if a text file contains the word 'NSA'
 
-#ifdef ANSWERS
+. . .
+
 ```python
 def spot_nsa(filename):
 	f = file(filename)
@@ -323,12 +351,9 @@ def spot_nsa(filename):
 			break
 	return found
 ```
-#endif
 
-- - -
 
-Representation of images
-------------------------
+# Representation of images
 
 Images can be stored either:
 
@@ -337,7 +362,11 @@ Images can be stored either:
 
 Here we are just going to manipulate bitmaps.
 
+<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
+## Black and white bitmaps 
+=======
 ### Black and white bitmaps
+>>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 Each dot (pixel) is either '0' (black) or '1' (white).
 
@@ -345,11 +374,10 @@ Each dot (pixel) is either '0' (black) or '1' (white).
 
 (@) What is the size in kilobytes of a 1024x768 pixels images ?
 
-#ifdef ANSWERS
+. . .
 
 *Answer:* 1024*768/8/1024=96 KB
 
-#endif
 
 (@) Execute the follwoing code (it requires the modules numpy and matplotlib).
 
@@ -379,7 +407,7 @@ Numpy's arrays are a new type of object. There are similar to lists, but optimis
     2. make two crosses imitating the British Flag
 
 
-#ifdef ANSWERS
+. . .
 
 ```python
 a = np.zeros((200,200))
@@ -391,7 +419,6 @@ a[0:200:2,] = 1
 plt.imshow(a, cmap=plt.cm.gray, interpolation='nearest')
 plt.show()
 ```
-#endif
 
 # Grey level pictures
 
@@ -436,7 +463,6 @@ kernel2 = np.array([[-1, -1, -1, -1, -1],
 ```
 
 More manipulations are available at <http://scipy-lectures.github.io/advanced/image_processing/>.
-
 
 
 ### Colored bitmaps

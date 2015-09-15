@@ -17,7 +17,7 @@ Introduction to Programming (AIP2015)
 
 (see below for more details about the contents of this series of lectures)
 
-### Lexture materials:
+### Lecture materials:
 
 The most up-to-date lectures materials are available in a git repository at <https://github.com/chrplr/AIP2015>
 
@@ -64,6 +64,7 @@ Basic programming concepts
 * file input/output
 
 For example, you should be able to write Python scripts to:
+
 * search for items in a list
 * find the largest number in a list of integers
 * compute basic statistics from files containaint numeric data

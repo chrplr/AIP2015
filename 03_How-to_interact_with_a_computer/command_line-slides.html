@@ -6,26 +6,25 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Sylvain Charron" />
+  <title>Interagir en utilisant la ligne de commande</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div class="slide section level3">
-
-<p>http://www.kloth.net/services/cardpunch.php file system</p>
-<p>file</p>
-<p>Fiche</p>
-<p>=&gt; some oddities of computer-related facts come from such old conventions for example the</p>
+<div class="slide titlepage">
+  <h1 class="title">Interagir en utilisant la ligne de commande</h1>
+  <p class="author">
+Sylvain Charron
+  </p>
 </div>
-<div id="la-ligne-de-commande-shell" class="slide section level3">
-<h1>La ligne de commande (“Shell”)</h1>
-<p>C’est l’interface privilégiée avec l’ordinateur quand on veut le soumettre à notre volonté. Elle nécessite d’utiliser un langage qui permet de communiquer avec l’ordinateur (de façon assez frustre, entendons-nous) c’est-à-dire d’envoyer des instructions à l’ordinateur et parfois voir l’output de ces instructions s’afficher à l’écran.</p>
+<div id="la-ligne-de-commande-shell" class="slide section level1">
+<h1><a href="#la-ligne-de-commande-shell">La ligne de commande (“Shell”)</a></h1>
+<p>C’est l’interface privilégiée avec l’ordinateur quand on veut le soumettre à notre volonté.</p>
+<p>Elle nécessite d’utiliser un langage qui permet de communiquer avec l’ordinateur (de façon assez frustre, entendons-nous) c’est-à-dire d’envoyer des instructions à l’ordinateur et parfois voir l’output de ces instructions s’afficher à l’écran.</p>
 <table>
 <thead>
 <tr class="header">
@@ -56,21 +55,21 @@
 </tr>
 </tbody>
 </table>
-<h4 id="exercices">Exercices</h4>
+<p>** Exercices **</p>
 <ol style="list-style-type: decimal">
 <li>Accédez à une ligne de commande sur votre ordinateur.</li>
 <li>identifier les informations affichées automatiquement.</li>
 </ol>
 </div>
-<div id="larborescence-des-fichiers" class="slide section level3">
-<h1>L’arborescence des fichiers</h1>
-<p>C’est une façon de se représenter et d’organiser l’information stockée dans la mémoire de l’ordinateur<br />
-Il faut toujours savoir :</p>
+<div id="larborescence-des-fichiers" class="slide section level1">
+<h1><a href="#larborescence-des-fichiers">L’arborescence des fichiers</a></h1>
+<p>C’est une façon de se représenter et d’organiser l’information stockée dans la mémoire de l’ordinateur.</p>
+<p>Il faut toujours savoir :</p>
 <ul>
 <li><strong>où on est dans cette arborescence !</strong></li>
 <li><strong>où se trouve ce qu’on souhaite manipuler !</strong></li>
 </ul>
-<p><strong>Concepts clef</strong> :</p>
+<h2 id="concepts-clefs"><a href="#concepts-clefs">Concepts clefs :</a></h2>
 <ul>
 <li><strong>racine</strong> : c’est le point de départ de l’organisation des informations (particularité de windows : il peut y en avoir plusieurs, une par partition)</li>
 <li><strong>repertoire</strong> : c’est un contenant qui peut contenir des fichiers ou d’autres répertoires</li>
@@ -79,8 +78,8 @@ Il faut toujours savoir :</p>
 <li><strong>fichier</strong> : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,…)</li>
 <li><strong>chemin d’accès (ou <em>path</em>)</strong> : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier, en partant de la racine</li>
 </ul>
-<p>Tout ça peut se voir avec les outils graphiques qu’on trouve désormais couramment dans les systèmes d’exploitation<br />
-<strong>Gestionnaires de fichiers</strong> :</p>
+<p>Tout ça peut se voir avec les outils graphiques qu’on trouve désormais couramment dans les systèmes d’exploitation.</p>
+<h2 id="gestionnaires-de-fichiers-gui"><a href="#gestionnaires-de-fichiers-gui">Gestionnaires de fichiers GUI</a></h2>
 <table>
 <thead>
 <tr class="header">
@@ -95,25 +94,25 @@ Il faut toujours savoir :</p>
 <td align="left">windows</td>
 <td align="left">explorer</td>
 <td align="left">win+E</td>
-<td align="left">Lettre:<br />
-mac</td>
+<td align="left">Lettre:<br />mac</td>
 </tr>
 <tr class="even">
 <td align="left">linux</td>
-<td align="left">nautilus,gnome commander,…</td>
-<td align="left">commande</td>
+<td align="left">nautilus</td>
+<td align="left"></td>
 <td align="left">/</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Super important</strong> : pour éviter les problèmes (surtout en ligne de commande), toujours utiliser des noms de répertoires et de fichiers qui suivent ces règles : - pas d’espace - pas de caractères hors de : - l’alphabet anglais majuscule et minuscule - les chiffres arabes - le <code>_</code> (on tolère aussi le <code>-</code>) - pas le nom d’un autre truc utile</p>
-<h4 id="exercices-1">Exercices</h4>
+<p>** Exercices **:</p>
 <ol style="list-style-type: decimal">
 <li>Trouvez sur votre ordinateur votre répertoire d’utilisateur</li>
 <li>puis le répertoire racine</li>
 <li>puis le répertoire où la distribution Anaconda de python est installée</li>
 </ol>
-<p><strong>Pour aller plus loin</strong> Les systèmes de fichiers, avec des fonctionnalités différentes et malheureusement pas forcément compatibles les uns avec les autres, correspondent à la manière de transcrire physiquement sur la mémoire cette structure. C’est pour ça qu’on a souvent de sproblèmes de transfort de fichiers en mac et PC =&gt; bien choisir comment “formater” une clef USB ou un disque dur pour partager des données</p>
+<h2 id="pour-aller-plus-loin"><a href="#pour-aller-plus-loin">Pour aller plus loin</a></h2>
+<p>Les systèmes de fichiers, avec des fonctionnalités différentes et malheureusement pas forcément compatibles les uns avec les autres, correspondent à la manière de transcrire physiquement sur la mémoire cette structure. C’est pour ça qu’on a souvent de sproblèmes de transfort de fichiers en mac et PC =&gt; bien choisir comment “formater” une clef USB ou un disque dur pour partager des données</p>
 <p>Exemples :</p>
 <ul>
 <li>FAT 32, File Allocation Table depuis windows 95 : limite la taille des fichiers à 4 Go, le seul système de fichier bien supporté par tous les systèmes d’exploitation</li>
@@ -122,7 +121,7 @@ mac</td>
 <li>ext, extended file system : linux, actuellement en version ext4</li>
 <li>HFS et HFS+, Hierarchical File System : mac avec une taille minimale de fichier qui gaspille de l’espace</li>
 </ul>
-<p><strong>Afficher le nom, le contenu et changer de répertoire courant</strong></p>
+<h2 id="afficher-le-nom-le-contenu-et-changer-de-répertoire-courant"><a href="#afficher-le-nom-le-contenu-et-changer-de-répertoire-courant">Afficher le nom, le contenu et changer de répertoire courant</a></h2>
 <table>
 <thead>
 <tr class="header">
@@ -161,7 +160,7 @@ mac</td>
 </tr>
 </tbody>
 </table>
-<h4 id="essayez-ces-manipulations-en-ligne-de-commande-avec-votre-système">Essayez ces manipulations en ligne de commande avec votre système</h4>
+<p>** Essayez ces manipulations en ligne de commande avec votre système **</p>
 <ol style="list-style-type: decimal">
 <li>où êtes-vous quand vous ouvrez votre ligne de commande ?</li>
 <li>quels sont les fichiers présents là aussi ?</li>
@@ -174,8 +173,8 @@ mac</td>
 <li>on peut éditer des fichiers mais pas des répertoires !</li>
 <li>les fichiers et les répertoires comportent des méta-données (comme vos photos,emails,…) qui disent qui a le droit de faire quoi avec</li>
 <li>oui je sais techniquement un répertoire c’est aussi un fichier (c’est de l’info en la mémoire) mais pas la peine de s’embrouiller.</li>
+<li>toutes les opérations que vous faites avec un gestionnaire sont faisable en ligne de commande (et souvent c’est plus pratique quand on a plein d’opérations à effectuer). Attention par contre, on a pas droit à l’erreur donc il vaut mieux avoir un système de suivi de version pour ses documents !</li>
 </ul>
-<p><strong>Remarque</strong> : toutes les opérations que vous faites avec un gestionnaire sont faisable en ligne de commande (et souvent c’est plus pratique quand on a plein d’opérations à effectuer). Attention par contre, on a pas droit à l’erreur donc il vaut mieux avoir un système de suivi de version pour ses documents !</p>
 </div>
 </body>
 </html>

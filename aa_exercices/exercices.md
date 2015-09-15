@@ -14,10 +14,13 @@ else:
 	print("Bonjour!")
 ```
 
-#ifdef ANSWERS
-*Answer:* It prints 'Bonjour!'
-#endif
+. . .
 
+*Answer:* It prints 'Bonjour!'
+
+. . .
+
+---------------
 
 (@) What does the following program do?
 
@@ -35,22 +38,27 @@ for i in range(100):
 			state = 1
 ```
 
-#ifdef ANSWERS
-*Answer:* It prints a sequence of alternating A, B and C         
+. . .
 
-#endif
+*Answer:* It prints a sequence of alternating 'A', 'B' and 'C'
 
-(@) What does the following program do (% is the modulo operator that returns the remainder of the integer division)
+---------------------
+
+
+. . .
+
+(@) What does the following program do ('%' is the "modulo" operator that returns the remainder of the integer division)
 
 ```python
 n = 100
 while n > 0:
-	if n%7 == 0:
+	if (n % 7) == 0:
 		print(n)
 	n = n - 1
 ```
 
-#ifdef ANSWERS
+. . .
+
 *Answer:* It prints the numbers between 1 and 100 that are divisible by 7
 
 A more efficient version would be:
@@ -58,7 +66,8 @@ A more efficient version would be:
 ```python
 	[x for x in range(101) if x%7 == 0]
 ```
-#endif
+
+--------
 
 (@) What does the function ssn do in the following code?
 
@@ -73,9 +82,13 @@ def ssn(n):
 	return ss(range(n+1))
 ```
 
-#ifdef ANSWERS
+. . .
+
 *Answer:* It returns the sum of squares of the first 'n' integers
-#endif
+
+
+
+---------------
 
 (@) What does the following function do?
 
@@ -88,7 +101,8 @@ def un(l):
 	return u
 ```
 
-#ifdef ANSWERS
+. . .
+
 *Answer:* It returns the set of elements in the list l
-#endif
+
 

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,29 +26,21 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-   href="css/slidy.css" />
-  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
-    charset="utf-8" type="text/javascript"></script>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
 </head>
 <body>
-<div class="slide titlepage">
-  <h1 class="title">Reaction times</h1>
-  <p class="author">
-christophe@pallier.org
-  </p>
-  <p class="date">Sept. 2013</p>
+<div id="header">
+<h1 class="title">Reaction times</h1>
+<h2 class="author">christophe@pallier.org</h2>
+<h3 class="date">Sept. 2013</h3>
 </div>
-<div class="slide section level6">
-
 <ol style="list-style-type: example">
 <li>Write a program, using pygame, that starts with an empty black screen and after one second, displays a small white dot at the center of the screen for 1 second, waits for another second and then quits (tip: use the function pygame.time.delay to wait for a given amount of time)</li>
 </ol>
-</div>
-<div class="slide section level6">
-
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#include &lt;simple-rt1.py&gt;</span></code></pre>
+<p>. . .</p>
+<hr />
 <ol start="2" style="list-style-type: example">
 <li>Start the following program, move the mouse into the pygame window and clik on it several times, press keys, … close the window to quit.</li>
 </ol>
@@ -67,15 +57,17 @@ screen = pygame.display.set_mode((<span class="dv">640</span>, <span class="dv">
 
 pygame.quit()</code></pre>
 <p>(you can skim through the tutorial at <a href="http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/">http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/</a> ) to understand pygame’s mouse events. Now, modify the previous code so that the dot remains on the screen until you press a mouse button.</p>
-</div>
-<div class="slide section level6">
-
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#include &lt;simple-rt2.py&gt;</span></code></pre>
+<p>. . .</p>
+<hr />
 <ol start="3" style="list-style-type: example">
 <li>Look at the documentation of the function pygame.time.get_ticks() and add code to measure and print the reaction-times, that is the time between the onset of the dot’s display and the mouse button press.</li>
 </ol>
-</div>
-<div class="slide section level6">
-
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#include &lt;simple-rt2b.py&gt;</span></code></pre>
+<p>. . .</p>
+<hr />
 <ol start="4" style="list-style-type: example">
 <li>Modify the previous program to repeat the process for 32 trials, and:</li>
 </ol>
@@ -85,9 +77,10 @@ pygame.quit()</code></pre>
 <li>At the end of the program, save the reaction times in a text file.</li>
 <li>Run this program twice using your right hand and twice using your left hand, <em>trying to respond as fast as possible, but without making false alarms</em> (change the name of the text file to save into different text files).</li>
 </ul>
-</div>
-<div class="slide section level6">
-
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#include &lt;simple-rt3.py&gt;</span></code></pre>
+<p>. . .</p>
+<hr />
 <ol start="5" style="list-style-type: example">
 <li>Look at your reaction time data. If you know to do it, plot histograms with a spreadsheet program or R (or any other software)</li>
 </ol>
@@ -101,15 +94,14 @@ plot(l)
 hist(l)
 mean(l)
 median(l)</code></pre>
-</div>
-<div class="slide section level6">
-
+<hr />
 <ol start="6" style="list-style-type: example">
 <li>Back to the reaction time program, write a function that removes the 25% extreme data points in a list and returns the mean and standard errors of the remaining data points (not using numpy).</li>
 </ol>
-</div>
-<div class="slide section level6">
-
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#include &lt;simple-rt4.py&gt;</span></code></pre>
+<p>. . .</p>
+<hr />
 <ol start="7" style="list-style-type: example">
 <li><p>Change the size of the dot so that it is 10 times bigger than previously. Rerun the experiment. How is your reaction times affected?</p></li>
 <li><p>Now, change the contrast of the dot with the background (make it grey rather than white). How is your reaction times affected?</p></li>
@@ -118,6 +110,5 @@ median(l)</code></pre>
 <li><p>Modify the program so that the dot can appear (randomly) at one of two locations far on the left or far on the right of the center. How is your reaction time affected?</p></li>
 <li><p>(advanced): Modify the simple detection program so that the contrast can be modified at each trial. Write the program to find the threshold of detection of the do.</p></li>
 </ol>
-</div>
 </body>
 </html>

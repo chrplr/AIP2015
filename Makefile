@@ -1,5 +1,5 @@
 # recursive make: runs make in all the immediate subdirs
-# Time-stamp: <2015-09-12 17:51 christophe@pallier.org>
+# Time-stamp: <2015-09-14 20:50 christophe@pallier.org>
  
 SHELL=/bin/bash
 
@@ -7,7 +7,7 @@ SUBDIRS := $(wildcard */.)
 
 .PHONY: all clean putonweb
 
-all: README.html doclist.html index.html
+all: README.html doclist.html
 	@for a in $(SUBDIRS); do \
 		if [ -f $$a/Makefile ]; then \
 			echo "processing folder $$a"; \
@@ -18,8 +18,6 @@ all: README.html doclist.html index.html
 README.html: README.md
 	pandoc -s -S -c pandoc.css $< -o $@
 
-index.html: README.html
-	cp $<  $@
 
 doclist.html: doclist.md
 	pandoc -s -S -c pandoc.css $< -o $@
