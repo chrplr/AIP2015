@@ -28,28 +28,23 @@ Tapez les  lignes de commandes suivantes:
 * Si vous êtes connecté à Internet:
 
 ```
-     git clone  https://github.com/chrplr/AIP2015 
+git clone  https://github.com/chrplr/AIP2015 
+cd AIP2015
+git remote rename origin internet
+git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015
 ```
-
 
 * Si vous êtes connecté au reseau wifi local "synapse":
 
 ```
 git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 
-```
-
-
-Quand un mot de passe est demandé, tapez `test` et appuyez sur 'Entrée'.
-(il est normal que le mot de passe ne s'affiche pas)
-
-* Puis tapez les commandes suivantes:
-
-```
 cd AIP2015
-git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015
+git remote rename origin synapse
 git remote add internet https://github.com/chrplr/AIP2015
 ```
 
+Quand un mot de passe est demandé, tapez `test` et appuyez sur 'Entrée'.
+(il est normal que le mot de passe ne s'affiche pas)
 
 * Et vérifiez si la configuration est correcte:
 
