@@ -7,21 +7,26 @@ Affiche un rectangle
 
 import sys
 import pygame
-
-WHITE=(255,255,255)
-BLUE=(0,0,255)
-WINDOW_DIMENSIONS = (400,300)
-
+from pygame.locals import *
 
 def main():
     pygame.init()
-    MY_WINDOW=pygame.display.set_mode(WINDOW_DIMENSIONS)
-    MY_WINDOW.fill(WHITE)
-    pygame.draw.rect(MY_WINDOW,BLUE,(200,150,100,50))
-    pygame.display.flip()
-    pygame.time.wait(2000)
-    pygame.quit()
-    sys.exit()
+
+    SURFACE_AFFICHAGE=pygame.display.set_mode((400,300))
+
+    WHITE=(255,255,255)
+    BLUE=(0,0,255)
+
+    SURFACE_AFFICHAGE.fill(WHITE)
+
+    pygame.draw.rect(SURFACE_AFFICHAGE,BLUE,(200,150,100,50))
+
+    while True:
+        for event in pygame.event.get():
+            if event.type==QUIT:
+                pygame.quit()
+                sys.exit()
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
