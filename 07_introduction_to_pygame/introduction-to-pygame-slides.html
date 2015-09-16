@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="../css/styles/slidy.css" />
+  <script src="../css/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<p>Plan du cours :</p>
+<ul>
+<li>open then close a window in which stimuly will appear</li>
+<li>draw something in that window</li>
+<li>draw basic shapes</li>
+<li>modify the position of a stimulus</li>
+<li>modify the color of a stimulus</li>
+<li>control the timing</li>
+</ul>
+<p>If we have time</p>
+<ul>
+<li>show an image in the window</li>
+<li>show some texte in the window</li>
+</ul>
+</div>
+<div id="open-and-close-a-window" class="slide section level1">
+<h1>Open and close a window</h1>
+<ol style="list-style-type: decimal">
+<li>Open a terminal and launch an ipython interpreter</li>
+<li><p>type the following command to get access to the pygame module and all its amazing possibilities</p>
+<pre><code>import pygame</code></pre></li>
+<li><p>Then you have to initialize all the things that pygame requires</p>
+<pre><code>pygame.init()</code></pre></li>
+<li><p>Nothing shows up yet, and that’s normal. In order to be able to draw something you have to define a display window, which requires us to specify the width and height of the window</p>
+<pre><code>pygame.display.set_mode((400,300))</code></pre></li>
+<li><p>Now you can close your window</p>
+<pre><code>pygame.quit()</code></pre></li>
+<li><p>You might notice that there is still some pygame stuff running, so to actually close everything, quit the interpreter</p>
+<pre><code>quit</code></pre></li>
+</ol>
+<h2 id="exercise">Exercise</h2>
+<ol style="list-style-type: decimal">
+<li><p>Try again, but this time, Use a variable to store the display window object</p>
+<pre><code>MY_WINDOW=pygame.display.set_mode((400,300))</code></pre></li>
+<li><p>Take a look at the variable attributes and methods using</p>
+<pre><code>MY_WINDOW. and hit the tabulation key</code></pre></li>
+</ol>
+</div>
+<div id="basic-pygame-program" class="slide section level1">
+<h1>Basic Pygame program</h1>
+<ol style="list-style-type: decimal">
+<li>From the template Louis presented, make a little program with the commandes you just typed in the ipython interpreter</li>
+<li>Save that program with an appropriate name</li>
+<li><p>run it using the command line</p>
+<pre><code>python name_of_your_program.py</code></pre></li>
+</ol>
+<h2 id="exercise-1">Exercise</h2>
+<ol style="list-style-type: decimal">
+<li>What do you notice?</li>
+<li>Open a ipython interpreter to get access to the nice built-in help</li>
+<li>Try to understand what does the <code>pygame.time.wait</code> function and use it in your program</li>
+<li>Now, modify your program to display a window with different dimensions</li>
+<li>Let’s take a look together at the program prems.py</li>
+</ol>
+</div>
+<div id="change-the-background-color-of-the-window" class="slide section level1">
+<h1>Change the background color of the window</h1>
+<p>Now we will interact a little bit with that display window.</p>
+<h2 id="color-code">Color code</h2>
+<p>The colors are coded using a triplet of values for its RED, GREEN and BLUE components.<br />
+Each component intensity is represented by a number that can take values between 0 and 255 (it is coded on one 8-bit byte).<br />
+Thus:</p>
+<ul>
+<li>RED is coded as <code>(255,0,0)</code><br />
+</li>
+<li>GREEN is coded as <code>(0,255,0)</code></li>
+<li>BLUE is coded as <code>(0,0,255)</code></li>
+<li>BLACK is coded as <code>(0,0,0)</code></li>
+<li>WHITE is coded as <code>(255,255,255)</code></li>
+</ul>
+<h2 id="a-little-explanation-on-display-asynchrony">A little explanation on display asynchrony</h2>
+<p>In order to control the timing of a stimulus appearance on a screen, drawing and displaying are two diferent steps.</p>
+<ol style="list-style-type: decimal">
+<li>you prepare a stimumus in the graphic memory of the video card of your computer using pygame functions</li>
+<li>you tell the computer to show on the screen what you prepared with the <code>pygame.display.flip()</code> function</li>
+</ol>
+<h2 id="exercice">Exercice</h2>
+<ol style="list-style-type: decimal">
+<li>make a nex program from <code>prems.py</code></li>
+<li>use the <code>MY_WINDOW.fill()</code> method to change the color of the window</li>
+<li>use <code>pygame.display.flip()</code> to actually display it</li>
+</ol>
+</div>
+</body>
+</html>
