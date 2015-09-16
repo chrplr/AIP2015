@@ -8,10 +8,17 @@ Open a pygame window then close it properly
 import pygame
 import sys
 
-def main():
+WINDOW_DIMENSIONS=(400,300)
+
+def initialisation():
     pygame.init()
-    WINDOW_DIMENSIONS=(400,300)
-    MY_WINDOW=pygame.display.set_mode(WINDOW_DIMENSIONS)
+
+def ouverture_de_fenetre(size):
+    MY_WINDOW=pygame.display.set_mode(size)
+
+def main():
+    initialisation()
+    ouverture_de_fenetre(WINDOW_DIMENSIONS)
     pygame.time.wait(2000)
     pygame.quit()
     sys.exit()
