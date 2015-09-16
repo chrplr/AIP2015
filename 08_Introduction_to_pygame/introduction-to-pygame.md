@@ -40,7 +40,7 @@ pygame.quit()
 quit
 ```
 
-## Exercise
+## Exercises
 1. Try again, but this time, Use a variable to store the display window object
 ```
 MY_WINDOW=pygame.display.set_mode((400,300))
@@ -60,7 +60,7 @@ MY_WINDOW. and hit the tabulation key
 python name_of_your_program.py
 ```
 
-## Exercise
+## Exercises
 1. What do you notice?
 2. Open a ipython interpreter to get access to the nice built-in help
 3. Try to understand what does the `pygame.time.wait` function and use it in your program
@@ -90,8 +90,46 @@ In order to control the timing of a stimulus appearance on a screen, drawing and
 1. you prepare a stimumus in the graphic memory of the video card of your computer using pygame functions
 2. you tell the computer to show on the screen what you prepared with the `pygame.display.flip()` function
 
-## Exercice
+## Exercices
 
-1. make a nex program from `prems.py`
+1. make a new program from `prems.py`
 2. use the `MY_WINDOW.fill()` method to change the color of the window
 3. use `pygame.display.flip()` to actually display it
+4. make a dictionary with colors and loop through it to change de window colors
+
+#  Drawing stuff
+
+### Information on rectangles
+
+Everything relates to rectangles!  
+Rectangles positions in the window are defined as `[left_upper_corner_horizontal_position, left_upper_corner_vertical_position, width, height]`  
+Vertical and horizontal positions of the rectangle left top corner are relative to the window left top corner.  
+
+One way to remember how rectangles positions are coded is to know that this conventions comes from the way we write the latin languages : from left to right and from top to bottom.
+
+## Draw a rectangle
+
+1. In the ipython command line, do everything to get access to a new pygame-controlled window and use the following command to draw a rectangle
+```
+pygame.draw.rect(SURFACE_DISPLAY,COLOR,RECTANGLE)
+```
+2. Play around with the input arguments to draw rectangle at different positions
+3. What would you do in order to stop drawing each new rectangles on top of all previously drawn rectangles?
+
+## Exercices
+
+1. Make a little program to draw a rectangle
+2. Check `pygame.draw. and tab` to see how you could draw some other shapes
+3. Now let's express your artistic fiber!
+
+
+# Homework
+
+1. Write a program nicely organized that changes the background color of a window by looping through a dictionary defining the different colors
+2. Build a progam that displays the [Ebbinghaus illusion](https://en.wikipedia.org/wiki/Ebbinghaus_illusion)
+
+# Challenge
+
+1. Go check the following web page describing a famous optical illusion and try to reproduce this stimulus  
+[motion induced blindness](http://www.michaelbach.de/ot/mot-mib/)
+2. Build a progam that allows the user to specify some properties of the stimulus in order to explore their influence on the perception.

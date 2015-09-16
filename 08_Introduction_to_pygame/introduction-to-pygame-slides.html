@@ -18,7 +18,7 @@
 
 <p>Plan du cours :</p>
 <ul>
-<li>open then close a window in which stimuly will appear</li>
+<li>open then close a window in which stimuli will appear</li>
 <li>draw something in that window</li>
 <li>draw basic shapes</li>
 <li>modify the position of a stimulus</li>
@@ -46,7 +46,7 @@
 <li><p>You might notice that there is still some pygame stuff running, so to actually close everything, quit the interpreter</p>
 <pre><code>quit</code></pre></li>
 </ol>
-<h2 id="exercise">Exercise</h2>
+<h2 id="exercises">Exercises</h2>
 <ol style="list-style-type: decimal">
 <li><p>Try again, but this time, Use a variable to store the display window object</p>
 <pre><code>MY_WINDOW=pygame.display.set_mode((400,300))</code></pre></li>
@@ -62,7 +62,7 @@
 <li><p>run it using the command line</p>
 <pre><code>python name_of_your_program.py</code></pre></li>
 </ol>
-<h2 id="exercise-1">Exercise</h2>
+<h2 id="exercises-1">Exercises</h2>
 <ol style="list-style-type: decimal">
 <li>What do you notice?</li>
 <li>Open a ipython interpreter to get access to the nice built-in help</li>
@@ -92,11 +92,48 @@ Thus:</p>
 <li>you prepare a stimumus in the graphic memory of the video card of your computer using pygame functions</li>
 <li>you tell the computer to show on the screen what you prepared with the <code>pygame.display.flip()</code> function</li>
 </ol>
-<h2 id="exercice">Exercice</h2>
+<h2 id="exercices">Exercices</h2>
 <ol style="list-style-type: decimal">
-<li>make a nex program from <code>prems.py</code></li>
+<li>make a new program from <code>prems.py</code></li>
 <li>use the <code>MY_WINDOW.fill()</code> method to change the color of the window</li>
 <li>use <code>pygame.display.flip()</code> to actually display it</li>
+<li>make a dictionary with colors and loop through it to change de window colors</li>
+</ol>
+</div>
+<div id="drawing-stuff" class="slide section level1">
+<h1>Drawing stuff</h1>
+<h3 id="information-on-rectangles">Information on rectangles</h3>
+<p>Everything relates to rectangles!<br />
+Rectangles positions in the window are defined as <code>[left_upper_corner_horizontal_position, left_upper_corner_vertical_position, width, height]</code><br />
+Vertical and horizontal positions of the rectangle left top corner are relative to the window left top corner.</p>
+<p>One way to remember how rectangles positions are coded is to know that this conventions comes from the way we write the latin languages : from left to right and from top to bottom.</p>
+<h2 id="draw-a-rectangle">Draw a rectangle</h2>
+<ol style="list-style-type: decimal">
+<li><p>In the ipython command line, do everything to get access to a new pygame-controlled window and use the following command to draw a rectangle</p>
+<pre><code>pygame.draw.rect(SURFACE_DISPLAY,COLOR,RECTANGLE)</code></pre></li>
+<li>Play around with the input arguments to draw rectangle at different positions</li>
+<li><p>What would you do in order to stop drawing each new rectangles on top of all previously drawn rectangles?</p></li>
+</ol>
+<h2 id="exercices-1">Exercices</h2>
+<ol style="list-style-type: decimal">
+<li>Make a little program to draw a rectangle</li>
+<li>Check <code>pygame.draw. and tab</code> to see how you could draw some other shapes</li>
+<li>Now let’s express your artistic fiber!</li>
+</ol>
+</div>
+<div id="homework" class="slide section level1">
+<h1>Homework</h1>
+<ol style="list-style-type: decimal">
+<li>Write a program nicely organized that changes the background color of a window by looping through a dictionary defining the different colors</li>
+<li>Build a progam that displays the <a href="https://en.wikipedia.org/wiki/Ebbinghaus_illusion">Ebbinghaus illusion</a></li>
+</ol>
+</div>
+<div id="challenge" class="slide section level1">
+<h1>Challenge</h1>
+<ol style="list-style-type: decimal">
+<li>Go check the following web page describing a famous optical illusion and try to reproduce this stimulus<br />
+<a href="http://www.michaelbach.de/ot/mot-mib/">motion induced blindness</a></li>
+<li>Build a progam that allows the user to specify some properties of the stimulus in order to explore their influence on the perception.</li>
 </ol>
 </div>
 </body>
