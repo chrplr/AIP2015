@@ -1,6 +1,6 @@
 Plan du cours :
 
-- open then close a window in which stimuly will appear
+- open then close a window in which stimuli will appear
 - draw something in that window
 - draw basic shapes
 - modify the position of a stimulus
