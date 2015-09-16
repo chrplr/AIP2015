@@ -21,29 +21,37 @@ Le principe est le suivant:
 
 La toute première fois, vous devrez *cloner* un des repositories sur votre ordinateur, c'est à dire créer un répertoire AIP2015 contenant tous les fichiers du cours.
 
-[Ouvrez un terminal](how-to-open-a-terminal.html) et tapez les  lignes de commandes suivantes:
+Si vous êtes sous Windows, ouvrez 'git shell', sous les autres sytèmes, ouvrez un terminal.
+
+Tapez les  lignes de commandes suivantes:
 
 * Si vous êtes connecté à Internet:
 
 ```
-git clone  https://github.com/chrplr/AIP2015 internet
-cd AIP2015
-git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015
+     git clone  https://github.com/chrplr/AIP2015 
 ```
+
 
 * Si vous êtes connecté au reseau wifi local "synapse":
 
 ```
-git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 synapse
-cd AIP2015
-git remote add internet https://github.com/chrplr/AIP2015
+git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 
 ```
+
 
 Quand un mot de passe est demandé, tapez `test` et appuyez sur 'Entrée'.
 (il est normal que le mot de passe ne s'affiche pas)
 
+* Puis tapez les commandes suivantes:
 
-* Vérifier si la configuration est correcte:
+```
+cd AIP2015
+git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015
+git remote add internet https://github.com/chrplr/AIP2015
+```
+
+
+* Et vérifiez si la configuration est correcte:
 
 ```
 git remote -v
@@ -84,7 +92,7 @@ cd GitHub/AIP2015
 
  - version longue, typiquement si vous avez déplacé le répertoire AIP2015 après son clonage : localisez le répertoire AIP2015 dans votre arborescence puis exécutez la commande `cd chemin_vers_votre_repertoire_AIP2015` où il faut évidemment remplacer "chemin_vers_votre_repertoire_AIP2015" par le chemin d'accès dans votre cas particulier.
 
-3. Exécutez la commande **git** qui met à jour votre répertoire **AIP2015** depuis l'un des deux repositories du réseau
+3. Exécutez la commande **git** qui met à jour votre répertoire **AIP2015** depuis l'un des deux "remote repository" du réseau
 
  * Si vous êtes connecté à Internet :
 
@@ -98,5 +106,12 @@ git pull internet master
 git pull synapse master
 ```
 
+En cas de conflit empêchant la mise à jour tapez
+
+```
+git reset --hard
+```
+
+Cela effacera toutes les modifications que vous aurez pu faire dans AIP2015, permettant la mise à jour. Vous n'avez plus qu'a effectuer un des deux git pull ci-dessus.
 
 That's all!

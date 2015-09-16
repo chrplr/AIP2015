@@ -74,9 +74,10 @@ Sylvain Charron
 <li><strong>racine</strong> : c’est le point de départ de l’organisation des informations (particularité de windows : il peut y en avoir plusieurs, une par partition)</li>
 <li><strong>repertoire</strong> : c’est un contenant qui peut contenir des fichiers ou d’autres répertoires</li>
 <li><strong>répertoire courant</strong> : c’est l’endroit où on se trouve à un instant donné dans l’arborescence, c’est là qu’on cherchera à ouvrir ou à écrire un fichier si on ne précise rien de plus</li>
-<li><strong>chemin relatif</strong> : le chemin à partir du répertoire courant, identifié par le signe “point” <code>.</code> tandis que le répertoire parent est identifié par le signe “point point” `..``</li>
 <li><strong>fichier</strong> : en simplifiant ça correspond à une zone de mémoire où sont stockées des informations (texte,video,données, script,…)</li>
-<li><strong>chemin d’accès (ou <em>path</em>)</strong> : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier, en partant de la racine</li>
+<li><strong>chemin d’accès (ou <em>path</em>)</strong> : c’est la description du chemin à suivre dans l’arborescence pour trouver un répertoire ou un fichier. Il s’agit de la suite des noms des répertoire à parcourir, séparés par un caractère <code>/</code> sous Mac et Linux et <code>\</code> sous Windows</li>
+<li><strong>chemin d’accès absolu</strong> : c’est le chemin d’accès en partant de la racine</li>
+<li><strong>chemin relatif</strong> : c’est le chemin d’accès à partir du répertoire courant, identifié par le signe “point” <code>.</code> tandis que le répertoire parent est identifié par le signe “point point” `..``</li>
 </ul>
 <p>Tout ça peut se voir avec les outils graphiques qu’on trouve désormais couramment dans les systèmes d’exploitation.</p>
 <h2 id="gestionnaires-de-fichiers-gui"><a href="#gestionnaires-de-fichiers-gui">Gestionnaires de fichiers GUI</a></h2>
@@ -98,8 +99,8 @@ Sylvain Charron
 </tr>
 <tr class="even">
 <td align="left">linux</td>
-<td align="left">nautilus</td>
-<td align="left"></td>
+<td align="left">nautilus,thunar,…</td>
+<td align="left">commande</td>
 <td align="left">/</td>
 </tr>
 </tbody>

@@ -32,24 +32,27 @@
 <li><p>vous allez créer, une fois pour toutes, une copie locale du cours sur votre ordinateur (“clonage”).</p></li>
 <li><p>Ensuite, à tout moment, vous pourrez très simplement mettre à jour les fichiers modifiés par les enseignants.</p></li>
 </ul>
-<h2 id="création-dune-copie-locale">Création d’une copie locale</h2>
+<h2 id="création-dune-copie-locale"><a href="#création-dune-copie-locale">Création d’une copie locale</a></h2>
 <p>La toute première fois, vous devrez <em>cloner</em> un des repositories sur votre ordinateur, c’est à dire créer un répertoire AIP2015 contenant tous les fichiers du cours.</p>
-<p><a href="how-to-open-a-terminal.html">Ouvrez un terminal</a> et tapez les lignes de commandes suivantes:</p>
+<p>Si vous êtes sous Windows, ouvrez ‘git shell’, sous les autres sytèmes, ouvrez un terminal.</p>
+<p>Tapez les lignes de commandes suivantes:</p>
 <ul>
 <li>Si vous êtes connecté à Internet:</li>
 </ul>
-<pre><code>git clone  https://github.com/chrplr/AIP2015 internet
-cd AIP2015
-git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015</code></pre>
+<pre><code>     git clone  https://github.com/chrplr/AIP2015 </code></pre>
 <ul>
 <li>Si vous êtes connecté au reseau wifi local “synapse”:</li>
 </ul>
-<pre><code>git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 synapse
-cd AIP2015
-git remote add internet https://github.com/chrplr/AIP2015</code></pre>
+<pre><code>git clone  student@192.168.0.2:Sites/cogmaster2015/AIP2015 </code></pre>
 <p>Quand un mot de passe est demandé, tapez <code>test</code> et appuyez sur ‘Entrée’. (il est normal que le mot de passe ne s’affiche pas)</p>
 <ul>
-<li>Vérifier si la configuration est correcte:</li>
+<li>Puis tapez les commandes suivantes:</li>
+</ul>
+<pre><code>cd AIP2015
+git remote add synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015
+git remote add internet https://github.com/chrplr/AIP2015</code></pre>
+<ul>
+<li>Et vérifiez si la configuration est correcte:</li>
 </ul>
 <pre><code>git remote -v</code></pre>
 <p>Vous devriez voir s’afficher:</p>
@@ -57,7 +60,7 @@ git remote add internet https://github.com/chrplr/AIP2015</code></pre>
 internet        https://github.com/chrplr/AIP2015.git (push)
 synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (fetch)
 synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (push)</code></pre>
-<h2 id="mises-à-jour">Mises à jour</h2>
+<h2 id="mises-à-jour"><a href="#mises-à-jour">Mises à jour</a></h2>
 <p>Pour mettre à jour le contenu du répertoire AIP2015</p>
 <ol style="list-style-type: decimal">
 <li>Lancez un shell qui puisse interpréter les commandes <strong>git</strong> :</li>
@@ -79,7 +82,7 @@ synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (push)</code></pre>
 <li>version longue, typiquement si vous avez déplacé le répertoire AIP2015 après son clonage : localisez le répertoire AIP2015 dans votre arborescence puis exécutez la commande <code>cd chemin_vers_votre_repertoire_AIP2015</code> où il faut évidemment remplacer “chemin_vers_votre_repertoire_AIP2015” par le chemin d’accès dans votre cas particulier.</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Exécutez la commande <strong>git</strong> qui met à jour votre répertoire <strong>AIP2015</strong> depuis l’un des deux repositories du réseau</li>
+<li>Exécutez la commande <strong>git</strong> qui met à jour votre répertoire <strong>AIP2015</strong> depuis l’un des deux “remote repository” du réseau</li>
 </ol>
 <ul>
 <li>Si vous êtes connecté à Internet :</li>
@@ -89,6 +92,9 @@ synapse student@192.168.0.2:Sites/cogmaster2015/AIP2015 (push)</code></pre>
 <li>Si vous êtes connecté au réseau wifi local “synapse” :</li>
 </ul>
 <pre><code>git pull synapse master</code></pre>
+<p>En cas de conflit empêchant la mise à jour tapez</p>
+<pre><code>git reset --hard</code></pre>
+<p>Cela effacera toutes les modifications que vous aurez pu faire dans AIP2015, permettant la mise à jour. Vous n’avez plus qu’a effectuer un des deux git pull ci-dessus.</p>
 <p>That’s all!</p>
 </body>
 </html>

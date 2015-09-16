@@ -3,57 +3,90 @@
 % Sept. 2013
 
 
-Strings
-=======
+# Strings
 
-In Python, text can be stored in objects of type 'str' (a.k.a as 'strings')
+In Python, text can be stored in objects called *strings*.
 
-String constants are enclosed between single or double quotes
+String constants are enclosed between single quotes
 
-```python
-'bonjour'
+    'Bonjour le monde!'
 
-"bonjour Paris!"
+Or double quotes
 
-"""hello
-ceci est un text
-sur plusieurs lignes
-"""
 
-type('123')
+    "Bonjour le monde !"
 
-type(123)
+Or "triple" quotes for multilines strings
 
-123 + 456
+    """
+    Bonjour le monde!
 
-'123' + '456'
+    Longtemps je me suis levé de bonne heure,
+	Les sanglots longs des violons,
+    ...
+	"""
 
-int('123')  # converting str into int
-str(1 + 1)  # converting int into str
-```
+They have a type 'str'.
 
-* A string can be viewed as a *list* of characters:
+    >>> type('bonjour')
+    <type 'str'>
 
-```python
-mystring = 'superman'
+To convert an object to a string representation:
 
-len(mystring)
+	str(10)
+	a = dict((("a",1), ("b",2)))
+	str(a)
 
-mystring[0]
-mystring[1]
-mystring[1:5]
+A string is nothing but a sequence of characters.
 
-for letter in mystring:
-    print(letter)
-```
+	a = 'bonjour'
+	print(a[0])
+	print(a[1])
+	print(a[2])
+	print(a[2:4])
+	print(len(a))
+	
+	for c in 'bonjour':
+		print(c)
 
-A set of functions to manipulate strings is available in the module 'string' (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])). Among others, you should know about:
 
-* string.upper and string.lower
-* string.split
-* string.find
+Operations on strings
 
-### Interactive input from the command line:
+	a = 'bonjour'
+	b = 'hello'
+	a + b
+	a + ' ' + b
+
+
+A set of functions to manipulate strings is available in the module 'string'.
+
+
+	import string
+	string.upper(a)
+	string.lower('ENS')
+
+## search/replace a substring within a string
+
+	a = 'alain marie jean marc'
+    a.find('alain')
+    a.find('marie')
+	a.find('ma')
+	a.find('marc')
+	a.find('o')
+	
+	a.replace('marie','claude')
+	a
+
+## splitting a strings at delimiters
+
+    a = 'alain marie jean marc'
+    a.split(" ")
+
+
+Read (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])) to learn about more string functions.
+
+
+# Interactive input from the command line:
 
 ```python
 name = raw_input('Comment vous appelez-vous ? ')
@@ -61,13 +94,35 @@ name = raw_input('Comment vous appelez-vous ? ')
 print "Bonjour " + name + '!'
 ```
 
-Reading and writing to text files
-=================================
+# Reading and writing to text files
+
+
+* With Atom, create a text file containing a few lines of arbitrary content, an save it under the filename 'test.txt'
+
+
+
+
+## the special case of csv files (comma separated values)
+
+
+* Open a spreadsheet, e.g. with Excel or LibreOffice Calc.
+* Create a small table with 3 colums and 4 lines, with arbitrary content
+* Use 'save as' to save the file with a *csv format*.
+* Using a text editor, e.g. atom, open the file you have just saved.
+
+Notice that a csv file is a *text file* (contrary to a .xlsx file, which uses a binary, proprietary format).
+
+To store data, it is generally a good idea to use a text format rather
+than a binary format.
+
+Not only it is better for humans, but it makes it easier to import
+other software, e.g. Python.
+
 
 
 Create a text file 'essa
 
-```python
+```pytho
 
 
 writing:

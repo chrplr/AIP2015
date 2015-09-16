@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Christophe@pallier.org" />
+  <title>Text manipulations</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Text manipulations</h1>
+<h2 class="author">Christophe@pallier.org</h2>
+<h3 class="date">Sept. 2013</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#strings">Strings</a><ul>
+<li><a href="#searchreplace-a-substring-within-a-string">search/replace a substring within a string</a></li>
+<li><a href="#splitting-a-strings-at-delimiters">splitting a strings at delimiters</a></li>
+</ul></li>
+<li><a href="#interactive-input-from-the-command-line">Interactive input from the command line:</a></li>
+<li><a href="#reading-and-writing-to-text-files">Reading and writing to text files</a><ul>
+<li><a href="#the-special-case-of-csv-files-comma-separated-values">the special case of csv files (comma separated values)</a></li>
+</ul></li>
+<li><a href="#exercices">Exercices</a></li>
+<li><a href="#ifdef-answers">ifdef ANSWERS</a></li>
+<li><a href="#endif">endif</a></li>
+<li><a href="#ifdef-answers-1">ifdef ANSWERS</a></li>
+<li><a href="#endif-1">endif</a></li>
+<li><a href="#ifdef-answers-2">ifdef ANSWERS</a></li>
+<li><a href="#endif-2">endif</a></li>
+<li><a href="#ifdef-answers-3">ifdef ANSWERS</a></li>
+<li><a href="#endif-3">endif</a></li>
+<li><a href="#ifdef-answers-4">ifdef ANSWERS</a></li>
+<li><a href="#endif-4">endif</a></li>
+<li><a href="#ifdef-answers-5">ifdef ANSWERS</a></li>
+</ul>
+</div>
+<h1 id="strings"><a href="#strings">Strings</a></h1>
+<p>In Python, text can be stored in objects called <em>strings</em>.</p>
+<p>String constants are enclosed between single quotes</p>
+<pre><code>&#39;Bonjour le monde!&#39;</code></pre>
+<p>Or double quotes</p>
+<pre><code>&quot;Bonjour le monde !&quot;</code></pre>
+<p>Or “triple” quotes for multilines strings</p>
+<pre><code>&quot;&quot;&quot;
+Bonjour le monde!
+
+Longtemps je me suis levé de bonne heure,
+Les sanglots longs des violons,
+...
+&quot;&quot;&quot;</code></pre>
+<p>They have a type ‘str’.</p>
+<pre><code>&gt;&gt;&gt; type(&#39;bonjour&#39;)
+&lt;type &#39;str&#39;&gt;</code></pre>
+<p>To convert an object to a string representation:</p>
+<pre><code>str(10)
+a = dict(((&quot;a&quot;,1), (&quot;b&quot;,2)))
+str(a)</code></pre>
+<p>A string is nothing but a sequence of characters.</p>
+<pre><code>a = &#39;bonjour&#39;
+print(a[0])
+print(a[1])
+print(a[2])
+print(a[2:4])
+print(len(a))
+
+for c in &#39;bonjour&#39;:
+    print(c)</code></pre>
+<p>Operations on strings</p>
+<pre><code>a = &#39;bonjour&#39;
+b = &#39;hello&#39;
+a + b
+a + &#39; &#39; + b</code></pre>
+<p>A set of functions to manipulate strings is available in the module ‘string’.</p>
+<pre><code>import string
+string.upper(a)
+string.lower(&#39;ENS&#39;)</code></pre>
+<h2 id="searchreplace-a-substring-within-a-string"><a href="#searchreplace-a-substring-within-a-string">search/replace a substring within a string</a></h2>
+<pre><code>a = &#39;alain marie jean marc&#39;
+a.find(&#39;alain&#39;)
+a.find(&#39;marie&#39;)
+a.find(&#39;ma&#39;)
+a.find(&#39;marc&#39;)
+a.find(&#39;o&#39;)
+
+a.replace(&#39;marie&#39;,&#39;claude&#39;)
+a</code></pre>
+<h2 id="splitting-a-strings-at-delimiters"><a href="#splitting-a-strings-at-delimiters">splitting a strings at delimiters</a></h2>
+<pre><code>a = &#39;alain marie jean marc&#39;
+a.split(&quot; &quot;)</code></pre>
+<p>Read (see <a href="https://docs.python.org/2/library/string.html]">https://docs.python.org/2/library/string.html</a>) to learn about more string functions.</p>
+<h1 id="interactive-input-from-the-command-line"><a href="#interactive-input-from-the-command-line">Interactive input from the command line:</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python">name = <span class="dt">raw_input</span>(<span class="st">&#39;Comment vous appelez-vous ? &#39;</span>)
+
+<span class="dt">print</span> <span class="st">&quot;Bonjour &quot;</span> + name + <span class="st">&#39;!&#39;</span></code></pre>
+<h1 id="reading-and-writing-to-text-files"><a href="#reading-and-writing-to-text-files">Reading and writing to text files</a></h1>
+<ul>
+<li>With Atom, create a text file containing a few lines of arbitrary content, an save it under the filename ‘test.txt’</li>
+</ul>
+<h2 id="the-special-case-of-csv-files-comma-separated-values"><a href="#the-special-case-of-csv-files-comma-separated-values">the special case of csv files (comma separated values)</a></h2>
+<ul>
+<li>Open a spreadsheet, e.g. with Excel or LibreOffice Calc.</li>
+<li>Create a small table with 3 colums and 4 lines, with arbitrary content</li>
+<li>Use ‘save as’ to save the file with a <em>csv format</em>.</li>
+<li>Using a text editor, e.g. atom, open the file you have just saved.</li>
+</ul>
+<p>Notice that a csv file is a <em>text file</em> (contrary to a .xlsx file, which uses a binary, proprietary format).</p>
+<p>To store data, it is generally a good idea to use a text format rather than a binary format.</p>
+<p>Not only it is better for humans, but it makes it easier to import other software, e.g. Python.</p>
+<p>Create a text file ’essa</p>
+<p>```pytho</p>
+<p>writing:</p>
+<pre class="sourceCode python"><code class="sourceCode python">filename = <span class="st">&#39;test.txt&#39;</span>
+handle = <span class="dt">open</span>(filename, <span class="st">&#39;w&#39;</span>)
+handle.write(<span class="st">&#39;welcome&#39;</span>)
+handle.write(<span class="st">&#39;to the wonderful&#39;</span>)
+handle.write(<span class="st">&#39;world of Python!&#39;</span>)
+handle.close()</code></pre>
+<h1 id="exercices"><a href="#exercices">Exercices</a></h1>
+<p>Download <a href="http://www.pallier.org/cours/AIP2013/alice.txt">Alice in Wonderland</a>.</p>
+<ol style="list-style-type: example">
+<li>Write a program that prints the lines that contains the string ‘Alice’ (tip: you can use the find function from the module string). Then, test the same program with the strings ‘Rabbit’, ‘rabbit’, ‘stone’, ‘office’.</li>
+</ol>
+<h1 id="ifdef-answers"><a href="#ifdef-answers">ifdef ANSWERS</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> string
+text = <span class="dt">file</span>(<span class="st">&#39;alice.txt&#39;</span>)
+<span class="kw">for</span> line in text:
+    <span class="kw">if</span> string.find(line, <span class="st">&#39;Alice&#39;</span>) != -<span class="dv">1</span>:
+        <span class="dt">print</span>(line)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> string
+ 
+<span class="kw">def</span> print_matching_lines(filename, expr):
+    <span class="dt">print</span> <span class="st">&quot;#&quot;</span>*<span class="dv">30</span>
+    <span class="dt">print</span>(<span class="st">&quot;Searching &quot;</span> + filename + <span class="st">&quot; for &quot;</span> + expr + <span class="st">&quot;:&quot;</span>)
+    <span class="kw">for</span> line in <span class="dt">file</span>(filename):
+        <span class="kw">if</span> string.find(line, expr) != -<span class="dv">1</span>:
+            <span class="dt">print</span>(line)
+
+print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;Alice&#39;</span>)
+print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;Rabbit&#39;</span>)
+print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;rabbit&#39;</span>)
+print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;stone&#39;</span>)
+print_matching_lines(<span class="st">&#39;alice.txt&#39;</span>, <span class="st">&#39;office&#39;</span>)</code></pre>
+<p>Get <a href="http://www.pallier.org/cours/AIP2013/text3.py">http://www.pallier.org/cours/AIP2013/text3.py</a></p>
+<h1 id="endif"><a href="#endif">endif</a></h1>
+<hr />
+<ol start="2" style="list-style-type: example">
+<li>Here is a program that converts the text file into a list of words, removing the punctuation marks and converting everything in lower case. Run it.</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> string
+<span class="kw">def</span> remove_punctuation(text):
+    punct = string.punctuation + <span class="dt">chr</span>(<span class="dv">10</span>)
+    <span class="kw">return</span> text.translate(string.maketrans(punct, <span class="st">&quot; &quot;</span> * <span class="dt">len</span>(punct)))
+
+textori = <span class="dt">file</span>(<span class="st">&#39;alice.txt&#39;</span>).read().lower()
+text = remove_punctuation(textori)
+words = text.split()
+<span class="dt">print</span>(words)</code></pre>
+<p>Now write a script that counts the number of occurences of ‘Alice’, ‘Rabbit’ or ‘office’ in the list of words.</p>
+<h1 id="ifdef-answers-1"><a href="#ifdef-answers-1">ifdef ANSWERS</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python">n1, n2, n3 = <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>
+<span class="kw">for</span> w in words:
+    <span class="kw">if</span> w == <span class="st">&#39;alice&#39;</span>:
+        n1 = n1 + <span class="dv">1</span>
+    <span class="kw">if</span> w == <span class="st">&#39;rabbit&#39;</span>:
+        n2 = n2 + <span class="dv">1</span>
+    <span class="kw">if</span> w == <span class="st">&#39;office&#39;</span>:
+        n3 = n3 + <span class="dv">1</span>
+<span class="dt">print</span> n1, n2, n3</code></pre>
+<h1 id="endif-1"><a href="#endif-1">endif</a></h1>
+<hr />
+<ol start="3" style="list-style-type: example">
+<li>Read about Python’s Dictionnaries <a href="http://docs.python.org/2/tutorial/datastructures.html#dictionaries">http://docs.python.org/2/tutorial/datastructures.html#dictionaries</a> and use a dictonnary to store the number of occurrences of each word in Alice in Wonderland (the keys are the words, and the values and the number of occurrences; if word= [‘a’, ‘a’, ‘b’]; dico={‘a’:2, ‘b’:1}).</li>
+</ol>
+<h1 id="ifdef-answers-2"><a href="#ifdef-answers-2">ifdef ANSWERS</a></h1>
+<pre><code>dico = {}
+for w in words:
+    if not(dico.has_key(w)):
+        dico[w] = 1
+    else:
+        dico[w] += 1
+        
+print(dico)
+
+# print sorted by word frequencies
+for w in sorted(dico, key=dico.get, reverse=True):
+    print w, d[w]</code></pre>
+<p>Get <a href="http://www.pallier.org/cours/AIP2013/text2.py">http://www.pallier.org/cours/AIP2013/text2.py</a></p>
+<h1 id="endif-2"><a href="#endif-2">endif</a></h1>
+<hr />
+<ol start="4" style="list-style-type: example">
+<li>Use numpy and matplotlib to plot the word log(frequencies) as a function of the rank of words on the abscissae (the most frequence word being ranked #1)</li>
+</ol>
+<p>You can skim through <a href="http://matplotlib.org/users/pyplot_tutorial.html">http://matplotlib.org/users/pyplot_tutorial.html</a>.</p>
+<h1 id="ifdef-answers-3"><a href="#ifdef-answers-3">ifdef ANSWERS</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># affichage des fréquences en fonction de leur rang     </span>
+freqs = dico.values()
+
+<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
+
+lf = np.sort(freqs)
+lf = lf[::-<span class="dv">1</span>] <span class="co"># reverse</span>
+
+plt.plot(lf, <span class="st">&#39;ro&#39;</span>)
+plt.yscale(<span class="st">&#39;log&#39;</span>)
+plt.xscale(<span class="st">&#39;log&#39;</span>)
+
+plt.show()</code></pre>
+<p>Get <a href="http://www.pallier.org/cours/AIP2013/text3.py">http://www.pallier.org/cours/AIP2013/text3.py</a></p>
+<h1 id="endif-3"><a href="#endif-3">endif</a></h1>
+<p>Remark: The product rank X frequency is roughly constant. This ‘law’ was discovered by Estoup and popularized by Zipf. See <a href="http://en.wikipedia.org/wiki/Zipf%27s_law">http://en.wikipedia.org/wiki/Zipf%27s_law</a>.</p>
+<ol start="5" style="list-style-type: example">
+<li>(advanced) Plot the relationship between word length and word frequency.</li>
+</ol>
+<hr />
+<ol start="6" style="list-style-type: example">
+<li>Generate random text (each letter from a-z being equiprobable, and the spacecharacter being 8 times more probable) of 1 million characters. Compute the frequencies of each ‘pseudowords’ and plot the rank/frequency diagram.</li>
+</ol>
+<h1 id="ifdef-answers-4"><a href="#ifdef-answers-4">ifdef ANSWERS</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> random
+letters = <span class="st">&quot;abcdefghijklmnopqrstuvwxyz        &quot;</span>
+text = <span class="st">&quot;&quot;</span>.join([ random.choice(letters) <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1000000</span>) ])
+<span class="dt">print</span>(text)
+
+dico = {}
+<span class="kw">for</span> w in text.split():
+    <span class="kw">if</span> not(dico.has_key(w)):
+        dico[w] = <span class="dv">1</span>
+    <span class="kw">else</span>:
+        dico[w] += <span class="dv">1</span>
+        
+<span class="co"># affichage des fréquences en fonction de leur rang     </span>
+freqs = dico.values()
+
+<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">import</span> matplotlib.pyplot <span class="ch">as</span> plt
+
+lf = np.sort(freqs)
+lf = lf[::-<span class="dv">1</span>] <span class="co"># reverse</span>
+
+plt.plot(lf, <span class="st">&#39;ro&#39;</span>)
+plt.yscale(<span class="st">&#39;log&#39;</span>)
+plt.xscale(<span class="st">&#39;log&#39;</span>)
+
+plt.show()</code></pre>
+<p>Get <a href="http://www.pallier.org/cours/AIP2013/text4.py">http://www.pallier.org/cours/AIP2013/text4.py</a></p>
+<h1 id="endif-4"><a href="#endif-4">endif</a></h1>
+<hr />
+<ol start="7" style="list-style-type: example">
+<li>(advanced) compute the table of transition frequencies between words in Alice and generate random text following this pattern.</li>
+</ol>
+<hr />
+<ol start="8" style="list-style-type: example">
+<li>Read about the MU Puzzle (<a href="http://en.wikipedia.org/wiki/MU_puzzle">http://en.wikipedia.org/wiki/MU_puzzle</a>). Write a program that generates sequences of strings based on the following production rules and the initial state ‘MI’</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><pre><code>xI -&gt; xIU</code></pre></li>
+<li><pre><code>Mx -&gt; Mxx</code></pre></li>
+<li><pre><code>xIIIy -&gt; xUy</code></pre></li>
+<li><pre><code>xUUy -&gt; xy</code></pre></li>
+</ol>
+<p>(Tip: use the function string.replace)</p>
+<h1 id="ifdef-answers-5"><a href="#ifdef-answers-5">ifdef ANSWERS</a></h1>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> string,random
+
+<span class="kw">def</span> rule1(s):
+    <span class="kw">if</span> s[-<span class="dv">1</span>] == <span class="st">&#39;I&#39;</span>:
+        <span class="kw">return</span> s + <span class="st">&#39;U&#39;</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> -<span class="dv">1</span>
+
+<span class="kw">def</span> rule2(s):
+    <span class="kw">if</span> s[<span class="dv">0</span>] == <span class="st">&#39;M&#39;</span>:
+        <span class="kw">return</span> <span class="st">&#39;M&#39;</span> + s[<span class="dv">1</span>:] + s[<span class="dv">1</span>:]
+    <span class="kw">else</span>:
+        <span class="kw">return</span> -<span class="dv">1</span>
+
+<span class="kw">def</span> rule3(s):
+    <span class="kw">if</span> s.find(<span class="st">&#39;III&#39;</span>) != -<span class="dv">1</span>:
+        <span class="kw">return</span> s.replace(<span class="st">&#39;III&#39;</span>, <span class="st">&#39;U&#39;</span>)
+    <span class="kw">else</span>:
+        <span class="kw">return</span> -<span class="dv">1</span>       
+ 
+<span class="kw">def</span> rule4(s):
+    <span class="kw">if</span> s.find(<span class="st">&#39;UU&#39;</span>) != -<span class="dv">1</span>:
+        <span class="kw">return</span> s.replace(<span class="st">&#39;UU&#39;</span>, <span class="st">&#39;&#39;</span>)
+    <span class="kw">else</span>:
+        <span class="kw">return</span> -<span class="dv">1</span>
+    
+s = <span class="st">&#39;MI&#39;</span>
+
+n = <span class="dv">0</span>
+<span class="kw">while</span> n&lt;<span class="dv">10</span>:
+    r = random.randint(<span class="dv">1</span>,<span class="dv">4</span>)
+    <span class="kw">if</span> r==<span class="dv">1</span>:
+        news = rule1(s)
+    <span class="kw">if</span> r==<span class="dv">2</span>:
+        news = rule2(s)
+    <span class="kw">if</span> r==<span class="dv">3</span>:
+        news = rule3(s)
+    <span class="kw">if</span> r==<span class="dv">4</span>:
+        news = rule4(s)
+    <span class="kw">if</span> news != -<span class="dv">1</span>:
+        <span class="dt">print</span>(<span class="dt">str</span>(n) + <span class="st">&#39;: (&#39;</span>+ <span class="dt">str</span>(r) + <span class="st">&#39;): &#39;</span> + s + <span class="st">&#39; -&gt; &#39;</span> + news)
+        s = news
+        n = n + <span class="dv">1</span></code></pre>
+<p>Get Get <a href="http://www.pallier.org/cours/AIP2013/text5.py">http://www.pallier.org/cours/AIP2013/text5.py</a></p>
+<p>One way to perform pattern matching is to use regular expressions <a href="http://docs.python.org/2/howto/regex.html#regex-howto">http://docs.python.org/2/howto/regex.html#regex-howto</a>.</p>
+</body>
+</html>

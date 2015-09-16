@@ -424,18 +424,10 @@ __________________________________________________
 
 You must be connected to the Internet!
 
-Execute the following commands:
-1. Download and install
+To download and install Python, as well as various libraries and documentation, copy paste the following line in a terminal and press 'Enter':
 
 ```
-sudo apt-get install python2.7
-sudo apt-get install python-numpy python-scipy python-matplotlib python-pandas
-sudo apt-get install ipython ipython-notebook
-
-sudo apt-get install python2.7-doc python2.7-examples
-sudo apt-get install python-numpy-doc python-matplotlib-doc
-sudo apt-get install ipython-doc
-sudo apt-get install python-pygame
+sudo apt-get install python2.7  python-numpy python-scipy python-matplotlib python-pandas ipython ipython-notebook python2.7-doc python2.7-examples python-numpy-doc python-matplotlib-doc ipython-doc python-pygame
 ```
 
 2. Check the installation
@@ -502,7 +494,7 @@ You should see a new window, where you should be able to grab and move the littl
 
 ### R
 
-Instructions to install R are available here:
+The instructions to install R are available here:
 <https://cran.r-project.org/bin/linux/ubuntu/README.html#installation>
 
 1. Setup
