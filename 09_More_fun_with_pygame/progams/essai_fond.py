@@ -19,7 +19,9 @@ WINDOW_COLOR = (0,0,0)
 CROSS_COLOR = (0,0,255)
 
 BACKGROUND_SIZE = (300,300)
-BACKGROUND_COLOR = (0,0,0)
+BACKGROUND_COLOR = (110,110,110)
+
+DISPLAY_DURATION = 1000
 
 
 def initialization():
@@ -37,19 +39,20 @@ def clean_the_window(surface,color):
     """apply the background color on the whole window"""
     surface.fill(color)
 
-def make_surface(surface_size):
+def make_surface(surface_size,surface_color):
     the_surface = pygame.Surface(surface_size)
-    surface.fill()
+    surface.fill(surface_color)
     return the_surface
 
 def main():
     initialization()
     MY_WINDOW = open_a_window(WINDOW_DIMENSIONS)
-    clean_the_window(MY_WINDOW, BACKGROUND_COLOR)
+    clean_the_window(MY_WINDOW, WINDOW_COLOR)
 
-    BACKGROUND = make_surface(BACKGROUND_SIZE)
+    BACKGROUND = make_surface(BACKGROUND_SIZE,BACKGROUND_COLOR)
 
-
+    pygame.display.flip()
+    pygame.time.wait(DISPLAY_DURATION)
 
 
     # finally we close everything properly
