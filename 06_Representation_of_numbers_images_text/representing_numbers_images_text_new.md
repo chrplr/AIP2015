@@ -432,7 +432,7 @@ import matplotlib.pyplot as plt
 a = np.array([[0, 0, 0, 0, 0, 0, 0],
               [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
-			  [0, 0, 1, 1, 1, 0, 0],
+			  [0, 0, 1, 0, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 0, 0, 0, 0, 0]])
@@ -443,12 +443,8 @@ plt.show()
 Numpy's arrays are a new type of object. There are similar to lists, but optimised for mathematical computations. Notably, they can be multidimensional (i.e. you can use a[i,j] notation). You can learn more about arrays in the documents <http://www.pallier.org/cours/AIP2013/python4science.pdf> and <http://wiki.scipy.org/Tentative_NumPy_Tutorial>.
 
 
-(@) Exercice:
+Here is another example:
 
-1. Create a cross.
-2. create a 200x200 bitmap:
-    1. add a diagonal
-    2. make two crosses imitating the British Flag
 
 
 . . .
@@ -472,7 +468,6 @@ Each dot is now associated to an integer value, e.g. ranging from 0 to 255 for 8
 How large is the file for an image 1024x768 pixels with 256 grey levels?
 
 
-
 The following code displays an image:
 
 ```python
@@ -491,9 +486,9 @@ plt.imshow(bl,  cmap=plt.cm.gray)
 plt.show()
 ```
 
-Edge detector. It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>.
+**Edge detector** It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>.
 
-Using the ndimage.convolve function, apply the following filters to the image and diplay the results.
+Using the `ndimage.convolve` function, apply the following filters to the image and diplay the results.
 
 ```python
 kernel1 = np.array([[-1, -1, -1],

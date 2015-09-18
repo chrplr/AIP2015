@@ -362,24 +362,14 @@ nw = <span class="dv">0</span>
 a = np.array([[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>],
               [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
               [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
-              [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
+              [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
               [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
               [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],
               [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]])
 plt.imshow(a, cmap=plt.cm.gray, interpolation=<span class="st">&#39;nearest&#39;</span>)
 plt.show()</code></pre>
 <p>Numpy’s arrays are a new type of object. There are similar to lists, but optimised for mathematical computations. Notably, they can be multidimensional (i.e. you can use a[i,j] notation). You can learn more about arrays in the documents <a href="http://www.pallier.org/cours/AIP2013/python4science.pdf">http://www.pallier.org/cours/AIP2013/python4science.pdf</a> and <a href="http://wiki.scipy.org/Tentative_NumPy_Tutorial">http://wiki.scipy.org/Tentative_NumPy_Tutorial</a>.</p>
-<ol start="14" style="list-style-type: example">
-<li>Exercice:</li>
-</ol>
-<ol style="list-style-type: decimal">
-<li>Create a cross.</li>
-<li>create a 200x200 bitmap:
-<ol style="list-style-type: decimal">
-<li>add a diagonal</li>
-<li>make two crosses imitating the British Flag</li>
-</ol></li>
-</ol>
+<p>Here is another example:</p>
 </div>
 <div class="incremental">
 <pre class="sourceCode python"><code class="sourceCode python">a = np.zeros((<span class="dv">200</span>,<span class="dv">200</span>))
@@ -407,8 +397,8 @@ plt.show()</code></pre>
 bl = scipy.ndimage.gaussian_filter(l, <span class="dv">3</span>)
 plt.imshow(bl,  cmap=plt.cm.gray)
 plt.show()</code></pre>
-<p>Edge detector. It is easy to implement an edge detector with a neural network. See <a href="https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html">https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html</a>.</p>
-<p>Using the ndimage.convolve function, apply the following filters to the image and diplay the results.</p>
+<p><strong>Edge detector</strong> It is easy to implement an edge detector with a neural network. See <a href="https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html">https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html</a>.</p>
+<p>Using the <code>ndimage.convolve</code> function, apply the following filters to the image and diplay the results.</p>
 <pre class="sourceCode python"><code class="sourceCode python">kernel1 = np.array([[-<span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">1</span>],
                    [-<span class="dv">1</span>,  <span class="dv">8</span>, -<span class="dv">1</span>],
                    [-<span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">1</span>]])
