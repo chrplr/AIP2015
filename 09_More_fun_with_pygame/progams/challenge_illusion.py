@@ -19,8 +19,12 @@ BACKGROUND_COLOR = (0,0,0)
 CROSS_COLOR = (0,0,255)
 
 SIDE_CIRCLES_COLOR = (255,255,0)
-SIDE_CIRCLES_CENTERS = [(150,100),(250,100),(150,200),(250,200)]
+SIDE_CIRCLES_CENTERS = [(150,100), (250,100), (150,200), (250,200)]
 SIDE_CIRCLES_RADIUS = 5
+
+CENTRAL_CIRCLE_COLORS = [(0,255,0), (255,0,0)]
+CENTRAL_CIRCLE_CENTER = (200,150)
+CENTRAL_CIRCLE_RADIUS = 3
 
 DISPLAY_DURATION = 2000
 
@@ -59,9 +63,11 @@ def main():
         pygame.draw.circle(MY_WINDOW, SIDE_CIRCLES_COLOR, centers, SIDE_CIRCLES_RADIUS)
 
 
-    pygame.display.flip()
+    for color in CENTRAL_CIRCLE_COLORS:
+        pygame.draw.circle(MY_WINDOW, color , CENTRAL_CIRCLE_CENTER, CENTRAL_CIRCLE_RADIUS)
+        pygame.display.flip()
+        pygame.time.wait(DISPLAY_DURATION)
 
-    pygame.time.wait(DISPLAY_DURATION)
 
     # finally we close everything properly
     pygame.quit()
