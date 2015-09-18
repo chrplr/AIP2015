@@ -16,13 +16,15 @@ import pygame
 WINDOW_DIMENSIONS = (400,300)
 WINDOW_COLOR = (0,0,0)
 
-CROSS_COLOR = (0,0,255)
+CROSS_SIZE = (40,40)
+CROSS_BACKGROUND_COLOR = (255,255,255)
+
 
 BACKGROUND_SIZE = (300,300)
 BACKGROUND_COLOR = (110,110,110)
 BACKGROUND_POSITION = (0,0)
 
-DISPLAY_DURATION = 1000
+DISPLAY_DURATION = 2000
 
 
 def initialization():
@@ -51,9 +53,19 @@ def main():
     clean_the_window(MY_WINDOW, WINDOW_COLOR)
 
 
-    BACKGROUND = make_surface(BACKGROUND_SIZE,BACKGROUND_COLOR)
+    BACKGROUND = make_surface(BACKGROUND_SIZE, BACKGROUND_COLOR)
 
-    MY_WINDOW.blit( BACKGROUND, BACKGROUND_POSITION)
+    CROSS = make_surface(CROSS_SIZE, CROSS_BACKGROUND_COLOR)
+    pygame.draw.rect(CROSS, (0,0,255), (18,6,4,28))
+    pygame.draw.rect(CROSS, (0,0,255), (6,18,28,4))
+
+
+    BACKGROUND.fill((255,0,0))
+    for x in range(0,40*7,40):
+        for y in range(0,40*7,40):
+            BACKGROUND.blit(CROSS,(x,y))
+
+    MY_WINDOW.blit(BACKGROUND, BACKGROUND_POSITION)
 
     pygame.display.flip()
     pygame.time.wait(DISPLAY_DURATION)
