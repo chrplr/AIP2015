@@ -45,7 +45,7 @@ def load_an_image(image_path):
 def main():
     initialization()
     MY_WINDOW = open_a_window(WINDOW_DIMENSIONS)
-    
+
     MY_IMAGE=load_an_image(PYTHON_LOGO_PATH)
     MY_IMAGE_POSITION=MY_IMAGE.get_rect()
 
@@ -63,8 +63,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-for degres in range(0,2000,1):
-    MY_ROTATED_IMAGE=pygame.transform.rotate(MY_IMAGE,degres)
-    MY_WINDOW.blit(MY_ROTATED_IMAGE,MY_IMAGE_POSITION)
-    pygame.display.flip()
