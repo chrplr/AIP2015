@@ -20,6 +20,7 @@ CROSS_COLOR = (0,0,255)
 
 BACKGROUND_SIZE = (300,300)
 BACKGROUND_COLOR = (110,110,110)
+BACKGROUND_POSITION = (0,0)
 
 DISPLAY_DURATION = 1000
 
@@ -41,7 +42,7 @@ def clean_the_window(surface,color):
 
 def make_surface(surface_size,surface_color):
     the_surface = pygame.Surface(surface_size)
-    surface.fill(surface_color)
+    the_surface.fill(surface_color)
     return the_surface
 
 def main():
@@ -49,7 +50,10 @@ def main():
     MY_WINDOW = open_a_window(WINDOW_DIMENSIONS)
     clean_the_window(MY_WINDOW, WINDOW_COLOR)
 
+
     BACKGROUND = make_surface(BACKGROUND_SIZE,BACKGROUND_COLOR)
+
+    MY_WINDOW.blit( BACKGROUND, BACKGROUND_POSITION)
 
     pygame.display.flip()
     pygame.time.wait(DISPLAY_DURATION)
