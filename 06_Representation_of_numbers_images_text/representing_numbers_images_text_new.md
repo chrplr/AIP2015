@@ -3,84 +3,6 @@
 % Sept. 2015
 
 
-# Warm up
-
-(@) What does the following code do?
-
-```python
-for i in (1, 2, 3, 4, 5):
-	print("All work and no play makes Jack a dull boy")
-```
-
-. . .
-
-Modify it to print the line 100 times (You want to do a loop, check python's documentation)
-
-. . .
-
-One possible solution, using a "while loop":
-
-```python
-n = 1
-while n <= 100:
-	print("All work and no play makes Jack a dull boy")
-	n = n + 1
-```
-
-. . .
-
-Another, using a "for loop" and the function `range`:
-
-```python
-for _ in range(100):
-	print("All work and no play makes Jack a dull boy")
-```
-
-. . .
-
-Modify the program to randomly select a name in the list (John, Jack, Paul, Tim) at each line.
-
-(Hint: import the module "random")
-
-. . .
-
-```python
-import random
-
-NAMES = ('John', 'Jack', 'Paul', 'Tim')
-
-for _ in range(100):
-	name = random.choice(NAMES)
-	print("All work and no play makes " + name +  " a dull boy")
-```
-
-
--------------
-
-(@) What does the following function compute?
-
-```python
-def mysterious(n):
-	""" ???? """ 
-	sum = 0
-	for i in range(1, n+1):
-		sum = sum + i
-	return sum
-```
-
-. . .
-
-It computes the sum of all integers between 1 and n.
-
-
-Remark: Freidriech Gauss would probably have written:
-
-```python
-def sum2(n):
-	""" returns the sum of integers between 1 and n """
-	return n * (n + 1) / 2
-```
-
 
 # Representation of integers
 
@@ -120,28 +42,52 @@ To learn more about how integer numbers are reprsented in binary format, you can
 
 *Answer:* 5, 8, 11, 255
 
-(@) Write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer.
+## From  binary to decimal
+
+
+(@) Let us write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer.
+
+Remember that a number represented by four digits d3 d2 d1 d0 in a basis 'b', has a value of d3*b^3 + d2*b^2 + d1*b^1 + d0*b^0
+
+1. Let us first suppose that we want to convert a string containing exactly 8 binary digits (e.g. '01011010') into decimal. How would you do that? 
 
 . . .
 
+```python
+def todec8bits(s):
+	return int(s[0])*128 + int(s[1])*64 + int(s[2])*32 + \
+	       int(s[3])*16 + int(s[4])*8 + int(s[5])*4 + \
+		   int(s[6])*2 + int(s[7])
+```
+
+Or, another solution, demonstrating several new Pythonic constructions
+that we have not seen yet:
+
+```python
+pow2 = [2 ** n for n in range(7, -1, -1)]
+val = 0
+for b, p in zip(s, pow2):
+	val += int(b) * p
+```
+. . .
+
+My favorite which has the advantage of working with strings of unlimited size:
 
 ```python
 def todec(s):
 	""" convert a string of 0 and 1 representing a binary number into an integer """
 	n = 0
-	for i in s:
-		n = n * 2 + int(i)
+	for b in s:
+		n = n * 2 + int(b)
 	return n
 
 for i in ['101', '1000', '1011', '11111111']:
 	print(todec(i))
-<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 ```	
-=======
-```
-#endif
->>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
+------------------------
+
+## From decimal to binary
 
 (@) Now we will go in the other direction: Our aim is to write a program that, given a number (in decimal), computes its binary representation.
 
@@ -160,14 +106,9 @@ print(str(d3) + str(d2) + str(d1) + str(d0))
 
 (@) Adapt the above program to print the binary representation of num
 
-<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 . . .
 
 ```python	
-=======
-#ifdef ANSWERS
-```python
->>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 num = 17
 b0 = num % 2
 b1 = int(num/2) % 2
@@ -186,16 +127,10 @@ print(str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str
 
 (@) Modify the above program to print the binary representations of every number between 0 and 255.
 
-<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
 . . .
 
 ```python	
-=======
-#ifdef ANSWERS
-```python
->>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 def tobin(num):
-	b8 = int(num/256) % 2
 	b7 = int(num/128) % 2
 	b6 = int(num/64)  % 2
 	b5 = int(num/32)  % 2
@@ -204,7 +139,8 @@ def tobin(num):
 	b2 = int(num/4) % 2
 	b1 = int(num/2) % 2
 	b0 = num % 2
-    return (str(b8) + str(b7) +  str(b6) + str(b5) + str(b4) + str(b3) + str(b2) + str(b1) + str(b0))
+    return (str(b7) +  str(b6) + str(b5) + str(b4) + \
+	        str(b3) + str(b2) + str(b1) + str(b0))
 
 for n in range(256):
 	print(n, tobin(n))
@@ -272,17 +208,23 @@ To go further:
 and <https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues>
 
 
-
-
 # Representation of text
 
-A text file is nothing but a sequences of characters (a word document is not a text file).
+A text file is nothing but a sequences of characters.
 
 For a long time, characters were encoded using ASCII code.
 
 ![ascii table](images/asciitable.jpg)
 
-(@) lookup the ASCII representation of  your first name in the table and use the chr function of Python to print it.
+
+In Python, you can know the code of a character with the function `ord`:
+
+    print(ord('a'))
+    print(ord('@'))
+	
+The inverse of `ord` is `chr`.
+
+(@) lookup the ASCII representation of  your first name in the table and use the `chr` function of Python to print it.
 
 . . .
 
@@ -290,18 +232,125 @@ For example, if you name is 'ZOE', you would type:
 
 	print(chr(90)+chr(79)+chr(69))
 
-<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
-=======
-#endif
->>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
-Remark: **ASCII** codes use one byte per characters. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.
+
+Remark: **ASCII** codes use one byte (=8bits) per character. This is fine for English, but cannot cover all the caracters of all alphabets. It cannot even encode french accented letters.
 
 **Unicode** was invented that associate a unique 2 bytes number to each character of any human script. It is possible to write text files using these number, but more economic to encode the most common letters with one byte, and keep the compatibility with ASCII (UTF-8).
 
 
+    print("".join([unichr(c) for c in range(20000, 21000)]))
 
-### How to read a text file in Python
+
+
+# Strings
+
+In Python, text can be stored in objects called *strings*.
+
+String constants are enclosed between single quotes
+
+    'Bonjour le monde!'
+
+Or double quotes
+
+
+    "Bonjour le monde !"
+
+Or "triple" quotes for multilines strings
+
+    """
+    Bonjour le monde!
+
+    Longtemps je me suis levé de bonne heure,
+	Les sanglots longs des violons,
+    ...
+	"""
+
+They have a type 'str'.
+
+    >>> type('bonjour')
+    <type 'str'>
+
+To convert an object to a string representation:
+
+	str(10)
+	a = dict((("a",1), ("b",2)))
+	str(a)
+
+A string is nothing but a sequence of characters.
+
+	a = 'bonjour'
+	print(a[0])
+	print(a[1])
+	print(a[2])
+	print(a[2:4])
+	print(len(a))
+	
+	for c in 'bonjour':
+		print(c)
+
+
+Operations on strings
+
+	a = 'bonjour'
+	b = 'hello'
+	a + b
+	a + ' ' + b
+
+
+A set of functions to manipulate strings is available in the module 'string'.
+
+
+	import string
+	string.upper(a)
+	string.lower('ENS')
+
+## search/replace a substring within a string
+
+	a = 'alain marie jean marc'
+    a.find('alain')
+    a.find('marie')
+	a.find('ma')
+	a.find('marc')
+	a.find('o')
+	
+	a.replace('marie','claude')
+	a
+
+## splitting a strings at delimiters
+
+    a = 'alain marie jean marc'
+    a.split(" ")
+
+
+Read (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])) to learn about more string functions.
+
+
+# Interactive input from the command line:
+
+```python
+name = raw_input('Comment vous appelez-vous ? ')
+
+print "Bonjour " + name + '!'
+```
+
+# Reading and writing to text files
+
+
+#. With Atom, create a text file containing a few lines of arbitrary content, an save it under the filename 'test.txt'
+#. with ipython running in the same directory where you saved test.txt 
+
+
+```python
+f = file('test.txt')
+o = f.read()
+print(o)
+lines = o.split("\n")
+print(lines)
+```
+
+
+# Counting lines and words in a text file.
 
 Download [Alice in Wonderland](http://www.pallier.org/cours/AIP2013/alice.txt)
 
@@ -362,24 +411,19 @@ Images can be stored either:
 
 Here we are just going to manipulate bitmaps.
 
-<<<<<<< HEAD:06_Representation_of_numbers_images_text/representing_numbers_images_text.md
-## Black and white bitmaps 
-=======
-### Black and white bitmaps
->>>>>>> 56025cfc85e9a40663e452f055225e216a22239a:06a_Representation_of_numbers_images_text/representing_numbers_images_text.md
 
 Each dot (pixel) is either '0' (black) or '1' (white).
 
 ![](images/bitmap.jpg)
 
-(@) What is the size in kilobytes of a 1024x768 pixels images ?
+(@) What is the size in kilobytes of a 1024x768pixels black and white image ?
 
 . . .
 
 *Answer:* 1024*768/8/1024=96 KB
 
 
-(@) Execute the follwoing code (it requires the modules numpy and matplotlib).
+(@) Execute the following code in ipython:
 
 ```python
 import numpy as np
@@ -388,7 +432,7 @@ import matplotlib.pyplot as plt
 a = np.array([[0, 0, 0, 0, 0, 0, 0],
               [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
-			  [0, 0, 1, 1, 1, 0, 0],
+			  [0, 0, 1, 0, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 1, 1, 1, 0, 0],
 			  [0, 0, 0, 0, 0, 0, 0]])
@@ -399,12 +443,8 @@ plt.show()
 Numpy's arrays are a new type of object. There are similar to lists, but optimised for mathematical computations. Notably, they can be multidimensional (i.e. you can use a[i,j] notation). You can learn more about arrays in the documents <http://www.pallier.org/cours/AIP2013/python4science.pdf> and <http://wiki.scipy.org/Tentative_NumPy_Tutorial>.
 
 
-(@) Exercice:
+Here is another example:
 
-1. Create a cross.
-2. create a 200x200 bitmap:
-    1. add a diagonal
-    2. make two crosses imitating the British Flag
 
 
 . . .
@@ -415,6 +455,7 @@ for i in range(200):
 	a[i, i] = 1
 plt.imshow(a, cmap=plt.cm.gray, interpolation='nearest')
 plt.show()
+
 a[0:200:2,] = 1
 plt.imshow(a, cmap=plt.cm.gray, interpolation='nearest')
 plt.show()
@@ -424,7 +465,7 @@ plt.show()
 
 Each dot is now associated to an integer value, e.g. ranging from 0 to 255 for 8-bits codes, coding for a grey level (smaller=darker). Each dot needs one byte.
 
-How large is the file for a 1024x768 image pixels with 256 grey levels?
+How large is the file for an image 1024x768 pixels with 256 grey levels?
 
 
 The following code displays an image:
@@ -445,14 +486,18 @@ plt.imshow(bl,  cmap=plt.cm.gray)
 plt.show()
 ```
 
-Edge detector. It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>.
+**Edge detector** It is easy to implement an edge detector with a neural network. See <https://courses.cit.cornell.edu/bionb2220/UnderstandingLateralInhibition.html>.
 
-Using the ndimage.convolve function, apply the following filters to the image and diplay the results.
+Using the `ndimage.convolve` function, apply the following filters to the image and diplay the results.
 
 ```python
 kernel1 = np.array([[-1, -1, -1],
                    [-1,  8, -1],
                    [-1, -1, -1]])
+
+bl=scipy.ndimage.convolve(l,kernel1)
+plt.imshow(bl,  cmap=plt.cm.gray)
+plt.show()
 
 
 kernel2 = np.array([[-1, -1, -1, -1, -1],
@@ -460,6 +505,10 @@ kernel2 = np.array([[-1, -1, -1, -1, -1],
                    [-1,  2,  4,  2, -1],
                    [-1,  1,  2,  1, -1],
                    [-1, -1, -1, -1, -1]])
+bl=scipy.ndimage.convolve(l,kernel2)
+plt.imshow(bl,  cmap=plt.cm.gray)
+plt.show()
+
 ```
 
 More manipulations are available at <http://scipy-lectures.github.io/advanced/image_processing/>.

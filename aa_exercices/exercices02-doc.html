@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#warm-up">Warm up</a></li>
+</ul>
+</div>
+<h1 id="warm-up"><a href="#warm-up">Warm up</a></h1>
+<ol style="list-style-type: example">
+<li>What does the following code do?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>):
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)</code></pre>
+<p>. . .</p>
+<p>Modify it to print the line 100 times (You want to do a loop, check python’s documentation)</p>
+<p>. . .</p>
+<p>One possible solution, using a “while loop”:</p>
+<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">1</span>
+<span class="kw">while</span> n &lt;= <span class="dv">100</span>:
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)
+    n = n + <span class="dv">1</span></code></pre>
+<p>. . .</p>
+<p>Another, using a “for loop” and the function <code>range</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">100</span>):
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes Jack a dull boy&quot;</span>)</code></pre>
+<p>. . .</p>
+<p>Modify the program to randomly select a name in the list (John, Jack, Paul, Tim) at each line.</p>
+<p>(Hint: import the module “random”)</p>
+<p>. . .</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> random
+
+NAMES = (<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Jack&#39;</span>, <span class="st">&#39;Paul&#39;</span>, <span class="st">&#39;Tim&#39;</span>)
+
+<span class="kw">for</span> _ in <span class="dt">range</span>(<span class="dv">100</span>):
+    name = random.choice(NAMES)
+    <span class="dt">print</span>(<span class="st">&quot;All work and no play makes &quot;</span> + name +  <span class="st">&quot; a dull boy&quot;</span>)</code></pre>
+<hr />
+<ol start="2" style="list-style-type: example">
+<li>What does the following function compute?</li>
+</ol>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> mysterious(n):
+    <span class="co">&quot;&quot;&quot; ???? &quot;&quot;&quot;</span> 
+    <span class="dt">sum</span> = <span class="dv">0</span>
+    <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">1</span>, n<span class="dv">+1</span>):
+        <span class="dt">sum</span> = <span class="dt">sum</span> + i
+    <span class="kw">return</span> <span class="dt">sum</span></code></pre>
+<p>. . .</p>
+<p>It computes the sum of all integers between 1 and n.</p>
+<p>Remark: Freidriech Gauss would probably have written:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sum2(n):
+    <span class="co">&quot;&quot;&quot; returns the sum of integers between 1 and n &quot;&quot;&quot;</span>
+    <span class="kw">return</span> n * (n + <span class="dv">1</span>) / <span class="dv">2</span></code></pre>
+</body>
+</html>
