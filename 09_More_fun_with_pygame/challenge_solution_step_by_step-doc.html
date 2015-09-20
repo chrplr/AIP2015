@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#side-circles">1. Side circles</a><ul>
+<li><a href="#list-what-you-need-in-order-to-draw-one-circle">1.1 List what you need in order to draw one circle</a></li>
+<li><a href="#draw-four-side-circles">1.2 Draw four side circles</a></li>
+<li><a href="#insert-the-code-to-draw-four-side-circles-in-a-program">1.3 Insert the code to draw four side circles in a program</a></li>
+</ul></li>
+<li><a href="#blinking-central-dot">2. Blinking central dot</a><ul>
+<li><a href="#draw-a-circle-then-another-one-with-a-different-color">2.1 Draw a circle then another one with a different color</a></li>
+<li><a href="#draw-an-alternating-circle">2.2 Draw an alternating circle</a></li>
+<li><a href="#write-down-a-program">2.3 Write down a program</a></li>
+</ul></li>
+<li><a href="#rotating-background">3. Rotating background</a><ul>
+<li><a href="#preparation">3.0. Preparation</a></li>
+<li><a href="#prepare-the-background">3.1. Prepare the background</a></li>
+</ul></li>
+<li><a href="#combine-the-rotating-background-the-side-circles-and-the-central-dot-in-one-program">4. Combine the rotating background, the side circles and the central dot in one program</a><ul>
+<li><a href="#start-from-your-rotating_background.py-program-and-add-the-adequate-pieces-of-your-side_circles.py-and-atlernating_dot.py">1. Start from your <code>rotating_background.py</code> program and add the adequate pieces of your <code>side_circles.py</code> and <code>atlernating_dot.py</code></a></li>
+<li><a href="#do-adjustments-and-enjoy">2. Do adjustments and enjoy!</a><ul>
+<li><a href="#if-needed-check-the-program-aip201509_more_fun_with_pygameprogramschallenge_05.py">If needed, check the program <code>AIP2015/09_More_fun_with_pygame/programs/challenge_05.py</code></a></li>
+<li><a href="#there-is-a-tricky-little-part-in-order-to-insert-the-alternation-of-the-central-dot-color-in-the-angle-loop-but-its-using-some-math-modulo-those-who-are-interested-can-try-to-understand-how-it-works-ask-me-if-needed.">There is a tricky little part, in order to insert the alternation of the central dot color in the angle loop, but it’s using some math (modulo), those who are interested can try to understand how it works, ask me if needed.</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<p>The challenge was to make a program that shows this optical illusion :<br />
+<a href="http://www.michaelbach.de/ot/mot-mib/">“motion induced blindness”</a></p>
+<p>A very good strategy to confront a challenge in conputer science is to split up said challenge in several less challenging bits.</p>
+<p>As you can see, in our case the stimulus is a composition of</p>
+<ul>
+<li>a rotating black background with a pattern made of blue crosses</li>
+<li>3 static yellow dots, equidistant from the center</li>
+<li>a static central dot whose color is alternating between green and red</li>
+</ul>
+<p>It’s a good strategy to start by the easiest part, then to progress with increasing difficulty. In our case, we would thus proceed in this order</p>
+<ol style="list-style-type: decimal">
+<li>the side dots, because we know how to draw static constant dots at given positions with <code>pygame.draw.circle</code>, so let’s call them side circles now</li>
+<li>the central dot, because it requires two steps :</li>
+<li>drawing a static dot, as for side dots</li>
+<li>make its color change</li>
+<li>the rotating pattern</li>
+</ol>
+<p>It’s usually a good method to check if you can re-use something you already made, for example</p>
+<ul>
+<li>drawing a circle</li>
+<li>setting the background color of a surface</li>
+<li>we just saw the solution to get the rotating python logo well centered, so you can anticipate that we will use a very similar code to rotate cross-spangled background around the center of the window.</li>
+</ul>
+<p>So, let’s start.</p>
+<p>First, we set up our working environment</p>
+<ol style="list-style-type: decimal">
+<li>Open atom, where you will edit your program</li>
+<li>Open a first command-line interface and change directory to go to your testing folder (the one I told you to call “AIP_brouillons”), you will use it to run your programs</li>
+<li><p>Open a second command-line interface, go to AIP_brouillons, and lauch the ipython interpreter, you will use it to try littles pieces of code and see the help related to python commands, so start with typing</p>
+<pre><code>import pygame
+pygame.init()
+WINDOW_DIMENSIONS = (400,300)
+MY_WINDOW = pygame.display.set_mode(WINDOW_DIMENSIONS)</code></pre></li>
+</ol>
+<h1 id="side-circles">1. Side circles</h1>
+<h2 id="list-what-you-need-in-order-to-draw-one-circle">1.1 List what you need in order to draw one circle</h2>
+<ol style="list-style-type: decimal">
+<li><p>If you don’t remember the syntax, go to you <code>ipython</code> command line and type <code>pygame.draw.circle?</code> &gt; Docstring:<br />
+&gt; circle(Surface, color, pos, radius, width=0) -&gt; Rect<br />
+&gt; draw a circle around a point</p></li>
+<li>So now you need to provide 4 arguments</li>
+</ol>
+<ul>
+<li>a surface: your window</li>
+<li>a color: a triplet of values between 0 and 255</li>
+<li>a position: a couple of values, which are the horizontal and vertical position of the center of the circle relatively to the top-left corner of the surface (in number of pixels)</li>
+<li>a radius: just a value (in number of pixels)</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><p>so you can start by defining some variables to store values that will stay constant for your program, so by convention, their names are upper case. The color and radius are the same for each side cicle, so let’s define</p>
+<pre><code>SIDE_CIRCLES_COLOR = (255,255,0)
+SIDE_CIRCLES_RADIUS = 5</code></pre></li>
+<li><p>Now you can draw one cicle at a given position, for example the center of the window. You can try in your ipython command line</p></li>
+</ol>
+<pre><code>BACKGROUND_COLOR = (0,0,0)
+MY_WINDOW.fill(BACKGROUND_COLOR)
+pygame.draw.circle(MY_WINDOW, SIDE_CIRCLES_COLOR, (200,150), SIDE_CIRCLES_RADIUS)
+pygame.display.flip()</code></pre>
+<h2 id="draw-four-side-circles">1.2 Draw four side circles</h2>
+<ol start="4" style="list-style-type: decimal">
+<li><p>In order to make it easy to define the positions, we will use 4 side circles. Grab a piece of paper and figure out the couple of horizontal and vertical positions of each circle which will be 100 pixels appart from the center of the window, knowing that the window size is 400 by 300 pixels</p></li>
+<li>For example</li>
+</ol>
+<ul>
+<li>100 pixels right from the center =&gt; (200+100,150)</li>
+<li>100 pixels left from the center =&gt; (200-100,150)<br />
+</li>
+<li>100 pixels over the center =&gt; (200,150-100)</li>
+<li>100 pixels under the center =&gt; (200,150+100)</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><p>You could draw the four side circles one by one, and it would be tedious, and this is typically why we have loops. Here we know exactly how many iteration we need, so we can use a <code>for</code> iteration structure.</p></li>
+<li><p>Thus we need something to iterate on, typically a list, but it could be a dictionary, a tuple,…</p>
+<pre><code>SIDE_CIRCLES_CENTERS = [(300, 150), (200, 250), (100, 150), (200, 50)]
+MY_WINDOW.fill(BACKGROUND_COLOR)
+for center in SIDE_CIRCLES_CENTERS:
+pygame.draw.circle(MY_WINDOW, SIDE_CIRCLES_COLOR, center, SIDE_CIRCLES_RADIUS)
+pygame.display.flip()</code></pre></li>
+<li><p>Test it in ipython to see the 4 side dots on the pygame-operated window</p></li>
+</ol>
+<h2 id="insert-the-code-to-draw-four-side-circles-in-a-program">1.3 Insert the code to draw four side circles in a program</h2>
+<p>You can start with the minimally appropriate pygame program template… well, minimal regarding our safety and good practice recommendations.<br />
+You will find this template in <code>AIP2015/09_More_fun_with_pygame/programs/pygame_template.py</code></p>
+<ol style="list-style-type: decimal">
+<li>Create a new file from the template, using atom
+<ol style="list-style-type: decimal">
+<li>Prepare atom
+<ul>
+<li>In atom, go to the menu <code>File</code>, then <code>Add Project Folder</code> and select your <code>AIP2015/09_More_fun_with_pygame/</code> local repository.</li>
+<li>It should now appear in the left panel of the atom window, and you should be aple to navigate this directory, and see the files in the <code>programs</code> sub-directory.</li>
+<li>Do the same with your <code>AIP2015_Brouillons</code> directory.</li>
+</ul></li>
+<li>Use atom Project Folder panel to copy-paste a file
+<ul>
+<li>From <code>09_More_fun_with_pygame/programs</code>, select the file <code>pygame_template.py</code></li>
+<li>Using the secondary click menu, copy it, then use the secondary click menu on <code>AIP2015_Brouillons</code> to paste the file in your AIP2015_brouillons folder, finally, always with the secondary click menu rename it as <code>side_dots.py</code></li>
+</ul></li>
+</ol></li>
+<li>Fill the program file with the snippets of code you already have tested in ipython
+<ol start="0" style="list-style-type: decimal">
+<li>change the docstring to describe what your program is doing</li>
+<li>nothing to change to the <code>import</code> session</li>
+<li>add the required constants</li>
+<li>add the loop to draw the four side circles</li>
+</ol></li>
+<li><p>In the <strong>ipython command line</strong>, in order to avoid confusion (and possible computer problems) between multiple pygame-operated windows, execute</p>
+<pre><code>pygame.quit()
+quit</code></pre>
+<p>then just launch the ipython interpreter again.</p></li>
+<li><p>In your <strong>normal command line interpreter (not the ipython one)</strong>, execute</p>
+<pre><code>python side_circles.py</code></pre></li>
+<li><p>If needed, the file <code>challenge_01.py</code> in <code>09_More_fun_with_pygame/programs</code> should be very similar to your own side_circles.py</p></li>
+<li><p>For more seasoned coders, have a look at the file <code>programs/side_circles_deluxe.py</code> for drawing as many centered shapes as you like, using a dictionary for side dots constants and comprehension lists (cf <a href="http://sametmax.com/python-love-les-listes-en-intention-partie/">one of the best explanation of comprenhension lists</a>).</p></li>
+</ol>
+<h1 id="blinking-central-dot">2. Blinking central dot</h1>
+<p>Basically you draw a circle in the center of the window, and later you draw the same circle with a different color.</p>
+<h2 id="draw-a-circle-then-another-one-with-a-different-color">2.1 Draw a circle then another one with a different color</h2>
+<p>Back to the ipython command line (by the way, when you have to pase a bloc of code lines, just type <code>%paste</code> at the ipython command prompt)</p>
+<ol start="0" style="list-style-type: decimal">
+<li><p>Just do the usual to get access to a pygame_operated window</p></li>
+<li><p>Define what you need to draw the circle, just as you did for in 1.1</p>
+<pre><code>#clear the window
+MY_WINDOW.fill(BACKGROUND_COLOR)
+pygame.display.flip()
+# ok, now for the central dot
+CENTRAL_CIRCLE_CENTER = (200,150)
+CENTRAL_CIRCLE_RADIUS = 100
+CENTRAL_CIRCLE_COLOR_1 = (0,255,0)
+CENTRAL_CIRCLE_COLOR_2 = (255,0,0)
+# draw the first circle
+pygame.draw.circle(MY_WINDOW, CENTRAL_CIRCLE_COLOR_1, CENTRAL_CIRCLE_CENTER, CENTRAL_CIRCLE_RADIUS)
+# show the first circle
+pygame.display.flip()
+# contemplate your work
+pygame.time.wait(1000)
+# draw the second circle, show and contemplate
+pygame.draw.circle(MY_WINDOW, CENTRAL_CIRCLE_COLOR_2, CENTRAL_CIRCLE_CENTER, CENTRAL_CIRCLE_RADIUS)
+pygame.display.flip()
+pygame.time.wait(1000)</code></pre></li>
+<li><p>Well, you know, each time you write something twice, you’d better make a loop. So here the think we loop about is the colors so let’s define a color list whose elements are the colors we want</p>
+<pre><code>CENTRAL_CIRCLE_COLORS = [(0,255,0),(255,0,0)]</code></pre></li>
+<li><p>Make a loop, let’s say, to get a green then a red dot</p>
+<pre><code>#clear the window
+MY_WINDOW.fill(BACKGROUND_COLOR)
+pygame.display.flip()
+# and now the loop
+for color in CENTRAL_CIRCLE_COLORS:
+pygame.draw.circle(MY_WINDOW, color, CENTRAL_CIRCLE_CENTER, CENTRAL_CIRCLE_RADIUS)
+pygame.display.flip()
+pygame.time.wait(1000)</code></pre></li>
+</ol>
+<h2 id="draw-an-alternating-circle">2.2 Draw an alternating circle</h2>
+<p>Well it’s still not really alternating…<br />
+So, do you remember what happens when you tried naively to multiply a list by an integer? 1. Try the following command</p>
+<pre><code>print CENTRAL_CIRCLE_COLORS
+print CENTRAL_CIRCLE_COLORS * 4</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>With this trick you could do 4 alternations between green and red like this:</p>
+<pre><code>for color in CENTRAL_CIRCLE_COLORS * 4:
+print color
+pygame.draw.circle(MY_WINDOW, color, CENTRAL_CIRCLE_CENTER, CENTRAL_CIRCLE_RADIUS)
+pygame.display.flip()
+pygame.time.wait(1000)</code></pre></li>
+<li><p>Remark:<br />
+This time you have to put the</p>
+<pre><code>pygame.display.flip()
+pygame.time.wait(1000)</code></pre>
+<p>inside the loop otherwise you would just write red dots over green dots and so on in the memory where you prepare the stimuli and then only display the final state, i.e. a red dot.</p></li>
+</ol>
+<h2 id="write-down-a-program">2.3 Write down a program</h2>
+<ol style="list-style-type: decimal">
+<li><p>Set up everything Exactly as you did before, copy the template in <code>AIP_brouillons</code> and rename it <code>atlernating_dot.py</code></p></li>
+<li><p>Add your constants between the imports and then functions, and the loop in the main function</p></li>
+<li><p>In the <strong>ipython command line</strong>, in order to avoid confusion (and possible computer problems) between multiple pygame-operated windows, execute</p>
+<pre><code>pygame.quit()
+quit</code></pre>
+<p>then just launch the ipython interpreter again.</p></li>
+<li><p>In your <strong>normal command line interpreter (not the ipython one)</strong>, execute</p>
+<pre><code>python alternating_dot.py</code></pre></li>
+<li><p>If needed, the file <code>challenge_02.py</code> in <code>09_More_fun_with_pygame/programs</code> should be very similar to your own alternating_dot.py</p></li>
+</ol>
+<h1 id="rotating-background">3. Rotating background</h1>
+<h2 id="preparation">3.0. Preparation</h2>
+<ol style="list-style-type: decimal">
+<li>First, let’s split up this rotating crossed background in sub-units the first decompositions isolates two sub-units
+<ol style="list-style-type: decimal">
+<li>building the crossed pattern</li>
+<li>rotating it</li>
+</ol></li>
+<li>Since we already have the function to nicely rotate an image, let’s think a minute…</li>
+</ol>
+<ul>
+<li>What it is that we can rotate?
+<ul>
+<li>A surface!</li>
+<li>So Let’s build the background be a surface!</li>
+</ul></li>
+<li>If the background is a surface, what method typical of surface would we use to insert a blue cross pattern into it?
+<ul>
+<li><code>.blit</code> !</li>
+<li>What is it that could be “blited” inside the background?
+<ul>
+<li>Another surface!</li>
+<li>So let’s make the blue cross a surface too!</li>
+</ul></li>
+</ul></li>
+<li>How easy is it to <code>.blit</code> a surface at a given position?
+<ul>
+<li>Meh, kinda easy actually?
+<ul>
+<li>Indeed, so we only have to make surface bearing a blue cross and <code>.blit</code> at different positions
+<ul>
+<li>So we will not use the <code>.move</code> method?
+<ul>
+<li>Nah, it’s a possibility, but why <code>.blit</code> then extract rectangle then <code>.move</code> then ‘.blit’ again when you can just <code>.blit'</code>?</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>So, to summarize
+<ol start="2" style="list-style-type: decimal">
+<li>build a surface for the background</li>
+<li>build a surface for one blue cross</li>
+<li><code>.blit</code> the cross all over the background</li>
+<li>prepare the rotated background and <code>.blit</code> it at the center of the window</li>
+</ol></li>
+<li><p>Let’s go back to your ipython command line! You know what you have to do to get a pygame-operated window called MY_WINDOW, but this time, let’s have its color be something else than black in order to better see where our black background is located <code>WINDOW_SIZE = (400,300)   WINDOW_COLOR = (127,127,127)</code></p></li>
+<li><strong>For those who are not to afraid of math</strong>,<br />
+let’s define the size of the different sub-units</li>
+</ol>
+<ul>
+<li><p>in your impython window, <code>import math</code></p></li>
+<li><p>If we want the rotated background to always fit in the window, it’s maximal dimensions i.e. it’s diagonal should be less than the smaller dimension of the window <code>window_dim = [dim for dim in MY_WINDOW.get_size()]   window_dim.sort()   background_dim = int(math.floor(window_dim[0] / math.sqrt(2)))</code></p></li>
+<li><p>and if we want a crossed pattern similar to <a href="">this one</a> we need an odd number of crosses that is not too small, as you know since you were in elementary school <code>7 x 3 = 21</code>, so you would have 7 x 7 crosses on the background, each on a 30 pixel square and it would look nice. <code>crosses_per_dim = 7   cross_dim = background_dim / crosses_per_dim   background_dim = cross_dim * crosses_per_dim   print  background_dim   print cross_dim</code> Remark:<br />
+ Here we uwe the pythonic behavior of integer division to get the actual background_dim</p></li>
+<li>Thus finally you get
+<ul>
+<li>background_dim = 210 pixels</li>
+<li>cross_dim = 30 pixels</li>
+</ul></li>
+</ul>
+<h2 id="prepare-the-background">3.1. Prepare the background</h2>
+<ol style="list-style-type: decimal">
+<li>Build a surface for the background
+<ul>
+<li><p>Check the syntaxe <code>pygame.Surface?</code> &gt; Docstring:<br />
+ &gt; Surface((width, height), flags=0, depth=0, masks=None) -&gt; Surface<br />
+ &gt; Surface((width, height), flags=0, Surface) -&gt; Surface<br />
+ &gt; pygame object for representing images</p></li>
+<li><p>Define the constants you need, <code>BACKGROUND_SIZE = (210,210)</code> Remark :<br />
+ The background shape is a square, as for its size, for the moment, let’s just make it fit in the wndow</p></li>
+<li><p>Create your surface <code>BACKGROUND = pygame.Surface(BACKGROUND_SIZE)</code></p></li>
+<li><p>Paint it black <code>BACKGROUND_COLOR = (0,0,0)   BACKGROUND.fill(BACKGROUND_COLOR)</code></p></li>
+</ul></li>
+<li>Build a surface for one blue cross
+<ul>
+<li><p>Define the constants you need for the 30 pixel square on which you are going to draw the blue cross</p>
+<pre><code>CROSS_TILE_SIZE = (30,30)
+CROSS_TILE = pygame.Surface(CROSS_TILE_SIZE)</code></pre></li>
+<li><p>Paint it white for the moment so that we could see it on the black background</p>
+<pre><code>CROSS_TILE_COLOR = (250,250,250)
+CROSS_TILE.fill(CROSS_TILE_COLOR)</code></pre></li>
+<li><p>Draw a blue cross on the cross tile</p>
+<pre><code>CROSS_COLOR = (0,0,255)
+CROSS_RECTANGLES = [(8,14,14,2),(14,8,2,14)]
+for r in CROSS_RECTANGLES:
+pygame.draw.rect(CROSS_TILE,CROSS_COLOR,r)</code></pre></li>
+</ul></li>
+<li><p><code>.blit</code> the cross all over the background</p>
+<ol style="list-style-type: decimal">
+<li><p>First, let’s <code>.blit</code> one cross surface on the bare background surface, and then to <code>.blit</code> the background on you pygame-operated window</p>
+<ul>
+<li><p>In order to check the <code>.blit</code> syntaxe, remember that it is a method of the surface inside which you want to put some other surface</p>
+<pre><code>.blit?</code></pre>
+<blockquote>
+<p>Docstring:<br />
+blit(source, dest, area=None, special_flags = 0) -&gt; Rect<br />
+draw one image onto another</p>
+</blockquote></li>
+</ul>
+<p>Remark: <strong>source</strong> is the surface you want to insert (here: the cross) and <strong>dest</strong> is a tuple <code>(horizontal_position_of_the_top-left_corner,   vertical_position_of_the_top-left_corner)</code> or a rectangle <code>(horizontal_position_of_the_top-left_corner,   vertical_position_of_the_top-left_corner, width, height)</code> that defines the position at which you want the inserted surface (here: the cross) to appear, relatively to the top-left corner of the surface in which you want to blit (here: the bare background square)</p>
+<ul>
+<li><p>So you need a position. For the moment, lets define some constants to <code>.blit</code> the cross on the bare background and then the crossed background on the window</p>
+<pre><code>CROSS_TILE_POSITION = (0,0)
+BACKGROUND_POSITION = (50,0)</code></pre></li>
+<li><p>Now you can <code>.blit</code> one cross tile on the background, and the background on the window, then display the result</p>
+<pre><code>BACKGROUND.blit(CROSS_TILE, CROSS_TILE_POSITION)
+MY_WINDOW.blit(BACKGROUND, BACKGROUND_POSITION)
+pygame.display.flip()</code></pre></li>
+</ul></li>
+<li><p>Now, the only thing to change in order to <code>.blit</code> several CROSS_TILE on the background is to find how to iterate</p>
+<ul>
+<li><p>You need to iterate over the horizontal and vertical dimention, which you could easily do with 2 nested <code>for</code> loops and a carefuly specified <code>range</code>. if needed, use the ipython help</p>
+<pre><code>range?</code></pre></li>
+<li><p>You need to iterate for as much CROSS_TILE you can fit in the BACKGROUND</p>
+<pre><code>for horizontal_position in range(0, BACKGROUND.get_width(), CROSS_TILE.get_width()):
+for vertical_position in range(0, BACKGROUND.get_height(), CROSS_TILE.get_height()):
+    BACKGROUND.blit(CROSS_TILE, (horizontal_position, vertical_position))</code></pre></li>
+</ul></li>
+<li><p>Display hte result on the pygame-operated window</p>
+<pre><code>MY_WINDOW.blit(BACKGROUND, BACKGROUND_POSITION)
+pygame.display.flip()</code></pre></li>
+</ol></li>
+<li><p>Prepare the rotated background and <code>.blit</code> it at the center of the window</p>
+<ol style="list-style-type: decimal">
+<li><p>In order to use the rotation that we already built in <code>AIP2015/09_More_fun_with_pygame/programs/rotating_python_logo_solution.py</code>, let’s first make a nice program with the background we just built</p>
+<ul>
+<li><p>Same as before : go to <code>AIP_brouillons</code> copy <code>AIP2015/09_More_fun_with_pygame/programs/pygame_template.py</code> there under the name <code>rotating_background.py</code>.</p></li>
+<li><p>Since we are making a lot of surfaces, it’s a good opportunity to make a function that combines generating and coloring the surface in one step</p>
+<pre><code>def make_surface(surface_size,surface_color):
+the_surface = pygame.Surface(surface_size)
+the_surface.fill(surface_color)
+return the_surface</code></pre></li>
+<li><p>If you need, compare your script with <code>AIP2015/09_More_fun_with_pygame/programs/challenge_03.py</code></p></li>
+</ul></li>
+<li><p>Insert the pieces of <code>AIP2015/09_More_fun_with_pygame/programs/rotating_python_logo_solution.py</code> that you need to have your background revolve around the center of the window</p>
+<ul>
+<li><p>replace</p>
+<pre><code>BACKGROUND_POSITION = centerize(BACKGROUND, MY_WINDOW)
+MY_WINDOW.blit(BACKGROUND, BACKGROUND_POSITION)</code></pre></li>
+</ul>
+<p>by</p>
+<pre><code>for degres in range(0,ANGLE_MAX,ANGLE_STEP):
+    MY_ROTATED_IMAGE = pygame.transform.rotate(MY_IMAGE, degres)
+
+    MY_ROTATED_IMAGE_POSITION = centerize(MY_ROTATED_IMAGE, MY_WINDOW)
+
+    clean_the_window(MY_WINDOW, BACKGROUND_COLOR)
+
+    MY_WINDOW.blit(MY_ROTATED_IMAGE, MY_ROTATED_IMAGE_POSITION)
+    pygame.display.flip()</code></pre>
+<ul>
+<li>do the necessary adaptations
+<ul>
+<li>variable name translations</li>
+<li>define the angles for the rotation</li>
+</ul></li>
+</ul></li>
+<li><p>Now you can see what I meant about everything being rectangles!</p>
+<ul>
+<li><p>If not, compare your code with <code>AIP2015/09_More_fun_with_pygame/programs/challenge_04.py</code>.</p></li>
+<li><p>or maybe you already changed the colors of the cross tile and the background and the window. If not, you can set them all to black now.</p></li>
+</ul></li>
+</ol></li>
+</ol>
+<h1 id="combine-the-rotating-background-the-side-circles-and-the-central-dot-in-one-program">4. Combine the rotating background, the side circles and the central dot in one program</h1>
+<h2 id="start-from-your-rotating_background.py-program-and-add-the-adequate-pieces-of-your-side_circles.py-and-atlernating_dot.py">1. Start from your <code>rotating_background.py</code> program and add the adequate pieces of your <code>side_circles.py</code> and <code>atlernating_dot.py</code></h2>
+<h2 id="do-adjustments-and-enjoy">2. Do adjustments and enjoy!</h2>
+<h3 id="if-needed-check-the-program-aip201509_more_fun_with_pygameprogramschallenge_05.py">If needed, check the program <code>AIP2015/09_More_fun_with_pygame/programs/challenge_05.py</code></h3>
+<h3 id="there-is-a-tricky-little-part-in-order-to-insert-the-alternation-of-the-central-dot-color-in-the-angle-loop-but-its-using-some-math-modulo-those-who-are-interested-can-try-to-understand-how-it-works-ask-me-if-needed.">There is a tricky little part, in order to insert the alternation of the central dot color in the angle loop, but it’s using some math (modulo), those who are interested can try to understand how it works, ask me if needed.</h3>
+<hr />
+<p>The End!</p>
+</body>
+</html>
