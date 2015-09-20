@@ -2,7 +2,7 @@
 The challenge was to make a program that shows this optical illusion :  
 ["motion induced blindness"](http://www.michaelbach.de/ot/mot-mib/)
 
-A very good strategy to confront a challenge in conputer science is to split up said challange in several less challenging bits.
+A very good strategy to confront a challenge in conputer science is to split up said challenge in several less challenging bits.
 
 As you can see, in our case the stimulus is a composition of
 
@@ -11,7 +11,7 @@ As you can see, in our case the stimulus is a composition of
 - a static central dot whose color is alternating between green and red
 
 
-It's a good strategy to start by the easiest part, and then progress with increasing difficulty.
+It's a good strategy to start by the easiest part, then to progress with increasing difficulty.
 In our case, we would thus proceed in this order
 
 1. the side dots, because we know how to draw static constant dots at given positions with `pygame.draw.circle`, so let's call them side circles now
@@ -127,7 +127,7 @@ python side_circles.py
 ```
 4. If needed, the file `challenge_01.py` in `09_More_fun_with_pygame/programs` should be very similar to your own side_circles.py
 
-5. For more seasoned coders, have a look at the file `programsside_circles_deluxe.py` for drawing as many centered shapes as you like, using a dictionary for side dots constants and comprehension lists (cf [one of the best explanation of coprenhension lists](http://sametmax.com/python-love-les-listes-en-intention-partie/)).
+5. For more seasoned coders, have a look at the file `programsside_circles_deluxe.py` for drawing as many centered shapes as you like, using a dictionary for side dots constants and comprehension lists (cf [one of the best explanation of comprenhension lists](http://sametmax.com/python-love-les-listes-en-intention-partie/)).
 
 # 2. Blinking central dot
 
@@ -265,7 +265,7 @@ the first decompositions isolates two sub-units
   WINDOW_COLOR = (127,127,127)
   ```
 
-5. **For the one who are not to afraid of math**,  
+5. **For those who are not to afraid of math**,  
 let's define the size of the different sub-units
   + in your impython window, `import math`
 
@@ -443,9 +443,9 @@ let's define the size of the different sub-units
 
 ## 1. Start from your `rotating_background.py` program and add the adequate pieces of your `side_circles.py` and `atlernating_dot.py`
 
-## 2. Do adjustements and enjoy!
-
-    If needed, check the program `AIP2015/09_More_fun_with_pygame/programschallenge_05.py`
+## 2. Do adjustments and enjoy!
+### If needed, check the program `AIP2015/09_More_fun_with_pygame/programschallenge_05.py`
+### There is a tricky little part, in order to insert the alternation of the central dot color in the angle loop, but it's using some math (modulo), those who are interested can try to understand how it works, ask me if needed.
 
 ___
 The End!
