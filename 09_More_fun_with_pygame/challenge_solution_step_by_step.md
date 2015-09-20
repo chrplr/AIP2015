@@ -444,7 +444,9 @@ let's define the size of the different sub-units
 ## 1. Start from your `rotating_background.py` program and add the adequate pieces of your `side_circles.py` and `atlernating_dot.py`
 
 ## 2. Do adjustments and enjoy!
+
 ### If needed, check the program `AIP2015/09_More_fun_with_pygame/programs/challenge_05.py`
+
 ### There is a tricky little part, in order to insert the alternation of the central dot color in the angle loop, but it's using some math (modulo), those who are interested can try to understand how it works, ask me if needed.
 
 ___
