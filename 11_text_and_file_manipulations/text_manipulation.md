@@ -26,17 +26,6 @@ Or "triple" quotes for multilines strings
     ...
 	"""
 
-They have a type 'str'.
-
-    >>> type('bonjour')
-    <type 'str'>
-
-To convert an object to a string representation:
-
-	str(10)
-	a = dict((("a",1), ("b",2)))
-	str(a)
-
 A string is nothing but a sequence of characters.
 
 	a = 'bonjour'
@@ -56,6 +45,35 @@ Operations on strings
 	b = 'hello'
 	a + b
 	a + ' ' + b
+
+They have a type 'str'.
+
+    >>> type('bonjour')
+    <type 'str'>
+
+To convert an object to a string representation:
+
+	str(10)
+	a = dict((("a",1), ("b",2)))
+	str(a)
+	b = ["alpha", "beta", "gamma"]
+	str(b)
+    ", ".join(b)
+
+Splitting a strings at a delimiter:
+
+    a = 'alain marie jean marc'
+    a.split(" ")
+
+
+format strings:
+
+	"%d + %d is %d" % (4, 5, 9)
+	"%s is %d years old" % ('Jacques', 45)
+	"%03d" % 1
+
+See doc for information on format strings
+
 
 
 A set of functions to manipulate strings is available in the module 'string'.
@@ -77,14 +95,11 @@ A set of functions to manipulate strings is available in the module 'string'.
 	a.replace('marie','claude')
 	a
 
-## splitting a strings at delimiters
-
-    a = 'alain marie jean marc'
-    a.split(" ")
 
 
 Read (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])) to learn about more string functions.
 
+See regular expressions for more compelx pattern search.
 
 # Interactive input from the command line:
 
@@ -97,9 +112,56 @@ print "Bonjour " + name + '!'
 # Reading and writing to text files
 
 
-* With Atom, create a text file containing a few lines of arbitrary content, an save it under the filename 'test.txt'
+* With Atom, create a text file containing two lines of arbitrary content (using only ascii characters), and save it under the filename `test.txt`
+* Execute the following script (in the directory where `test.txt` is located)
 
+```python
+    f = file("text.txt")
+  	f.read()
+```
 
+```python
+    f = file("test.txt")
+	content = f.read()
+	content.split("\n")
+	f.close()
+```
+To write in a text file:
+
+```python
+	f = file('test2.txt', 'w')
+	f.write("Attention")
+	f.write("Ceci est")
+	f.write("un essai")
+	f.close()
+```
+
+Important: to end a line, you need to write a 'carriage return' character '\n'
+
+Exercice: write the numbers 1 to 1000 (1 per line) in a file 'numbers.txt'.
+
+. . .
+
+```python
+	f = file('numbers.txt', 'w')
+	for i in range(1, 1001):
+		f.write(str(i) + '\n')
+	f.close()
+```
+
+```python
+	f = file('numbers2.txt', 'w')
+	for i in range(1, 1001):
+		f.write("%d\n" % i)
+	f.close()
+```
+
+```python
+	f = file('numbers3.txt', 'w')
+	for i in range(1, 1001):
+		f.write("%04d\n" % i)
+	f.close()
+```
 
 
 ## the special case of csv files (comma separated values)
@@ -119,13 +181,81 @@ Not only it is better for humans, but it makes it easier to import
 other software, e.g. Python.
 
 
+```python
+import csv
+f = file('aga.csv')
+data = csv.reader(f, delimiter=',')
+for row in data:
+	print(row)
+```
 
-Create a text file 'essa
+. . .
 
-```pytho
+Exercice: modify this program to compute the averages of each columns
+
+. . .
+
+```python
+import csv
+f = file('aga.csv')
+data = csv.reader(f, delimiter=',')
+sumcol1, sumcol2, nline = 0, 0, 0
+for row in data:
+	val1, val2 = row
+	sumcol1 += val1
+	sumcol2 += val2
+	nline = nline + 1
+print(sumcol1/nline)
+print(sumcol2/nline)
+```
+
+. . .
 
 
-writing:
+```python
+import csv
+f = file('aga.csv')
+data = csv.reader(f, delimiter=',')
+sumcol1, sumcol2, nline = 0, 0, 0
+for row in data:
+	val1, val2 = row
+	sumcol1 += val1
+	sumcol2 += val2
+	nline = nline + 1
+print(sumcol1/nline)
+print(sumcol2/nline)
+```
+
+```python
+import csv
+import numpy as np
+
+data1 = []
+data2 = []
+f = file('aga.csv')
+data = csv.reader(f, delimiter=',')
+
+for row in data:
+	val1, val2 = row
+	data1.append(float(val1))
+	data2.append(float(val2))
+
+d1 = np.array(data1)
+d2 = np.array(data2)
+
+np.mean(d1)
+np.mean(d2)
+np.std(d1)
+np.std(d2)
+
+
+import matplotlib.pyplot as plt
+
+plt.plot(d1, d2)
+plt.show()
+
+```
+
 
 
 

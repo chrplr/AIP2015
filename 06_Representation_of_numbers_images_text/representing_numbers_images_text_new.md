@@ -2,23 +2,21 @@
 % Christophe@pallier.org
 % Sept. 2015
 
-
-
 # Representation of integers
-
 
 *There are 10 kinds of people: those who count in binary and the others.*
 
-
 Computers represent everything as series of 0 and 1, also known as *bits* (for "binary digits").
 
+Just like a number can be written in base 10, it can be written in base 2 (or in any other base):
 
-Just like a number can be written in base 10, it can be written in base 2:
+	12 = 10  + 2 = 1.(10^1) + 2.(10^0) 
+	12 = 8 + 4 = 2^3 + 2^1 => 1010
 
-E.g.
+    33 = 30  + 3 = 3.(10^1) + 3.(10^0)
+	33 = 32 + 1 = 2^5 + 2^0 => 100001
 
-	12 : 10  + 2  = 8 + 4 = 2**3 + 2**1 : 1010
-    33 : 30  + 3  = 32 + 1 = 2**5 + 1 : 100001
+The binary representions of the first integers:
 
 	1 :   1
 	2 :  10
@@ -30,7 +28,14 @@ E.g.
 	...
 
 
-To learn more about how integer numbers are reprsented in binary format, you can check out <http://csunplugged.org/binary-numbers>
+Remember that a number represented by four digits "d3 d2 d1 d0" in a basis 'b', has a value of d3*b^3 + d2*b^2 + d1*b^1 + d0*b^0
+
+- In binary, there are only two possibilities for the digits: {0,1}
+- In decimal, 10 possible characters
+- In hexadecimal, 16 possible characters 0-9, A, B, C, D, E, F
+(D8F1 = 14*16^3 + 8*10^2 + 15*16^1 + 1*16^0)
+
+To learn more about how integer numbers are represented in binary format, you can check out <http://csunplugged.org/binary-numbers>
 
 (@) Convert (manually) into decimal the following binary numbers:
 - 101
@@ -47,7 +52,6 @@ To learn more about how integer numbers are reprsented in binary format, you can
 
 (@) Let us write a function that, given the binary representation of a number as a string of '0' and '1', returns its value as a integer.
 
-Remember that a number represented by four digits d3 d2 d1 d0 in a basis 'b', has a value of d3*b^3 + d2*b^2 + d1*b^1 + d0*b^0
 
 1. Let us first suppose that we want to convert a string containing exactly 8 binary digits (e.g. '01011010') into decimal. How would you do that? 
 
@@ -58,18 +62,39 @@ def todec8bits(s):
 	return int(s[0])*128 + int(s[1])*64 + int(s[2])*32 + \
 	       int(s[3])*16 + int(s[4])*8 + int(s[5])*4 + \
 		   int(s[6])*2 + int(s[7])
+
+todec8bits("01010101")
 ```
 
-Or, another solution, demonstrating several new Pythonic constructions
-that we have not seen yet:
+One issue with this code:
+
+```python
+todec8bits("0101010")
+todec8bits("010101010")
+
+```
+
+Remark: on your computers, integers are represented either as 32 or 64 bits, depending on your processor/operating system.
+
+Why is this is relevant: suppose you perform an EEG recording with 256 electrodes every milliseconds for one hour. How large is the data?
+
+
+
+Beware: your computer can make mistakes if you add too large numbers!!!
+
+
+Another solution demonstrating several new Pythonic constructions that we have not seen yet:
 
 ```python
 pow2 = [2 ** n for n in range(7, -1, -1)]
-val = 0
+n = 0
 for b, p in zip(s, pow2):
-	val += int(b) * p
+	n += int(b) * p
+print(n)
 ```
 . . .
+
+We could modify it to adapt to the size of the string 's'.
 
 My favorite which has the advantage of working with strings of unlimited size:
 
