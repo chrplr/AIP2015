@@ -3,8 +3,8 @@
 # -*- encoding: utf-8 -*-
 
 """
-Use pygame to display a window
-Put an image within and then rotate it nicely in the center
+Use pygame to display the "motion induced blindness" illusion
+cf http://www.michaelbach.de/ot/mot-mib/
 """
 
 # importing useful modules
