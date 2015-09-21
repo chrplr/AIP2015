@@ -16,7 +16,7 @@ Or double quotes
 
     "Bonjour le monde !"
 
-Or "triple" quotes for multilines strings
+Or "triple" quotes for multi-lines strings
 
     """
     Bonjour le monde!
@@ -26,7 +26,12 @@ Or "triple" quotes for multilines strings
     ...
 	"""
 
-A string is nothing but a sequence of characters.
+It is also possible to insert a 'line break' within a string with the character '\n' (line feed; ascii code=10).
+
+    print("ligne 1\nligne 2")
+
+
+A string is a **sequence** of characters.
 
 	a = 'bonjour'
 	print(a[0])
@@ -51,7 +56,7 @@ They have a type 'str'.
     >>> type('bonjour')
     <type 'str'>
 
-To convert an object to a string representation:
+To convert objects to string representations:
 
 	str(10)
 	a = dict((("a",1), ("b",2)))
@@ -60,24 +65,13 @@ To convert an object to a string representation:
 	str(b)
     ", ".join(b)
 
-Splitting a strings at a delimiter:
+Splitting a string at a delimiter:
 
     a = 'alain marie jean marc'
     a.split(" ")
 
 
-format strings:
-
-	"%d + %d is %d" % (4, 5, 9)
-	"%s is %d years old" % ('Jacques', 45)
-	"%03d" % 1
-
-See doc for information on format strings
-
-
-
-A set of functions to manipulate strings is available in the module 'string'.
-
+The string module contains a set of functions to manipulate strings, e.g.:
 
 	import string
 	string.upper(a)
@@ -99,7 +93,19 @@ A set of functions to manipulate strings is available in the module 'string'.
 
 Read (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])) to learn about more string functions.
 
-See regular expressions for more compelx pattern search.
+See also *regular expression* (module 're') for more complex pattern search.
+
+
+
+format strings:
+
+	"%d + %d is %d" % (4, 5, 9)
+	"%s is %d years old" % ('Jacques', 45)
+	"%03d" % 1
+
+See doc for information on format strings
+
+
 
 # Interactive input from the command line:
 
@@ -109,7 +115,7 @@ name = raw_input('Comment vous appelez-vous ? ')
 print "Bonjour " + name + '!'
 ```
 
-# Reading and writing to text files
+# Reading a text file
 
 
 * With Atom, create a text file containing two lines of arbitrary content (using only ascii characters), and save it under the filename `test.txt`
@@ -118,7 +124,11 @@ print "Bonjour " + name + '!'
 ```python
     f = file("text.txt")
   	f.read()
+	f.close()
 ```
+
+...
+
 
 ```python
     f = file("test.txt")
@@ -126,7 +136,9 @@ print "Bonjour " + name + '!'
 	content.split("\n")
 	f.close()
 ```
-To write in a text file:
+
+
+# Writing to a text file:
 
 ```python
 	f = file('test2.txt', 'w')
@@ -136,7 +148,7 @@ To write in a text file:
 	f.close()
 ```
 
-Important: to end a line, you need to write a 'carriage return' character '\n'
+Important: to insert a  linebreak, you need to insert the character '\n'
 
 Exercice: write the numbers 1 to 1000 (1 per line) in a file 'numbers.txt'.
 
@@ -168,7 +180,17 @@ Exercice: write the numbers 1 to 1000 (1 per line) in a file 'numbers.txt'.
 
 
 * Open a spreadsheet, e.g. with Excel or LibreOffice Calc.
-* Create a small table with 3 colums and 4 lines, with arbitrary content
+* Create a small table with 3 colums and 4 lines:
+
+-------   ----------  ----------
+   cond            x           y
+      a          2.0         4.2
+	  a          3.0         5.4
+	  b          4.0         3.1
+	  b          5.0         3.9 
+-------   ----------  ----------
+
+
 * Use 'save as' to save the file with a *csv format*.
 * Using a text editor, e.g. atom, open the file you have just saved.
 
@@ -181,6 +203,8 @@ Not only it is better for humans, but it makes it easier to import
 other software, e.g. Python.
 
 
+
+
 ```python
 import csv
 f = file('aga.csv')
@@ -191,97 +215,40 @@ for row in data:
 
 . . .
 
-Exercice: modify this program to compute the averages of each columns
+We could modify this program to compute the averages of each column.
 
-. . .
+But it would be tedious. Rather, we can use the module pandas:
+
 
 ```python
-import csv
-f = file('aga.csv')
-data = csv.reader(f, delimiter=',')
-sumcol1, sumcol2, nline = 0, 0, 0
-for row in data:
-	val1, val2 = row
-	sumcol1 += val1
-	sumcol2 += val2
-	nline = nline + 1
-print(sumcol1/nline)
-print(sumcol2/nline)
+import pandas as pd
+
+data = pd.read_csv('aga.csv')
+
+data.x.mean()
+data.y.mean()
+data.groupby('cond').y.mean()
 ```
 
 . . .
 
-
-```python
-import csv
-f = file('aga.csv')
-data = csv.reader(f, delimiter=',')
-sumcol1, sumcol2, nline = 0, 0, 0
-for row in data:
-	val1, val2 = row
-	sumcol1 += val1
-	sumcol2 += val2
-	nline = nline + 1
-print(sumcol1/nline)
-print(sumcol2/nline)
 ```
-
-```python
-import csv
-import numpy as np
-
-data1 = []
-data2 = []
-f = file('aga.csv')
-data = csv.reader(f, delimiter=',')
-
-for row in data:
-	val1, val2 = row
-	data1.append(float(val1))
-	data2.append(float(val2))
-
-d1 = np.array(data1)
-d2 = np.array(data2)
-
-np.mean(d1)
-np.mean(d2)
-np.std(d1)
-np.std(d2)
-
-
 import matplotlib.pyplot as plt
 
-plt.plot(d1, d2)
+plt.plot(data.x, data.y)
 plt.show()
 
 ```
 
 
 
-
-
-```python
-filename = 'test.txt'
-handle = open(filename, 'w')
-handle.write('welcome')
-handle.write('to the wonderful')
-handle.write('world of Python!')
-handle.close()
-```
-
-
-
-
-
-
-Exercices
-=========
+# Exercices
 
 Download [Alice in Wonderland](http://www.pallier.org/cours/AIP2013/alice.txt).
 
-(@) Write a program that prints the lines that contains the string 'Alice' (tip: you can use the find function from the module string). Then, test the same program with the strings 'Rabbit', 'rabbit', 'stone', 'office'.
+(@) Write a program that prints all the lines that contain the string 'Alice'.
 
-#ifdef ANSWERS
+. . .
 
 ```python
 import string
@@ -290,6 +257,8 @@ for line in text:
 	if string.find(line, 'Alice') != -1:
 		print(line)
 ```
+
+Modify your program to print the lines containing 'Rabbit', 'rabbit', 'stone', 'office'.
 
 ```python
 import string
@@ -311,7 +280,6 @@ print_matching_lines('alice.txt', 'office')
 Get <http://www.pallier.org/cours/AIP2013/text3.py>
 
 
-#endif
 
 - - - 
 
@@ -331,7 +299,7 @@ print(words)
 
 Now write a script that counts the number of occurences of 'Alice', 'Rabbit' or 'office' in the list of words.
 
-#ifdef ANSWERS
+. . .
 
 ```python
 n1, n2, n3 = 0, 0, 0
@@ -344,14 +312,15 @@ for w in words:
 		n3 = n3 + 1
 print n1, n2, n3
 ```
-#endif
+
 
 
 - - -
 
-(@) Read about Python's Dictionnaries <http://docs.python.org/2/tutorial/datastructures.html#dictionaries> and use a dictonnary to store the number of occurrences of each word in Alice in Wonderland (the keys are the words, and the values and the number of occurrences; if word= ['a', 'a', 'b']; dico={'a':2, 'b':1}). 
+(@) Use a dictonary to store the number of occurrences of each word in Alice in Wonderland (the keys are the words, and the values and the number of occurrences; if word= ['a', 'a', 'b']; dico={'a':2, 'b':1}). 
 
-#ifdef ANSWERS
+. . .
+
 ```
 dico = {}
 for w in words:
@@ -364,13 +333,11 @@ print(dico)
 
 # print sorted by word frequencies
 for w in sorted(dico, key=dico.get, reverse=True):
-	print w, d[w]
+	print w, dico[w]
 ```
 
 Get <http://www.pallier.org/cours/AIP2013/text2.py>
 
-
-#endif
 
 - - -
 
@@ -378,7 +345,7 @@ Get <http://www.pallier.org/cours/AIP2013/text2.py>
 
 You can skim through <http://matplotlib.org/users/pyplot_tutorial.html>.
 
-#ifdef ANSWERS
+. . .
 
 ```python
 # affichage des fréquences en fonction de leur rang		
@@ -399,7 +366,7 @@ plt.show()
 
 Get <http://www.pallier.org/cours/AIP2013/text3.py>
 
-#endif
+
 
 Remark: The product rank X frequency is roughly constant. This 'law' was discovered by Estoup and popularized by Zipf. See  <http://en.wikipedia.org/wiki/Zipf%27s_law>. 
 
@@ -410,7 +377,7 @@ Remark: The product rank X frequency is roughly constant. This 'law' was discove
 
 (@) Generate random text (each letter from a-z being equiprobable, and the spacecharacter being 8 times more probable) of 1 million characters. Compute the frequencies of each 'pseudowords' and plot the rank/frequency diagram.
 
-#ifdef ANSWERS
+. . .
 
 ```python
 import random
@@ -443,7 +410,7 @@ plt.show()
 
 Get <http://www.pallier.org/cours/AIP2013/text4.py>
 
-#endif
+. . .
 
 - - -
 
@@ -460,7 +427,7 @@ Get <http://www.pallier.org/cours/AIP2013/text4.py>
 
 (Tip: use the function string.replace)
 
-#ifdef ANSWERS
+. . .
 
 ```python
 import string,random
@@ -508,9 +475,36 @@ while n<10:
         n = n + 1
 ```
 
-Get Get <http://www.pallier.org/cours/AIP2013/text5.py>
+Get <http://www.pallier.org/cours/AIP2013/text5.py>
 
 
 One way to perform pattern matching is to use regular expressions <http://docs.python.org/2/howto/regex.html#regex-howto>.
 
+
+
+# Additional exercices
+
+
+(@) Monte-Carlo estimation of PI
+
+By taking pairs of random numbers uniformly distributed between 0 and 1, and checking if there are within the disk of radius 1 centered on 0, that is, if x**2+y**2 < 1, estimate the number PI.
+
+
+. . .
+
+```python
+import random
+
+N = 10000
+within = 0
+
+for i in range(N):
+	x, y = random.uniform(0,1), random.uniform(0,1)
+	if (x**2 + y**2) < 1:
+		within += 1
+
+print 4.0*within/N
+```
+
+. . .
 
