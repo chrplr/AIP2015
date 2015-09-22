@@ -65,19 +65,21 @@ To convert objects to string representations:
 	str(b)
     ", ".join(b)
 
-Splitting a string at a delimiter:
+
+## Splitting a string at a delimiter:
 
     a = 'alain marie jean marc'
     a.split(" ")
 
 
-The string module contains a set of functions to manipulate strings, e.g.:
+The string module (<https://docs.python.org/2/library/string.html>) 
+ contains a set of functions to manipulate strings, e.g.:
 
 	import string
 	string.upper(a)
 	string.lower('ENS')
 
-## search/replace a substring within a string
+## Search/replace a substring within a string
 
 	a = 'alain marie jean marc'
     a.find('alain')
@@ -90,29 +92,92 @@ The string module contains a set of functions to manipulate strings, e.g.:
 	a
 
 
+# The MU Puzzle
 
-Read (see [https://docs.python.org/2/library/string.html](https://docs.python.org/2/library/string.html])) to learn about more string functions.
+(@) Read about the MU Puzzle (<http://en.wikipedia.org/wiki/MU_puzzle>).
 
-See also *regular expression* (module 're') for more complex pattern search.
+Here is the set of rewriting rules (x and y are variable):
 
+1.    xI -> xIU
+2.    Mx -> Mxx
+3.    xIIIy -> xUy
+4.    xUUy -> xy
 
+Starting for the string 'MI', is it possible to generate 'MU'?
 
-format strings:
+Exercice: Write a program that generates sequences of strings based on the rewriteing production rules and the initial state 'MI'.
+(Tip: use the function string.replace)
 
+. . .
+
+```python
+import string,random
+
+def rule1(s):
+    if s[-1] == 'I':
+        return s + 'U'
+    else:
+        return -1
+
+def rule2(s):
+    if s[0] == 'M':
+        return 'M' + s[1:] + s[1:]
+    else:
+        return -1
+
+def rule3(s):
+    if s.find('III') != -1:
+        return s.replace('III', 'U')
+    else:
+        return -1
+ 
+def rule4(s):
+    if s.find('UU') != -1:
+        return s.replace('UU', '')
+    else:
+        return -1
+    
+s = 'MI'
+
+n = 1
+while n <= 10:
+    r = random.randint(1,4)
+    if r==1:
+        news = rule1(s)
+    if r==2:
+        news = rule2(s)
+    if r==3:
+        news = rule3(s)
+    if r==4:
+        news = rule4(s)
+    if news != -1:
+        print('step' + str(n) + ': (rule '+ str(r) + '): ' + s + ' -> ' + news)
+        s = news
+        n = n + 1
+```
+
+See code [mu_puzzle.py](mu_puzzle.py)
+
+See also *regular expression* (module 're') for pattern search.
+(<http://docs.python.org/2/howto/regex.html#regex-howto>)
+
+# Formatted output with template strings:
+
+Using the '%' operator with a string and a list as operands:
+ 
 	"%d + %d is %d" % (4, 5, 9)
 	"%s is %d years old" % ('Jacques', 45)
 	"%03d" % 1
 
-See doc for information on format strings
-
-
+See <http://www.python-course.eu/python3_formatted_output.php>
+for more information.
 
 # Interactive input from the command line:
 
 ```python
 name = raw_input('Comment vous appelez-vous ? ')
 
-print "Bonjour " + name + '!'
+print("Bonjour %s !" % name)
 ```
 
 # Reading a text file
@@ -124,18 +189,59 @@ print "Bonjour " + name + '!'
 ```python
     f = file("text.txt")
   	f.read()
-	f.close()
 ```
 
-...
+* when give a filename as a single argument, the function `file` **opens** the corresponding file for reading.
 
+* The function `read` returns the content of the file as a string
+
+To do something with the content of the file, you must save it in a variable.
 
 ```python
     f = file("test.txt")
 	content = f.read()
 	content.split("\n")
-	f.close()
 ```
+
+. . .
+
+
+From Python's point of view, a file is also a sequence of lines. 
+It is also possible to read the file line by line in the following way.
+
+```python
+for line in file("text.txt"):
+	print line
+```
+
+This is useful when you need not read the entire file.
+
+For example, to print only the 5th line:
+
+```python
+i = 1
+for line in file("text.txt"):
+	if i==5:
+		print(line)
+		break
+	i = i + 1
+```
+
+Or, in a more pythonic way:
+
+
+```python
+for i, line in enumerate(file("text.txt")):
+	if i==5:
+		print(line)
+		break
+f.close()
+```
+
+Note the f.close(). Closing the file is necessary so that the line pointer starts again from the top of the file.
+
+Try to run the above code twice with and without the f.close()
+
 
 
 # Writing to a text file:
@@ -176,7 +282,7 @@ Exercice: write the numbers 1 to 1000 (1 per line) in a file 'numbers.txt'.
 ```
 
 
-## the special case of csv files (comma separated values)
+## The special case of csv  (comma separated values) files
 
 
 * Open a spreadsheet, e.g. with Excel or LibreOffice Calc.
@@ -192,7 +298,7 @@ Exercice: write the numbers 1 to 1000 (1 per line) in a file 'numbers.txt'.
 
 
 * Use 'save as' to save the file with a *csv format*.
-* Using a text editor, e.g. atom, open the file you have just saved.
+* Using a text editor, e.g. atom, and open the file you have just saved.
 
 Notice that a csv file is a *text file* (contrary to a .xlsx file, which uses a binary, proprietary format).
 
@@ -201,8 +307,6 @@ than a binary format.
 
 Not only it is better for humans, but it makes it easier to import
 other software, e.g. Python.
-
-
 
 
 ```python
@@ -232,6 +336,14 @@ data.groupby('cond').y.mean()
 
 . . .
 
+To learn more about pandas, you can read the tutorial at
+<http://nbviewer.ipython.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/01%20-%20Lesson.ipynb>
+
+
+To create graphics, you can use the module `matplotlib.pyplot`:
+
+. . .
+
 ```
 import matplotlib.pyplot as plt
 
@@ -240,13 +352,14 @@ plt.show()
 
 ```
 
+See <http://matplotlib.org/users/pyplot_tutorial.html>
 
 
 # Exercices
 
 Download [Alice in Wonderland](http://www.pallier.org/cours/AIP2013/alice.txt).
 
-(@) Write a program that prints all the lines that contain the string 'Alice'.
+(@) Write a program that prints all the lines that contain the string 'Alice' (hint use the 'find' function)
 
 . . .
 
@@ -259,6 +372,8 @@ for line in text:
 ```
 
 Modify your program to print the lines containing 'Rabbit', 'rabbit', 'stone', 'office'.
+
+. . .
 
 ```python
 import string
@@ -277,10 +392,10 @@ print_matching_lines('alice.txt', 'stone')
 print_matching_lines('alice.txt', 'office')
 ```
 
-Get <http://www.pallier.org/cours/AIP2013/text3.py>
+Code available as `text1.py`
 
 
-
+# Counting words in a text file:
 - - - 
 
 (@) Here is a program that converts the text file into a list of words, removing the punctuation marks and converting everything in lower case. Run it.
@@ -297,7 +412,7 @@ words = text.split()
 print(words)
 ```
 
-Now write a script that counts the number of occurences of 'Alice', 'Rabbit' or 'office' in the list of words.
+**Exercice:** write code that counts the number of occurences of 'Alice', 'Rabbit' or 'office' in the list 'words'.
 
 . . .
 
@@ -313,11 +428,11 @@ for w in words:
 print n1, n2, n3
 ```
 
-
-
 - - -
 
-(@) Use a dictonary to store the number of occurrences of each word in Alice in Wonderland (the keys are the words, and the values and the number of occurrences; if word= ['a', 'a', 'b']; dico={'a':2, 'b':1}). 
+# Using a dictionary to store the number of occurrences of items
+
+Study the following code. It uses a dictionary to store the number of occurrences of each word in Alice in Wonderland: the keys are the words, and the values and the number of occurrences. 
 
 . . .
 
@@ -336,12 +451,11 @@ for w in sorted(dico, key=dico.get, reverse=True):
 	print w, dico[w]
 ```
 
-Get <http://www.pallier.org/cours/AIP2013/text2.py>
-
+(code available as `text2.py`)
 
 - - -
 
-(@) Use numpy and matplotlib to plot the word log(frequencies) as a function of the rank of words on the abscissae (the most frequence word being ranked #1)
+We can use numpy and matplotlib to plot the word log(frequencies) as a function of the rank of words on the abscissae (the most frequence word being ranked #1)
 
 You can skim through <http://matplotlib.org/users/pyplot_tutorial.html>.
 
@@ -364,7 +478,7 @@ plt.xscale('log')
 plt.show()
 ```
 
-Get <http://www.pallier.org/cours/AIP2013/text3.py>
+Code available as  'text3.py'
 
 
 
@@ -408,7 +522,7 @@ plt.xscale('log')
 plt.show()
 ```
 
-Get <http://www.pallier.org/cours/AIP2013/text4.py>
+Code: text4.py
 
 . . .
 
@@ -417,68 +531,6 @@ Get <http://www.pallier.org/cours/AIP2013/text4.py>
 (@) (advanced) compute the table of transition frequencies between words in Alice and generate random text following this pattern.
 
 - - -
-
-(@) Read about the MU Puzzle (<http://en.wikipedia.org/wiki/MU_puzzle>). Write a program that generates sequences of strings based on the following production rules and the initial state 'MI'
-
-1.    xI -> xIU
-2.    Mx -> Mxx
-3.    xIIIy -> xUy
-4.    xUUy -> xy
-
-(Tip: use the function string.replace)
-
-. . .
-
-```python
-import string,random
-
-def rule1(s):
-    if s[-1] == 'I':
-        return s + 'U'
-    else:
-        return -1
-
-def rule2(s):
-    if s[0] == 'M':
-        return 'M' + s[1:] + s[1:]
-    else:
-        return -1
-
-def rule3(s):
-    if s.find('III') != -1:
-        return s.replace('III', 'U')
-    else:
-        return -1       
- 
-def rule4(s):
-    if s.find('UU') != -1:
-        return s.replace('UU', '')
-    else:
-        return -1
-    
-s = 'MI'
-
-n = 0
-while n<10:
-    r = random.randint(1,4)
-    if r==1:
-        news = rule1(s)
-    if r==2:
-        news = rule2(s)
-    if r==3:
-        news = rule3(s)
-    if r==4:
-        news = rule4(s)
-    if news != -1:
-        print(str(n) + ': ('+ str(r) + '): ' + s + ' -> ' + news)
-        s = news
-        n = n + 1
-```
-
-Get <http://www.pallier.org/cours/AIP2013/text5.py>
-
-
-One way to perform pattern matching is to use regular expressions <http://docs.python.org/2/howto/regex.html#regex-howto>.
 
 
 
