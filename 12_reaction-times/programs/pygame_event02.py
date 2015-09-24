@@ -9,7 +9,7 @@ import random
 
 WINDOW_SIZE = (600,300)
 WINDOW_BACKGROUND_COLOR = (0,0,0)
-DISPLAY_DURATION = 2000
+DISPLAY_DURATION = 3000
 
 # petite astuce pour forcer la position de la fenetre sur votre ecran
 WINDOW_POSITION_ON_SCREEN = (0, 10)
@@ -48,7 +48,9 @@ def main():
         delay = pygame.time.get_ticks() - t0
 
         if event_stack: # if the event stack is not empty
+            print(type(event_stack))
             for event in event_stack:
+                print(event)
                 if event.type == KEYDOWN and event.key == K_SPACE:
                     print("Reaction time = " + str(delay) + " milliseconds")
                     break
