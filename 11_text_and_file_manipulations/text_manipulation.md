@@ -183,8 +183,8 @@ print("Bonjour %s !" % name)
 # Reading a text file
 
 
-* With Atom, create a text file containing two lines of arbitrary content (using only ascii characters), and save it under the filename `test.txt`
-* Execute the following script (in the directory where `test.txt` is located)
+* With Atom, create a text file containing two lines of arbitrary content (using only ascii characters), and save it under the filename `text.txt`
+* Execute the following script (in the directory where `text.txt` is located)
 
 ```python
     f = file("text.txt")
@@ -364,12 +364,22 @@ Download [Alice in Wonderland](http://www.pallier.org/cours/AIP2013/alice.txt).
 . . .
 
 ```python
-import string
-text = file('alice.txt')
-for line in text:
-	if string.find(line, 'Alice') != -1:
+for line in file('alice.txt'):
+	if line.find('Alice') != -1:
 		print(line)
 ```
+
+. . .
+
+Remark: the operator 'in' can also be used:
+
+```python
+for line in file('alice.txt'):
+	if 'Alice' in line:
+		print(line)
+```
+
+
 
 Modify your program to print the lines containing 'Rabbit', 'rabbit', 'stone', 'office'.
 
@@ -382,7 +392,7 @@ def print_matching_lines(filename, expr):
     print "#"*30
     print("Searching " + filename + " for " + expr + ":")
     for line in file(filename):
-		if string.find(line, expr) != -1:
+		if line.find(expr) != -1:
 			print(line)
 
 print_matching_lines('alice.txt', 'Alice')
