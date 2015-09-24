@@ -1,14 +1,20 @@
 #! /usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-"""Template for pygame programs
-   Thanks to Juliette
+"""
+Use pygame.time functions to control the window display duration
 """
 
 import pygame
 import sys
+import os
 
-WINDOW_DIMENSIONS = (400,300)
+WINDOW_DIMENSIONS = (600,300)
+
+# littkle trick to position the pygame window on your screen
+WINDOW_POSITION_ON_SCREEN = (0, 10)
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % WINDOW_POSITION_ON_SCREEN
+
 WINDOW_BACKGROUND_COLOR = (0,0,0)
 DISPLAY_DURATION = 2000
 
@@ -36,10 +42,19 @@ def main():
 
     # preparation
     initialization()
+
+    clock = pygame.time.Clock()
+
     MY_WINDOW = open_a_window(WINDOW_DIMENSIONS)
     apply_background_color(MY_WINDOW, WINDOW_BACKGROUND_COLOR)
+
     pygame.display.flip()
-    pygame.time.wait(DISPLAY_DURATION)
+    t0 = pygame.time.get_ticks()
+
+    while pygame.time.get_ticks() < t0 + DISPLAY_DURATION:
+        print("delay : " + str(pygame.time.get_ticks() - t0))
+
+    print("Total delay : " + str(pygame.time.get_ticks() - t0))
     close_everything_properly()
 
 if __name__ == '__main__':

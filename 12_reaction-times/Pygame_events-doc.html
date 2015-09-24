@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="christophe@pallier.org" />
+  <title>Pygame events</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Pygame events</h1>
+<h2 class="author">christophe@pallier.org</h2>
+<h3 class="date">sylvain charron</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#todays-schedule">Today’s schedule</a></li>
+<li><a href="#set-up-your-working-environment">Set up your working environment</a></li>
+<li><a href="#looking-at-the-computers-clock">Looking at the computer’s clock</a></li>
+<li><a href="#using-pygame.time.get_tics-in-a-program">Using <code>pygame.time.get_tics()</code> in a program</a></li>
+<li><a href="#frame-rate-for-advanced-programers">Frame Rate for advanced programers</a></li>
+<li><a href="#introduction-to-events">Introduction to events</a></li>
+<li><a href="#more-one-events">More one events</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</div>
+<h3 id="todays-schedule">Today’s schedule</h3>
+<ol style="list-style-type: decimal">
+<li>lecture</li>
+</ol>
+<ul>
+<li>introduction to pygame timing</li>
+<li>introduction to pygame events</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>practice</li>
+</ol>
+<ul>
+<li>get a reaction time</li>
+<li>building a stroop experiment</li>
+</ul>
+<hr />
+<h3 id="set-up-your-working-environment">Set up your working environment</h3>
+<ol style="list-style-type: decimal">
+<li>Open atom, open two “Project Folders”
+<ul>
+<li>12-reaction-times</li>
+<li>AIP_brouillons</li>
+</ul></li>
+<li>Open a first command-line interface and change directory to go to your testing folder “AIP_brouillons”. There you will run your programs by typing <code>python my_program_name.py</code></li>
+<li><p>Open a second command-line interface, go to AIP_brouillons, and lauch the ipython interpreter. There you will try littles pieces of code and check the ipython help, so start with typing</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> pygame</code></pre></div></li>
+</ol>
+<hr />
+<h3 id="looking-at-the-computers-clock">Looking at the computer’s clock</h3>
+<ol style="list-style-type: decimal">
+<li><p>In your ipython command line, try several time the command</p>
+<pre><code>pygame.time.get_ticks()</code></pre></li>
+<li><p>How would you retrieve the delay between two consecutive call to the function <code>pygame.time.get_tics()</code>?</p></li>
+</ol>
+<p>. . .</p>
+<pre><code>1. store initial time in a variable  
+    t0 = pygame.time.get_tics()
+
+2. get the difference between the current ime and the recorded initial time  
+    delay = pygame.time.get_tics() - t0</code></pre>
+<p>. . .</p>
+<hr />
+<h3 id="using-pygame.time.get_tics-in-a-program">Using <code>pygame.time.get_tics()</code> in a program</h3>
+<ol style="list-style-type: decimal">
+<li><p>What would this little program do?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">import</span> pygame
+
+pygame.init()
+
+MY_WINDOW <span class="op">=</span> pygame.display.set_mode((<span class="dv">600</span>,<span class="dv">300</span>))
+MY_WINDOW.fill((<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))
+pygame.display.flip()
+t0 <span class="op">=</span> pygame.time.get_ticks()
+
+<span class="cf">while</span> pygame.time.get_ticks() <span class="op">&lt;</span> t0 <span class="op">+</span> <span class="dv">2000</span>:
+    <span class="bu">print</span>(<span class="st">&quot;delay : &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pygame.time.get_ticks() <span class="op">-</span> t0))
+
+<span class="bu">print</span>(<span class="st">&quot;Total delay : &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pygame.time.get_ticks() <span class="op">-</span> t0))
+pygame.quit()
+sys.exit()</code></pre></div></li>
+<li><p>Make a new program <code>pygame_timing_01.py</code> from the pygame template and modify it to use the <code>while</code> loop from 1. instead of <code>pygame.time.wait()</code></p></li>
+<li>Reminder on creating new files from teplate using atom:
+<ul>
+<li>from the project folder <code>12_reaction-times/programs</code>, select the file <code>pygame_template.py</code></li>
+<li>using the secondary click menu, copy it</li>
+<li>use the secondary click menu on the project folder <code>AIP2015_Brouillons</code> to paste the file in your testing folder</li>
+<li>on the <code>pygame_template.py</code> copy, use he secondary click menu rename it as <code>pygame_timing_01.py</code></li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="frame-rate-for-advanced-programers">Frame Rate for advanced programers</h3>
+<p>Check the file <code>AIP2015/12_reaction-times/programs/pygame_frame_rate.py</code>, and try to adjust the timing to flip at each refresh (this is very useful for subliminal stimulation).<br />
+It could be very tricky to achieve…</p>
+<hr />
+<h3 id="introduction-to-events">Introduction to events</h3>
+<p>Events are recordings of things that happen to the computer, including the user’s actions through the input devices: keyboard and mouse/trackpad</p>
+<p>Events have different types, you need to import pygame.locals to get access to those types and more, such as key names</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pygame
+<span class="im">from</span> pygame.<span class="bu">locals</span> <span class="im">import</span> <span class="op">*</span></code></pre></div>
+<p>Constants that define key names could be found <a href="https://www.pygame.org/docs/ref/key.html">in the pygame.key documentation</a></p>
+<p>Play a bit with the file <code>AIP2015/12_reaction-times/programs/pygame_event01.py</code></p>
+<hr />
+<h3 id="more-one-events">More one events</h3>
+<p>Events are stored in a stack as time goes by.</p>
+<p>Some useful functions from <code>pygame.event</code></p>
+<ul>
+<li><p>wait for an event</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pygame.event.wait()</code></pre></div></li>
+<li><p>clear the stack using</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pygame.event.clear()</code></pre></div></li>
+<li><p>retrieve the stack as a list</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pygame.event.get()</code></pre></div></li>
+<li><p>more on <a href="https://www.pygame.org/docs/ref/event.html">The pygame documentation</a></p></li>
+</ul>
+<hr />
+<h3 id="example">Example</h3>
+<p>Play a bit with the file</p>
+</body>
+</html>
