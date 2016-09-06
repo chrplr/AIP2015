@@ -13,7 +13,7 @@ système|nom|pour ouvrir|langage
 -------|--------|--------|------
 windows|fenêtre de commande,... |win+R puis cmd| dos
 mac|terminal,iterm,...|/Applications/Utilities/Terminal| bash
-linux|terminal emulator,xterm,...|se loguer|bash, tcsh,...
+linux|terminal emulator,xterm,...|se loguer, Ctrl + Alt + t|bash, tcsh,...
 
 ** Exercices **
 
@@ -81,13 +81,13 @@ Exemples :
 
 
 
-## Afficher le nom, le contenu et changer de répertoire courant 
+## Afficher le nom, le contenu et changer de répertoire courant
 
 OS|langage|nom|contenu|changer | créer
 ---|----|--------|--------|---|---
 Windows|dos|chdir|dir|chdir|mkdir
 linux/OS|bash|pwd|ls|cd|mkdir
-independant|python module os|os.getcwd()|os.listdir()|os.chdir|os.mkdir()
+independant|python module os|os.getcwd()|os.listdir()|os.chdir()|os.mkdir()
 
 ** Essayez ces manipulations en ligne de commande avec votre système **
 

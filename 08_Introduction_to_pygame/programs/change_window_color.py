@@ -22,7 +22,7 @@ MY_COLORS = {'WHITE': (255,255,255),
 DISPLAY_DURATION = 2000
 
 def initialization():
-    """initialize the different modules wihtin pygame"""
+    """initialize the different modules within pygame"""
     pygame.init()
 
 def open_a_window(dimensions):
